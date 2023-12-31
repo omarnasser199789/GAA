@@ -15,7 +15,6 @@ import '../bloc/authenticate_bloc.dart';
 import '../bloc/authenticate_event.dart';
 import '../bloc/authenticate_state.dart';
 import '../../../../nav_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OTPPage extends StatefulWidget {
@@ -287,19 +286,19 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
                               loading: loading,
                               borderRadius: 8,
                               onTap: () {
-                                if(currentText.length>5) {
-                                  firstOne=true;
-                                  PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(verificationId: widget.verificationId, smsCode: currentText);
-                                  BlocProvider.of<AuthenticateBloc>(context).add(
-                                      RegisterUserInFirebaseEvent(phoneAuthCredential: phoneAuthCredential));/// => SuccessRegisterUserInFirebase
-                                }else{
-                                  showMessage(message: "الرجاء ادخال رمز الOTP",
-                                      context: context,
-                                      bgColor: Colors.red);
-                                  setState(() {
-
-                                  });
-                                }
+                                // if(currentText.length>5) {
+                                //   firstOne=true;
+                                //   PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(verificationId: widget.verificationId, smsCode: currentText);
+                                //   BlocProvider.of<AuthenticateBloc>(context).add(
+                                //       RegisterUserInFirebaseEvent(phoneAuthCredential: phoneAuthCredential));/// => SuccessRegisterUserInFirebase
+                                // }else{
+                                //   showMessage(message: "الرجاء ادخال رمز الOTP",
+                                //       context: context,
+                                //       bgColor: Colors.red);
+                                //   setState(() {
+                                //
+                                //   });
+                                // }
 
                               }),
                         ),

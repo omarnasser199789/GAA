@@ -44,9 +44,13 @@ class BannerController extends BaseController {
 
     try {
       // Step 1: Build Template
-      await this.executeCommand("mason", ["make", "acadimiat", "--app_name", `${createOrUpdateObject.appName}`], () => {
+      await this.executeCommand("mason", ["make", "acadimiat",
+        "--app_name", `${createOrUpdateObject.appName}`,
+        "--primary_color", `${createOrUpdateObject.primaryColor}`,
+        "--base_url", `${createOrUpdateObject.baseUrl}`,
+        "--base_signalr_url", `${createOrUpdateObject.baseSignalrUrl}`,
+      ], () => {
         console.log("Build Template => Succeeded");
-
 
         // Step 2: Save the current directory
         const originalDir = process.cwd();
@@ -73,11 +77,11 @@ class BannerController extends BaseController {
             console.log("Back to original directory:", originalDir);
 
             // Step 7: Delay for 10 seconds before removing the acadimiat directory
-            setTimeout(() => {
-              fs.rmdirSync(acadimiatPath, { recursive: true });
-              console.log("Removed directory:", acadimiatPath);
-
-            }, 10000); // 10 seconds delay
+            // setTimeout(() => {
+            //   fs.rmdirSync(acadimiatPath, { recursive: true });
+            //   console.log("Removed directory:", acadimiatPath);
+            //
+            // }, 10000); // 10 seconds delay
 
             // Step 8: Respond with success
             response.json({ message: "Build successful" });

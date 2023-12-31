@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
-import '../../../../../core/classes/Response.dart' as R;
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/globals.dart';
 import '../../../domain/use_cases/facheck_usecase.dart';
@@ -16,7 +14,7 @@ import '../../models/login_model.dart';
 import '../../models/register_model.dart';
 import '../../models/update_user_mode_info.dart';
 import '../local_data_source/authentication_local_data_sources.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 
 class AuthenticateRemoteDataFunctions {
   /// Login function that sends a POST request to the server with login data and caches authentication data
@@ -365,45 +363,6 @@ class AuthenticateRemoteDataFunctions {
         print(e);
       }
       throw ServerException();
-    }
-  }
-
-  /// Register the user with Firebase using the given PhoneAuthCredential
-  Future<int> registerUserInFirebase(PhoneAuthCredential phoneAuthCredential) async {
-    /// Initialize Firebase Authentication
-    FirebaseAuth auth = FirebaseAuth.instance;
-
-    try {
-      /// Sign in with the given PhoneAuthCredential
-      final authCredential = await auth.signInWithCredential(phoneAuthCredential);
-
-      if (authCredential.user != null) {
-        /// Get the ID token from Firebase and print it (for debugging purposes)
-        authCredential.user!.getIdToken().then((token) async {
-          if (kDebugMode) {
-            print("FIREBASE TOKEN: $token");
-          }
-
-          ////Save data in locale storage
-          /// AuthenticationLocalDataSourceImpl authenticationLocalDataSourcesImpl =
-          /// AuthenticationLocalDataSourceImpl();
-          /// await authenticationLocalDataSourcesImpl.cacheFirebaseToken(
-          ///     token, authCredential.user!.phoneNumber.toString());
-        });
-
-        /// Return a status code of 200 if sign-in is successful
-        return 200;
-      }
-
-      /// Return a status code of 400 if user is null
-      return 400;
-    } on FirebaseAuthException catch (e) {
-      if (kDebugMode) {
-        print(e.message);
-      }
-
-      /// Return a status code of 403 if there is a FirebaseAuthException
-      return 403;
     }
   }
 

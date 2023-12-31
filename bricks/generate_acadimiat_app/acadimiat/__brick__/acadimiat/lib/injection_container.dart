@@ -12,7 +12,6 @@ import 'features/authentication_feature/domain/use_cases/check_password_usecase.
 import 'features/authentication_feature/domain/use_cases/facheck_usecase.dart';
 import 'features/authentication_feature/domain/use_cases/login_usecase.dart';
 import 'features/authentication_feature/domain/use_cases/register_usecase.dart';
-import 'features/authentication_feature/domain/use_cases/register_user_in_firebase_usecase.dart';
 import 'features/authentication_feature/domain/use_cases/reset_password_usecase.dart';
 import 'features/authentication_feature/domain/use_cases/update_user_info_usecase.dart';
 import 'features/authentication_feature/presentation/bloc/authenticate_bloc.dart';
@@ -143,7 +142,6 @@ Future<void> init() async {
     () => AuthenticateBloc(
       concreteLoginUseCase: sl(),
       concreteCheckPasswordUseCase: sl(),
-      concreteRegisterUserInFirebaseUseCase: sl(),
       concreteUpdateUserInfoUseCase: sl(),
       concreteRegisterUseCase: sl(),
       concreteResetPasswordUseCase: sl(),
@@ -295,7 +293,6 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetAllProductsFromLocalDBUseCase(repository: sl()));
   sl.registerLazySingleton(() => AddProductInLocalDBUseCase(repository: sl()));
   sl.registerLazySingleton(() => UpdateUserInfoUseCase(repository: sl()));
-  sl.registerLazySingleton(() => RegisterUserInFirebaseUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetPackageByIdUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetConsultancyUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetMyPaymentsUseCase(repository: sl()));

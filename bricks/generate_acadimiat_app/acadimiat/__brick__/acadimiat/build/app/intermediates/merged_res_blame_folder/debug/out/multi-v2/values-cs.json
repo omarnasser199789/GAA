@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.jahezkw.academy.app-mergeDebugResources-65:/values-cs/values-cs.xml",
+            "outputFile": "com.omar.academy.app-mergeDebugResources-58:/values-cs/values-cs.xml",
             "map": [
                 {
                     "source": "/Users/omarnaser/.gradle/caches/transforms-3/39833b16a49a71929bf780c3f95ebfa2/transformed/browser-1.5.0/res/values-cs/values-cs.xml",

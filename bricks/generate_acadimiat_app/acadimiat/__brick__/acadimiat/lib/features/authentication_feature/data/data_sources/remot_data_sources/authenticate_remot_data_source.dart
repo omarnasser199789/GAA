@@ -8,7 +8,7 @@ import '../../models/authenticate_model.dart';
 import '../../models/check_password_model.dart';
 import '../../models/update_user_mode_info.dart';
 import 'authenticate_remote_data_functions.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 
 
 // This abstract class defines the contract for a remote data source that handles authentication-related operations.
@@ -30,9 +30,6 @@ abstract class AuthenticateRemoteDataSource {
 
   // This method sends a change password request to the server using the given login parameters and returns the status code of the response.
   Future<int> changePassword(LoginParams params);
-
-  // This method registers a user in Firebase using the given phone authentication credentials and returns the status code of the response.
-  Future<int> registerUserInFirebase(PhoneAuthCredential params);
 
   // This method updates user information on the server using the given UserInfoParams and returns an UpdateUserInfoModel.
   Future<UpdateUserInfoModel> updateUserInfo(UserInfoParams params);
@@ -77,11 +74,6 @@ class AuthenticateRemoteDataSourceImpl implements AuthenticateRemoteDataSource {
     return functions.changePassword('$baseUrl/users/changepassword', params);
   }
 
-  // Calls the registerUserInFirebase API endpoint to register a user in Firebase.
-  @override
-  Future<int> registerUserInFirebase(PhoneAuthCredential params) {
-    return functions.registerUserInFirebase(params);
-  }
 
   // Calls the updateinfo API endpoint to update a user's information.
   @override

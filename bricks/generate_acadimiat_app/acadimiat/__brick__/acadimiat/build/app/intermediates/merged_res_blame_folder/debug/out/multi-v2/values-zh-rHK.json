@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.jahezkw.academy.app-mergeDebugResources-65:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.omar.academy.app-mergeDebugResources-58:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "/Users/omarnaser/.gradle/caches/transforms-3/f2d65ebcffe665bce920bb6f4c0cd6d6/transformed/jetified-exoplayer-ui-2.17.1/res/values-zh-rHK/values-zh-rHK.xml",

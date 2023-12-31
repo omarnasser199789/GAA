@@ -2,18 +2,11 @@ import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:acadmiat/core/widgets/custom_botton.dart';
 import 'package:acadmiat/features/authentication_feature/presentation/pages/login_page.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/functions.dart';
-import '../../../../core/globals.dart';
 import '../../../../core/widgets/custom_text_field.dart';
-
-import '../../../../core/widgets/svg_code_widget.dart';
 import '../../../../injection_container.dart';
 import '../../../../nav_page.dart';
 import '../../domain/use_cases/register_usecase.dart';
@@ -33,16 +26,11 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   bool checkBoxValue = false;
-  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey();
-
   bool isLoading = false;
-
   bool shouldCheck = false;
   bool loading = false;
   bool editPickerPhone = false;
   String countryCodePicker = "+973";
-  FirebaseAuth auth = FirebaseAuth.instance;
-
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController _phoneNumberController = TextEditingController();
@@ -146,7 +134,7 @@ class _SignupPageState extends State<SignupPage> {
 
                             ///NAME FIELD
                             Padding(
-                              padding: EdgeInsets.only(top: 40, bottom: 15),
+                              padding: const EdgeInsets.only(top: 40, bottom: 15),
                               child: CustomTextField(
                                 controller: nameController,
                                 title: locale.fullName!,
@@ -162,7 +150,7 @@ class _SignupPageState extends State<SignupPage> {
 
                             ///E-MAIL FIELD
                             Padding(
-                              padding: EdgeInsets.only(bottom: 15),
+                              padding: const EdgeInsets.only(bottom: 15),
                               child: CustomTextField(
                                 controller: emailController,
                                 title: locale.email!,
@@ -183,7 +171,7 @@ class _SignupPageState extends State<SignupPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   ///PHONE FIELD
-                                  Container(
+                                  SizedBox(
                                     width: size.width - 160,
                                     child: CustomTextField(
                                       title: locale.mobileNumberOptional!,
@@ -191,11 +179,6 @@ class _SignupPageState extends State<SignupPage> {
                                       textAlign: TextAlign.left,
                                       controller: _phoneNumberController,
                                       hint: '000 000 0000', onTap: () {},
-                                      // onChange: (value){
-                                      //   return validatePhoneNumber(value);
-                                      //
-                                      //
-                                      // },
                                     ),
                                   ),
 
@@ -294,7 +277,7 @@ class _SignupPageState extends State<SignupPage> {
                                               ),
                                             ),
                                             initialSelection: 'BH',
-                                            favorite: [
+                                            favorite: const [
                                               "+963",
                                               "+971",
                                               "+20",
@@ -417,49 +400,6 @@ class _SignupPageState extends State<SignupPage> {
                                             loading = true;
                                           });
 
-                                          await auth.verifyPhoneNumber(
-                                            phoneNumber: countryCodePicker + _phoneNumberController.text,
-                                            verificationCompleted: (PhoneAuthCredential credential) {
-                                              setState(() {
-                                                loading = false;
-                                              });
-                                              //Completed
-                                            },
-                                            verificationFailed: (FirebaseAuthException e) {
-                                              setState(() {
-                                                loading = false;
-                                              });
-                                              print(e.message.toString());
-                                              showMessage(
-                                                  message: e.message.toString(),
-                                                  context: context);
-                                            },
-                                            codeSent: (String verification,
-                                                int? resendToken) {
-                                              setState(() {
-                                                loading = false;
-                                              });
-
-                                              goTo(context, (context) => OTPPage(
-                                                phoneNumber: countryCodePicker + _phoneNumberController.text,
-                                                verificationId: verification,
-                                                registerParams: RegisterParams(
-                                                  email: emailController.text,
-                                                  phone: countryCodePicker + _phoneNumberController.text,
-                                                  password: passwordController.text,
-                                                  fullName: nameController.text,
-                                                  rePassword: rePasswordController.text,
-                                                  acceptTerms: checkBoxValue,
-                                                ),
-                                              ));
-                                            },
-                                            codeAutoRetrievalTimeout:
-                                                (String verification) {
-                                              setState(() {
-                                                loading = false;
-                                              });
-                                            },
-                                          );
                                         } else {
                                           showMessage(
                                               message:

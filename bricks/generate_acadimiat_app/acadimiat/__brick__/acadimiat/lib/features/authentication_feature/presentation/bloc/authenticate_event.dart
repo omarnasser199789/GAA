@@ -1,7 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
 import '../../domain/use_cases/facheck_usecase.dart';
 import '../../domain/use_cases/register_usecase.dart';
 
@@ -20,10 +17,6 @@ class ChangePasswordEvent extends AuthenticateEvent {
     required this.id,
     required this.password,
   });
-}
-class RegisterUserInFirebaseEvent extends AuthenticateEvent{
-  PhoneAuthCredential phoneAuthCredential;
-  RegisterUserInFirebaseEvent({required this.phoneAuthCredential});
 }
 
 class UpdateUserInfo extends AuthenticateEvent {
@@ -63,21 +56,6 @@ class ResetPasswordDbaEvent extends AuthenticateEvent {
   });
 }
 
-// class RegisterEvent extends AuthenticateEvent {
-//   String email;
-//   String password;
-//   String phone;
-//   String fullName;
-//   RegisterEvent({
-//     required this.email,
-//     required this.phone,
-//     required this.password,
-//     required this.fullName,
-//   });
-// }
-
-
-
 class ReactivateEvent extends AuthenticateEvent {
   String email;
 
@@ -85,6 +63,7 @@ class ReactivateEvent extends AuthenticateEvent {
     required this.email,
   });
 }
+
 class ResetEvent extends AuthenticateEvent {
   String email;
 
@@ -105,6 +84,7 @@ class ResetPasswordEvent extends AuthenticateEvent {
   });
 
 }
+
 class GetInEvent extends AuthenticateEvent {
   String id;
   int userId;
@@ -150,6 +130,7 @@ class CheckPassword extends AuthenticateEvent {
   final String password;
   CheckPassword( {required this.loginName,required this.password});
 }
+
 class ChangePassword extends AuthenticateEvent {
   final String loginName;
   final String password;

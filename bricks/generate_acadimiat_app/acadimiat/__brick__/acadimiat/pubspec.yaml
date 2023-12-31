@@ -54,36 +54,6 @@ dev_dependencies:
 #build_runner: This is a build tool that can automatically generate code and run build scripts. It is used by chopper_generator and built_value_generator to generate code.
   build_runner: ^2.4.7
 
-
-  #FIRECASE
-
-#  cloud_firestore: This is a library that provides access to Google's Firestore database service.
-#  It is used to store and retrieve data in real-time.
-  cloud_firestore: ^4.13.6
-
-# firebase_messaging: This library provides access to Google's Firebase Cloud Messaging service.
-#  It allows for sending and receiving push notifications in Flutter apps.
-  firebase_messaging: ^14.7.9
-
-#  firebase_auth: This library provides access to Google's Firebase Authentication service.
-#  It is used for user authentication and authorization in Flutter apps.
-  firebase_auth: ^4.15.3
-
-#  firebase_core: This library provides core functionality for using Firebase in Flutter apps.
-#  It includes initialization and configuration functionality.
-
-  firebase_core: ^2.24.2
-#  firebase_crashlytics: This library provides access to Google's Firebase Crashlytics service.
-#  It allows for tracking app crashes and errors.
-  firebase_crashlytics: ^3.4.8
-
-#  firebase_remote_config: This library provides access to Google's Firebase Remote Config service.
-#  It allows for dynamic app configuration without requiring a new app release.
-  firebase_remote_config: ^4.3.8
-#firebase_analytics: This library provides access to Google's Firebase Analytics service.
-#  It allows for tracking user behavior and app usage.
-  firebase_analytics: ^10.7.4
-
 #  share_plus: This library provides a simple way to share content from Flutter apps.
 #  It includes support for sharing text, files, and URLs.
   share_plus:
@@ -265,6 +235,7 @@ dev_dependencies:
   package_info: ^2.0.2
   app_version_update_lite: ^4.0.4
   in_app_review: ^2.0.8
+  flutter_dotenv: ^5.1.0
 
 
 
@@ -285,6 +256,8 @@ flutter:
 
   uses-material-design: true
   assets:
+    - .env
+    - .dev_env
     - assets/
     - assets/images/
     - assets/fonts/

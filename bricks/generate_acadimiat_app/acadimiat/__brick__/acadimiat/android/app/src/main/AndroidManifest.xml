@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.jahezkw.academy">
+    package="com.omar.academy">
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Required to read and write documents from device storage -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -39,7 +39,7 @@
         android:largeHeap="true"
         android:usesCleartextTraffic="true"
         android:enableOnBackInvokedCallback="true"
-        android:label="JAHEZ"
+        android:label="omar"
         android:icon="@mipmap/ic_launcher">
 
         <activity

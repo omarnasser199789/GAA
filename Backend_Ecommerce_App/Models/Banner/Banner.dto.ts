@@ -5,6 +5,15 @@ class CreateUpdateDTO {
 
   @IsString()
   appName: string;
+
+  @IsString()
+  primaryColor: string;
+
+  @IsString()
+  baseUrl: string;
+
+  @IsString()
+  baseSignalrUrl: string;
 }
 
 export default CreateUpdateDTO;

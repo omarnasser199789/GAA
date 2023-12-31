@@ -3,7 +3,6 @@ import 'package:acadmiat/features/authentication_feature/domain/use_cases/fachec
 import 'package:acadmiat/features/authentication_feature/domain/use_cases/register_usecase.dart';
 import 'package:acadmiat/features/authentication_feature/domain/use_cases/update_user_info_usecase.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth_platform_interface/src/providers/phone_auth.dart';
 import '../../../../core/error/failures.dart';
 import '../../domain/entities/authenticate_entity.dart';
 import '../../domain/entities/check_password_entity.dart';
@@ -41,13 +40,6 @@ class AuthenticateRepositoryImpl extends AuthenticateRepository {
   }
 
   @override
-  Future<Either<Failure, int>> registerUserInFirebase(PhoneAuthCredential params) async{
-    return await convertToInt(() {
-      return authenticateRemoteDataSource.registerUserInFirebase(params);
-    });
-  }
-
-  @override
   Future<Either<Failure, UpdateUserInfoEntity>> updateUserInfo(UserInfoParams params) async {
     return await convertUpdateUserInfo(() {
       return authenticateRemoteDataSource.updateUserInfo(params);
@@ -74,12 +66,5 @@ class AuthenticateRepositoryImpl extends AuthenticateRepository {
       return authenticateRemoteDataSource.facheck(params);
     });
   }
-
-
-
-
-
-
-
 
 }

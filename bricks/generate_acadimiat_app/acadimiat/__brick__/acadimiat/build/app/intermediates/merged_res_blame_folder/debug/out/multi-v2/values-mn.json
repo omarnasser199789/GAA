@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.jahezkw.academy.app-mergeDebugResources-65:/values-mn/values-mn.xml",
+            "outputFile": "com.omar.academy.app-mergeDebugResources-58:/values-mn/values-mn.xml",
             "map": [
                 {
                     "source": "/Users/omarnaser/.gradle/caches/transforms-3/554e3aac523e06d8d21858fb9bbbc331/transformed/jetified-play-services-base-18.2.0/res/values-mn/values.xml",

@@ -4,22 +4,18 @@ import 'package:acadmiat/core/widgets/custom_botton.dart';
 import 'package:acadmiat/injection_container.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../Locale/locale.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/classes/countries.dart';
 import '../../../../../core/functions.dart';
 import '../../../../../core/widgets/app_bar_widget.dart';
-import '../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
-import '../../../../authentication_feature/presentation/bloc/authenticate_event.dart' as authenticate_event;
-import '../../../../authentication_feature/presentation/pages/otp_page.dart';
 import '../../../domain/entities/user_info_entity.dart';
 import '../../bloc/profile_bloc.dart';
 import '../../bloc/profile_event.dart';
 import '../../bloc/profile_state.dart';
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 class EditPersonalInfoPage extends StatefulWidget {
   const EditPersonalInfoPage({Key? key, required this.userInfoEntity})
       : super(key: key);
@@ -40,25 +36,21 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
     nameController.text = widget.userInfoEntity.name;
     // phoneNumberController.text = widget.userInfoEntity.phone;
 
-    if(seperatePhoneAndDialCode(widget.userInfoEntity.phone).length==2){
-      countryCodePicker = seperatePhoneAndDialCode(widget.userInfoEntity.phone)[0];
-      phoneNumberController.text =  seperatePhoneAndDialCode(widget.userInfoEntity.phone)[1];
+    if (seperatePhoneAndDialCode(widget.userInfoEntity.phone).length == 2) {
+      countryCodePicker =
+          seperatePhoneAndDialCode(widget.userInfoEntity.phone)[0];
+      phoneNumberController.text =
+          seperatePhoneAndDialCode(widget.userInfoEntity.phone)[1];
     }
-
   }
-  bool loading=false;
-  bool loadingBtn=false;
-  FirebaseAuth auth = FirebaseAuth.instance;
 
-
-
+  bool loading = false;
+  bool loadingBtn = false;
 
   List<String> seperatePhoneAndDialCode(String phoneWithDialCode) {
     Map<String, String> foundedCountry = {};
 
-
     for (var country in Countries.allCountries) {
-
       String dialCode = country["dial_code"].toString();
 
       if (phoneWithDialCode.contains(dialCode)) {
@@ -75,10 +67,9 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
         foundedCountry["dial_code"]!.length,
       );
       print({dialCode, newPhoneNumber});
-      return [dialCode,newPhoneNumber];
+      return [dialCode, newPhoneNumber];
     }
     return [];
-
   }
 
   @override
@@ -95,19 +86,21 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
           if (kDebugMode) {
             print("state:$state");
           }
-          if(state is Loading){
-            loading= true;
-          }else{
-            loading= false;
+          if (state is Loading) {
+            loading = true;
+          } else {
+            loading = false;
           }
-          if(state is SuccessUpdateUserInfoEntity){
-            widget.userInfoEntity.phone=state.updateUserInfoEntity.phone;
-            widget.userInfoEntity.name=state.updateUserInfoEntity.name;
-            widget.userInfoEntity.email=state.updateUserInfoEntity.email;
+          if (state is SuccessUpdateUserInfoEntity) {
+            widget.userInfoEntity.phone = state.updateUserInfoEntity.phone;
+            widget.userInfoEntity.name = state.updateUserInfoEntity.name;
+            widget.userInfoEntity.email = state.updateUserInfoEntity.email;
 
-            if(widget.userInfoEntity.phone== countryCodePicker +phoneNumberController.text) {
+            if (widget.userInfoEntity.phone ==
+                countryCodePicker + phoneNumberController.text) {
               loadingBtn = false;
-              showMessage(message: "تم تعديل المعلومات الشخصية",
+              showMessage(
+                  message: "تم تعديل المعلومات الشخصية",
                   context: context,
                   bgColor: Colors.green);
             }
@@ -131,7 +124,7 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                 ],
                 null),
             body: GestureDetector(
-              onTap: (){
+              onTap: () {
                 FocusManager.instance.primaryFocus?.unfocus();
               },
               child: Padding(
@@ -150,7 +143,7 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                           //   controller: emailController,
                           // ),
                           Padding(
-                            padding: const EdgeInsets.only(top:20),
+                            padding: const EdgeInsets.only(top: 20),
                             child: CustomTextField(
                               title: locale.name!,
                               hint: widget.userInfoEntity.name,
@@ -160,146 +153,74 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                             ),
                           ),
 
-
-
-
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 20,top:20 ),
+                            padding: const EdgeInsets.only(bottom: 20, top: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-
-
                                 SizedBox(
-                                  width: size.width*0.6,
+                                  width: size.width * 0.6,
                                   child: CustomTextField(
-
                                     title: locale.mobileNumber!,
                                     keyboardType: TextInputType.phone,
                                     textAlign: TextAlign.left,
-                                    controller:phoneNumberController ,
-                                    hint: '000 000 0000', onTap: () {  },
+                                    controller: phoneNumberController,
+                                    hint: '000 000 0000',
+                                    onTap: () {},
                                   ),
                                 ),
-
                                 Container(
                                   height: 48,
                                   decoration: BoxDecoration(
-                                    color: textFormFieldFillColor,
-                                    borderRadius: BorderRadius.circular(6)
-                                  ),
+                                      color: textFormFieldFillColor,
+                                      borderRadius: BorderRadius.circular(6)),
                                   child: Directionality(
-                                    textDirection:
-                                    isEnglish(context)?
-                                    TextDirection.rtl:TextDirection.ltr,
-                                    // child:GestureDetector(
-                                    //   onTap: (){
-                                    //     showCountryPicker(
-                                    //       countryListTheme: CountryListThemeData(
-                                    //           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                                    //         textStyle: blackBoldTextStyle(fontSize: 14, context: context),
-                                    //           searchTextStyle: blackBoldTextStyle(fontSize: 14, context: context),
-                                    //           inputDecoration:InputDecoration(
-                                    //             border: InputBorder.none,
-                                    //             hintText: "اختر مفتاح دولتك",
-                                    //
-                                    //             hintStyle: blackBoldTextStyle(context: context,fontSize: 12,color: hintTextColor),
-                                    //             filled: true,
-                                    //
-                                    //             fillColor: textFormFieldFillColor,
-                                    //             prefixIcon: Icon(Icons.search,color: hintTextColor,),
-                                    //             focusedBorder: OutlineInputBorder(
-                                    //               borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                                    //               borderRadius: BorderRadius.circular(6),
-                                    //
-                                    //             ),
-                                    //             enabledBorder: UnderlineInputBorder(
-                                    //               borderSide: BorderSide(color: Theme.of(context).cardColor),
-                                    //               borderRadius: BorderRadius.circular(6),
-                                    //             ),
-                                    //           ),
-                                    //       ),
-                                    //       context: context,
-                                    //       favorite: ["+963","+971","+20","+974",'+973','+964'],
-                                    //       showPhoneCode: true, /// optional. Shows phone code before the country name.
-                                    //       onSelect: (Country country) {
-                                    //         print('SelectCountry: ${country.displayName}');
-                                    //          selectCountry=country;
-                                    //          setState(() {
-                                    //
-                                    //          });
-                                    //       },
-                                    //     );
-                                    //   },
-                                    //   child: Container(
-                                    //     // width: 50,
-                                    //     height: 50,
-                                    //
-                                    //     decoration: BoxDecoration(
-                                    //       color: textFormFieldFillColor,
-                                    //         borderRadius: BorderRadius.circular(8)
-                                    //     ),
-                                    //     child:Row(
-                                    //       children: [
-                                    //         Text(selectCountry.flagEmoji,style: blackBoldTextStyle(fontSize: 25, context: context),),
-                                    //         SizedBox(width: 10,),
-                                    //         Text(selectCountry.name,style: blackBoldTextStyle(fontSize: 14, context: context),),
-                                    //       ],
-                                    //     ),
-                                    //   ),
-                                    // )
-                                   child: Theme(
+                                    textDirection: isEnglish(context)
+                                        ? TextDirection.rtl
+                                        : TextDirection.ltr,
+                                    child: Theme(
                                       data: Theme.of(context).copyWith(
                                         unselectedWidgetColor: Colors.red,
                                         cardColor: Colors.red,
                                         canvasColor: Colors.red,
-                                        textTheme: isLight()? Typography(platform: TargetPlatform.iOS).black:Typography(platform: TargetPlatform.iOS).white,
-                                        cardTheme:  CardTheme(
-                                            color: Colors.red
-                                        ),
-
-
+                                        textTheme: isLight()
+                                            ? Typography(
+                                                    platform:
+                                                        TargetPlatform.iOS)
+                                                .black
+                                            : Typography(
+                                                    platform:
+                                                        TargetPlatform.iOS)
+                                                .white,
+                                        cardTheme: CardTheme(color: Colors.red),
                                       ),
-                                      // child: GestureDetector(
-                                      //   onTap: (){
-                                      //     showCountryPicker(
-                                      //       countryListTheme: CountryListThemeData(
-                                      //         backgroundColor: Colors.white
-                                      //
-                                      //       ),
-                                      //       context: context,
-                                      //       showPhoneCode: true, // optional. Shows phone code before the country name.
-                                      //       onSelect: (Country country) {
-                                      //         print('Select country: ${country.displayName}');
-                                      //       },
-                                      //     );
-                                      //   },
-                                      //   child: Container(
-                                      //     width: 50,
-                                      //     height: 50,
-                                      //     color: Colors.red,
-                                      //   ),
-                                      // ),
-
-
                                       child: CountryCodePicker(
                                         onChanged: (value) {
                                           setState(() {
-                                            countryCodePicker = value.toString();
+                                            countryCodePicker =
+                                                value.toString();
                                           });
                                         },
-                                        textStyle: blackBoldTextStyle(fontSize: 12, context: context),
-                                        searchStyle: blackBoldTextStyle(fontSize: 12, context: context) ,
-                                        boxDecoration:BoxDecoration(
+                                        textStyle: blackBoldTextStyle(
+                                            fontSize: 12, context: context),
+                                        searchStyle: blackBoldTextStyle(
+                                            fontSize: 12, context: context),
+                                        boxDecoration: BoxDecoration(
                                           color: Theme.of(context).cardColor,
                                         ),
-                                        closeIcon: Icon(Icons.close,color: iconsColor,),
-                                        searchDecoration:InputDecoration(
+                                        closeIcon: Icon(
+                                          Icons.close,
+                                          color: iconsColor,
+                                        ),
+                                        searchDecoration: InputDecoration(
                                           border: InputBorder.none,
                                           // hintText: widget.hint,
 
-                                          hintStyle: blackBoldTextStyle(context: context,fontSize: 12,color: hintTextColor),
+                                          hintStyle: blackBoldTextStyle(
+                                              context: context,
+                                              fontSize: 12,
+                                              color: hintTextColor),
                                           filled: true,
                                           fillColor: textFormFieldFillColor,
 
@@ -313,21 +234,37 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                                           //     },
                                           //     child: const Icon(Icons.remove_red_eye_outlined,color: Colors.grey,)):null,
 
-                                          prefixIcon: Icon(Icons.search,color: hintTextColor,),
+                                          prefixIcon: Icon(
+                                            Icons.search,
+                                            color: hintTextColor,
+                                          ),
 
-
-                                          contentPadding: const EdgeInsets.all(8),
+                                          contentPadding:
+                                              const EdgeInsets.all(8),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(color: Theme.of(context).primaryColor),
-                                            borderRadius: BorderRadius.circular(6),
+                                            borderSide: BorderSide(
+                                                color: Theme.of(context)
+                                                    .primaryColor),
+                                            borderRadius:
+                                                BorderRadius.circular(6),
                                           ),
                                           enabledBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(color: Theme.of(context).cardColor),
-                                            borderRadius: BorderRadius.circular(6),
+                                            borderSide: BorderSide(
+                                                color: Theme.of(context)
+                                                    .cardColor),
+                                            borderRadius:
+                                                BorderRadius.circular(6),
                                           ),
                                         ),
                                         initialSelection: countryCodePicker,
-                                        favorite: ["+963","+971","+20","+974",'+973','+964' , ],// 'IQ','BH',
+                                        favorite: [
+                                          "+963",
+                                          "+971",
+                                          "+20",
+                                          "+974",
+                                          '+973',
+                                          '+964',
+                                        ], // 'IQ','BH',
                                         // optional. Shows only country name and flag
                                         showCountryOnly: false,
                                         // optional. Shows only country name and flag when popup is closed.
@@ -338,12 +275,9 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                                     ),
                                   ),
                                 ),
-
                               ],
                             ),
                           ),
-
-
                         ],
                       ),
                     ),
@@ -356,109 +290,46 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                           child: Hero(
                             tag: "otpBtn",
                             child: CustomButton(
-                                title: locale.updateMyDetails!, loading: loadingBtn,onTap: () async {
-
-                                  if(widget.userInfoEntity.phone!= countryCodePicker +phoneNumberController.text){
-
-                                    FocusScopeNode currentFocus = FocusScope.of(context);
-                                    if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+                                title: locale.updateMyDetails!,
+                                loading: loadingBtn,
+                                onTap: () async {
+                                  if (widget.userInfoEntity.phone !=
+                                      countryCodePicker +
+                                          phoneNumberController.text) {
+                                    FocusScopeNode currentFocus =
+                                        FocusScope.of(context);
+                                    if (!currentFocus.hasPrimaryFocus &&
+                                        currentFocus.focusedChild != null) {
                                       currentFocus.focusedChild!.unfocus();
                                     }
 
                                     setState(() {
                                       loadingBtn = true;
                                     });
-
-
-                                    await auth.verifyPhoneNumber(
-                                      phoneNumber:
-                                      countryCodePicker +
-                                          phoneNumberController.text,
-                                      verificationCompleted:
-                                          (PhoneAuthCredential credential) {
-                                        setState(() {
-                                          loadingBtn = false;
-                                        });
-                                        //Completed
-                                      },
-                                      verificationFailed: (FirebaseAuthException e) {
-                                        setState(() {
-                                          loadingBtn = false;
-                                        });
-                                        print(e.message.toString());
-                                        showMessage(message:e.message.toString(), context: context);
-
-
-                                      },
-                                      codeSent:
-                                          (String verification, int? resendToken) {
-                                        setState(() {
-                                          loadingBtn = false;
-                                        });
-
-
-                                        goTo(context, (context) =>
-                                            OTPPage(phoneNumber: countryCodePicker + phoneNumberController.text,
-                                                verificationId: verification,
-                                                updateUserInfo: authenticate_event.UpdateUserInfo(
-                                                  email: emailController.text,
-                                                  id: widget.userInfoEntity.id,
-                                                  name: nameController.text,
-                                                  phone: countryCodePicker+phoneNumberController.text,
-                                                  birthdate: DateTime.now().toString(),//
-
-                                                )
-                                            ));
-
-                                      },
-                                      codeAutoRetrievalTimeout: (String verification) {
-                                        setState(() {
-                                          loading = false;
-                                        });
-                                      },
-                                    );
-
-
-                                  }else{
-    if(widget.userInfoEntity.name!= nameController.text){
-      setState(() {
-        loadingBtn = true;
-      });
-      BlocProvider.of<ProfileBloc>(context)
-          .add(
-          UpdateUserInfo(
-
-            email: emailController.text,
-            id: widget.userInfoEntity.id,
-            name: nameController.text,
-            phone: countryCodePicker +phoneNumberController.text,
-            birthdate: DateTime.now().toString(),//
-
-          ));
-
-
-    }else{
-      showMessage(message: "لم تقم بتعديل اي معلومات",
-          context: context,
-          bgColor: Colors.red);
-      setState(() {
-
-      });
-    }
-
+                                  } else {
+                                    if (widget.userInfoEntity.name !=
+                                        nameController.text) {
+                                      setState(() {
+                                        loadingBtn = true;
+                                      });
+                                      BlocProvider.of<ProfileBloc>(context)
+                                          .add(UpdateUserInfo(
+                                        email: emailController.text,
+                                        id: widget.userInfoEntity.id,
+                                        name: nameController.text,
+                                        phone: countryCodePicker +
+                                            phoneNumberController.text,
+                                        birthdate: DateTime.now().toString(), //
+                                      ));
+                                    } else {
+                                      showMessage(
+                                          message: "لم تقم بتعديل اي معلومات",
+                                          context: context,
+                                          bgColor: Colors.red);
+                                      setState(() {});
+                                    }
                                   }
-
-
-
-
-
-
-
-
-
-
-
-                            }),
+                                }),
                           ),
                         ),
                       ),
