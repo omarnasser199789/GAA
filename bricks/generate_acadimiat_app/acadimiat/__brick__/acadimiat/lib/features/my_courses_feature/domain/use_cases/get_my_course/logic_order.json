@@ -1,0 +1,50 @@
+{
+  "id": 174,
+  "materialId": 79,
+  "order": null,
+  "type": 12,
+  "fileId": 0,
+  "file": null,
+  "activityId": null,
+  "activity": {
+    "id": 47,
+    "type": 7,
+    "title": "الترتيب المنطقي",
+    "decision": null,
+    "caseStudy": null,
+    "matching": null,
+    "filling": null,
+    "quizz": null,
+    "logicalOrder": {
+      "id": 9,
+      "title": "الترتيب المنطقي",
+      "sentences": [
+        {
+          "id": 34,
+          "sentence": "الجمة الاولى"
+        },
+        {
+          "id": 36,
+          "sentence": "الجملة الثالثة"
+        },
+        {
+          "id": 37,
+          "sentence": "الجملة الرابعة"
+        },
+        {
+          "id": 35,
+          "sentence": "الجملة الثانيه"
+        }
+      ],
+      "attendanceTable": []
+    }
+  },
+  "meetingLink": "",
+  "isFree": false,
+  "fileUrl": "",
+  "body": "<p>قم بترتيب الجمل التالية ترتيب منطقي&nbsp;</p>",
+  "url": "https://media.elearning......",
+  "currentTime": null,
+  "questions": [],
+  "bookmarks": []
+}

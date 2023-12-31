@@ -1,0 +1,93 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+#https://stackoverflow.com/questions/66059470/fastlane-upload-to-testflight-the-call-to-the-itmstransporter-completed-with-a-n
+
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+  ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+
+
+    increment_build_number(xcodeproj: "Runner.xcodeproj")
+    build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
+    upload_to_testflight
+
+
+
+
+  end
+
+   # Constants
+   XCODE_PROJECT = "Runner.xcodeproj"
+   XCODE_WORKSPACE = "Runner.xcworkspace"
+   PRODUCTION_GSP_PATH = "/Users/omarnasser/Downloads/GoogleService-Info.plist"
+
+   platform :ios do
+     desc "Push a production build to TestFlight"
+     lane :upload_crashlytics_prod do
+       download_dsyms(
+           version: get_version_number(xcodeproj: XCODE_PROJECT),
+           build_number: get_build_number(xcodeproj: XCODE_PROJECT)
+       )
+       upload_symbols_to_crashlytics(gsp_path: PRODUCTION_GSP_PATH)
+     end
+   end
+
+
+  after_all do |lane|
+    #This block is only called if executed lane was successful
+    slack(
+        message:"Successful push a new beta build to testflight :rocket:"
+    )
+    end
+    error do |lane,exception|
+      slack(
+          message: exception.message,
+          success: false
+      )
+    end
+
+  end
+
+
+
+
+#  # Fastfile
+#  default_platform(:ios)
+#
+#  # Constants
+#  XCODE_PROJECT = "Runner.xcodeproj"
+#  XCODE_WORKSPACE = "Runner.xcworkspace"
+#  PRODUCTION_GSP_PATH = "/Users/omarnasser/Downloads/GoogleService-Info.plist"
+#
+#
+#  platform :ios do
+#    desc "Push a production build to TestFlight"
+#    lane :upload_crashlytics_prod do
+#      download_dsyms(
+#          version: get_version_number(xcodeproj: XCODE_PROJECT),
+#          build_number: get_build_number(xcodeproj: XCODE_PROJECT)
+#      )
+#      upload_symbols_to_crashlytics(gsp_path: PRODUCTION_GSP_PATH)
+#    end
+#  end
+
+

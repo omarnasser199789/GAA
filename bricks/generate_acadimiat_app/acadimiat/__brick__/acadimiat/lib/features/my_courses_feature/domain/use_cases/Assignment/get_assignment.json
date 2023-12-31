@@ -1,0 +1,32 @@
+{
+  "assignmentId": 12,
+  "assignment": "واجب جديد 3",
+  "body": "<p>&nbsp;واجب واجب واجب واجب واجب واجب اجب واجب<br></p>",
+  "courseName": null,
+  "courseId": 13,
+  "isAccepted": false,
+  "canAttend": true,
+  "allAccepted": 0,
+  "allPending": 0,
+  "allDeclined": 2,
+  "attempts": [
+    {
+      "attemptId": 5,
+      "date": "2022-10-03T13:46:48.2144124",
+      "status": 3,
+      "file": "https://s3.eu-west-1.amazonaws.com/assignments.elearning.technology/7a1nh8an8aouioiika15801eaah3ia3sxkt0pqfwp75rbd6a48.csv",
+      "fileBack": null,
+      "evaluation": "<p>تم رفض انت طالب كسول&nbsp;</p>",
+      "isAccepted": false
+    },
+    {
+      "attemptId": 6,
+      "date": "2022-10-03T13:49:50.0643545",
+      "status": 3,
+      "file": "https://s3.eu-west-1.amazonaws.com/assignments.elearning.technology/sszqz89c3oui6fbi3xt55gurl559dt8nbhibn897opao97qu7o.csv",
+      "fileBack": null,
+      "evaluation": "<p>ffff</p>",
+      "isAccepted": false
+    }
+  ]
+}

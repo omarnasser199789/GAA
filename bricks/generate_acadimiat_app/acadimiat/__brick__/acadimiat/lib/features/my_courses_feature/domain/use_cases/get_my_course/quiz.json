@@ -1,0 +1,92 @@
+{
+  "id": 184,
+  "materialId": 83,
+  "order": null,
+  "type": 5,
+  "fileId": 0,
+  "file": null,
+  "activityId": null,
+  "activity": {
+    "id": 50,
+    "type": 6,
+    "title": "اختبار",
+    "decision": null,
+    "caseStudy": null,
+    "matching": null,
+    "filling": null,
+    "quizz": {
+      "id": 6,
+      "title": null,
+      "name": "اختبار",
+      "notes": null,
+      "questions": [
+        {
+          "id": 21,
+          "quizzId": null,
+          "questionType": 1,
+          "score": null,
+          "optional": null,
+          "question": "<p>اختر خيار واحد فقط</p>",
+          "title": "<p>اختر خيار واحد فقط</p>",
+          "stripped": null,
+          "words": [],
+          "answer": [],
+          "pairs": [],
+          "pairsSelection": []
+        },
+        {
+          "id": 22,
+          "quizzId": null,
+          "questionType": 2,
+          "score": null,
+          "optional": null,
+          "question": "<p>بمكنك اختيار اكثر من خيار&nbsp;</p>",
+          "title": "<p>بمكنك اختيار اكثر من خيار&nbsp;</p>",
+          "stripped": null,
+          "words": [],
+          "answer": [],
+          "pairs": [],
+          "pairsSelection": []
+        },
+        {
+          "id": 23,
+          "quizzId": null,
+          "questionType": 1,
+          "score": null,
+          "optional": null,
+          "question": "<p>سؤال رقم ٤٣٤٣</p>",
+          "title": "<p>سؤال رقم ٤٣٤٣</p>",
+          "stripped": null,
+          "words": [],
+          "answer": [],
+          "pairs": [],
+          "pairsSelection": []
+        },
+        {
+          "id": 24,
+          "quizzId": null,
+          "questionType": 5,
+          "score": null,
+          "optional": null,
+          "question": "<p>سؤال رقم 5544</p>",
+          "title": "<p>سؤال رقم 5544</p>",
+          "stripped": null,
+          "words": [],
+          "answer": [],
+          "pairs": [],
+          "pairsSelection": []
+        }
+      ],
+      "attendanceTable": []
+    },
+    "logicalOrder": null
+  },
+  "meetingLink": "",
+  "isFree": false,
+  "fileUrl": "",
+  "body": "",
+  "url": "https://media.ele....",
+  "currentTime": null,
+  "questions": [],
+  "bookmarks": []
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.remedi.vimeo_player.remedi_vimeo_player-merged_res-20:/menu/example_menu2.xml",
+        "source": "com.remedi.vimeo_player.remedi_vimeo_player-core-1.7.0-3:/menu/example_menu2.xml"
+    },
+    {
+        "merged": "com.remedi.vimeo_player.remedi_vimeo_player-merged_res-20:/menu/example_menu.xml",
+        "source": "com.remedi.vimeo_player.remedi_vimeo_player-core-1.7.0-3:/menu/example_menu.xml"
+    }
+]

@@ -1,0 +1,77 @@
+{
+  "id": 275,
+  "materialId": 89,
+  "order": null,
+  "type": 12,
+  "fileId": 0,
+  "file": null,
+  "activityId": null,
+  "activity": {
+    "id": 131,
+    "type": 7,
+    "title": "ترتيب جمل",
+    "decision": null,
+    "caseStudy": null,
+    "matching": null,
+    "filling": null,
+    "quizz": null,
+    "logicalOrder": {
+      "id": 11,
+      "title": "ترتيب جمل",
+      "sentences": [
+        {
+          "id": 42,
+          "sentence": "الجمله الثانيه"
+        },
+        {
+          "id": 43,
+          "sentence": "الجملة الثالثة"
+        },
+        {
+          "id": 41,
+          "sentence": "الجمله الآولى"
+        }
+      ],
+      "attendanceTable": [
+        {
+          "id": 10,
+          "userId": 1,
+          "email": null,
+          "questionId": 0,
+          "isCorrect": null,
+          "reply": null,
+          "answer": null,
+          "date": "2022-10-24T13:30:21.862",
+          "orders": [
+            {
+              "id": 37,
+              "sentenceId": 41,
+              "order": 0,
+              "correct": 0
+            },
+            {
+              "id": 38,
+              "sentenceId": 42,
+              "order": 1,
+              "correct": 1
+            },
+            {
+              "id": 39,
+              "sentenceId": 43,
+              "order": 2,
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "meetingLink": "",
+  "isFree": false,
+  "fileUrl": "",
+  "body": "<p>اعد ترتيب الجمل&nbsp;</p><p><br></p>",
+  "url": "",
+  "currentTime": null,
+  "questions": [],
+  "bookmarks": []
+}

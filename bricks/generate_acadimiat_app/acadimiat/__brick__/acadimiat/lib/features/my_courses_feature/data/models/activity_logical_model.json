@@ -1,0 +1,117 @@
+{
+  "id": 277,
+  "materialId": 89,
+  "order": null,
+  "type": 12,
+  "fileId": 0,
+  "file": null,
+  "activityId": null,
+  "activity": {
+    "id": 133,
+    "type": 7,
+    "title": "وتب الجمل التالية",
+    "decision": null,
+    "caseStudy": null,
+    "matching": null,
+    "filling": null,
+    "quizz": null,
+    "logicalOrder": {
+      "id": 13,
+      "title": "وتب الجمل التالية",
+      "sentences": [
+        {
+          "id": 50,
+          "sentence": "جمله٤"
+        },
+        {
+          "id": 49,
+          "sentence": "جمله٣"
+        },
+        {
+          "id": 51,
+          "sentence": "جمله٥"
+        },
+        {
+          "id": 47,
+          "sentence": "جمله ١ "
+        },
+        {
+          "id": 53,
+          "sentence": "جمله٦"
+        },
+        {
+          "id": 52,
+          "sentence": "جمله٥"
+        },
+        {
+          "id": 48,
+          "sentence": "جمله٢"
+        }
+      ],
+      "attendanceTable": [
+        {
+          "id": 25,
+          "userId": 1,
+          "email": null,
+          "questionId": 0,
+          "isCorrect": null,
+          "reply": null,
+          "answer": null,
+          "date": "2022-10-25T12:34:38.175348",
+          "orders": [
+            {
+              "id": 58,
+              "sentenceId": 47,
+              "order": 0,
+              "correct": 0
+            },
+            {
+              "id": 59,
+              "sentenceId": 48,
+              "order": 1,
+              "correct": 1
+            },
+            {
+              "id": 60,
+              "sentenceId": 49,
+              "order": 2,
+              "correct": 2
+            },
+            {
+              "id": 61,
+              "sentenceId": 50,
+              "order": 3,
+              "correct": 3
+            },
+            {
+              "id": 62,
+              "sentenceId": 52,
+              "order": 4,
+              "correct": 5
+            },
+            {
+              "id": 63,
+              "sentenceId": 51,
+              "order": 5,
+              "correct": 4
+            },
+            {
+              "id": 64,
+              "sentenceId": 53,
+              "order": 6,
+              "correct": 6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "meetingLink": "",
+  "isFree": false,
+  "fileUrl": "",
+  "body": "",
+  "url": "",
+  "currentTime": null,
+  "questions": [],
+  "bookmarks": []
+}

@@ -1,0 +1,11 @@
+<svg id="google" xmlns="http://www.w3.org/2000/svg" width="309" height="387" viewBox="0 0 309 387">
+  <g id="Group_15102" data-name="Group 15102" transform="translate(-248 -137)">
+    <rect id="Rectangle_4604" data-name="Rectangle 4604" width="309" height="387" rx="41" transform="translate(248 137)" fill="#eee"/>
+    <g id="google-2" data-name="google" transform="translate(307.703 235.703)">
+      <path id="Path_38193" data-name="Path 38193" d="M42.018,201.641l-6.6,24.637-24.121.51a94.963,94.963,0,0,1-.7-88.52H10.6l21.474,3.937,9.407,21.345a56.577,56.577,0,0,0,.532,38.091Z" transform="translate(0 -87.067)" fill="#fbbb00"/>
+      <path id="Path_38194" data-name="Path 38194" d="M352.684,208.176a94.757,94.757,0,0,1-33.793,91.635l-.005-.005-27.048-1.38-3.827-23.9a56.5,56.5,0,0,0,24.309-28.85h-50.69v-37.5Z" transform="translate(-164.747 -131.088)" fill="#518ef8"/>
+      <path id="Path_38195" data-name="Path 38195" d="M173.35,363.553l.005.005a94.828,94.828,0,0,1-142.847-29L61.23,309.409a56.378,56.378,0,0,0,81.244,28.866Z" transform="translate(-19.211 -194.834)" fill="#28b446"/>
+      <path id="Path_38196" data-name="Path 38196" d="M173.33,21.824,142.62,46.966A56.372,56.372,0,0,0,59.511,76.483L28.629,51.2h-.005A94.817,94.817,0,0,1,173.33,21.824Z" transform="translate(-18.025)" fill="#f14336"/>
+    </g>
+  </g>
+</svg>

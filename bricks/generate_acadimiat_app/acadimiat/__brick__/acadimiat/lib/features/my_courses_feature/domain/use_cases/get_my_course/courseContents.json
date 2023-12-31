@@ -1,0 +1,235 @@
+{
+  "courseContents": [
+    {
+      "id": 32,
+      "unitName": "تعريف التواصل الفعال",
+      "unitDesc": "",
+      "unitBanner": "",
+      "isDone": false,
+      "percent": 66.0,
+      "totalScore": 0.0,
+      "completitionDate": null,
+      "contents": [
+        {
+          "id": 60,
+          "name": " الفرق بين التحدث والتواصل",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 98,
+              "type": 1,
+              "title": "Screen Recording 2022-08-24 at 23.14.38.mov",
+              "time": 47.0
+            },
+            {
+              "id": 100,
+              "type": 2,
+              "title": "courses1.png",
+              "time": 0.0
+            },
+            {
+              "id": 99,
+              "type": 3,
+              "title": "Kotobati - مكتبة كتوباتي - “فن اللامبالاة” لعيش حياة تخالف المألوف.pdf",
+              "time": 0.0
+            },
+            {
+              "id": 94,
+              "type": 3,
+              "title": "Kotobati - مكتبة كتوباتي - “فن اللامبالاة” لعيش حياة تخالف المألوف.pdf",
+              "time": 0.0
+            },
+            {
+              "id": 95,
+              "type": 2,
+              "title": "Screenshot 2022-08-23 113256.jpg",
+              "time": 0.0
+            },
+            {
+              "id": 96,
+              "type": 2,
+              "title": "Screen Shot 2021-12-03 at 09.52.56.png",
+              "time": 0.0
+            },
+            {
+              "id": 97,
+              "type": 2,
+              "title": "newtest.png",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "name": "علامات التواصل الجيد وتعريفه",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 85,
+              "type": 2,
+              "title": "newtest.png",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "name": " أهمية مهارات التواصل في بيئة العمل",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 86,
+              "type": 3,
+              "title": "Cash Flow Statement (2).pdf",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 63,
+          "name": " عملية التواصل الجيد",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 87,
+              "type": 4,
+              "title": "<p class=\"Msoف الموع الآخرين.</span></p>",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 64,
+          "name": " حواجز التواصل والتغلب عليها",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 88,
+              "type": 7,
+              "title": " حواجز التواصل والتغلب عليها",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 65,
+          "name": " مراجعة وتلخيص الجزء الأول",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 89,
+              "type": 11,
+              "title": null,
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 74,
+          "name": "سسس",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 92,
+              "type": 1,
+              "title": "testvideo.mp4",
+              "time": 257.0
+            }
+          ]
+        },
+        {
+          "id": 75,
+          "name": "سسس",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 76,
+          "name": "سسس",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        }
+      ],
+      "quizz": {
+        "quizzId": 0,
+        "quizzName": "No Quizz",
+        "attempts": 0
+      }
+    },
+    {
+      "id": 33,
+      "unitName": "التواصل مع الذات",
+      "unitDesc": "",
+      "unitBanner": "",
+      "isDone": false,
+      "percent": 16.0,
+      "totalScore": 0.0,
+      "completitionDate": null,
+      "contents": [
+        {
+          "id": 66,
+          "name": " نافذة جوهاري للوعي الذاتي",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 67,
+          "name": " المنطقة المفتوحة",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 68,
+          "name": " المنطقة العمياء",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 69,
+          "name": " المنطقة الخفية",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 70,
+          "name": "اختبار عن التواصل الفعال",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 90,
+              "type": 5,
+              "title": null,
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 71,
+          "name": " مراجعة وتلخيص الجزء الثاني",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        }
+      ],
+      "quizz": {
+        "quizzId": 0,
+        "quizzName": "No Quizz",
+        "attempts": 0
+      }
+    }
+  ]
+}

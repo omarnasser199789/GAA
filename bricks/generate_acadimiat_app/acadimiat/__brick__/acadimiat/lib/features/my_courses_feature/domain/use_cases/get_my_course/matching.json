@@ -1,0 +1,137 @@
+[
+  {
+    "id": 208,
+    "materialId": 87,
+    "order": null,
+    "type": 10,
+    "fileId": 0,
+    "file": null,
+    "activityId": null,
+    "activity": {
+      "id": 65,
+      "type": 4,
+      "title": "نشاط ربط الجمل",
+      "decision": null,
+      "caseStudy": null,
+      "matching": {
+        "id": 8,
+        "title": "نشاط ربط الجمل",
+        "sentences": [
+          {
+            "id": 17,
+            "sentence": "<p>اكل الولد&nbsp;</p>"
+          },
+          {
+            "id": 16,
+            "sentence": "<p>شرب الولد&nbsp;</p>"
+          }
+        ],
+        "relations": [
+          {
+            "id": 17,
+            "sentence": "<p>التفاحة</p>"
+          },
+          {
+            "id": 16,
+            "sentence": "<p>الحليب</p>"
+          }
+        ],
+        "attendanceTable": [
+          {
+            "id": 6,
+            "userId": 1,
+            "questionId": null,
+            "email": null,
+            "isCorrect": null,
+            "date": "2022-10-21T16:18:17.252",
+            "matched": [
+              {
+                "id": 14,
+                "attendanceId": 6,
+                "pairId": null,
+                "selectedId": null,
+                "first": "<p>شرب الولد&nbsp;</p>",
+                "second": "<p>الحليب</p>",
+                "shouldBe": "<p>الحليب</p>",
+                "attendance": null
+              },
+              {
+                "id": 15,
+                "attendanceId": 6,
+                "pairId": null,
+                "selectedId": null,
+                "first": "<p>اكل الولد&nbsp;</p>",
+                "second": "<p>التفاحة</p>",
+                "shouldBe": "<p>التفاحة</p>",
+                "attendance": null
+              }
+            ]
+          }
+        ]
+      },
+      "filling": null,
+      "quizz": null,
+      "logicalOrder": null
+    },
+    "meetingLink": "",
+    "isFree": false,
+    "fileUrl": "",
+    "body": "",
+    "url": "",
+    "currentTime": null,
+    "questions": [],
+    "bookmarks": []
+  },
+  {
+    "id": 209,
+    "materialId": 87,
+    "order": null,
+    "type": 10,
+    "fileId": 0,
+    "file": null,
+    "activityId": null,
+    "activity": {
+      "id": 66,
+      "type": 4,
+      "title": "نشاط رقم ٢",
+      "decision": null,
+      "caseStudy": null,
+      "matching": {
+        "id": 9,
+        "title": "نشاط رقم ٢",
+        "sentences": [
+          {
+            "id": 19,
+            "sentence": "<p>اوقف الرجل الفلم&nbsp;</p>"
+          },
+          {
+            "id": 18,
+            "sentence": "<p>شاهد الرجل الفلم</p>"
+          }
+        ],
+        "relations": [
+          {
+            "id": 18,
+            "sentence": "<p>وذلك بعد نوم الاطفال</p>"
+          },
+          {
+            "id": 19,
+            "sentence": "<p>وذلك بعد صحوة اطفاله</p>"
+          }
+        ],
+        "attendanceTable": []
+      },
+      "filling": null,
+      "quizz": null,
+      "logicalOrder": null
+    },
+    "meetingLink": "",
+    "isFree": false,
+    "fileUrl": "",
+    "body": "",
+    "url": "",
+    "currentTime": null,
+    "questions": [],
+    "bookmarks": []
+  }
+]

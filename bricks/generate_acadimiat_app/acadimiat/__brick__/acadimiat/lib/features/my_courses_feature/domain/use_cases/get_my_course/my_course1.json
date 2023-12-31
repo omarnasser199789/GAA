@@ -1,0 +1,744 @@
+{
+  "id": 13,
+  "courseName": "مهارات التواصل الفعال",
+  "preCourseQuizzId": 12,
+  "courseLink": "مهارات_التواصل",
+  "progress": 43,
+  "courseCover": "https://s3.eu-wjpg",
+  "courseVideo": "",
+  "courseRecord": {
+    "id": 72,
+    "traineeId": 11,
+    "courseId": 13,
+    "isFinished": false,
+    "currentProgress": 43.0,
+    "completedAt": null,
+    "unitsLog": [
+      {
+        "id": 298,
+        "traineeId": 11,
+        "unitId": 32,
+        "name": null,
+        "courselogId": 72,
+        "isFinished": false,
+        "currentProgress": 66.0,
+        "completedAt": null,
+        "lecturesLog": [
+          {
+            "id": 900,
+            "traineeId": 11,
+            "lectureId": 60,
+            "unitlogId": 298,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-10-07T15:00:02.1582738"
+          },
+          {
+            "id": 901,
+            "traineeId": 11,
+            "lectureId": 61,
+            "unitlogId": 298,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-08-28T04:09:45.2064608"
+          },
+          {
+            "id": 902,
+            "traineeId": 11,
+            "lectureId": 62,
+            "unitlogId": 298,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-08-28T04:10:04.6370738"
+          },
+          {
+            "id": 903,
+            "traineeId": 11,
+            "lectureId": 63,
+            "unitlogId": 298,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-08-28T04:12:53.6872162"
+          },
+          {
+            "id": 904,
+            "traineeId": 11,
+            "lectureId": 64,
+            "unitlogId": 298,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-09-26T14:31:48.5668357"
+          },
+          {
+            "id": 905,
+            "traineeId": 11,
+            "lectureId": 65,
+            "unitlogId": 298,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-10-09T12:24:15.5043851"
+          },
+          {
+            "id": 933,
+            "traineeId": 11,
+            "lectureId": 74,
+            "unitlogId": 298,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 934,
+            "traineeId": 11,
+            "lectureId": 75,
+            "unitlogId": 298,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 935,
+            "traineeId": 11,
+            "lectureId": 76,
+            "unitlogId": 298,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          }
+        ],
+        "quizzesLog": []
+      },
+      {
+        "id": 299,
+        "traineeId": 11,
+        "unitId": 33,
+        "name": null,
+        "courselogId": 72,
+        "isFinished": false,
+        "currentProgress": 16.0,
+        "completedAt": null,
+        "lecturesLog": [
+          {
+            "id": 906,
+            "traineeId": 11,
+            "lectureId": 66,
+            "unitlogId": 299,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 907,
+            "traineeId": 11,
+            "lectureId": 67,
+            "unitlogId": 299,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 908,
+            "traineeId": 11,
+            "lectureId": 68,
+            "unitlogId": 299,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 909,
+            "traineeId": 11,
+            "lectureId": 69,
+            "unitlogId": 299,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 910,
+            "traineeId": 11,
+            "lectureId": 70,
+            "unitlogId": 299,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-09-28T12:11:56.3977354"
+          },
+          {
+            "id": 911,
+            "traineeId": 11,
+            "lectureId": 71,
+            "unitlogId": 299,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          }
+        ],
+        "quizzesLog": []
+      }
+    ],
+    "activitiesLog": [
+      {
+        "id": 529,
+        "traineeId": 11,
+        "forumId": null,
+        "casestudyId": null,
+        "glossaryId": null,
+        "wikiId": null,
+        "quizzId": 11,
+        "assignmentId": null,
+        "type": 6,
+        "name": null,
+        "courselogId": 72,
+        "isFinished": true,
+        "currentProgress": 100.0,
+        "completedAt": "2022-10-05T19:52:58.4401665"
+      },
+      {
+        "id": 563,
+        "traineeId": 11,
+        "forumId": null,
+        "casestudyId": 17,
+        "glossaryId": null,
+        "wikiId": null,
+        "quizzId": null,
+        "assignmentId": null,
+        "type": 2,
+        "name": null,
+        "courselogId": 72,
+        "isFinished": false,
+        "currentProgress": 0.0,
+        "completedAt": null
+      }
+    ]
+  },
+  "trainers": [
+    {
+      "id": 4,
+      "trainerName": "Riham ezzo",
+      "trainerInfo": "",
+      "trainerAvatar": "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
+      "trainerMoreInfo": "",
+      "trainerCourses": null
+    }
+  ],
+  "courseContents": [
+    {
+      "id": 32,
+      "unitName": "تعريف التواصل الفعال",
+      "unitDesc": "",
+      "unitBanner": "",
+      "isDone": false,
+      "percent": 66.0,
+      "totalScore": 0.0,
+      "completitionDate": null,
+      "contents": [
+        {
+          "id": 60,
+          "name": " الفرق بين التحدث والتواصل",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 98,
+              "type": 1,
+              "title": "Screen Recording 2022-08-24 at 23.14.38.mov",
+              "time": 47.0
+            },
+            {
+              "id": 100,
+              "type": 2,
+              "title": "courses1.png",
+              "time": 0.0
+            },
+            {
+              "id": 99,
+              "type": 3,
+              "title": "Kotobati - مكتبة كتوباتي - “فن اللامبالاة” لعيش حياة تخالف المألوف.pdf",
+              "time": 0.0
+            },
+            {
+              "id": 94,
+              "type": 3,
+              "title": "Kotobati - مكتبة كتوباتي - “فن اللامبالاة” لعيش حياة تخالف المألوف.pdf",
+              "time": 0.0
+            },
+            {
+              "id": 95,
+              "type": 2,
+              "title": "Screenshot 2022-08-23 113256.jpg",
+              "time": 0.0
+            },
+            {
+              "id": 96,
+              "type": 2,
+              "title": "Screen Shot 2021-12-03 at 09.52.56.png",
+              "time": 0.0
+            },
+            {
+              "id": 97,
+              "type": 2,
+              "title": "newtest.png",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "name": "علامات التواصل الجيد وتعريفه",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 85,
+              "type": 2,
+              "title": "newtest.png",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "name": " أهمية مهارات التواصل في بيئة العمل",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 86,
+              "type": 3,
+              "title": "Cash Flow Statement (2).pdf",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 63,
+          "name": " عملية التواصل الجيد",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 87,
+              "type": 4,
+              "title": "<p class=\"MsoNormal\" dir=\"RTL\" style=\"margin: 0in 0in 11px; font-size: 15px; font-family: Calibri, sans-serif; text-align: right; line-height: 150%; direction: rtl; unicode-bidi: embed;\"><strong><span lang=\"AR-SA\" style=\"font-family: Cairo; color: rgb(32, 56, 100); background: white;\">ما\n            هي مهارات التواصل وكيف يمكنك تطويرها؟</span></strong><span dir=\"LTR\" style=\"font-family: Cairo; color: rgb(32, 56, 100); background: white;\"><br>\n    </span><span lang=\"AR-SA\" style=\"font-family: Cairo; color: dimgray; background: white;\">مهارات\n        التواصل أو الـ</span><span dir=\"LTR\" style=\"font-family: Cairo; color: dimgray; background: white;\"> Communication Skills </span><span lang=\"AR-SA\" style=\"font-family: Cairo; color: dimgray; background: white;\">هي القدرات التي تستخدمها عند تقديم أو\n        تلقي مختلف أنواع المعلومات مثل إيصال الأفكار والمشاعر للأطراف الأخرى، أو\n        التعبير عمّا يحدث من حولك. تختلف عملية التواصل باختلاف الوسيلة المستخدمة لذلك،\n        فنجد أنّ التواصل وجهًا لوجه يكون في الغالب أكثر صعوبة من التواصل عبر الهاتف أو\n        البريد الإلكتروني، ولكلّ طريقة مميزاتها ومهارات خاصّة بها لابدّ من اكتسابها\n        لإتقان عملية التواصل الفعّال. سنتعرّف في مقال اليوم على مختلف أنواع مهارات\n        الاتصال هذه، وكيفية <br>\n    </span><strong><span lang=\"AR-SA\" style=\"font-family: Cairo; color: rgb(32, 56, 100); background: white;\"><br>تطويرها وتحسينها لتحقق الفائدة الأعظم من هذه\n            العملية</span></strong><strong><span dir=\"LTR\" style=\"font-family: Cairo; color: rgb(32, 56, 100); background: white;\">.</span></strong><strong><span dir=\"LTR\" style=\"font-family: Calibri, sans-serif; color: rgb(32, 56, 100); background: rgb(217, 217, 217);\">&nbsp;<br>\n        </span></strong><span lang=\"AR-SA\" style=\"font-family: Cairo; color: dimgray; background: white;\">أشهر مهارات التواصل تضمّ مهارات الاتصال الفعّال تحت مظلتها\n        عدّة مهارات تعمل معًا في سياقات ومواقف مختلفة، نذكر منها الآتي: مهارات الاستماع\n        الفعّال ويعني ذلك أن تعير الشخص الذي يتحدّث إليك كامل انتباهك. حيث يتمتّع\n        الأشخاص الذين يمتلكون مهارة الاستماع الفعّال بسمعة حسنة بين زملائهم في الدراسة\n        والعمل، نظرًا للاهتمام والاحترام اللذان يقدّمونهما للآخرين. القدرة على تكييف\n        نمط التواصل مع الجمهور ونعني بهذا اختيار أسلوب وطريقة التواصل المناسبة بناءً\n        على الشخص أو الأشخاص الذين تتواصل معهم. فمثلاً، لو كنت طالبًا جامعيًا وتودّ\n        التواصل مع أحد الأساتذة في كليّتك ممّن لا تعرفهم معرفة شخصية، في هذه الحالة،\n        ستكون الطريقة الأنسب والأفضل من خلال إرسال بريد إلكتروني بدلاً من رسالة على\n        تطبيقات التواصل الاجتماعي مثل فيسبوك أو واتساب، أو حتى رسالة هاتفية. وقس على\n        ذلك مختلف المواقف التي تحتاج فيها إلى التواصل مع الآخرين.</span></p>",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 64,
+          "name": " حواجز التواصل والتغلب عليها",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 88,
+              "type": 7,
+              "title": " حواجز التواصل والتغلب عليها",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 65,
+          "name": " مراجعة وتلخيص الجزء الأول",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 89,
+              "type": 11,
+              "title": null,
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 74,
+          "name": "سسس",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 92,
+              "type": 1,
+              "title": "testvideo.mp4",
+              "time": 257.0
+            }
+          ]
+        },
+        {
+          "id": 75,
+          "name": "سسس",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 76,
+          "name": "سسس",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        }
+      ],
+      "quizz": {
+        "quizzId": 0,
+        "quizzName": "No Quizz",
+        "attempts": 0
+      }
+    },
+    {
+      "id": 33,
+      "unitName": "التواصل مع الذات",
+      "unitDesc": "",
+      "unitBanner": "",
+      "isDone": false,
+      "percent": 16.0,
+      "totalScore": 0.0,
+      "completitionDate": null,
+      "contents": [
+        {
+          "id": 66,
+          "name": " نافذة جوهاري للوعي الذاتي",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 67,
+          "name": " المنطقة المفتوحة",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 68,
+          "name": " المنطقة العمياء",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 69,
+          "name": " المنطقة الخفية",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        },
+        {
+          "id": 70,
+          "name": "اختبار عن التواصل الفعال",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 90,
+              "type": 5,
+              "title": null,
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 71,
+          "name": " مراجعة وتلخيص الجزء الثاني",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": []
+        }
+      ],
+      "quizz": {
+        "quizzId": 0,
+        "quizzName": "No Quizz",
+        "attempts": 0
+      }
+    }
+  ],
+  "quizz": [
+    {
+      "quizzId": 11,
+      "quizzName": "الاختبار النظري",
+      "attempts": 200
+    }
+  ],
+  "currentLecture": null,
+  "assignments": [
+    {
+      "id": 9,
+      "assignemnet": "نصائح عملية لتطوّر مهاراتك التواصلية",
+      "body": "<p>ماهي&nbsp;نصائح لتطوّر مهارات التواصل</p>",
+      "file": "https://s3.eu-west-1.amazonaws.com/assignments.elearning.technology/seceyxdsbgwkf2y4ixyvkpvab481l8dveqd7qxcz5fr0qgdyy2",
+      "year": 2022,
+      "isDone": true,
+      "rule": "Anyway",
+      "appliedAt": "2022-10-05T13:25:39.8513707",
+      "notes": "<p>هذا الواجب مرفوض ................................................................................................................................................................................................مرفووووض</p>",
+      "fromDate": "2022-08-31T00:00:00",
+      "toDate": "2022-10-02T23:59:00"
+    },
+    {
+      "id": 14,
+      "assignemnet": "واجب فاضي لا حدا يدخل علا",
+      "body": "<p>لا ترفع واجب هون هاد الواجب فاضي عفوا منك يعني 😒</p><p><br></p>",
+      "file": "https://s3.eu-west-1.amazonaws.com/assignments.elearning.technology/8txamttwepzj31xv0d19pmr5wsl5k0icog02tk199dys327fn7.mp4",
+      "year": 2022,
+      "isDone": false,
+      "rule": "Trainer",
+      "appliedAt": "2022-10-06T18:49:50.9513721",
+      "notes": null,
+      "fromDate": "2022-10-01T00:00:00",
+      "toDate": "2022-10-31T23:59:00"
+    }
+  ],
+  "wiki": {
+    "wikiId": 5,
+    "wikiName": "مهارات الاستماع الفعّال",
+    "articles": [
+      {
+        "articleId": 7,
+        "articleName": "مهارات الاستماع الفعّال",
+        "addedBy": "Seham",
+        "date": "2022-08-25T11:03:05.206",
+        "details": [
+          {
+            "detailId": 5,
+            "addedBy": "Seham",
+            "header": "الثقة",
+            "body": "<p>يميل الناس غالبًا للتواصل والتعرّف على الأشخاص الذين يمتلكون ثقة عالية بأنفسهم، بل وينجذبون للأفكار التي يتمّ التعبير عنها بثقة حتى وإن لم تكن أفكار إبداعية، في حين قد يتجاهلون أفكارًا عبقرية، فقط لأن من قدّمها لم يكن يمتلك ثقة كافية بنفسه وبفكرته.</p>",
+            "date": "2022-08-25T11:19:38.067"
+          },
+          {
+            "detailId": 7,
+            "addedBy": "ELT Test",
+            "header": "مقال جديد",
+            "body": "<p>مقال جديدمقال جديدمقال جديدمقال جديدمقال جديد</p>",
+            "date": "2022-10-09T17:25:08.101"
+          }
+        ]
+      }
+    ]
+  },
+  "forum": {
+    "forumId": 6,
+    "forumName": "اساسيات مهارات التواصل",
+    "description": "ان لآساسيات مهارات التواصة فائدة هامه جدا لكل من يتعلمها لذلك نحن اليوم وفي هذا اليوم العظيم سنقول بفتح هذا المنتدى وذلك للتناقش بهذه المواضيع وشكرا ",
+    "fromDate": null,
+    "toDate": null,
+    "topics": [
+      {
+        "topicId": 10,
+        "addedBy": "",
+        "topic": "ما هي أشهر مهارات التواصل",
+        "attachment": "",
+        "date": "2022-08-25T05:01:21.015",
+        "replies": [
+          {
+            "replyId": 7,
+            "addedBy": "Seham",
+            "reply": "<p>القدرة على تكييف نمط التواصل مع الجمهور</p>",
+            "attachment": null,
+            "date": "2022-08-25T11:18:27.578"
+          },
+          {
+            "replyId": 8,
+            "addedBy": "Seham",
+            "reply": "<p>تلقي التغذية الراجعة وتقديمها</p>",
+            "attachment": null,
+            "date": "2022-08-25T11:19:09.072"
+          },
+          {
+            "replyId": 9,
+            "addedBy": "ELT Test",
+            "reply": "<p>مشاركة جديدة <br></p>",
+            "attachment": null,
+            "date": "2022-10-09T13:53:37.522"
+          },
+          {
+            "replyId": 10,
+            "addedBy": "ELT Test",
+            "reply": "<p>نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;نص نص نص نص نص&nbsp;</p>",
+            "attachment": null,
+            "date": "2022-10-10T10:45:54.211"
+          },
+          {
+            "replyId": 11,
+            "addedBy": "ELT Test",
+            "reply": "<p><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">صناعة الخوف ...</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">\"ان االمتحكمين بهذا العالم يتآمرون و \"الاذكياء\" يتفاخرون بانهم يعرفون ذلك\"</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">اذا اراد لصا صغيرا سرقة محل للجواهر فانه بكل تاكيد سيضع مخطط و سيدرس المكان و يجد افضل السبل للقيام بعمله هذا. فما بالك اذا ارادت حفنة من اصحاب المصارف و الثروات ممن يتحكمون في العالم ان ينهبوا شعوبا باسرها. هل سيكون الامر غريبا بان يضعوا خطة و مؤامرة للقيام بذلك؟ كلا بالتاكيد بل لا ينبغي ان نتوقع بان شركات و مصارف مالية كبرى عريقة في اعمال النهب تتصرف دون تخطيط. لذلك فاننا نود ان نتحدث هنا ليس عن المؤامرة نفسها بل عن الايديولوجية التي تقف ورائها و الاهداف التي تريد الوصول اليها. ليس لاننا من هواة التحليل و لكن لان فهم العقلية التي تقف وراء ما يجري يعد ضروريا لمقاومتها و ابطال مفعولها.</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">الولايات المتحدة الامريكية مثلها مثل اي نظام سياسي اخر ليست عبارة عن كيان منسجم من السياسيين بل انها عبارة عن شركات و بنوك و مصالح تتفق او تتصارع فيما بينها. و لكن الكتلة الاكبر و الاكثر نفوذا منذ عقود طويلة هي الكتلة المعروفة بصقور البيت الابيض. اشتهرت هذه الطغمة في الماضي بكونها من اشد انصار الليبرالية الجديدة التي كانت تدين بالحرية المطلقة للاسواق و عدم تدخل الدولة في شؤون الناس. و لكن منذ دخول الراسمالية عصر انحطاطها و انكشاف ازماتها و مخاطر انهيار الدولار تحولت هذه الطغمة من صقور الى وحوش بدأت تنهش الشعوب بهدف حماية الدولار من السقوط.</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">هذه الطغمة المتنفذة في امريكا تعمل منذ فترة على اساس ايديولوجية مستمدة من نظرية كارل شميت أحد أهم مفكري النازية الألمان وأكثرهم إشكالية في القرن العشرين. صاحب المقولة المشهورة التي تقول:</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">لاجل ان يكون لديك مجتمعا متماسكا لا بد ان يكون هنالك عدو خارجي.</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">ومنذ انتهاء الحرب الباردة بالانتصار على \"الخطر الشيوعي\" 1989 كانت هذه الطغمة تهم في البحث عن اعداء خارجيين جدد تستخدمهم لتبرير سياسات النهب و لاخضاع المجتمع الامريكي و قبل كل هذا و ذاك حماية تماسكه امام الاخطار المحدقة التي سيتم افتعالها. فكانت احداث سبتمبر 11 هي بداية عصر جديد يواجه فيها الغرب خطرا جديدا مفترضا و هو خطر الارهاب. و بعد ان انتهت الولايات المتحدة من استهلاك هذا الخطر لما بدى و كان الغرب قد انتصر في حربه على الارهاب, فان استمرار التخبط الاقتصادي و عدم عودة الاسواق الى انتعاشها و موجة الاعتراضات التي بدات تضرب اوروبا و امريكا و غيرها من دول وضعت موضوع العدو و الخطر الخارجي على الطاولة من جديد.</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">و هكذا يقوم الصقور هذه الايام بالتهويل و الترويج عن المنظمات الارهابية و المتطرفة سواء كانت بغطاء ديني كما في العالم العربي او نازية جديدة كما في اوروبا لكي ينتشر شبح العدو المتوحش الهمجي على المجتمع. وسائل الاعلام الغربية و العالمية تروع هذه الايام جميع شعوب العالم عبر نشرها للافلام و الصور في عناوينها الرئيسية كل يوم تتحدث عن اعمال وحشية و رؤوس مقطوعة و عمليات اعدامات و افلام عن تهديدات منظمة ارهابية خطيرة.</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">و الذي يتتبع مزاج الناس في الشارع و على الاقل في صفحات الفيسبوك مثلا سيرى بوضوح كيف ان الخوف من هؤلاء الوحوش اصاب الجميع بالهلع و الياس و دفعهم الى التخندق في الجانب المقابل حول انظمتهم السياسية. و هذا هو المطلوب بالضبط. فقد عمل السحر مفعوله بسرعة. و سنرى في الايام القادمة و سنقرا عن اعمال وحشية شنيعة و تفجيرات ستتزايد كلما تزايد تخبط الراسمالية في ازمتها و هم سيضعونها لك في صدر نشراتهم.</span><br style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><span style=\"caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;Noto Naskh Arabic UI&quot;, tahoma, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration: none; display: inline !important; float: none;\">و لكن دعني اقول لك شيئا ... ان ما تراه حول اعمال ارهابية و حشية كانت هناك دائما و لم تخلو بلادنا منها. هذه الاعمال الشنيعة ارتكبتها الانظمة و المنظمات الارهابية دائما. الفرق هذه المرة هو انهم يضيفون الملح الى الطبخة و يتلاعبون بالاحداث هنا و هناك و من ثم يجعلونك تراها عبر اعلامهم و هم يتوعدونك كل يوم لان هذا ضروري لحمايتك من خطر المطالبة بحقوقك في الازمة القادمة ...</span></p>",
+            "attachment": null,
+            "date": "2022-10-10T11:17:23.435"
+          },
+          {
+            "replyId": 12,
+            "addedBy": "ELT Test",
+            "reply": "<p>تعليق</p>",
+            "attachment": null,
+            "date": "2022-10-10T11:23:00.744"
+          },
+          {
+            "replyId": 13,
+            "addedBy": "ELT Test",
+            "reply": "<p>تجربه</p>",
+            "attachment": null,
+            "date": "2022-10-10T11:55:38.461"
+          },
+          {
+            "replyId": 14,
+            "addedBy": "ELT Test",
+            "reply": "<p>نص</p>",
+            "attachment": null,
+            "date": "2022-10-10T11:57:29.765"
+          },
+          {
+            "replyId": 15,
+            "addedBy": "ELT Test",
+            "reply": "non Duis",
+            "attachment": "",
+            "date": "1948-01-09T09:25:23.599"
+          },
+          {
+            "replyId": 16,
+            "addedBy": "ELT Test",
+            "reply": "",
+            "attachment": "",
+            "date": "2022-10-10T15:30:09.065896"
+          },
+          {
+            "replyId": 17,
+            "addedBy": "ELT Test",
+            "reply": "",
+            "attachment": "",
+            "date": "2022-10-10T15:31:03.279444"
+          },
+          {
+            "replyId": 18,
+            "addedBy": "ELT Test",
+            "reply": "",
+            "attachment": "",
+            "date": "2022-10-10T15:35:26.979607"
+          },
+          {
+            "replyId": 19,
+            "addedBy": "ELT Test",
+            "reply": "tttt",
+            "attachment": "",
+            "date": "2022-10-10T15:37:10.247979"
+          },
+          {
+            "replyId": 20,
+            "addedBy": "ELT Test",
+            "reply": "tttt",
+            "attachment": "",
+            "date": "2022-10-10T15:38:13.112401"
+          },
+          {
+            "replyId": 21,
+            "addedBy": "ELT Test",
+            "reply": "tttt",
+            "attachment": "",
+            "date": "2022-10-10T15:39:15.164511"
+          },
+          {
+            "replyId": 22,
+            "addedBy": "ELT Test",
+            "reply": "tttt",
+            "attachment": "",
+            "date": "2022-10-10T15:39:21.542577"
+          }
+        ]
+      },
+      {
+        "topicId": 14,
+        "addedBy": "",
+        "topic": "موضوع للنقاش لايسمح لآحد ان يناقش فيه هو عبارة عن طرح رئي فقط ارجو عدم الازعاج وشكرا، موضوع للنقاش لايسمح لآحد ان يناقش فيه هو عبارة عن طرح رئي فقط ارجو عدم الازعاج وشكرا",
+        "attachment": "",
+        "date": "2022-10-10T07:40:11.778",
+        "replies": [
+          {
+            "replyId": 23,
+            "addedBy": "ELT Test",
+            "reply": "eeee",
+            "attachment": "",
+            "date": "2022-10-10T15:39:33.744607"
+          },
+          {
+            "replyId": 24,
+            "addedBy": "ELT Test",
+            "reply": "مشاركة",
+            "attachment": "",
+            "date": "2022-10-10T15:43:43.780489"
+          }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "glossaryId": 6,
+    "name": "التواصل",
+    "description": "مهارات التواصل الفعال",
+    "numberOfConcepts": 39,
+    "concepts": []
+  },
+  "caseStudy": [
+    {
+      "casestudyId": 8,
+      "open": false,
+      "header": "القدرة على تكييف نمط التواصل مع الجمهور",
+      "body": "",
+      "solution": {
+        "solutionId": 9,
+        "answers": [
+          {
+            "answerId": 8,
+            "answer": "<p>ونعني بهذا اختيار أسلوب وطريقة التواصل المناسبة بناءً على الشخص أو الأشخاص الذين تتواصل معهم. فمثلاً، لو كنت طالبًا جامعيًا وتودّ التواصل مع أحد الأساتذة في كليّتك ممّن لا تعرفهم معرفة شخصية، في هذه الحالة، ستكون الطريقة الأنسب والأفضل من خلال إرسال بريد إلكتروني بدلاً من رسالة على تطبيقات التواصل الاجتماعي مثل فيسبوك أو واتساب، أو حتى رسالة هاتفية. وقس على ذلك مختلف المواقف التي تحتاج فيها إلى التواصل مع الآخرين.</p>",
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 13,
+      "open": true,
+      "header": "القدرة على تكييف نمط التواصل مع الجمهور",
+      "body": "<p>ونعني بهذا اختيار أسلوب وطريقة التواصل المناسبة بناءً على الشخص أو الأشخاص الذين تتواصل معهم. فمثلاً، لو كنت طالبًا جامعيًا وتودّ التواصل مع أحد الأساتذة في كليّتك ممّن لا تعرفهم معرفة شخصية، في هذه الحالة، ستكون الطريقة الأنسب والأفضل من خلال إرسال بريد إلكتروني بدلاً من رسالة على تطبيقات التواصل الاجتماعي مثل فيسبوك أو واتساب، أو حتى رسالة هاتفية. وقس على ذلك مختلف المواقف التي تحتاج فيها إلى التواصل مع الآخرين.<br></p>",
+      "solution": {
+        "solutionId": 14,
+        "answers": []
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 15,
+      "open": false,
+      "header": "عنوان الحالة الدراسية",
+      "body": "<p>شرح الحالة</p>",
+      "solution": {
+        "solutionId": 16,
+        "answers": [
+          {
+            "answerId": 9,
+            "answer": "<p>الجواب الجواب الجواب&nbsp;</p>",
+            "explain": null
+          },
+          {
+            "answerId": 10,
+            "answer": null,
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 17,
+      "open": true,
+      "header": "عنوان الحالة الدراسية المفتوحة",
+      "body": "<p>شرح الحالة الدراسية المفتوحة</p>",
+      "solution": {
+        "solutionId": 18,
+        "answers": []
+      },
+      "attendanceTable": null
+    }
+  ]
+}

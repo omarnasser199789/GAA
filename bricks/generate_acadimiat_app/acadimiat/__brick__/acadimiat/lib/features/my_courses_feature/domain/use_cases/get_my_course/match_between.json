@@ -1,0 +1,52 @@
+{
+  "id": 162,
+  "materialId": 79,
+  "order": null,
+  "type": 10,
+  "fileId": 0,
+  "file": null,
+  "activityId": null,
+  "activity": {
+    "id": 45,
+    "type": 4,
+    "title": "عنوان اختبار توصيل الجمل",
+    "decision": null,
+    "caseStudy": null,
+    "matching": {
+      "id": 6,
+      "title": "عنوان اختبار توصيل الجمل",
+      "sentences": [
+        {
+          "id": 12,
+          "sentence": "<p>omar&nbsp;</p>"
+        },
+        {
+          "id": 13,
+          "sentence": "<p>najla</p>"
+        }
+      ],
+      "relations": [
+        {
+          "id": 12,
+          "sentence": "<p>Flutter developer</p>"
+        },
+        {
+          "id": 13,
+          "sentence": "<p>UIUX</p>"
+        }
+      ],
+      "attendanceTable": []
+    },
+    "filling": null,
+    "quizz": null,
+    "logicalOrder": null
+  },
+  "meetingLink": "",
+  "isFree": false,
+  "fileUrl": "",
+  "body": "<p>قم بتوصيل الجمل التاليه وذلك حسب ما تراه مناسب (اذا كنت تره اصلا)</p>",
+  "url": "https://media.elear2NQCVIK8ESD",
+  "currentTime": null,
+  "questions": [],
+  "bookmarks": []
+}

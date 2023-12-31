@@ -1,0 +1,689 @@
+{
+  "id": 73,
+  "courseName": "تطوير العمليات والإجراءات وتنظيم العمل",
+  "preCourseQuizzId": 0,
+  "courseLink": "Operation_Organizational_and_Procedures_Development",
+  "progress": 7,
+  "courseCover": "https://s3.eu-west-1.amazonaws.com/course.em",
+  "courseVideo": "https://s3.eu-west-1.amazonaws.com/course.",
+  "courseRecord": {
+    "id": 11946,
+    "traineeId": 10413,
+    "courseId": 73,
+    "isFinished": false,
+    "currentProgress": 7.0,
+    "completedAt": null,
+    "unitsLog": [
+      {
+        "id": 57983,
+        "traineeId": 10413,
+        "unitId": 531,
+        "name": null,
+        "courselogId": 11946,
+        "isFinished": false,
+        "currentProgress": 16.0,
+        "completedAt": null,
+        "lecturesLog": [
+          {
+            "id": 352799,
+            "traineeId": 10413,
+            "lectureId": 3300,
+            "unitlogId": 57983,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 352800,
+            "traineeId": 10413,
+            "lectureId": 3299,
+            "unitlogId": 57983,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-09-15T12:53:42.9898606"
+          }
+
+        ],
+        "quizzesLog": [
+          {
+            "id": 3007,
+            "traineeId": 10413,
+            "quizzId": 114,
+            "unitlogId": 57983,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 4163,
+            "traineeId": 10413,
+            "quizzId": 114,
+            "unitlogId": 57983,
+            "isFinished": true,
+            "currentProgress": 100.0,
+            "completedAt": "2022-08-28T17:26:20.3128413"
+          }
+        ]
+      },
+      {
+        "id": 57984,
+        "traineeId": 10413,
+        "unitId": 532,
+        "name": null,
+        "courselogId": 11946,
+        "isFinished": false,
+        "currentProgress": 0.0,
+        "completedAt": null,
+        "lecturesLog": [
+          {
+            "id": 352805,
+            "traineeId": 10413,
+            "lectureId": 3759,
+            "unitlogId": 57984,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 352806,
+            "traineeId": 10413,
+            "lectureId": 3305,
+            "unitlogId": 57984,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 352807,
+            "traineeId": 10413,
+            "lectureId": 3306,
+            "unitlogId": 57984,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 352808,
+            "traineeId": 10413,
+            "lectureId": 3307,
+            "unitlogId": 57984,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 352809,
+            "traineeId": 10413,
+            "lectureId": 3308,
+            "unitlogId": 57984,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          },
+          {
+            "id": 352810,
+            "traineeId": 10413,
+            "lectureId": 3309,
+            "unitlogId": 57984,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          }
+        ],
+        "quizzesLog": [
+          {
+            "id": 3008,
+            "traineeId": 10413,
+            "quizzId": 115,
+            "unitlogId": 57984,
+            "isFinished": false,
+            "currentProgress": 0.0,
+            "completedAt": null
+          }
+        ]
+      }
+
+    ],
+    "activitiesLog": [
+      {
+        "id": 14534,
+        "traineeId": 10413,
+        "forumId": null,
+        "casestudyId": null,
+        "glossaryId": null,
+        "wikiId": null,
+        "quizzId": 121,
+        "assignmentId": null,
+        "type": 6,
+        "name": null,
+        "courselogId": 11946,
+        "isFinished": true,
+        "currentProgress": 100.0,
+        "completedAt": "2022-07-21T16:47:14.0446185"
+      }
+
+    ]
+  },
+  "trainers": [
+    {
+      "id": 25,
+      "trainerName": "د. جمال هيكل",
+      "trainerInfo": "<p style=\".</p>",
+      "trainerAvatar": "https://s3.eu-west-1.amazonaws.com/trainer.emasteryacademy.com/yzmxe4t0im.png",
+      "trainerMoreInfo": "",
+      "trainerCourses": null
+    }
+  ],
+  "courseContents": [
+    {
+      "id": 531,
+      "unitName": "الجزء الأول: الأدوات الإدارية التخطيطية والتنفيذية",
+      "unitDesc": "",
+      "unitBanner": "",
+      "isDone": false,
+      "percent": 16.0,
+      "totalScore": 0.0,
+      "completitionDate": null,
+      "contents": [
+        {
+          "id": 3300,
+          "name": "مقدمة الجزء الأول",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5028,
+              "type": 1,
+              "title": "مقدمة الجزء الأول -OPD-1.1.mp4",
+              "time": 66.0
+            },
+            {
+              "id": 4678,
+              "type": 13,
+              "title": "المادة التدريبية لدورة تطوير العمليات والإجراءات وتنظيم العمل.pptx",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 3299,
+          "name": "لماذا التطوير؟ ومتى يكون ملحًّا؟",
+          "type": 1,
+          "isDone": true,
+          "lectureContents": [
+            {
+              "id": 5075,
+              "type": 1,
+              "title": "لماذا  التطوير؟ ومتى يكون ملحًّا؟ -OPD-1.2.mp4",
+              "time": 316.0
+            }
+          ]
+        },
+        {
+          "id": 3301,
+          "name": "المسح البيئي",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5029,
+              "type": 1,
+              "title": "المسح البيئي -OPD-1.3.mp4",
+              "time": 154.0
+            }
+          ]
+        },
+        {
+          "id": 3302,
+          "name": "المسح البيئي: تحليل SWOT",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5077,
+              "type": 1,
+              "title": "المسح البيئي تحليل  SWOT -OPD-1.4.mp4",
+              "time": 1517.0
+            },
+            {
+              "id": 4672,
+              "type": 13,
+              "title": "نموذج تحليل SWOT.docx",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 3304,
+          "name": "المسح البيئي: تحليل PEST",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5030,
+              "type": 1,
+              "title": "المسح البيئي تحليل  PEST -OPD-1.6.mp4",
+              "time": 312.0
+            },
+            {
+              "id": 4673,
+              "type": 13,
+              "title": "نموذج تحليل PEST.docx",
+              "time": 0.0
+            }
+          ]
+        },
+        {
+          "id": 3758,
+          "name": "مراجعة وتلخيص الجزء الأول",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5078,
+              "type": 1,
+              "title": "مراجعة وتلخيص الجزء الأول -OPD-1.7.mp4",
+              "time": 54.0
+            }
+          ]
+        },
+        {
+          "id": 114,
+          "name": "مراجعة الجزء الأول",
+          "type": 2,
+          "isDone": false,
+          "lectureContents": null
+        }
+      ],
+      "quizz": {
+        "quizzId": 114,
+        "quizzName": "مراجعة الجزء الأول",
+        "attempts": 0
+      }
+    },
+    {
+      "id": 532,
+      "unitName": "الجزء الثاني: الأدوات التخطيطية",
+      "unitDesc": "",
+      "unitBanner": "",
+      "isDone": false,
+      "percent": 0.0,
+      "totalScore": 0.0,
+      "completitionDate": null,
+      "contents": [
+        {
+          "id": 3759,
+          "name": "مقدمة الجزء الثاني",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5032,
+              "type": 1,
+              "title": "مقدمة الجزء الثاني -OPD-2.1.mp4",
+              "time": 40.0
+            }
+          ]
+        },
+        {
+          "id": 3305,
+          "name": "الأدوات التخطيطية: الرؤية المؤسسية",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5033,
+              "type": 1,
+              "title": "الأدوات التخطيطية الرؤية المؤسسية -OPD-2.2.mp4",
+              "time": 129.0
+            }
+          ]
+        },
+        {
+          "id": 3306,
+          "name": "الأدوات التخطيطية: الرسالة المؤسسية",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5034,
+              "type": 1,
+              "title": "الأدوات التخطيطية الرسالة المؤسسية -OPD-2.3.mp4",
+              "time": 342.0
+            }
+          ]
+        },
+        {
+          "id": 3307,
+          "name": "الأدوات التخطيطية: الأهداف الاستراتيجية",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5031,
+              "type": 1,
+              "title": "الأدوات التخطيطية الأهداف الاستراتيجية - OPD-2.4.mp4",
+              "time": 399.0
+            }
+          ]
+        },
+        {
+          "id": 3308,
+          "name": "الأدوات التخطيطية: السياسات",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5079,
+              "type": 1,
+              "title": "الأدوات التخطيطية السياسات -OPD-2.5.mp4",
+              "time": 216.0
+            }
+          ]
+        },
+        {
+          "id": 3309,
+          "name": "مراجعة وتلخيص الجزء الثاني",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5035,
+              "type": 1,
+              "title": "مراجعة وتلخيص الجزء الثاني -OPD-2.6.mp4",
+              "time": 39.0
+            }
+          ]
+        },
+        {
+          "id": 115,
+          "name": "مراجعة الجزء الثاني",
+          "type": 2,
+          "isDone": false,
+          "lectureContents": null
+        }
+      ],
+      "quizz": {
+        "quizzId": 115,
+        "quizzName": "مراجعة الجزء الثاني",
+        "attempts": 0
+      }
+    },
+    {
+      "id": 533,
+      "unitName": "الجزء الثالث: الأدوات التنفيذية",
+      "unitDesc": "",
+      "unitBanner": "",
+      "isDone": false,
+      "percent": 0.0,
+      "totalScore": 0.0,
+      "completitionDate": null,
+      "contents": [
+        {
+          "id": 3310,
+          "name": "مقدمة الجزء الثالث",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5036,
+              "type": 1,
+              "title": "مقدمة الجزء الثالث -OPD-3.1.mp4",
+              "time": 144.0
+            }
+          ]
+        },
+        {
+          "id": 3311,
+          "name": "الأدوات التنفيذية: البرامج",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5080,
+              "type": 1,
+              "title": "الأدوات التنفيذية البرامج -OPD-3.2.mp4",
+              "time": 199.0
+            }
+          ]
+        },
+        {
+          "id": 3312,
+          "name": "الأدوات التنفيذية: الموازنات",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5037,
+              "type": 1,
+              "title": "الأدوات التنفيذية الموازنات -OPD-3.3.mp4",
+              "time": 120.0
+            }
+          ]
+        },
+        {
+          "id": 3313,
+          "name": "الأدوات التنفيذية: خطة العمل",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5038,
+              "type": 1,
+              "title": "الأدوات التنفيذية خطة العمل -OPD-3.4.mp4",
+              "time": 234.0
+            }
+          ]
+        },
+        {
+          "id": 3314,
+          "name": "الأدوات التنفيذية: إجراءات العمل",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5039,
+              "type": 1,
+              "title": "الأدوات التنفيذية إجراءات العمل -OPD-3.5.mp4",
+              "time": 135.0
+            }
+          ]
+        },
+        {
+          "id": 3760,
+          "name": "مراجعة وتلخيص الجزء الثالث",
+          "type": 1,
+          "isDone": false,
+          "lectureContents": [
+            {
+              "id": 5081,
+              "type": 1,
+              "title": "مراجعة وتلخيص الجزء الثالث -OPD-3.6.mp4",
+              "time": 39.0
+            }
+          ]
+        },
+        {
+          "id": 116,
+          "name": "مراجعة الجزء الثالث",
+          "type": 2,
+          "isDone": false,
+          "lectureContents": null
+        }
+      ],
+      "quizz": {
+        "quizzId": 116,
+        "quizzName": "مراجعة الجزء الثالث",
+        "attempts": 0
+      }
+    }
+  ],
+  "quizz": [
+    {
+      "quizzId": 121,
+      "quizzName": "الاختبار النظري",
+      "attempts": 3
+    }
+  ],
+  "currentLecture": null,
+  "assignments": [],
+  "wiki": {
+    "wikiId": 0,
+    "wikiName": null,
+    "articles": null
+  },
+  "forum": {
+    "forumId": 17,
+    "forumName": "نقاش",
+    "description": "تطوير العمليات والاجراءات وتنظيم العمل",
+    "fromDate": null,
+    "toDate": null,
+    "topics": [
+      {
+        "topicId": 41,
+        "addedBy": "Mastery Support",
+        "topic": "ما هي الأهداف الاستراتيجية لشركتك؟ هل ترى أن هناك ما يمكن تغييره في تلك الأهداف، قُم بمناقشة آرائك.",
+        "attachment": "",
+        "date": "2022-03-31T08:11:39.946",
+        "replies": [
+          {
+            "replyId": 14,
+            "addedBy": "Mahroos Mubarak Alobthany",
+            "reply": "<p>&nbsp;الهدف الاستراتيجيي من خلال منطو العمليات (تطوير ادارة العمليات بنسبة 80% خلال عامين)</p><p>نستطيع تغيير الاهداف من خلال التطوير بتحديد الفجوات وتوليد المقترحات</p>",
+            "attachment": null,
+            "date": "2022-07-17T22:45:04.921"
+          }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "glossaryId": 12,
+    "name": "المصطلحات",
+    "description": "قائمة المصطلحات",
+    "numberOfConcepts": 12,
+    "concepts": [
+      {
+        "conceptId": 161,
+        "addedBy": "Mastery Support",
+        "concept": "نموذج SMART لوضع الأهداف",
+        "file": null,
+        "definition": "",
+        "keywords": "SMART",
+        "attachment": null,
+        "date": "2022-03-31T20:41:40"
+      },
+      {
+        "conceptId": 162,
+        "addedBy": "Mastery Support",
+        "concept": "نموذج PEST",
+        "file": null,
+        "definition": "",
+        "keywords": "PEST",
+        "attachment": null,
+        "date": "2022-03-31T20:43:38"
+      },
+      {
+        "conceptId": 163,
+        "addedBy": "Mastery Support",
+        "concept": "الرؤية",
+        "file": null,
+        "definition": "<p>يحدد ويصف بيان الرؤية الموقف المستقبلي المرغوب فيه للشركة.</p>",
+        "keywords": "الرؤية",
+        "attachment": null,
+        "date": "2022-03-31T20:45:14"
+      },
+      {
+        "conceptId": 164,
+        "addedBy": "Mastery Support",
+        "concept": "الرسالة",
+        "file": null,
+        "definition": "<p>هي بيان لطبيعة عمل الشركة وأهدافها ونهجها للوصول إلى رؤيتها المستقبلية.</p>",
+        "keywords": "الرسالة",
+        "attachment": null,
+        "date": "2022-03-31T20:45:54"
+      },
+      {
+        "conceptId": 165,
+        "addedBy": "Mastery Support",
+        "concept": "السياسات",
+        "file": null,
+        "definition": "<p>قواعد واسعة النطاق (عامة) لدعم اتخاذ القرار والربط بين التخطيط والتنفيذ.</p>",
+        "keywords": "السياسات",
+        "attachment": null,
+        "date": "2022-03-31T20:46:20"
+      },
+      {
+        "conceptId": 166,
+        "addedBy": "Mastery Support",
+        "concept": "البرامج",
+        "file": null,
+        "definition": "<p>هي بيان الأنشطة أو الخطوات اللازمة لإنجاز خطة معينة، تحول الأهداف والاستراتيجيات إلى خطة عمل.</p>",
+        "keywords": "البرامج",
+        "attachment": null,
+        "date": "2022-03-31T20:46:57"
+      },
+      {
+        "conceptId": 167,
+        "addedBy": "Mastery Support",
+        "concept": "الموازنة",
+        "file": null,
+        "definition": "<p>هي أسلوب للتخطيط المالي المستقبلي، يتناول القيمة المالية للأنشطة المختلفة لتنفيذ خطط العمل والبرامج. غالبًا ما توضع بشكل ربع سنوي أو شهري.</p>",
+        "keywords": "الموازنة",
+        "attachment": null,
+        "date": "2022-03-31T20:47:49"
+      },
+      {
+        "conceptId": 168,
+        "addedBy": "Mastery Support",
+        "concept": "خطة العمل Action Plan",
+        "file": null,
+        "definition": "<p>هي بيان لمجموعة الأنشطة اللازمة للوصول إلى هدف ما، وتشمل التخطيط الزمني والمالي لهذه الأنشطة.</p>",
+        "keywords": " Action Plan",
+        "attachment": null,
+        "date": "2022-03-31T20:48:24"
+      },
+      {
+        "conceptId": 169,
+        "addedBy": "Mastery Support",
+        "concept": "إجراءات التشغيل القياسية SOPs",
+        "file": null,
+        "definition": "<p>الخطوات أو التقنيات التي تصف بالتفصيل كيفية أداء مهمة أو مهمة معينة.&nbsp;</p><p>وهي عادةً ما توضح بالتفصيل الأنشطة المختلفة التي يجب القيام بها لإكمال أنشطة المنظمة.</p>",
+        "keywords": " SOPs",
+        "attachment": null,
+        "date": "2022-03-31T20:49:02"
+      },
+      {
+        "conceptId": 170,
+        "addedBy": "Mastery Support",
+        "concept": "عنق الزجاجة Bottleneck",
+        "file": null,
+        "definition": "<p>هي الحلقة الأضعف في سلسلة من العمليات اللازمة للوصول لهدف معين. وقد تؤدي إلى ضعف الإنتاج، وتكدس العرض، والضغط من العملاء، وانخفاض معنويات الموظفين.</p>",
+        "keywords": "Bottleneck",
+        "attachment": null,
+        "date": "2022-03-31T20:49:52"
+      },
+      {
+        "conceptId": 171,
+        "addedBy": "Mastery Support",
+        "concept": "مخطط التقارب Affinity Diagram",
+        "file": null,
+        "definition": "<p>مخطط التقارب هو أداة يمكن استخدامها لتصنيف كمية كبيرة من الأفكار وفرزها.</p>",
+        "keywords": "Affinity Diagram",
+        "attachment": null,
+        "date": "2022-03-31T20:51:04"
+      },
+      {
+        "conceptId": 172,
+        "addedBy": "Mastery Support",
+        "concept": "قبعات التفكير الست",
+        "file": null,
+        "definition": "<p>هي طريقة تستخدم لتسهيل التفكير في مشكلات العمل، من خلال التأكد من تمثيل مجموعة واسعة من وجهات النظر وأنماط التفكير. باستخدام ستة أدوار (أو \"قبعات\").</p><p> وهي إطار -طوّره الدكتور إدوارد دي بونو- لهيكلة التفكير بسهولة أكبر لتحقيق نتائج مثمرة.</p>",
+        "keywords": "قبعات التفكير الست",
+        "attachment": null,
+        "date": "2022-03-31T20:51:44"
+      }
+    ]
+  },
+  "caseStudy": []
+}

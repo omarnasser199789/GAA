@@ -1,0 +1,88 @@
+{
+  "userId": 31666,
+  "attendedAt": "2022-09-26T16:43:45.870Z",
+  "finished": true,
+  "quizzId": 11,
+  "attendanceTable": [
+    {
+      "questionId": 23,
+      "givenAnswers": [
+        {
+          "questionId":23,
+          "answerId":36
+        }
+      ],
+      "givenWords":[],
+      "pairs":[]
+    },
+    {
+      "questionId": 25,
+      "givenAnswers": [
+        {
+          "questionId":25,
+          "answerId":37
+        },
+        {
+          "questionId":25,
+          "answerId":39
+        },
+        {
+          "questionId":25,
+          "answerId":38
+        }
+      ],
+      "givenWords":[],
+      "pairs":[]
+    },
+    {
+
+      "questionId": 27,
+      "givenAnswers": [],
+      "givenWords":[
+        {
+          "questionId":27,
+          "word":15,
+          "order": 7
+        },
+        {
+          "questionId":27,
+          "word":16,
+          "order": 10
+        },
+        {
+          "questionId":27,
+          "word":18,
+          "order": 11
+        },
+        {
+          "questionId":27,
+          "word":17,
+          "order": 0
+        }
+      ],
+      "pairs":[]
+
+    },
+    {
+
+      "questionId": 30,
+      "givenAnswers": [
+        {"questionId": 30, "answerId": 43}
+      ],
+      "givenWords":[],
+      "pairs":[]
+
+    },
+    {
+
+      "questionId": 32,
+      "givenAnswers": [],
+      "givenWords":[],
+      "pairs":[
+        {"questionId": 32, "pairId": 9, "selectedId": 8},
+        {"questionId": 32, "pairId": 8, "selectedId": 9}
+      ]
+
+    }
+  ]
+}

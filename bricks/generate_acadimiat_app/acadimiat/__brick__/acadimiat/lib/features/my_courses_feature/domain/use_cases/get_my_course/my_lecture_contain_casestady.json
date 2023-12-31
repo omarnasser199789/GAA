@@ -1,0 +1,187 @@
+{
+"materialId": 360,
+"materialName": " 8 - قانون المحتوى",
+"unitId": 92,
+"order": 0,
+"materialLink": null,
+"materialLength": "",
+"isDone": false,
+"totalScore": 0.0,
+"completitionDate": null,
+"currentVideo": {
+"url": "https://media.emasteryacademy.com/media/5kccp71i4xwgw7leiwgts3ilc.m3u8",
+"currentTime": null,
+"questions": [],
+"bookmarks": [
+{
+"id": 1330,
+"userId": 12560,
+"videoId": 453,
+"atTime": 59,
+"note": "00:59",
+"video": {
+"id": 453,
+"fileName": "8 - قانون المحتوى.mp4",
+"name": "5kccp71i4xwgw7leiwgts3ilc.mp4",
+"clipId": null,
+"type": 1,
+"fileSize": "46391170",
+"uploadDate": "2020-06-05T17:03:23.296",
+"status": null,
+"length": 109.0,
+"uploadedBy": 3,
+"ownerID": null,
+"isVimeo": null,
+"allMaterials": null
+},
+"user": null
+}
+]
+},
+"discussion": {
+"discussionId": 45,
+"lectureId": 360,
+"timeline": [
+  {
+    "id": 135,
+    "discussionId": 45,
+    "userId": 12770,
+    "username": "محمد فوزي سيد عبد المولى",
+    "useravatar": "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
+    "message": "قانون مهم ... وهو قانون الدعم",
+    "addedAt": "2020-09-30T01:21:24.234",
+    "isReply": false,
+    "orginialId": null,
+    "original": {
+      "id": 0,
+      "discussionId": null,
+      "userId": null,
+      "username": null,
+      "useravatar": null,
+      "message": null,
+      "addedAt": null,
+      "isReply": false,
+      "orginialId": null,
+      "original": null,
+      "replies": null
+    },
+    "replies": [
+      {
+        "id": 1624,
+        "discussionId": 45,
+        "userId": 14710,
+        "username": "Ahmad Mohammed Aljaberi",
+        "useravatar": "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
+        "message": "<p class=\"ql-align-right ql-direction-rtl\">استاذ محمد اذا ماعليك اذا توضح عن قانون الدعم اكثر ولا تقصد قانون الدعم المالي؟ واكون شاكر لك</p>",
+        "addedAt": "2021-03-31T23:05:38.5662577",
+        "isReply": false,
+        "orginialId": 135,
+        "original": null,
+        "replies": null
+      }
+    ]
+  }
+]
+},
+"contents": [
+{
+"id": 349,
+"materialId": 360,
+"order": null,
+"type": 1,
+"fileId": 453,
+"file": {
+"id": 453,
+"fileName": "8 - قانون المحتوى.mp4",
+"name": "5kccp71i4xwgw7leiwgts3ilc.mp4",
+"clipId": null,
+"type": 1,
+"fileSize": "46391170",
+"uploadDate": "2020-06-05T17:03:23.296",
+"status": null,
+"length": 109.0,
+"uploadedBy": 3,
+"ownerID": null,
+"isVimeo": null,
+"allMaterials": null
+},
+"activityId": null,
+"activity": {
+"id": null,
+"type": 0,
+"title": null,
+"decision": null,
+"caseStudy": null,
+"matching": null,
+"filling": null,
+"quizz": null,
+"logicalOrder": null
+},
+"meetingLink": "",
+"isFree": false,
+"fileUrl": "https://media.emasteryacademy.com/media/5kccp71i4xwgw7leiwgts3ilc.m3u8",
+"body": "<p><br></p>",
+"url": "https://media.emasteryacademy.com/media/5kccp71i4xwgw7leiwgts3ilc.m3u8",
+"currentTime": null,
+"questions": [],
+"bookmarks": [
+{
+"id": 1330,
+"userId": 12560,
+"videoId": 453,
+"atTime": 59,
+"note": "00:59",
+"video": {
+"id": 453,
+"fileName": "8 - قانون المحتوى.mp4",
+"name": "5kccp71i4xwgw7leiwgts3ilc.mp4",
+"clipId": null,
+"type": 1,
+"fileSize": "46391170",
+"uploadDate": "2020-06-05T17:03:23.296",
+"status": null,
+"length": 109.0,
+"uploadedBy": 3,
+"ownerID": null,
+"isVimeo": null,
+"allMaterials": null
+},
+"user": null
+}
+]
+},
+{
+"id": 3445,
+"materialId": 360,
+"order": null,
+"type": 9,
+"fileId": 0,
+"file": null,
+"activityId": null,
+"activity": {
+"id": 73,
+"type": 1,
+"title": "حالة دراسية:",
+"decision": {
+"id": 22,
+"title": "حالة دراسية:",
+"body": "<p>كانت إحدى العلامات التجارية للملابس تقوم بعمل تخفيضات وتقدم عروضًا\nكثيرة، ولكن لا يحضر العملاء إلى المتجر. فأجْرت\nاستطلاعًا للآراء&nbsp; (Survey) ووُجد أنهم\nيفضّلون التسوُّق عبر الإنترنت أكثر من الذهاب إلى المتجر. فاتّجهت إلى عمل موقعٍ\nإلكتروني لبيع المُنتجات عبره إلى جانب البيع في المتجر. بعد مدة، وُجد أن الأرباح\nفي زيادة مستمرة. </p><p>\nما اسم القانون الذي اتبعته هذه العلامة التجارية؟&nbsp;</p>",
+"attendanceTable": []
+},
+"caseStudy": null,
+"matching": null,
+"filling": null,
+"quizz": null,
+"logicalOrder": null
+},
+"meetingLink": "",
+"isFree": false,
+"fileUrl": "",
+"body": "",
+"url": "https://media.emasteryacademy.com/media/5kccp71i4xwgw7leiwgts3ilc.m3u8",
+"currentTime": null,
+"questions": [],
+"bookmarks": []
+}
+]
+}

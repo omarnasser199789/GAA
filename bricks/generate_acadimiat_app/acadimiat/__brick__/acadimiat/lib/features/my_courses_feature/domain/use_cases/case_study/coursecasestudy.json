@@ -1,0 +1,51 @@
+{
+  "casestudyId": 22,
+  "open": true,
+  "header": "عنوان ٤٣٤٣",
+  "body": "<p>شرح ٣٢٣٢</p>",
+  "solution": {
+    "solutionId": 23,
+    "answers": [
+      {
+        "answerId": 28,
+        "answer": "<p>مافي جواب</p>",
+        "explain": "<p>مافي تفسير</p>"
+      },
+      {
+        "answerId": 29,
+        "answer": "<p>جواب ١</p>",
+        "explain": "<p>تفسير ١</p>"
+      },
+      {
+        "answerId": 30,
+        "answer": "<p>جواب ٢</p>",
+        "explain": "<p>تفسير ٢</p>"
+      },
+      {
+        "answerId": 31,
+        "answer": "<p>حواب ٣</p>",
+        "explain": "<p>تفسير ٣</p>"
+      },
+      {
+        "answerId": 32,
+        "answer": "<p>جواب ٤</p>",
+        "explain": "<p>تفسير ٤</p>"
+      }
+    ]
+  },
+  "attendanceTable": {
+    "attendanceId": null,
+    "userId": null,
+    "traineeName": null,
+    "caseStudyId": 22,
+    "date": "2028-03-20T06:46:23.416",
+    "answer": {
+      "answerId": null,
+      "answer": "officia dolore aliqua occaecat id",
+      "correctId": 28,
+      "explanation": "<p>مافي تفسير</p>",
+      "isCorrect": false,
+      "reply": null
+    }
+  }
+}

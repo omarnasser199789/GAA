@@ -1,0 +1,230 @@
+{
+  "caseStudy": [
+    {
+      "casestudyId": 8,
+      "open": false,
+      "header": "القدرة على تكييف نمط التواصل مع الجمهور",
+      "body": "",
+      "solution": {
+        "solutionId": 9,
+        "answers": [
+          {
+            "answerId": 8,
+            "answer": "<p>ونعني بهذا اختيار أسمع الآخرين.</p>",
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 13,
+      "open": true,
+      "header": "القدرة على تكييف نمط التواصل مع الجمهور",
+      "body": "<p>ونعنإلى التواصل مع الآخرين.<br></p>",
+      "solution": {
+        "solutionId": 14,
+        "answers": []
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 15,
+      "open": false,
+      "header": "عنوان الحالة الدراسية",
+      "body": "<p>شرح الحالة</p>",
+      "solution": {
+        "solutionId": 16,
+        "answers": [
+          {
+            "answerId": 9,
+            "answer": "<p>الجواب الجواب الجواب&nbsp;</p>",
+            "explain": null
+          },
+          {
+            "answerId": 10,
+            "answer": null,
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 17,
+      "open": true,
+      "header": "عنوان الحالة الدراسية المفتوحة",
+      "body": "<p>شرح الحالة الدراسية المفتوحة</p>",
+      "solution": {
+        "solutionId": 18,
+        "answers": []
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 18,
+      "open": false,
+      "header": "عنوان الحالة الدراسشي ",
+      "body": "<p>شرح الحالة الدراسية المفتوحة</p>",
+      "solution": {
+        "solutionId": 19,
+        "answers": [
+          {
+            "answerId": 12,
+            "answer": "<p>مافي جواب</p>",
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 19,
+      "open": false,
+      "header": "هذا هو عنوان الحالة الدراسية",
+      "body": "<p>هنا شرح الحالة&nbsp;</p>",
+      "solution": {
+        "solutionId": 20,
+        "answers": [
+          {
+            "answerId": 13,
+            "answer": "<p>مافي جواب</p>",
+            "explain": null
+          },
+          {
+            "answerId": 14,
+            "answer": "<p>جواب ١</p>",
+            "explain": null
+          },
+          {
+            "answerId": 15,
+            "answer": "<p>جواب ٢</p>",
+            "explain": null
+          },
+          {
+            "answerId": 16,
+            "answer": "<p>حواب ٣</p>",
+            "explain": null
+          },
+          {
+            "answerId": 17,
+            "answer": "<p>جواب ٤</p>",
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 20,
+      "open": true,
+      "header": "هذا عنوان الحالة الدراسية",
+      "body": "<p>هذا هو شرح الحالة الدراسية</p><p><br></p>",
+      "solution": {
+        "solutionId": 21,
+        "answers": [
+          {
+            "answerId": 18,
+            "answer": "<p>مافي جواب</p>",
+            "explain": null
+          },
+          {
+            "answerId": 19,
+            "answer": "<p>جواب ١</p>",
+            "explain": null
+          },
+          {
+            "answerId": 20,
+            "answer": "<p>جواب ٢</p>",
+            "explain": null
+          },
+          {
+            "answerId": 21,
+            "answer": "<p>حواب ٣</p>",
+            "explain": null
+          },
+          {
+            "answerId": 22,
+            "answer": "<p>جواب ٤</p>",
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 21,
+      "open": true,
+      "header": "عنوان الحالة الدراسية رقم ٥٤٥٤",
+      "body": "<p>شرح الحالة الدراسية رقم ٥٤٥٤</p>",
+      "solution": {
+        "solutionId": 22,
+        "answers": [
+          {
+            "answerId": 23,
+            "answer": "<p>مافي جواب</p>",
+            "explain": null
+          },
+          {
+            "answerId": 24,
+            "answer": "<p>جواب ١</p>",
+            "explain": null
+          },
+          {
+            "answerId": 25,
+            "answer": "<p>جواب ٢</p>",
+            "explain": null
+          },
+          {
+            "answerId": 26,
+            "answer": "<p>حواب ٣</p>",
+            "explain": null
+          },
+          {
+            "answerId": 27,
+            "answer": "<p>جواب ٤</p>",
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    },
+    {
+      "casestudyId": 22,
+      "open": true,
+      "header": "عنوان ٤٣٤٣",
+      "body": "<p>شرح ٣٢٣٢</p>",
+      "solution": {
+        "solutionId": 23,
+        "answers": [
+          {
+            "answerId": 28,
+            "answer": "<p>مافي جواب</p>",
+            "explain": null
+          },
+          {
+            "answerId": 29,
+            "answer": "<p>جواب ١</p>",
+            "explain": null
+          },
+          {
+            "answerId": 30,
+            "answer": "<p>جواب ٢</p>",
+            "explain": null
+          },
+          {
+            "answerId": 31,
+            "answer": "<p>حواب ٣</p>",
+            "explain": null
+          },
+          {
+            "answerId": 32,
+            "answer": "<p>جواب ٤</p>",
+            "explain": null
+          }
+        ]
+      },
+      "attendanceTable": null
+    }
+  ]
+}

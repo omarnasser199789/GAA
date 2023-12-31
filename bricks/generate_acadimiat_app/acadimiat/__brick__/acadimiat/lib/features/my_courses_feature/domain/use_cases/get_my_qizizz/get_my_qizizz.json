@@ -1,0 +1,203 @@
+{
+  "id": 9,
+  "materialId": null,
+  "courseId": 9,
+  "unitId": null,
+  "name": "اختبار",
+  "beforeStart": false,
+  "optional": false,
+  "timeLimit": 60,
+  "shuffle": false,
+  "repetition": 4,
+  "myAttempts": 2,
+  "ifPassed": 1,
+  "ifFailed": 4,
+  "minScore": 60.0,
+  "attendance": null,
+  "questions": [
+    {
+      "id": 23,
+      "quizzId": 9,
+      "questionType": 5,
+      "score": 20,
+      "optional": false,
+      "question": "الحاجات هي نقص في درجة الاشباع لدى العميل في أي من الجوانب النفسية أو الاجتماعية أو الجسدية",
+      "title": null,
+      "stripped": null,
+      "words": [],
+      "answer": [
+        {
+          "id": 35,
+          "questionId": 23,
+          "answerId": 35,
+          "answer": "<p>صح</p>",
+          "explanation": null,
+          "isCorrect": null
+        },
+        {
+          "id": 36,
+          "questionId": 23,
+          "answerId": 36,
+          "answer": "<p>خطأ</p>",
+          "explanation": null,
+          "isCorrect": null
+        }
+      ],
+      "pairs": [],
+      "pairsSelection": []
+    },
+    {
+      "id": 25,
+      "quizzId": 9,
+      "questionType": 2,
+      "score": 20,
+      "optional": false,
+      "question": "<p>عندما يستهدف الاعلان الحفاظ على مكانة السلعة في قمة اهتمامات المستهلك فهو يلعب دور :</p>",
+      "title": null,
+      "stripped": null,
+      "words": [],
+      "answer": [
+        {
+          "id": 37,
+          "questionId": 25,
+          "answerId": 37,
+          "answer": "<p>الإخباري</p>",
+          "explanation": null,
+          "isCorrect": null
+        },
+        {
+          "id": 39,
+          "questionId": 25,
+          "answerId": 39,
+          "answer": "<p>التذكيري</p>",
+          "explanation": null,
+          "isCorrect": null
+        },
+        {
+          "id": 41,
+          "questionId": 25,
+          "answerId": 41,
+          "answer": "<p>التفضيلي</p>",
+          "explanation": null,
+          "isCorrect": null
+        },
+        {
+          "id": 38,
+          "questionId": 25,
+          "answerId": 38,
+          "answer": "<p>التنافسي</p>",
+          "explanation": null,
+          "isCorrect": null
+        }
+      ],
+      "pairs": [],
+      "pairsSelection": []
+    },
+    {
+      "id": 27,
+      "quizzId": 9,
+      "questionType": 3,
+      "score": 20,
+      "optional": false,
+      "question": "$$$$ هم الأشخاص الذين يوفرون للشركة المصادر $$$$ الضرورية لإنتاج $$$$ $$$$ ",
+      "title": null,
+      "stripped": null,
+      "words": [
+        {
+          "wordId": 17,
+          "questionId": 27,
+          "word": "السلع",
+          "order": null
+        },
+        {
+          "wordId": 16,
+          "questionId": 27,
+          "word": "المادية",
+          "order": null
+        },
+        {
+          "wordId": 18,
+          "questionId": 27,
+          "word": "والخدمات.",
+          "order": null
+        },
+        {
+          "wordId": 15,
+          "questionId": 27,
+          "word": "الموردون",
+          "order": null
+        }
+      ],
+      "answer": [],
+      "pairs": [],
+      "pairsSelection": []
+    },
+    {
+      "id": 30,
+      "quizzId": 9,
+      "questionType": 1,
+      "score": 20,
+      "optional": false,
+      "question": "<p>تتكوّن&nbsp;البيئة الاقتصاديّة&nbsp;من</p>",
+      "title": null,
+      "stripped": null,
+      "words": [],
+      "answer": [
+        {
+          "id": 42,
+          "questionId": 30,
+          "answerId": 42,
+          "answer": "<p>من&nbsp;العوامل&nbsp;التي تؤثر على القدرة الشرائيّة</p>",
+          "explanation": null,
+          "isCorrect": null
+        },
+        {
+          "id": 43,
+          "questionId": 30,
+          "answerId": 43,
+          "answer": "<p>من&nbsp;العوامل&nbsp;التي لا تؤثر على القدرة الشرائيّة</p>",
+          "explanation": null,
+          "isCorrect": null
+        }
+      ],
+      "pairs": [],
+      "pairsSelection": []
+    },
+    {
+      "id": 32,
+      "quizzId": 9,
+      "questionType": 6,
+      "score": 20,
+      "optional": false,
+      "question": "<p>صل الجمل المناسبة:</p>",
+      "title": null,
+      "stripped": null,
+      "words": [],
+      "answer": [],
+      "pairs": [
+        {
+          "id": 9,
+          "questionId": 32,
+          "sentence": "<p>من استراتيجيات التعامل مع الاسواق المستهدفة</p>"
+        },
+        {
+          "id": 8,
+          "questionId": 32,
+          "sentence": "<p>من الانتقادات التي وجهت لعلم التسويق</p>"
+        }
+      ],
+      "pairsSelection": [
+        {
+          "id": 9,
+          "questionId": 32,
+          "sentence": "<p>استراتيجية السوق الكلي</p>"
+        },
+        {
+          "id": 8,
+          "questionId": 32,
+          "sentence": "<p>انه يشجع على استهلاك السلع الضارة</p>"
+        }
+      ]
+    }
+  ]
+}
