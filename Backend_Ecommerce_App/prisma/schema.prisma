@@ -1,0 +1,146 @@
+datasource db {
+  provider = "mysql"
+  url      = "mysql://omar1:123456789@54.158.155.70:3306/ECA"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+model Role {
+  id     Int     @id @default(autoincrement())
+  name   String  @unique
+  users  User[]  // Many-to-many relationship with User model
+}
+
+model User {
+  id                       Int                 @id @default(autoincrement())
+  uid                      String              @unique
+  username                 String?              @default("")
+  email                    String?              @unique
+  phoneNumber              String?              @unique
+  fcmToken                 String              @db.Text
+  deleted                  Boolean             @default(false)
+  createdAt                DateTime            @default(now())
+  roles                    Role[]              // Many-to-many relationship with Role model
+  createdCategories        Category[]
+  createdAttributes        ProductAttribute[]
+  // createdAppVariables      AppVariables[]
+  createdProducts          Product[]
+  createdProductAttachment ProductAttachment[]
+  createdNotifications     Notification[]
+  createdAttachments       Attachment[]
+  createdBanners           Banner[]
+}
+
+model LoginWithQrKey{
+  id                       Int                 @id @default(autoincrement())
+  uid                      String              @unique
+  loginKey                 String     
+}
+
+model Category {
+  id              Int        @id @default(autoincrement())
+  imageUrl        String
+  title_en        String
+  title_ar        String
+  title_ku        String
+  deleted         Boolean    @default(false)
+  createdAt       DateTime   @default(now())
+  createdByUser   User       @relation(fields: [createdBy], references: [id])
+  createdBy       Int
+  parentCategory  Category?  @relation("ChildCategories", fields: [parentId], references: [id])
+  parentId        Int?
+  childCategories Category[] @relation("ChildCategories")
+  products        Product[]
+
+  @@index([createdBy])
+}
+
+model Product {
+  id             Int                 @id @default(autoincrement())
+  title_en       String              @db.Text
+  title_ar       String              @db.Text
+  title_ku       String              @db.Text
+  description_en String              @db.Text
+  description_ar String              @db.Text
+  description_ku String              @db.Text
+  deleted        Boolean             @default(false)
+  createdAt      DateTime            @default(now())
+  createdByUser  User                @relation(fields: [createdBy], references: [id])
+  createdBy      Int
+  attributes     ProductAttribute[]
+  category       Category            @relation(fields: [categoryId], references: [id])
+  categoryId     Int
+  attachments    ProductAttachment[]
+}
+
+model ProductAttachment {
+  id            Int      @id @default(autoincrement())
+  url           String
+  createdAt     DateTime @default(now())
+  deleted       Boolean  @default(false)
+  isVideo       Boolean  @default(false)
+  height        Float?
+  width         Float?
+  quality       Int?
+  product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId     Int
+  createdByUser User     @relation(fields: [createdBy], references: [id])
+  createdBy     Int
+}
+
+model Attachment {
+  id            Int      @id @default(autoincrement())
+  objectId      Int
+  objectTable   String
+  path          String
+  deleted       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  createdByUser User     @relation(fields: [createdBy], references: [id])
+  createdBy     Int
+}
+
+model ProductAttribute {
+  id            Int      @id @default(autoincrement())
+  name          String   @db.Text
+  value         String   @db.Text
+  deleted       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  productId     Int
+  createdBy     Int
+  product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdByUser User     @relation(fields: [createdBy], references: [id])
+}
+
+model Banner {
+  id            Int      @id @default(autoincrement())
+  link          String
+  attachmentUrl String
+  isVideo       Boolean  @default(false) // New field to indicate if it's a video
+  deleted       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  createdByUser User     @relation(fields: [createdBy], references: [id])
+  createdBy     Int
+}
+
+// model AppVariables {
+//   id            Int      @id @default(autoincrement())
+//   aboutUs_en    String   @db.Text
+//   aboutUs_ar    String   @db.Text
+//   aboutUs_ku    String   @db.Text
+//   activated     Boolean  @default(false)
+//   deleted       Boolean  @default(false)
+//   createdAt     DateTime @default(now())
+//   // createdByUser User     @relation(fields: [createdBy], references: [id])
+//   createdBy     Int
+// }
+
+model Notification {
+  id            Int      @id @default(autoincrement())
+  title         String   @db.Text
+  text          String   @db.Text
+  deleted       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  createdByUser User     @relation(fields: [createdBy], references: [id])
+  createdBy     Int
+}

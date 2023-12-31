@@ -1,0 +1,45 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Al-Jazary/dashboard.git",
+  "author": "OMARNASSER <omarnaser1997@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "ts-node server.ts",
+    "tscBuild": "tsc --project tsconfig.json",
+    "gen:schema": "awk 1 ./prisma/schemas/*.prisma > ./prisma/schema.prisma && npx prisma format",
+    "prisma:generate": "npx prisma generate"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "@prisma/client": "^4.0.0",
+    "aws-sdk": "^2.1167.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "jsonwebtoken": "^9.0.2",
+    "mimetypes": "^0.1.1",
+    "moment": "^2.29.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.15",
+    "sharp": "^0.32.6",
+    "socket.io": "^4.7.2",
+    "uuid": "^8.3.2",
+    "ws": "^8.14.2",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "prisma": "^5.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
