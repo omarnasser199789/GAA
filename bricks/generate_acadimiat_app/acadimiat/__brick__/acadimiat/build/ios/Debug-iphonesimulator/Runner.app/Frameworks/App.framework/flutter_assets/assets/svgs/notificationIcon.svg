@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="notification_icon" data-name="notification icon" transform="translate(-112 -397)">
+    <rect id="frame" width="24" height="24" rx="3" transform="translate(112 397)" fill="#fff"/>
+    <g id="not" transform="translate(113.329 291.323)">
+      <path id="bell_3_" data-name="bell(3)" d="M20.22,12.183l-1.694-6.1A8.312,8.312,0,0,0,2.4,6.51l-1.312,5.9a4.459,4.459,0,0,0,4.353,5.426h.993a4.459,4.459,0,0,0,8.739,0h.747a4.459,4.459,0,0,0,4.3-5.652Zm-9.412,7.435A2.675,2.675,0,0,1,8.3,17.835h5.022a2.675,2.675,0,0,1-2.511,1.784ZM18.054,15a2.655,2.655,0,0,1-2.13,1.057H5.445A2.675,2.675,0,0,1,2.834,12.8L4.145,6.9a6.529,6.529,0,0,1,12.663-.332l1.694,6.1A2.655,2.655,0,0,1,18.054,15Z" transform="translate(-0.014 106.971)" fill="#131313"/>
+    </g>
+  </g>
+</svg>

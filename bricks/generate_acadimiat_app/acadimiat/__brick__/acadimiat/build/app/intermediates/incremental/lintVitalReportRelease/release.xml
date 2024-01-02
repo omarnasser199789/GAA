@@ -1,13 +1,13 @@
 <variant
     name="release"
-    package="com.jahezkw.academy"
+    package="com.omar.academy"
     minSdkVersion="25"
     targetSdkVersion="33"
     shrinking="true"
-    mergedManifest="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/merged_manifest/release/AndroidManifest.xml"
-    manifestMergeReport="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/outputs/logs/manifest-merger-release-report.txt"
-    proguardFiles="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.3.0:/Users/omarnaser/dev/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro:proguard-rules.pro"
-    partialResultsDir="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/lint_vital_partial_results/release/out">
+    mergedManifest="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/merged_manifest/release/AndroidManifest.xml"
+    manifestMergeReport="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/outputs/logs/manifest-merger-release-report.txt"
+    proguardFiles="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.3.0:/Users/omernasser/development/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro:proguard-rules.pro"
+    partialResultsDir="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/lint_vital_partial_results/release/out">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
@@ -32,9 +32,9 @@
         value="android.app.Application" />
   </manifestPlaceholders>
   <mainArtifact
-      classOutputs="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/javac/release/classes:/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/tmp/kotlin-classes/release:/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/kotlinToolingMetadata:/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/R.jar"
-      applicationId="com.jahezkw.academy"
-      generatedSourceFolders="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/ap_generated_sources/release/out:/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/aidl_source_output_dir/release/out:/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/source/buildConfig/release:/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/renderscript_source_output_dir/release/out"
-      generatedResourceFolders="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/res/rs/release:/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/res/resValues/release">
+      classOutputs="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/javac/release/classes:/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/tmp/kotlin-classes/release:/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/kotlinToolingMetadata:/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/R.jar"
+      applicationId="com.omar.academy"
+      generatedSourceFolders="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/ap_generated_sources/release/out:/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/aidl_source_output_dir/release/out:/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/source/buildConfig/release:/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/renderscript_source_output_dir/release/out"
+      generatedResourceFolders="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/res/rs/release:/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app/generated/res/resValues/release">
   </mainArtifact>
 </variant>

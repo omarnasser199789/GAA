@@ -4,7 +4,7 @@
             "outputFile": "com.prongbang.screen_protector-merged_res-10:/values-nb/values-nb.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-nb/values-nb.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-nb/values-nb.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -19,7 +19,7 @@
             "outputFile": "com.prongbang.screen_protector-mergeReleaseResources-8:/values-nb/values-nb.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-nb/values-nb.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-nb/values-nb.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -4,17 +4,7 @@
             "outputFile": "com.ryanheise.audio_session-merged_res-13:/values-fa/values-fa.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-fa/values-fa.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,157,252,345,465",
-                        "endColumns": "101,94,92,119,123",
-                        "endOffsets": "152,247,340,460,584"
-                    }
-                },
-                {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-fa/values-fa.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-fa/values-fa.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "589",
                         "endColumns": "100",
                         "endOffsets": "685"
+                    }
+                },
+                {
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-fa/values-fa.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,157,252,345,465",
+                        "endColumns": "101,94,92,119,123",
+                        "endOffsets": "152,247,340,460,584"
                     }
                 }
             ]
@@ -36,17 +36,7 @@
             "outputFile": "com.ryanheise.audio_session-mergeReleaseResources-11:/values-fa/values-fa.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-fa/values-fa.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,157,252,345,465",
-                        "endColumns": "101,94,92,119,123",
-                        "endOffsets": "152,247,340,460,584"
-                    }
-                },
-                {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-fa/values-fa.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-fa/values-fa.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -60,6 +50,16 @@
                         "startOffsets": "589",
                         "endColumns": "100",
                         "endOffsets": "685"
+                    }
+                },
+                {
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-fa/values-fa.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,157,252,345,465",
+                        "endColumns": "101,94,92,119,123",
+                        "endOffsets": "152,247,340,460,584"
                     }
                 }
             ]

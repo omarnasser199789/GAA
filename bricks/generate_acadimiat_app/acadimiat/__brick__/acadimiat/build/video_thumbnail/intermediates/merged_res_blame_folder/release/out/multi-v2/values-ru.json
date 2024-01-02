@@ -4,7 +4,7 @@
             "outputFile": "xyz.justsoft.video_thumbnail-mergeReleaseResources-8:/values-ru/values-ru.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-ru/values-ru.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-ru/values-ru.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -19,7 +19,7 @@
             "outputFile": "xyz.justsoft.video_thumbnail-merged_res-10:/values-ru/values-ru.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-ru/values-ru.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-ru/values-ru.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

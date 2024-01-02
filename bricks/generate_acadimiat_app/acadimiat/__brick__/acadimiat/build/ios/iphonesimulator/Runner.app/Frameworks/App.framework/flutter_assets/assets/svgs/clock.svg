@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.5" height="17.5" viewBox="0 0 17.5 17.5">
+  <g id="clock" transform="translate(-173.25 -189.25)">
+    <path id="Vector" d="M16,8A8,8,0,1,1,8,0,8,8,0,0,1,16,8Z" transform="translate(174 190)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Vector-2" data-name="Vector" d="M3.264,6.136.784,4.656A1.772,1.772,0,0,1,0,3.28V0" transform="translate(181.704 194.408)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>

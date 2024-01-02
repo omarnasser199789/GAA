@@ -4,7 +4,7 @@
             "outputFile": "com.ryanheise.just_audio-mergeReleaseResources-14:/values-de/values-de.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-de/values-de.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/647c8e7e1d6ef50a4ae39d0e31383754/transformed/core-1.7.0/res/values-de/values-de.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/647c8e7e1d6ef50a4ae39d0e31383754/transformed/core-1.7.0/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/121439ff7b7ab7aec6e9dc904737fe70/transformed/jetified-exoplayer-core-2.18.7/res/values-de/values-de.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/121439ff7b7ab7aec6e9dc904737fe70/transformed/jetified-exoplayer-core-2.18.7/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -60,7 +60,7 @@
             "outputFile": "com.ryanheise.just_audio-merged_res-16:/values-de/values-de.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-de/values-de.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e8d798c4763856c02339be1572573ed2/transformed/jetified-media2-session-1.2.1/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
@@ -77,7 +77,7 @@
                     }
                 },
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/647c8e7e1d6ef50a4ae39d0e31383754/transformed/core-1.7.0/res/values-de/values-de.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/647c8e7e1d6ef50a4ae39d0e31383754/transformed/core-1.7.0/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -94,7 +94,7 @@
                     }
                 },
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/121439ff7b7ab7aec6e9dc904737fe70/transformed/jetified-exoplayer-core-2.18.7/res/values-de/values-de.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/121439ff7b7ab7aec6e9dc904737fe70/transformed/jetified-exoplayer-core-2.18.7/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.jahezkw.academy.app-mergeReleaseResources-65:/values-v22/values-v22.xml",
+            "outputFile": "com.omar.academy.app-mergeReleaseResources-58:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/b928bd2b6db8ad8cc43acbdf840d047d/transformed/appcompat-1.6.1/res/values-v22/values-v22.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/b928bd2b6db8ad8cc43acbdf840d047d/transformed/appcompat-1.6.1/res/values-v22/values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

@@ -1,4 +1,4 @@
-com.jahezkw.academy
+com.omar.academy
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1311,7 +1311,6 @@ attr yearStyle
 attr yearTodayStyle
 bool abc_action_bar_embed_tabs
 bool abc_config_actionMenuItemAllCaps
-bool com_crashlytics_RequireBuildId
 bool enable_system_alarm_service_default
 bool enable_system_foreground_service_default
 bool enable_system_job_service_default
@@ -4107,7 +4106,6 @@ mipmap ic_launcher
 plurals exo_controls_fastforward_by_amount_description
 plurals exo_controls_rewind_by_amount_description
 plurals mtrl_badge_content_description
-raw firebase_common_keep
 raw license
 raw license_cpu_features
 raw license_gmp
@@ -4251,7 +4249,6 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
-string fcm_fallback_notification_channel_label
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -5711,6 +5708,5 @@ styleable ucrop_UCropView ucrop_aspect_ratio_x ucrop_aspect_ratio_y ucrop_circle
 xml filepaths
 xml flutter_image_picker_file_paths
 xml flutter_share_file_paths
-xml ga_ad_services_config
 xml image_share_filepaths
 xml provider_paths

@@ -4,7 +4,7 @@
             "outputFile": "com.jhomlala.better_player-merged_res-19:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/ad8bd768908a5e5047ee0c565a201ba5/transformed/media-1.4.3/res/values-v24/values-v24.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/ad8bd768908a5e5047ee0c565a201ba5/transformed/media-1.4.3/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -19,7 +19,7 @@
             "outputFile": "com.jhomlala.better_player-mergeReleaseResources-17:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/ad8bd768908a5e5047ee0c565a201ba5/transformed/media-1.4.3/res/values-v24/values-v24.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/ad8bd768908a5e5047ee0c565a201ba5/transformed/media-1.4.3/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

@@ -4,7 +4,7 @@
             "outputFile": "dev.fluttercommunity.plus.share.share_plus-merged_res-12:/values-pt/values-pt.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/82228292b0d1e8ceb875db9c90fb6bac/transformed/core-1.9.0/res/values-pt/values-pt.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/82228292b0d1e8ceb875db9c90fb6bac/transformed/core-1.9.0/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -19,7 +19,7 @@
             "outputFile": "dev.fluttercommunity.plus.share.share_plus-mergeReleaseResources-10:/values-pt/values-pt.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/82228292b0d1e8ceb875db9c90fb6bac/transformed/core-1.9.0/res/values-pt/values-pt.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/82228292b0d1e8ceb875db9c90fb6bac/transformed/core-1.9.0/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

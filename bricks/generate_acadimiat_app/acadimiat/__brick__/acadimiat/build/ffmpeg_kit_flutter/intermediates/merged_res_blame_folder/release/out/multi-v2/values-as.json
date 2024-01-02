@@ -4,7 +4,7 @@
             "outputFile": "com.arthenica.ffmpegkit.flutter.ffmpeg_kit_flutter-mergeReleaseResources-9:/values-as/values-as.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-as/values-as.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-as/values-as.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -19,7 +19,7 @@
             "outputFile": "com.arthenica.ffmpegkit.flutter.ffmpeg_kit_flutter-merged_res-11:/values-as/values-as.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-as/values-as.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/e7d448bedf457595d1da67f320b7b25d/transformed/core-1.6.0/res/values-as/values-as.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

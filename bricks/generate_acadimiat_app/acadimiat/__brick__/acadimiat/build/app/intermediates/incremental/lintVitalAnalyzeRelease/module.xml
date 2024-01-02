@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/android/app"
+    dir="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/android/app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.3.0"
-    buildFolder="/Users/omarnaser/Desktop/generate_acadimiat_app_by_mason/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app"
-    bootClassPath="/Users/omarnaser/Library/Android/sdk/platforms/android-34/android.jar:/Users/omarnaser/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    buildFolder="/Users/omernasser/Documents/GitHub/GAA/bricks/generate_acadimiat_app/acadimiat/__brick__/acadimiat/build/app"
+    bootClassPath="/Users/omernasser/Library/Android/sdk/platforms/android-34/android.jar:/Users/omernasser/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-34">
   <lintOptions

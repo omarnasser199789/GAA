@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.5" height="25.5" viewBox="0 0 25.5 25.5">
+  <g id="video" transform="translate(0.75 0.75)">
+    <rect id="bg" width="24" height="24" rx="12" fill="rgba(216,216,216,0.41)" stroke="#ec5252" stroke-linecap="round" stroke-width="1.5" stroke-dasharray="200 200"/>
+    <path id="Vector" d="M0,4.583V2.708C0,.287,1.711-.688,3.8.515l1.622.938,1.622.938c2.091,1.2,2.091,3.181,0,4.384l-1.622.938L3.8,8.651C1.711,9.854,0,8.866,0,6.458Z" transform="translate(8.068 7.418)" fill="#ec5252"/>
+  </g>
+</svg>

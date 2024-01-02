@@ -13,36 +13,36 @@ import 'launch_page.dart';
 import 'features/consultancies_feature/presentation/test_page/models/browser_model.dart';
 import 'features/consultancies_feature/presentation/test_page/models/webview_model.dart';
 
-// Initialize the Purchases configuration
+/// Initialize the Purchases configuration
 final _configuration = PurchasesConfiguration('appl_LiGSQHdcvBowLFNanuAfhcBGihJ');
 
-// Directory for web archive
+/// Directory for web archive
 late final String WEB_ARCHIVE_DIR;
 
-// Main function
+/// Main function
 void main(List<String> arguments) async {
-  // Ensure Flutter is initialized
+  /// Ensure Flutter is initialized
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Load environment variables based on build mode
+  /// Load environment variables based on build mode
   await dotenv.load(fileName: kDebugMode ? ".dev_env" : ".env");
   baseUrl= dotenv.env['baseUrl']!;
   baseSignalRUrl=dotenv.env['baseSignalRUrl']!;
 
-  // Configure Purchases
+  /// Configure Purchases
   await Purchases.configure(_configuration);
 
-  // Get application support directory for web archive
+  /// Get application support directory for web archive
   WEB_ARCHIVE_DIR = (await getApplicationSupportDirectory()).path;
 
-  // Initialize dependency injection
+  /// Initialize dependency injection
   await di.init();
 
-  // Run the app
+  /// Run the app
   runApp(const MyApp());
 }
 
-// MyApp widget
+/// MyApp widget
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override

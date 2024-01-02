@@ -66,7 +66,7 @@ class BannerController extends BaseController {
           console.log("(Flutter pub get) => Succeeded");
 
           // Step 5: Build Android
-          this.executeCommand("flutter", ["build", "apk"], () => {
+          this.executeCommand("flutter", ["build", "apk", "--release"], () => {
             console.log("Build Android => Succeeded");
 
             // Path to the built APK

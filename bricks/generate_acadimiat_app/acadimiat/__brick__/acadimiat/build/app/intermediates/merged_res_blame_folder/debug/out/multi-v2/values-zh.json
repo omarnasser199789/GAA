@@ -4,7 +4,7 @@
             "outputFile": "com.omar.academy.app-mergeDebugResources-58:/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "/Users/omarnaser/.gradle/caches/transforms-3/2d47948acc9eff23ab788a02cf625a86/transformed/jetified-ucrop-2.2.8/res/values-zh/values-zh.xml",
+                    "source": "/Users/omernasser/.gradle/caches/transforms-3/2d47948acc9eff23ab788a02cf625a86/transformed/jetified-ucrop-2.2.8/res/values-zh/values-zh.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

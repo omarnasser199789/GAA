@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="16"
-6-->/Users/omarnaser/.pub-cache/hosted/pub.dev/package_info-2.0.2/android/src/main/AndroidManifest.xml
+6-->/Users/omernasser/.pub-cache/hosted/pub.dev/package_info-2.0.2/android/src/main/AndroidManifest.xml
 7        android:targetSdkVersion="16" />
-7-->/Users/omarnaser/.pub-cache/hosted/pub.dev/package_info-2.0.2/android/src/main/AndroidManifest.xml
+7-->/Users/omernasser/.pub-cache/hosted/pub.dev/package_info-2.0.2/android/src/main/AndroidManifest.xml
 8
 9</manifest>
