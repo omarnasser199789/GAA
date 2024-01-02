@@ -9,20 +9,20 @@ import Photos
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-      
+
 //       self.view.snapshot()
 //      self.window.makeSecure()
-      
-      
+
+
 //      NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification, object: nil, queue: OperationQueue.main) { notification in
 //          print("Screenshot taken!")
 //      }
-      
-    
-   
-      
-      
-      
+
+
+
+
+
+
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
