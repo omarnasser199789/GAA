@@ -65,28 +65,38 @@ class BannerController extends BaseController {
         this.executeCommand("flutter", ["pub", "get"], () => {
           console.log("(Flutter pub get) => Succeeded");
 
-          // Step 5: Build Android
-          this.executeCommand("flutter", ["build", "apk", "--release"], () => {
-            console.log("Build Android => Succeeded");
+          // Step 5: Build App Icon
+          this.executeCommand("flutter", ["pub", "run", "flutter_launcher_icons:main"], () => {
+            console.log("Build App Icon => Succeeded");
 
-            // Path to the built APK
-            // const apkPath = path.resolve(currentDir, "build/app/outputs/flutter-apk/app-release.apk");
+            // Step 6: Build Android
+            this.executeCommand("flutter", ["build", "apk", "--release"], () => {
+              console.log("Build Android => Succeeded");
 
-            // Step 6: Navigate back to the original directory
-            process.chdir(originalDir);
-            console.log("Back to original directory:", originalDir);
+              // Path to the built APK
+              // const apkPath = path.resolve(currentDir, "build/app/outputs/flutter-apk/app-release.apk");
 
-            // Step 7: Delay for 10 seconds before removing the acadimiat directory
-            // setTimeout(() => {
-            //   fs.rmdirSync(acadimiatPath, { recursive: true });
-            //   console.log("Removed directory:", acadimiatPath);
-            //
-            // }, 10000); // 10 seconds delay
+              // Step 7: Navigate back to the original directory
+              process.chdir(originalDir);
+              console.log("Back to original directory:", originalDir);
 
-            // Step 8: Respond with success
-            response.json({ message: "Build successful" });
+              // Step 8: Delay for 10 seconds before removing the acadimiat directory
+              // setTimeout(() => {
+              //   fs.rmdirSync(acadimiatPath, { recursive: true });
+              //   console.log("Removed directory:", acadimiatPath);
+              //
+              // }, 10000); // 10 seconds delay
+
+              // Step 9: Respond with success
+              response.json({ message: "Build successful" });
+            }, (code) => {
+              console.error(`Build Android failed with exit code ${code}`);
+              next(new ServerException());
+            });
+
+
           }, (code) => {
-            console.error(`Build Android failed with exit code ${code}`);
+            console.error(`Build App Icon failed with exit code ${code}`);
             next(new ServerException());
           });
         }, (code) => {
