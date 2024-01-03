@@ -3,7 +3,7 @@ import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_cours
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/lessons_tab/case_stady_folder/case_stady_tab.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/discussions_tab.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/exams_tab.dart';
-import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/glossary_tab.dart';
+import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/glossary/glossary_tab.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/lessons_tab/lessons_tab.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/wiki_tab.dart';
 import 'package:flutter/foundation.dart';
