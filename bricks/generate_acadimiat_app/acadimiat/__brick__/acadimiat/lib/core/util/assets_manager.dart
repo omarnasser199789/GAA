@@ -15,6 +15,7 @@ class ImgAssets {
   static String pngCard = '$_pngPath/card.png';
   ///SVG
   static String error = '$_svgPath/error.svg';
+  static String add = '$_svgPath/add.svg';
   static String share = '$_svgPath/share.svg';
   static String search = '$_svgPath/search.svg';
   static String learning = '$_svgPath/learning.svg';
@@ -29,7 +30,10 @@ class ImgAssets {
   static String attachment = '$_svgPath/attachment.svg';
   static String expiry = '$_svgPath/expiry.svg';
   static String vuesaxLinearCalendar = '$_svgPath/vuesax-linear-calendar.svg';
+  static String profileIcon = '$_svgPath/profileIcon.svg';
+  static String articles = '$_svgPath/articles.svg';
 
 
 
+}
 }
