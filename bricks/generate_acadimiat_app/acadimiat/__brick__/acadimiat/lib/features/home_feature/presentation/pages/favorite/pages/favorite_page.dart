@@ -17,7 +17,7 @@ import '../../../../../../injection_container.dart';
 import '../widgets/item_list.dart';
 
 class FavoritePage extends StatefulWidget {
-  const   FavoritePage({Key? key}) : super(key: key);
+  const FavoritePage({super.key});
   @override
   State<FavoritePage> createState() => _FavoritePageState();
 }

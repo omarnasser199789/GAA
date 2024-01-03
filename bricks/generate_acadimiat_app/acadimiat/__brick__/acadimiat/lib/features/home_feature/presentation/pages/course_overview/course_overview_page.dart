@@ -9,7 +9,7 @@ import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'widgets/info_box.dart';
 
 class CourseOverviewPage extends StatefulWidget {
-  const CourseOverviewPage({Key? key,required this.cardByIdEntity}) : super(key: key);
+  const CourseOverviewPage({super.key,required this.cardByIdEntity});
   final CardByIdEntity cardByIdEntity;
   @override
   State<CourseOverviewPage> createState() => _CourseOverviewPageState();

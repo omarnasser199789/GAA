@@ -33,12 +33,7 @@ class TrainingPlanPage extends StatefulWidget {
 class _TrainingPlanPageState extends State<TrainingPlanPage> {
   List<MyPlansEntity> myPlans = [];
   List<Widget> widgetList=[];
-  // TextEditingController textController = TextEditingController();
-  // bool addBookMark = false;
-  // bool checkbox = false;
-  // bool dateSelected = false;
-  // DateTime fromDate=DateTime.now();
-  // DateTime toDate=DateTime.now();
+
   bool loading=false;
   @override
   Widget build(BuildContext context) {
@@ -369,6 +364,10 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                       child: Container(
                         height: 130,
                         width: double.infinity,
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                            borderRadius: BorderRadius.circular(15)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Scaffold(
@@ -443,10 +442,6 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                             ),
                           ),
                         ),
-                        margin: const EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                            borderRadius: BorderRadius.circular(15)),
                       ),
                     );
                   })),

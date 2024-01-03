@@ -119,24 +119,13 @@ import 'features/profile_feature/domain/use_cases/my_plans/get_my_plans_usecase.
 import 'features/profile_feature/domain/use_cases/my_plans/post_my_plan_usecase.dart';
 import 'features/profile_feature/domain/use_cases/update_my_avatar_usecase.dart';
 import 'features/profile_feature/presentation/bloc/profile_bloc.dart';
-import 'features/test_feature/data/data_sources/consultations_remot_data_source.dart';
-import 'features/test_feature/data/data_sources/post_api_service.dart';
-import 'features/test_feature/data/repositories/consultatios_repository_impl.dart';
-import 'features/test_feature/domain/repositories/profile_repository.dart';
-import 'features/test_feature/domain/use_cases/my_plans/get_post_by_id_usecase.dart';
-import 'features/test_feature/domain/use_cases/my_plans/post_my_plan_usecase.dart';
-import 'features/test_feature/presentation/bloc/profile_bloc.dart';
+
 
 final sl = GetIt.instance;
 
 Future<void> init() async {
   ///Bloc
-  sl.registerFactory(
-    () => TestBloc(
-        concreteGetTestUseCase: sl(),
-        concreteGetPostByIdUseCase: sl(),
-    ),
-  );
+
 
   sl.registerFactory(
     () => AuthenticateBloc(
@@ -260,8 +249,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => CheckPurchaseUseCase(repository: sl()));
   sl.registerLazySingleton(() => ResetPasswordUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetBannersUseCase(repository: sl()));
-  sl.registerLazySingleton(() => GetPostByIdUseCase(repository: sl()));
-  sl.registerLazySingleton(() => GetTestUseCase(repository: sl()));
+
   sl.registerLazySingleton(() => ReserveMeetingUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetRoomTimezoneUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetRoomHoursUseCase(repository: sl()));
@@ -356,13 +344,6 @@ Future<void> init() async {
     ),
   );
 
-  sl.registerLazySingleton<TestRepository>(
-    () => TestRepositoryImpl(
-        // postApiService: sl()
-        testRemoteDataSource: sl()
-    ),
-  );
-
 
   sl.registerLazySingleton<AuthenticateRepository>(
     () => AuthenticateRepositoryImpl(authenticateRemoteDataSource: sl()),
@@ -396,11 +377,6 @@ Future<void> init() async {
 
   ///Data sources
 
-
-  sl.registerLazySingleton<TestRemoteDataSource>(
-    () => TestRemoteDataSourceImpl(
-    ),
-  );
 
   sl.registerLazySingleton<MyCartRemoteDataSource>(
     () => MyCartRemoteDataSourceImpl(
@@ -515,7 +491,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => database);
   sl.registerLazySingleton(() => db);
   sl.registerLazySingleton(() => http.Client());
-  sl.registerLazySingleton(() => PostApiService);
+
 
   /**
    * ! Deprecated

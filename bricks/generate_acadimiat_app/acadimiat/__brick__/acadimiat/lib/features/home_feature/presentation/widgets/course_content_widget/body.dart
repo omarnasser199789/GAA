@@ -1,27 +1,21 @@
 import 'package:acadmiat/Theme/style.dart';
 import 'package:flutter/material.dart';
-import '../../../../../Locale/locale.dart';
 import '../../../../../core/functions.dart';
+import '../../../../../core/util/assets_manager.dart';
 import '../../../data/models/card_by_id_model.dart'as m;
-import '../../../domain/entities/card_by_id_entity.dart' ;
 import 'package:flutter_svg/flutter_svg.dart';
-import 'item.dart';
 
 class Body extends StatefulWidget {
-  Body({Key? key,required this.materials}) : super(key: key);
-  List<m.Material> materials;
+  const Body({super.key,required this.materials});
+  final List<m.Material> materials;
+
   @override
   State<Body> createState() => _BodyState();
 }
 
 class _BodyState extends State<Body> {
-
   @override
   Widget build(BuildContext context) {
-
-
-
-
     return Container(
       height:  62 * widget.materials.length / 1,
       decoration: BoxDecoration(
@@ -47,7 +41,7 @@ class _BodyState extends State<Body> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            lessonsNumber(index)+":  ",
+                            "${lessonsNumber(index)}:  ",
                             style: blackBoldTextStyle(context: context,
                                 fontSize: 11, color:   hintTextColor),
                           ),
@@ -58,7 +52,6 @@ class _BodyState extends State<Body> {
 
                         ],
                       ),
-
                       if(widget.materials[index].materialContents.isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.only(top:5),
@@ -83,13 +76,10 @@ class _BodyState extends State<Body> {
                               width: 17,
                               height: 17,
                               child: SvgPicture.asset(
-                                "assets/svgs/clock.svg",
+                                  ImgAssets.clock,
                               ),
                             ),
                           ],),
-
-
-
                         ),
                     ],
                   ),

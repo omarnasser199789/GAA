@@ -9,14 +9,13 @@ import '../../../../core/functions.dart';
 import '../../../../core/globals.dart';
 import '../../../../core/widgets/app_bar_widget.dart';
 import '../../../../injection_container.dart';
-import '../../domain/entities/user_info_entity.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiffy/jiffy.dart';
 import '../bloc/profile_event.dart';
 
 
 class MyRequestsPage extends StatefulWidget {
-  const MyRequestsPage({Key? key}) : super(key: key);
+  const MyRequestsPage({super.key});
   @override
   State<MyRequestsPage> createState() => _MyRequestsPageState();
 }
@@ -91,10 +90,6 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
                                         ],
                                       ),
                                     ),
-
-
-
-
                                   ],
                                 ),
                               ),
@@ -105,12 +100,9 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
               ),
             );
           }
-          return WaitingWidget();
+          return const WaitingWidget();
 
         }));
-
-
-
 
   }
 }

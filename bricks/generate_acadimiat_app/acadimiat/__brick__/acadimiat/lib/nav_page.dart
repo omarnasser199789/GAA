@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:acadmiat/core/globals.dart';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:acadmiat/features/home_feature/presentation/pages/home/pages/home_page.dart';
-import 'package:acadmiat/features/profile_feature/presentation/pages/profile_page.dart';
+import 'package:acadmiat/features/profile_feature/presentation/pages/profile/profile_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

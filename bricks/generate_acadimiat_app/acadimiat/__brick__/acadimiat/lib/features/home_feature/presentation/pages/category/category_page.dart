@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 import '../home/widgets/training_courses_widget.dart';
 
 class CategoryPage extends StatefulWidget {
-  const CategoryPage({Key? key,required this.index,required this.categoryName,required this.id,required this.colors}) : super(key: key);
+  const CategoryPage({super.key,required this.index,required this.categoryName,required this.id,required this.colors});
   final int index;
   final List<Color> colors;
   final String categoryName;
@@ -32,7 +32,6 @@ class _CategoryPageState extends State<CategoryPage> {
             child: SizedBox(
               width: 30,
               height: 30,
-              // color: Colors.red,
               child: SvgPicture.asset(
                 ImgAssets.share,
                 color:iconsColor,

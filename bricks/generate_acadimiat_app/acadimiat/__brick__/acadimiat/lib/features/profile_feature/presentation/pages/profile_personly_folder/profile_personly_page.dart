@@ -5,15 +5,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../Locale/locale.dart';
 import '../../../../../core/globals.dart';
 import '../../../../../core/widgets/app_bar_widget.dart';
-import '../../../../../core/widgets/cached_net_work_image.dart';
-import '../../../../../core/widgets/custom_botton.dart';
-import '../../../../../core/widgets/custom_text_field.dart';
 import '../../../domain/entities/user_info_entity.dart';
 import 'creare_new_password_page.dart';
-import 'delete_account_page.dart';
+import 'delete_account/delete_account_page.dart';
 
 class ProfilePersonlyPage extends StatefulWidget {
-  const ProfilePersonlyPage({Key? key,required this.userInfoEntity}) : super(key: key);
+  const ProfilePersonlyPage({super.key,required this.userInfoEntity});
   final UserInfoEntity userInfoEntity;
   @override
   State<ProfilePersonlyPage> createState() => _ProfilePersonlyPageState();
@@ -22,9 +19,7 @@ class ProfilePersonlyPage extends StatefulWidget {
 class _ProfilePersonlyPageState extends State<ProfilePersonlyPage> {
   @override
   Widget build(BuildContext context) {
-
     var locale = AppLocalizations.of(context)!;
-    Size size =MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Theme.of(context).cardColor,
       appBar:appBarWidget("الملف الشخصي",context,true,null,null),
@@ -151,14 +146,11 @@ class _ProfilePersonlyPageState extends State<ProfilePersonlyPage> {
                                 "assets/svgs/deleteIcon.svg",
                                 color: iconsColor,
                               ),
-                              SizedBox(width: 7,),
+                              const SizedBox(width: 7,),
                               Text("حذف الحساب",style: blackBoldTextStyle(fontSize: 13, context: context),),
                             ],
                           ),
-
-
                           Text("حذف الحساب",style: blackBoldTextStyle(fontSize: 12, context: context,color: Theme.of(context).primaryColor),),
-
                         ],
                       ),
                     ),
@@ -175,7 +167,7 @@ class _ProfilePersonlyPageState extends State<ProfilePersonlyPage> {
 
 
 class TextWidget extends StatelessWidget {
-  const TextWidget({Key? key,required this.title,required this.text}) : super(key: key);
+  const TextWidget({super.key,required this.title,required this.text});
   final String title;
   final String text;
 

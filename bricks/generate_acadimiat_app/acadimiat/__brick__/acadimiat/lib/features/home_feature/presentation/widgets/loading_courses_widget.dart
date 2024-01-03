@@ -4,10 +4,8 @@ import '../../../../core/widgets/cached_net_work_image.dart';
 import 'package:shimmer/shimmer.dart';
 class LoadingCoursesWidget extends StatelessWidget {
   const LoadingCoursesWidget(
-      {Key? key, required this.title,})
-      : super(key: key);
+      {super.key, required this.title,});
   final String title;
-
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +49,12 @@ class LoadingCoursesWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              width: 280, //+zoomRatio*14,
-                              // width: ,
+                            const SizedBox(
+                              width: 280,
                               height: 130,
                               child: Stack(
                                 alignment: Alignment.bottomLeft,
-                                children: const [
+                                children: [
                                   CachedNetWorkImage(
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(6)),
@@ -71,7 +68,6 @@ class LoadingCoursesWidget extends StatelessWidget {
                                   top: 0, left: 7, right: 7),
                               child: Text(
                                 "************",
-                                // locale.howToWriteAndImplementASalesPlan!,
                                 maxLines: 2,
                                 style: blackBoldTextStyle(
                                     context: context, fontSize: 14),

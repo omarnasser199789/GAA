@@ -1,25 +1,20 @@
-
-
 import 'package:acadmiat/core/globals.dart';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:flutter/foundation.dart';
-import '../../../../../../core/widgets/app_bar_widget.dart';
 import 'package:acadmiat/core/widgets/custom_botton.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/functions.dart';
-import '../../../../../unused_pages/add_new_card_page.dart';
-
 import '../../../../../core/widgets/custom_text_field.dart';
 import '../../../../../injection_container.dart';
 import '../../bloc/profile_bloc.dart';
 import '../../bloc/profile_event.dart';
 import '../../bloc/profile_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 class CreateNewPasswordPage extends StatefulWidget {
-  const CreateNewPasswordPage({Key? key}) : super(key: key);
+  const CreateNewPasswordPage({super.key});
 
   @override
   State<CreateNewPasswordPage> createState() => _CreateNewPasswordPageState();
@@ -101,7 +96,7 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                                   Column(
                                     children: [
                                       Text("a",style: blackBoldTextStyle(context: context,fontSize: 17),),
-                                      SizedBox(height: 15,),
+                                      const SizedBox(height: 15,),
                                       Text(locale.smallLetters!,style: blackBoldTextStyle(context: context,fontSize: 13),),
 
                                     ],
@@ -111,7 +106,7 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                                   Column(
                                     children: [
                                       Text("123",style: blackBoldTextStyle(context: context,fontSize: 17,color: Theme.of(context).primaryColor),),
-                                      SizedBox(height: 15,),
+                                      const SizedBox(height: 15,),
                                       Text(locale.numbers!,style: blackBoldTextStyle(context: context,fontSize: 13,color: Theme.of(context).primaryColor),),
 
                                     ],
@@ -121,22 +116,16 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                                   Column(
                                     children: [
                                       Text("#\$&",style: blackBoldTextStyle(context: context,fontSize: 17),),
-                                      SizedBox(height: 15,),
+                                      const SizedBox(height: 15,),
                                       Text("رموز",style: blackBoldTextStyle(context: context,fontSize: 13),),
 
                                     ],
                                   ),
-
-
-
-
                                 ],),
                             ),
 
-
-
                             Padding(
-                              padding:  EdgeInsets.only(top: 35),
+                              padding:  const EdgeInsets.only(top: 35),
                               child: CustomTextField(
                                 controller: currentPasswordController,
                                 title: "كلمة السر الحالية",
@@ -147,7 +136,7 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                             ),
 
                             Padding(
-                              padding:  EdgeInsets.only(top: 15),
+                              padding:  const EdgeInsets.only(top: 15),
                               child: CustomTextField(
                                 controller: newPasswordController,
                                 textInputAction: TextInputAction.next,

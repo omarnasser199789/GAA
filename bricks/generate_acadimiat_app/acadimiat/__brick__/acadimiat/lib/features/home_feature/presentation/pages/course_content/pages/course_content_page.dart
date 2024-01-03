@@ -29,8 +29,7 @@ import '../../../widgets/course_content_widget/course_content.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 class CourseContentPage extends StatefulWidget {
-  const CourseContentPage({Key? key, required this.cardId, required this.productType, required this.courseCover})
-      : super(key: key);
+  const CourseContentPage({super.key, required this.cardId, required this.productType, required this.courseCover});
 
   final int cardId;
   final int productType;
@@ -46,7 +45,6 @@ class _CourseContentPageState extends State<CourseContentPage> {
   @override
   void dispose() {
     controller.dispose();
-    // _betterPlayerController.pause();
     _betterPlayerController.dispose();
     super.dispose();
   }
@@ -378,7 +376,6 @@ class _CourseContentPageState extends State<CourseContentPage> {
                               }catch(e){
                                 if (kDebugMode) {
                                   print("Error:$e");
-                                  // showMessage(message: "هذا المنتج غير متاح الان", context: context,bgColor: Colors.red);
                                 }
                               }
                             }

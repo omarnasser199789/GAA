@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../../../../Theme/style.dart';
-
 import '../../../../core/widgets/app_bar_widget.dart';
 
 class PrivacyPolicyPage extends StatefulWidget {
-  const PrivacyPolicyPage({Key? key}) : super(key: key);
+  const PrivacyPolicyPage({super.key});
 
   @override
   State<PrivacyPolicyPage> createState() => _PrivacyPolicyPageState();
@@ -18,10 +16,8 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
       appBar:appBarWidget("سياسة الخصوصية",context,true,null,null),
       body: Padding(
         padding: const EdgeInsets.only(left: 17,right: 17,top: 40),
-        child: Container(
-          child:  Text("تحدد هذه الشروط والأحكام ضوابط استخدام موقع emasteryacademy.com ، حيث يعد استخدام هذا الموقع قبولاً تاماً بكامل هذه الشروط والأحكام، فإن لم يكن المستخدم للموقع موافقاً عليها أو على أي جزء منها فيجب عليه الامتناع عن استخدام موقعنا الالكتروني."
-            ,style:blackBoldTextStyle(context: context,fontSize: 11,height: 2) ,),
-        ),
+        child: Text("تحدد هذه الشروط والأحكام ضوابط استخدام موقع emasteryacademy.com ، حيث يعد استخدام هذا الموقع قبولاً تاماً بكامل هذه الشروط والأحكام، فإن لم يكن المستخدم للموقع موافقاً عليها أو على أي جزء منها فيجب عليه الامتناع عن استخدام موقعنا الالكتروني."
+          ,style:blackBoldTextStyle(context: context,fontSize: 11,height: 2) ,),
       ),
     );
   }

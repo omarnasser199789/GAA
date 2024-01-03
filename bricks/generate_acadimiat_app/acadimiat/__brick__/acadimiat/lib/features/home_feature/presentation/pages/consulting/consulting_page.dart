@@ -3,7 +3,6 @@ import 'package:acadmiat/features/home_feature/presentation/pages/search_page.da
 import 'package:flutter/material.dart';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:flutter/foundation.dart';
-import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/util/assets_manager.dart';
 import '../../../../../core/widgets/waiting_widget.dart';
@@ -17,7 +16,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ConsultingPage extends StatefulWidget {
-  ConsultingPage({Key? key,required this.consultanciesEntity}) : super(key: key);
+  ConsultingPage({super.key,required this.consultanciesEntity});
    List<ConsultanciesEntity> consultanciesEntity;
 
   @override
@@ -29,9 +28,6 @@ class _ConsultingPageState extends State<ConsultingPage> {
 
   @override
   Widget build(BuildContext context) {
-    var locale = AppLocalizations.of(context)!;
-
-
 
     return BlocProvider(
         create: (BuildContext context) => sl<HomeBloc>(),

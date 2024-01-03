@@ -17,8 +17,7 @@ import '../../bloc/profile_state.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
 class EditPersonalInfoPage extends StatefulWidget {
-  const EditPersonalInfoPage({Key? key, required this.userInfoEntity})
-      : super(key: key);
+  const EditPersonalInfoPage({super.key, required this.userInfoEntity});
   final UserInfoEntity userInfoEntity;
   @override
   State<EditPersonalInfoPage> createState() => _EditPersonalInfoPageState();
@@ -32,10 +31,9 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
 
   @override
   void initState() {
+    super.initState();
     emailController.text = widget.userInfoEntity.email;
     nameController.text = widget.userInfoEntity.name;
-    // phoneNumberController.text = widget.userInfoEntity.phone;
-
     if (seperatePhoneAndDialCode(widget.userInfoEntity.phone).length == 2) {
       countryCodePicker =
           seperatePhoneAndDialCode(widget.userInfoEntity.phone)[0];
@@ -49,7 +47,6 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
 
   List<String> seperatePhoneAndDialCode(String phoneWithDialCode) {
     Map<String, String> foundedCountry = {};
-
     for (var country in Countries.allCountries) {
       String dialCode = country["dial_code"].toString();
 
@@ -74,11 +71,8 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    // countryCodePicker="+964";
-
     var locale = AppLocalizations.of(context)!;
     Size size = MediaQuery.of(context).size;
-
     return BlocProvider(
         create: (BuildContext context) => sl<ProfileBloc>(),
         child:
@@ -111,17 +105,7 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                 locale.editPersonalInformation!,
                 context,
                 true,
-                [
-                  // Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: SizedBox(
-                  //       width: 40,
-                  //       height: 40,
-                  //       child: CachedNetWorkImage(
-                  //         borderRadius: BorderRadius.circular(200),
-                  //       )),
-                  // ),
-                ],
+                [],
                 null),
             body: GestureDetector(
               onTap: () {
@@ -135,13 +119,7 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                     SingleChildScrollView(
                       child: Column(
                         children: [
-                          // CustomTextField(
-                          //   title: locale.email!,
-                          //   maxLines: 1,
-                          //   hint: widget.userInfoEntity.email,
-                          //   onTap: () {},
-                          //   controller: emailController,
-                          // ),
+
                           Padding(
                             padding: const EdgeInsets.only(top: 20),
                             child: CustomTextField(
@@ -185,21 +163,14 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                                         cardColor: Colors.red,
                                         canvasColor: Colors.red,
                                         textTheme: isLight()
-                                            ? Typography(
-                                                    platform:
-                                                        TargetPlatform.iOS)
-                                                .black
-                                            : Typography(
-                                                    platform:
-                                                        TargetPlatform.iOS)
-                                                .white,
-                                        cardTheme: CardTheme(color: Colors.red),
+                                            ? Typography(platform:TargetPlatform.iOS).black
+                                            : Typography(platform: TargetPlatform.iOS).white,
+                                        cardTheme: const CardTheme(color: Colors.red),
                                       ),
                                       child: CountryCodePicker(
                                         onChanged: (value) {
                                           setState(() {
-                                            countryCodePicker =
-                                                value.toString();
+                                            countryCodePicker = value.toString();
                                           });
                                         },
                                         textStyle: blackBoldTextStyle(
@@ -215,25 +186,12 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                                         ),
                                         searchDecoration: InputDecoration(
                                           border: InputBorder.none,
-                                          // hintText: widget.hint,
-
                                           hintStyle: blackBoldTextStyle(
                                               context: context,
                                               fontSize: 12,
                                               color: hintTextColor),
                                           filled: true,
                                           fillColor: textFormFieldFillColor,
-
-                                          // suffixIcon: (widget.isPassword!=null&&widget.isPassword==true)? GestureDetector(
-                                          //     onTap: (){
-                                          //
-                                          //       setState((){
-                                          //         widget.isPassword=false;
-                                          //       });
-                                          //
-                                          //     },
-                                          //     child: const Icon(Icons.remove_red_eye_outlined,color: Colors.grey,)):null,
-
                                           prefixIcon: Icon(
                                             Icons.search,
                                             color: hintTextColor,
@@ -252,12 +210,11 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                                             borderSide: BorderSide(
                                                 color: Theme.of(context)
                                                     .cardColor),
-                                            borderRadius:
-                                                BorderRadius.circular(6),
+                                            borderRadius: BorderRadius.circular(6),
                                           ),
                                         ),
                                         initialSelection: countryCodePicker,
-                                        favorite: [
+                                        favorite: const [
                                           "+963",
                                           "+971",
                                           "+20",
@@ -286,7 +243,7 @@ class _EditPersonalInfoPageState extends State<EditPersonalInfoPage> {
                       alignment: Alignment.bottomCenter,
                       child: SafeArea(
                         child: Padding(
-                          padding: EdgeInsets.only(bottom: bottomPadding),
+                          padding: const EdgeInsets.only(bottom: bottomPadding),
                           child: Hero(
                             tag: "otpBtn",
                             child: CustomButton(

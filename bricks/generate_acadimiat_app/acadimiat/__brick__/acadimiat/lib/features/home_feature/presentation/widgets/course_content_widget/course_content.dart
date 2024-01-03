@@ -1,13 +1,14 @@
 import 'package:acadmiat/Theme/style.dart';
 import 'package:flutter/material.dart';
 import '../../../../../Locale/locale.dart';
+import '../../../../../core/util/assets_manager.dart';
 import '../../../domain/entities/card_by_id_entity.dart' ;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'body.dart';
 import 'item.dart';
 
 class CourseContentWidget extends StatefulWidget {
-  const CourseContentWidget({Key? key, required this.cardByIdEntity}) : super(key: key);
+  const CourseContentWidget({super.key, required this.cardByIdEntity});
  final CardByIdEntity cardByIdEntity;
   @override
   State<CourseContentWidget> createState() => _CourseContentState();
@@ -44,7 +45,7 @@ class _CourseContentState extends State<CourseContentWidget> {
                         width: 17,
                         height: 17,
                         child: SvgPicture.asset(
-                          "assets/svgs/lessons.svg",
+                            ImgAssets.lessons,
                         ),
                       ),
                       SizedBox(width: size.width*0.01),
@@ -57,7 +58,7 @@ class _CourseContentState extends State<CourseContentWidget> {
                         width: 17,
                         height: 17,
                         child: SvgPicture.asset(
-                          "assets/svgs/clock.svg",
+                            ImgAssets.clock,
                         ),
                       ),
                       SizedBox(width: size.width*0.01),

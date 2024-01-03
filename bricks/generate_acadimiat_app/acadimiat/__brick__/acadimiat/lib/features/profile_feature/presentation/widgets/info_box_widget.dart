@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../Theme/style.dart';
 class InfoBoxType2 extends StatefulWidget {
-  const InfoBoxType2({Key? key,required this.title,required this.text,required this.svg,required this.onTap}) : super(key: key);
+  const InfoBoxType2({super.key,required this.title,required this.text,required this.svg,required this.onTap});
 
   final String title;
   final String text;
@@ -26,13 +26,10 @@ class _InfoBoxType2State extends State<InfoBoxType2> {
         height: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          // color: Colors.red,
           color:  Theme.of(context).primaryColor.withOpacity(0.1),
         ),
 
-
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
@@ -41,10 +38,7 @@ class _InfoBoxType2State extends State<InfoBoxType2> {
                 alignment: Alignment.center,
                 height: 32,
                 width: 32,
-                decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(200)
-                ),
+                decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(200)),
                 child: Padding(
                   padding: const EdgeInsets.all(4),
                   child: SvgPicture.asset(

@@ -7,7 +7,7 @@ import '../../../../../../core/globals.dart';
 import '../../../../../../core/widgets/cached_net_work_image.dart';
 
 class ItemList extends StatefulWidget {
-  ItemList({Key? key,this.enableBroadcast,this.courseId,this.total,required this.onTap, this.typeCourse, this.imageUrl,this.percent,this.header,this.trainer})
+  const ItemList({Key? key,this.enableBroadcast,this.courseId,this.total,required this.onTap, this.typeCourse, this.imageUrl,this.percent,this.header,this.trainer})
       : super(key: key);
 
   final Function () onTap;
@@ -29,7 +29,6 @@ class _ItemListState extends State<ItemList> {
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
     var locale = AppLocalizations.of(context)!;
 
 
@@ -39,7 +38,6 @@ class _ItemListState extends State<ItemList> {
         onTap: widget.onTap,
         child: Container(
           width: 200,
-
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(8),

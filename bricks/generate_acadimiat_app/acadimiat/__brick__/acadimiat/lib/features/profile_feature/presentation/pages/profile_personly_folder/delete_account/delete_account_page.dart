@@ -1,17 +1,16 @@
 import 'package:acadmiat/core/globals.dart';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
-import '../../../../../../core/widgets/app_bar_widget.dart';
 import 'package:acadmiat/core/widgets/custom_botton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../../../Locale/locale.dart';
+import '../../../../../../Theme/style.dart';
+import '../../../../../../core/util/assets_manager.dart';
+import '../../../../../../core/widgets/custom_text_field.dart';
+import 'Info.dart';
 
-import '../../../../../Locale/locale.dart';
-import '../../../../../Theme/style.dart';
-import '../../../../../unused_pages/add_new_card_page.dart';
-  
-import '../../../../../core/widgets/custom_text_field.dart';
 class DeleteAccountPage extends StatefulWidget {
-  const DeleteAccountPage({Key? key}) : super(key: key);
+  const DeleteAccountPage({super.key});
 
   @override
   State<DeleteAccountPage> createState() => _DeleteAccountPageState();
@@ -36,12 +35,10 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                 children: [
 
                   Container(
-
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(12)
-
                     ),
 
                     child: Padding(
@@ -54,7 +51,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                               children: [
 
                                 SvgPicture.asset(
-                                  "assets/svgs/feather-alert-triangle.svg",
+                                  ImgAssets.featherAlertTriangle,
                                 ),
                                 const SizedBox(width: 13,),
                                 Text(locale.whenTheAccountIsDeletedItWillBe!,style: blackBoldTextStyle(context: context,fontSize: 14,color: Theme.of(context).primaryColor),),
@@ -62,11 +59,11 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                             ),
                           ),
                            Padding(
-                            padding: EdgeInsets.only(top: 5  ),
-                            child: Info(svg:"assets/svgs/warning.svg" ,text:locale.logoutAllDevices!,)
+                            padding: const EdgeInsets.only(top: 5  ),
+                            child: Info(svg:ImgAssets.warning ,text:locale.logoutAllDevices!,)
                           ),
-                           Info(svg:"assets/svgs/warning.svg" ,text: locale.deleteAllAccountData!,),
-                           Info(svg:"assets/svgs/warning.svg" ,text: locale.theAccountCannotBeRestoredAgain!,),
+                           Info(svg:ImgAssets.warning ,text: locale.deleteAllAccountData!,),
+                           Info(svg:ImgAssets.warning ,text: locale.theAccountCannotBeRestoredAgain!,),
 
 
                         ],
@@ -181,16 +178,13 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                             Row(
                               children: [
                                 Radio(
-
                                   fillColor: MaterialStateColor.resolveWith((states) => activeColor),
                                   value: 4,
-
                                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                   groupValue: val,
                                   onChanged: (value) {
                                     setState(() {
                                       val = value;
-
                                     });
                                   },
                                   activeColor: Theme.of(context).primaryColor,
@@ -198,7 +192,6 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                                 Text(locale.other!,style: blackBoldTextStyle(context: context,fontSize: 13),)
                               ],
                             ),
-
                             if(val==4)
                             Padding(
                               padding: const EdgeInsets.only(bottom: 17),
@@ -219,7 +212,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                 alignment: Alignment.bottomCenter,
                 child: SafeArea(
                   child: Padding(
-                    padding:  EdgeInsets.only(bottom: bottomPadding),
+                    padding:  const EdgeInsets.only(bottom: bottomPadding),
                     child: CustomButton(title: locale.confirmAccountDeletion!, onTap: (){
 
                     }),
@@ -237,27 +230,5 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
 
 }
 
-class Info extends StatelessWidget {
-  const Info({Key? key,required this.svg, required this.text}) : super(key: key);
-
-  final String svg;
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 13),
-      child: Row(
-        children: [
-
-          SvgPicture.asset(
-            svg,
-          ),
-          SizedBox(width: 13,),
-          Text(text,style: blackBoldTextStyle(context: context,fontSize: 12),),
-        ],
-      ),
-    );
-  }
-}
 
 

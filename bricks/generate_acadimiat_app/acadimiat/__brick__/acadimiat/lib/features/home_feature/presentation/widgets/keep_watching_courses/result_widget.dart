@@ -1,5 +1,4 @@
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../Locale/locale.dart';
 import '../../../../../../Theme/style.dart';
@@ -10,8 +9,8 @@ import '../../../../my_courses_feature/presentation/pages/my_course/course_page/
 import 'item_list.dart';
 
 class ResultWidget extends StatefulWidget {
-  ResultWidget({Key? key,required this.myCoursesEntity}) : super(key: key);
-  List<MyCoursesEntity> myCoursesEntity;
+  const ResultWidget({super.key,required this.myCoursesEntity});
+ final List<MyCoursesEntity> myCoursesEntity;
 
   @override
   State<ResultWidget> createState() => _ResultWidgetState();
@@ -75,9 +74,6 @@ class _ResultWidgetState extends State<ResultWidget> {
           child: Text("مشاهدة المزيد",style: blackBoldTextStyle(fontSize: 15, context: context,color: Theme.of(context).primaryColor),)),
     ));
 
-
-
-
     return Padding(
       padding: const EdgeInsets.only(right: 17),
       child: Column(
@@ -89,7 +85,6 @@ class _ResultWidgetState extends State<ResultWidget> {
             child: Text("تابع مشاهدة دوراتك",style: blackBoldTextStyle(fontSize: 15, context: context),),
           ),
 
-
           SizedBox(
             height: 200,
             width: size.width,
@@ -100,7 +95,6 @@ class _ResultWidgetState extends State<ResultWidget> {
               ),
             ),
           ),
-
         ],
       ),
     );

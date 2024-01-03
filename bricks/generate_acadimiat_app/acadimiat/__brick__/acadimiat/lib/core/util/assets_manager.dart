@@ -43,6 +43,28 @@ class ImgAssets {
   static String deleteIcon = '$_svgPath/deleteIcon.svg';
   static String edit = '$_svgPath/edit.svg';
   static String notes = '$_svgPath/notes.svg';
+  static String featherAlertTriangle = '$_svgPath/feather-alert-triangle.svg';
+  static String warning = '$_svgPath/warning.svg';
+  static String filesEmptyState = '$_svgPath/files_empty_state.svg';
+  static String sms = '$_svgPath/sms.svg';
+  static String call = '$_svgPath/call.svg';
+  static String note_ = '$_svgPath/note_.svg';
+  static String notesEmpty = '$_svgPath/notes_empty.svg';
+  static String camera = '$_svgPath/camera.svg';
+  static String file = '$_svgPath/file.svg';
+  static String noteblock = '$_svgPath/noteblock.svg';
+  static String planIcon = '$_svgPath/plan_icon.svg';
+  static String medalStar = '$_svgPath/medal-star.svg';
+  static String user = '$_svgPath/user.svg';
+  static String setting = '$_svgPath/setting.svg';
+  static String info = '$_svgPath/info.svg';
+  static String iconFacebook = '$_svgPath/Icon-facebook.svg';
+  static String iconYoutube = '$_svgPath/Icon-youtube.svg';
+  static String iconTwitter = '$_svgPath/Icon-twitter.svg';
+  static String iconLinkedin = '$_svgPath/Icon-linkedin.svg';
+  static String iconInstagram = '$_svgPath/Icon-instagram.svg';
+
+
 
 
 

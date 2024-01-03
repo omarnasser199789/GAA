@@ -11,9 +11,7 @@ import '../../../../core/globals.dart';
 import '../../../../core/widgets/app_bar_widget.dart';
 import '../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../core/widgets/empty_state_widget.dart';
-import '../../../../core/widgets/waiting_widget.dart';
 import '../../../../injection_container.dart';
-import '../../../../nav_page.dart';
 import '../../domain/entities/my_certificates_entity.dart';
 import '../../domain/use_cases/my_certificate_folder/export_certificate_to_pdf_usecase.dart';
 import '../bloc/bloc.dart';
@@ -145,7 +143,7 @@ class _CertificatesPageState extends State<CertificatesPage> {
                     expandedCard: Container(
                       decoration: BoxDecoration(
                           color: Theme.of(context).cardColor,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(10),
                               topLeft: Radius.circular(10))),
                       child: Padding(
@@ -182,17 +180,6 @@ class _CertificatesPageState extends State<CertificatesPage> {
                                           padding: 7,
                                           onTap: () async {
 
-                                            TextEditingController
-                                            titleController =
-                                            TextEditingController();
-                                            TextEditingController
-                                            definitionController =
-                                            TextEditingController();
-                                            TextEditingController
-                                            keywordsController =
-                                            TextEditingController();
-                                            bool definitionEmpty = false;
-                                            bool titleEmpty = false;
                                             final result = await showModalBottomSheet(
                                                 context: context,
                                                 backgroundColor:
@@ -204,46 +191,29 @@ class _CertificatesPageState extends State<CertificatesPage> {
                                                         context)
                                                         .scaffoldBackgroundColor,
                                                     borderRadius:
-                                                    const BorderRadius
-                                                        .only(
-                                                        topLeft: Radius
-                                                            .circular(
-                                                            10),
-                                                        topRight: Radius
-                                                            .circular(
-                                                            10)),
+                                                    const BorderRadius.only(
+                                                        topLeft: Radius.circular(10),
+                                                        topRight: Radius.circular(10)),
                                                     child: StatefulBuilder(
                                                         builder: (BuildContext
                                                         context, StateSetter mystate) {
                                                           return Padding(
                                                             padding:
-                                                            const EdgeInsets
-                                                                .only(
-                                                                left: 17,
-                                                                right:
-                                                                17),
+                                                            const EdgeInsets.only(left: 17, right: 17),
                                                             child: Column(
                                                               mainAxisSize:
                                                               MainAxisSize
                                                                   .min,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsets
-                                                                      .only(
-                                                                      top:
-                                                                      15),
+                                                                  padding: const EdgeInsets.only(top: 15),
                                                                   child: Row(
                                                                     mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
+                                                                    MainAxisAlignment.center,
                                                                     children: [
-                                                                      Container(
-                                                                        width:
-                                                                        50,
-                                                                        height:
-                                                                        3,
-                                                                        color:
-                                                                        Theme.of(context).canvasColor,
+                                                                      Container(width: 50,
+                                                                        height: 3,
+                                                                        color: Theme.of(context).canvasColor,
                                                                       )
                                                                     ],
                                                                   ),
@@ -251,17 +221,13 @@ class _CertificatesPageState extends State<CertificatesPage> {
                                                                 Padding(
                                                                   padding: const EdgeInsets
                                                                       .only(
-                                                                      bottom:
-                                                                      17,
-                                                                      top:
-                                                                      33),
+                                                                      bottom: 17,
+                                                                      top: 33),
                                                                   child: Text(
                                                                     "إضافة الشهادة على حساب لينكد ان",
                                                                     style: blackBoldTextStyle(
-                                                                        fontSize:
-                                                                        13,
-                                                                        context:
-                                                                        context),
+                                                                        fontSize: 13,
+                                                                        context: context),
                                                                   ),
                                                                 ),
                                                                 TextToCopy(
@@ -328,11 +294,7 @@ class _CertificatesPageState extends State<CertificatesPage> {
                                                                       },
                                                                       borderRadius:
                                                                       5,
-                                                                      color: Color.fromRGBO(
-                                                                          10,
-                                                                          102,
-                                                                          194,
-                                                                          1),
+                                                                      color: const Color.fromRGBO(10, 102, 194, 1),
                                                                     ),
                                                                   ),
                                                                 )
@@ -361,32 +323,6 @@ class _CertificatesPageState extends State<CertificatesPage> {
                                               if(value!=""){
                                                 _progress=double.parse("$value".replaceAll("%",""));
                                               }
-
-                                              // if (index == selectedItem && loadingFile == true) {
-                                              //   return Stack(
-                                              //     alignment: Alignment.center,
-                                              //     children: [
-                                              //       Center(
-                                              //         child: SizedBox(
-                                              //           width: 20,
-                                              //           height: 20,
-                                              //           child:
-                                              //           CircularProgressIndicator(
-                                              //             strokeWidth: 3,
-                                              //             value: _progress,
-                                              //           ),
-                                              //         ),
-                                              //       ),
-                                              //       Text(
-                                              //   "$value",
-                                              //         style: const TextStyle(
-                                              //             fontSize: 5),
-                                              //       ),
-                                              //     ],
-                                              //   );
-                                              // }
-                                              // else
-
                                                 if (loadingFile && index == selectedItem) {
                                                 return SizedBox(
                                                   width: 30,
@@ -449,7 +385,7 @@ class _CertificatesPageState extends State<CertificatesPage> {
                             color: Theme.of(context).cardColor,
                             borderRadius: (foldOutList[index] == false)
                                 ? BorderRadius.circular(10)
-                                : BorderRadius.only(
+                                : const BorderRadius.only(
                                 bottomRight: Radius.circular(10),
                                 bottomLeft: Radius.circular(10))),
                         child: Padding(
@@ -511,16 +447,15 @@ class _CertificatesPageState extends State<CertificatesPage> {
 }
 
 class TextToCopy extends StatefulWidget {
-   TextToCopy(
-      {Key? key,
+   const TextToCopy(
+      {super.key,
       required this.title,
       required this.mystate,
         required this.index,
 
       this.textToCopy,
       this.releaseMonth,
-      this.releaseYear})
-      : super(key: key);
+      this.releaseYear});
   final String title;
   final String? textToCopy;
   final String? releaseMonth;
@@ -552,7 +487,7 @@ class _TextToCopyState extends State<TextToCopy> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           if (widget.textToCopy != null)
@@ -619,7 +554,7 @@ class _TextToCopyState extends State<TextToCopy> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 17,
                 ),
                 Expanded(
@@ -655,8 +590,7 @@ class _TextToCopyState extends State<TextToCopy> {
 
 class Button extends StatelessWidget {
   const Button(
-      {Key? key, required this.svg, required this.onTap, required this.padding})
-      : super(key: key);
+      {super.key, required this.svg, required this.onTap, required this.padding});
 
   final String svg;
   final Function() onTap;

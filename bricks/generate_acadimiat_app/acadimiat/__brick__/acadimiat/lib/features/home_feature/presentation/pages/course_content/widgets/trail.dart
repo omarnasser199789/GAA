@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../../Locale/locale.dart';
 import '../../../../../../core/widgets/custom_botton.dart';
 
@@ -46,7 +45,7 @@ class Trail extends StatelessWidget {
                     CustomButton(
                       width: size.width - 34 ,
                       loading: loading,
-                      title: title?? locale.buyNow! +" $currentPrice",onTap: onTap,),
+                      title: title?? "${locale.buyNow!} $currentPrice",onTap: onTap,),
                   ],
                 )
               ],

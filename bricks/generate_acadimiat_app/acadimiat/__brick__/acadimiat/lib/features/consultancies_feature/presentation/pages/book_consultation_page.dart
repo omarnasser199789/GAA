@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/functions.dart';
-import '../../../../core/globals.dart';
 import '../../../../injection_container.dart';
 import '../../domain/entities/room_hour_entity.dart';
 import '../../domain/use_cases/present_section/get_room_hours_usecase.dart';

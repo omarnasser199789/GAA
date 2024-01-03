@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 
 class InfoBox extends StatelessWidget {
-  const InfoBox({Key? key,required this.svg,required this.title , this.svgWidth, this.body}) : super(key: key);
+  const InfoBox({super.key,required this.svg,required this.title , this.svgWidth, this.body});
 
   final String svg;
   final String title;

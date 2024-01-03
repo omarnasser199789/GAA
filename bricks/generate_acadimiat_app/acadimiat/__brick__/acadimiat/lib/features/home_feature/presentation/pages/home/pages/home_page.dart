@@ -9,7 +9,6 @@ import '../../../../../../Theme/style.dart';
 import '../../../../../../core/functions.dart';
 import '../../../../../../core/globals.dart';
 import '../../../../../../core/widgets/show_case_widget.dart';
-import '../../../../../../core/widgets/svg_code_widget.dart';
 import '../../../../../../injection_container.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import '../../../widgets/banner_widget.dart';
@@ -24,7 +23,7 @@ import '../widgets/training_courses_widget.dart';
 import 'package:showcaseview/showcaseview.dart';
 
 class HomePageViewCase extends StatelessWidget {
-  const HomePageViewCase({Key? key}) : super(key: key);
+  const HomePageViewCase({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -174,10 +173,6 @@ class HomePageViewCase extends StatelessWidget {
                         const KeepWatchingCoursesWidget(),
 
                         const SizedBox(height: 80,),
-
-                        // TrainingCoursesWidget(title: locale.coursesInManagementAndMarketing!, type: 1,),
-                        // const FirstListWidget(),
-                        // TrainingCoursesWidget(title: locale.mostWanted!,showFavBtn: true,enableBroadcast: false,disableTitleOnImage: true, type: 1,),
 
                         const  SizedBox(height: 30,),
 

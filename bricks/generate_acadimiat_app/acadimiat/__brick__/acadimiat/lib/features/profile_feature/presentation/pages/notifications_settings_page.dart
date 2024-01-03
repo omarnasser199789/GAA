@@ -4,10 +4,9 @@ import 'package:flutter/cupertino.dart';
 import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/globals.dart';
-import '../../../../core/widgets/app_bar_widget.dart';
 
 class NotificationsSettingsPage extends StatefulWidget {
-  const NotificationsSettingsPage({Key? key}) : super(key: key);
+  const NotificationsSettingsPage({super.key});
 
   @override
   State<NotificationsSettingsPage> createState() => _NotificationsSettingsPageState();

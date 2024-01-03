@@ -2,12 +2,12 @@ import '../../../../../core/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/globals.dart';
-import '../../../../core/widgets/app_bar_widget.dart';
+import '../../../../core/util/assets_manager.dart';
 import '../../../../item.dart';
-  import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HelpPage extends StatefulWidget {
-  const HelpPage({Key? key}) : super(key: key);
+  const HelpPage({super.key});
 
   @override
   State<HelpPage> createState() => _HelpPageState();
@@ -92,15 +92,10 @@ class _HelpPageState extends State<HelpPage> {
                 ),
               ),
 
-
-
-
-
               Padding(
                 padding: const EdgeInsets.only(top: 10,left: 17,right: 17,bottom: 10),
                 child: Text("الأسعار والدفع",style: blackBoldTextStyle(context: context,fontSize: 13,color:   hintTextColor),),
               ),
-
 
               SingleChildScrollView(
                 child: Container(
@@ -113,27 +108,18 @@ class _HelpPageState extends State<HelpPage> {
                     child: ExpansionPanelList.radio(
                       initialOpenPanelValue: 0,
                       elevation: 0,
-
-                      children: items
-                          .map((item) => ExpansionPanelRadio(
+                      children: items.map((item) => ExpansionPanelRadio(
                           backgroundColor: Theme.of(context).cardColor.withOpacity(0.5),
                           canTapOnHeader: true,
                           value: item.header,
                           headerBuilder: (context, isExpanded) =>
-                              ListTile(
-                                title: item.header,
-                              ),
-                          body: ListTile(title: item.body)))
-                          .toList(),
+                              ListTile(title: item.header),
+                          body: ListTile(title: item.body))).toList(),
                       expandedHeaderPadding: EdgeInsets.zero,
                     ),
                   ),
                 ),
               ),
-
-
-
-
 
               Padding(
                 padding: const EdgeInsets.only(top: 10,left: 17,right: 17,bottom: 10),
@@ -146,9 +132,8 @@ class _HelpPageState extends State<HelpPage> {
                     ),
                     Row(
                       children: [
-
                         SvgPicture.asset(
-                          "assets/svgs/sms.svg",
+                          ImgAssets.sms,
                           color: iconsColor,
                         ),
                         const SizedBox(width: 8,),
@@ -162,9 +147,8 @@ class _HelpPageState extends State<HelpPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-
                           SvgPicture.asset(
-                            "assets/svgs/call.svg",
+                            ImgAssets.call,
                             color: iconsColor,
                           ),
                           const  SizedBox(width: 8,),
@@ -179,16 +163,12 @@ class _HelpPageState extends State<HelpPage> {
                               Text("+974 000 000 000",style: blackBoldTextStyle(context: context,fontSize: 12),),
                             ],
                           ),
-
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-
-
-
             ],
           ),
         ),

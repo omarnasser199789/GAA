@@ -5,12 +5,11 @@ import '../../../../Locale/locale.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/functions.dart';
-import '../../../../core/globals.dart';
+import '../../../../core/util/assets_manager.dart';
 import '../../../../core/widgets/app_bar_widget.dart';
 import '../../../../core/widgets/custom_botton.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/empty_state_widget.dart';
-import '../../../../core/widgets/svg_code_widget.dart';
 import '../../../../injection_container.dart';
 import '../../domain/entities/my_notes_entity.dart';
 import '../../domain/use_cases/my_notes/add_new_note_usecase.dart';
@@ -21,17 +20,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiffy/jiffy.dart';
 
 class MyNotePage extends StatefulWidget {
-  const MyNotePage({Key? key}) : super(key: key);
+  const MyNotePage({super.key});
 
   @override
   State<MyNotePage> createState() => _MyNotePageState();
 }
 
 class _MyNotePageState extends State<MyNotePage> {
+
   MyNoteEntity myNoteEntity = MyNoteEntity(id: -1, userId: -1, notes: []);
   List<Widget> widgetList=[];
   TextEditingController textController = TextEditingController();
   bool addBookMark = false;
+
   @override
   Widget build(BuildContext context) {
     Jiffy.locale("ar");
@@ -66,7 +67,7 @@ class _MyNotePageState extends State<MyNotePage> {
                   padding: const EdgeInsets.only(left: 17,right: 17),
                   child: Shimmer.fromColors(
                     baseColor: Theme.of(context).cardColor,
-                    highlightColor: Color.fromRGBO(119, 118, 118, 0.5490196078431373),
+                    highlightColor: const Color.fromRGBO(119, 118, 118, 0.5490196078431373),
                     child: ListView.builder(
                         itemCount: 3,
                         itemBuilder: (context,index){
@@ -99,15 +100,6 @@ class _MyNotePageState extends State<MyNotePage> {
                   decoration: BoxDecoration(
                     color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(15),
-                    // boxShadow: [
-                    //   BoxShadow(
-                    //     color: Colors.grey.withOpacity(0.1),
-                    //     spreadRadius: 5,
-                    //     blurRadius: 7,
-                    //     offset: Offset(0,
-                    //         3), // changes position of shadow
-                    //   ),
-                    // ],
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(
@@ -127,27 +119,13 @@ class _MyNotePageState extends State<MyNotePage> {
                                 TextDirection.ltr,
                                 child: Text(
                                     Jiffy(item.createdAt).yMMMMdjm,
-                                  // Jiffy(item.createdAt).yMMMd,
-                                  // "${item.createdAt}",
-
-
                                   style: blackBoldTextStyle(
                                       fontSize: 12,
                                       height: 2,
                                       context: context,
-                                      // color: Theme.of(context)
-                                      //     .accentColor
                                   ),
                                 ),
-
-
-
-
-
-
-
                               ),
-
 
                               Row(
                                 children: [
@@ -204,10 +182,7 @@ class _MyNotePageState extends State<MyNotePage> {
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(
-                                                                bottom: 25,
-                                                                left: 35,
-                                                                right: 35),
+                                                            padding: const EdgeInsets.only(bottom: 25, left: 35, right: 35),
                                                             child: SafeArea(
                                                                 child: CustomButton(
                                                                     title: "تعديل الملاحظة",
@@ -246,14 +221,12 @@ class _MyNotePageState extends State<MyNotePage> {
                                       showCustomDialog(context,item.id);
                                     },
                                     child: SvgPicture.asset(
-                                      "assets/svgs/deleteIcon.svg",
+                                      ImgAssets.deleteIcon,
                                       color: iconsColor,
-
                                     ),
                                   ),
                                 ],
                               )
-
                             ],
                           ),
                         ),
@@ -265,12 +238,6 @@ class _MyNotePageState extends State<MyNotePage> {
                             style: blackBoldTextStyle(
                                 context: context,
                                 fontSize: 13),
-                            // style: blackBoldTextStyle(
-                            //     fontSize: 12,
-                            //     height: 2,
-                            //     context: context,
-                            //     color: Theme.of(context)
-                            //         .accentColor),
                           ),
                         ),
 
@@ -284,10 +251,9 @@ class _MyNotePageState extends State<MyNotePage> {
             ));
           }
           if(widgetList.isNotEmpty){
-            widgetList.add(SizedBox(height: 65,));
+            widgetList.add(const SizedBox(height: 65,));
           }
 
-          Size size = MediaQuery.of(context).size;
           return Scaffold(
             appBar:appBarWidget("دفتر الملاحظات",context,true,null,null),
             floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
@@ -297,13 +263,11 @@ class _MyNotePageState extends State<MyNotePage> {
                 onPressed: () async {
 
                   textController.text="";
-
                   final result = await showModalBottomSheet(
                       context: context,
                       backgroundColor: Colors.transparent,
                       isScrollControlled: true,
                       builder: (context) {
-
                         return Material(
                           color: Theme.of(context).scaffoldBackgroundColor,
                           borderRadius: const BorderRadius.only(
@@ -342,9 +306,7 @@ class _MyNotePageState extends State<MyNotePage> {
                                       Padding(
                                         padding: EdgeInsets.only(
                                             top: 19,
-                                            bottom: MediaQuery.of(context)
-                                                .viewInsets
-                                                .bottom),
+                                            bottom: MediaQuery.of(context).viewInsets.bottom),
                                         child: CustomTextField(
                                           title: '',
                                           hint: '${locale.writeYourNotes!}...',
@@ -367,10 +329,7 @@ class _MyNotePageState extends State<MyNotePage> {
                                                   }else{
                                                     Navigator.pop(context, 500);
                                                     showMessage(message: "الرجاء اضافة نص للملاحظة", context: context);
-
-                                                    mystate(() {
-
-                                                    });
+                                                    mystate(() {});
                                                   }
                                                 })),
                                       )
@@ -384,18 +343,16 @@ class _MyNotePageState extends State<MyNotePage> {
 
                   if (result == 200) {
                     addBookMark=true;
-
                     BlocProvider.of<ProfileBloc>(context)
                         .add(AddNewNoteEvent(
                         params: AddNewNoteParams(bookId: myNoteEntity.id, notes: textController.text, createdAt: DateTime.now())));
-
                   }
 
 
                 },
                 backgroundColor: kMainColor,
                 child: SvgPicture.asset(
-                  "assets/svgs/note_.svg",
+                  ImgAssets.note_,
                   color: Colors.white,
                   width: 23,
                 ),
@@ -413,20 +370,14 @@ class _MyNotePageState extends State<MyNotePage> {
                 ),
               ),
             ):
-            EmptyStateWidget(svg:"assets/svgs/notes_empty.svg",
+            EmptyStateWidget(svg:ImgAssets.notesEmpty,
               text1:"لم تقم باضافة ملاحظات بعد!",
               text3: "قم باضافة ملاحظتك الاولى",
-
             ),
-
-
-
           );
         }));
-
-
-
   }
+
   void showCustomDialog(BuildContext context, int id) {
     showGeneralDialog(
       context: context,
@@ -450,6 +401,10 @@ class _MyNotePageState extends State<MyNotePage> {
                       child: Container(
                         height: 130,
                         width: double.infinity,
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                            borderRadius: BorderRadius.circular(15)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Scaffold(
@@ -487,11 +442,8 @@ class _MyNotePageState extends State<MyNotePage> {
                                                 padding: const EdgeInsets.all(7),
                                                 child: Text(
                                                   locale.noCancelTheDeletion!,
-                                                  style: blackBoldTextStyle(
-                                                      context: context,
-                                                      fontSize: 12,
-                                                      color:
-                                                      Theme.of(context).primaryColor),
+                                                  style: blackBoldTextStyle(context: context, fontSize: 12,
+                                                      color: Theme.of(context).primaryColor),
                                                 ),
                                               ),
                                             )),
@@ -508,11 +460,8 @@ class _MyNotePageState extends State<MyNotePage> {
                                                 padding: const EdgeInsets.all(7),
                                                 child: Text(
                                                   locale.yesIWantToDelete!,
-                                                  style: blackBoldTextStyle(
-                                                      context: context,
-                                                      fontSize: 12,
-                                                      color:
-                                                      Theme.of(context).primaryColor),
+                                                  style: blackBoldTextStyle(context: context, fontSize: 12,
+                                                      color: Theme.of(context).primaryColor),
                                                 ),
                                               ),
                                             )),
@@ -524,10 +473,6 @@ class _MyNotePageState extends State<MyNotePage> {
                             ),
                           ),
                         ),
-                        margin: const EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                            borderRadius: BorderRadius.circular(15)),
                       ),
                     );
                   })),

@@ -11,9 +11,9 @@ import '../../../../my_courses_feature/presentation/bloc/my_courses_event.dart';
 import '../../../../my_courses_feature/presentation/bloc/my_courses_state.dart';
 import 'result_widget.dart';
 
-
 class KeepWatchingCoursesWidget extends StatefulWidget {
-  const KeepWatchingCoursesWidget({Key? key}) : super(key: key);
+  const KeepWatchingCoursesWidget({super.key});
+
   @override
   State<KeepWatchingCoursesWidget> createState() => _KeepWatchingCoursesWidgetState();
 }

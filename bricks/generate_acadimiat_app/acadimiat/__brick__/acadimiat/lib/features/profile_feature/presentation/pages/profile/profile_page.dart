@@ -6,35 +6,38 @@ import 'package:acadmiat/features/profile_feature/presentation/pages/training_pl
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:image_cropper/image_cropper.dart';
-import '../../../../../core/widgets/app_bar_widget.dart';
+import '../../../../../../core/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../Locale/locale.dart';
-import '../../../../Theme/style.dart';
-import '../../../../core/functions.dart';
-import '../../../../injection_container.dart';
-import '../../../../launch_page.dart';
-import '../widgets/app_versio.dart';
-import 'privacy_policy_page.dart';
-import '../../domain/entities/user_info_entity.dart';
-import 'terms_and_conditions_page.dart';
-import 'certificates_page.dart';
-import '../../../../core/globals.dart';
-import '../widgets/info_box_widget.dart';
-import '../../../../core/widgets/cached_net_work_image.dart';
-import 'file_explorer_page.dart';
-import 'help_page.dart';
-import 'my_notes_page.dart';
-import 'my_requests_page.dart';
+import '../../../../../Locale/locale.dart';
+import '../../../../../Theme/style.dart';
+import '../../../../../core/functions.dart';
+import '../../../../../core/util/assets_manager.dart';
+import '../../../../../injection_container.dart';
+import '../../../../../launch_page.dart';
+import '../../widgets/app_versio.dart';
+import '../privacy_policy_page.dart';
+import '../../../domain/entities/user_info_entity.dart';
+import '../terms_and_conditions_page.dart';
+import '../certificates_page.dart';
+import '../../../../../core/globals.dart';
+import '../../widgets/info_box_widget.dart';
+import '../../../../../core/widgets/cached_net_work_image.dart';
+import '../file_explorer_page.dart';
+import '../help_page.dart';
+import '../my_notes_page.dart';
+import '../my_requests_page.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'header_option_widget.dart';
+import 'option_widget.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key, required this.context_}) : super(key: key);
-
+  const ProfilePage({super.key, required this.context_});
   final BuildContext context_;
+
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -102,16 +105,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                     children: [
                                       Text(
                                         "${locale.welcome} ${userInfoEntity.name}",
-                                        style: blackBoldTextStyle(
-                                            context: context, fontSize: 15),
+                                        style: blackBoldTextStyle(context: context, fontSize: 15),
                                       ),
-                                      const SizedBox(
-                                        height: 9,
-                                      ),
+                                      const SizedBox(height: 9),
                                       Text(
                                         userInfoEntity.email,
-                                        style: blackBoldTextStyle(
-                                            context: context, fontSize: 12),
+                                        style: blackBoldTextStyle(context: context, fontSize: 12),
                                       ),
                                     ],
                                   ),
@@ -145,7 +144,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                         child: Padding(
                                           padding: const EdgeInsets.all(2),
                                           child: SvgPicture.asset(
-                                            "assets/svgs/profileIcon.svg",
+                                            ImgAssets.profileIcon,
                                             color: iconsColor,
                                           ),
                                         ),
@@ -171,7 +170,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                             child: Padding(
                                               padding: const EdgeInsets.all(6.0),
                                               child: SvgPicture.asset(
-                                                "assets/svgs/camera.svg",
+                                                ImgAssets.camera,
                                               ),
                                             )),
                                       ),
@@ -188,7 +187,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   InfoBoxType2(
-                                    svg: 'assets/svgs/file.svg',
+                                    svg: ImgAssets.file,
                                     title: '5',
                                     text: "التنزيلات",
                                     onTap: () {
@@ -197,7 +196,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     },
                                   ),
                                   InfoBoxType2(
-                                    svg: 'assets/svgs/noteblock.svg',
+                                    svg: ImgAssets.noteblock,
                                     title: '2',
                                     text: "دفتر الملاحظات",
                                     onTap: () {
@@ -205,16 +204,15 @@ class _ProfilePageState extends State<ProfilePage> {
                                     },
                                   ),
                                   InfoBoxType2(
-                                    svg: 'assets/svgs/plan_icon.svg',
+                                    svg: ImgAssets.planIcon,
                                     title: '2',
                                     text: "الخطة التدريبية",
                                     onTap: () {
-                                      goTo(context,
-                                          (context) =>const TrainingPlanPage());
+                                      goTo(context, (context) =>const TrainingPlanPage());
                                     },
                                   ),
                                   InfoBoxType2(
-                                    svg: 'assets/svgs/medal-star.svg',
+                                    svg: ImgAssets.medalStar,
                                     title: '2',
                                     text: "شهاداتي",
                                     onTap: () async {
@@ -274,13 +272,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                   const EdgeInsets.only(top: 10, bottom: 10),
                               child: Column(
                                 children: [
-                                  const HeaderOptionWidget(
-                                    svg: "assets/svgs/user.svg",
+                                   HeaderOptionWidget(
+                                    svg: ImgAssets.user,
                                     text: 'حسابي',
                                   ),
                                   OptionWidget(
                                     onTap: () async {
-                                      var v = await goTo(
+                                    await goTo(
                                           context,
                                           (context) => ProfilePersonlyPage(
                                               userInfoEntity: userInfoEntity));
@@ -295,28 +293,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     },
                                     title: "طلباتي",
                                   ),
-                                  // OptionWidget(
-                                  //   onTap: () {},
-                                  //   title: "برنامج التسويق بالعمولة",
-                                  // ),
-                                  // OptionWidget(
-                                  //   onTap: () {
-                                  //     goTo(
-                                  //         context,
-                                  //         (context) =>
-                                  //             const PaymentCardsPage());
-                                  //   },
-                                  //   title: locale.paymentCards!,
-                                  // ),
-                                  // OptionWidget(
-                                  //   onTap: () {
-                                  //     goTo(
-                                  //         context,
-                                  //         (context) =>
-                                  //             const PurchaseInvoicePage());
-                                  //   },
-                                  //   title: locale.purchaseInvoice!,
-                                  // ),
+
                                 ],
                               ),
                             ),
@@ -330,43 +307,14 @@ class _ProfilePageState extends State<ProfilePage> {
                                   const EdgeInsets.only(top: 10, bottom: 10),
                               child: Column(
                                 children: [
-                                  const HeaderOptionWidget(
-                                    svg: 'assets/svgs/setting.svg',
+                                   HeaderOptionWidget(
+                                    svg: ImgAssets.setting,
                                     text: 'إعدادات التطبيق',
                                     svgWidth: 23,
                                   ),
-                                  // OptionWidget(
-                                  //   onTap: () {
-                                  //     goTo(
-                                  //         context,
-                                  //         (context) =>
-                                  //             const SelectLanguagePage());
-                                  //   },
-                                  //   title: "اللغة",
-                                  //   text2: 'English',
-                                  // ),
-                                  // OptionWidget(
-                                  //   onTap: () {
-                                  //     goTo(
-                                  //         context,
-                                  //         (context) =>
-                                  //             const PerformanceQualityPage());
-                                  //   },
-                                  //   title: "جودة الآداء",
-                                  // ),
-                                  // OptionWidget(
-                                  //   onTap: () {
-                                  //     goTo(
-                                  //         context,
-                                  //         (context) =>
-                                  //             const NotificationsSettingsPage());
-                                  //   },
-                                  //   title: "الاشعارات",
-                                  // ),
+
                                   Container(
-                                    color: Theme.of(context)
-                                        .scaffoldBackgroundColor
-                                        .withOpacity(0.1),
+                                    color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),
                                     child: Padding(
                                       padding: const EdgeInsets.only(
                                           bottom: 16,
@@ -381,27 +329,19 @@ class _ProfilePageState extends State<ProfilePage> {
                                             children: [
                                               Text(
                                                 "تفعيل الوضع الليلي",
-                                                style: blackBoldTextStyle(
-                                                    context: context,
-                                                    fontSize: 13),
+                                                style: blackBoldTextStyle(context: context, fontSize: 13),
                                               ),
-                                              const SizedBox(
-                                                width: 20,
-                                              ),
+
+                                              const SizedBox(width: 20),
+
                                               GestureDetector(
                                                 onTap: () {
-                                                  LaunchPage.themeNotifier
-                                                      .value = ThemeMode.system;
-                                                  globalSH.setString(
-                                                      "ThemeMode", "");
+                                                  LaunchPage.themeNotifier.value = ThemeMode.system;
+                                                  globalSH.setString("ThemeMode", "");
                                                   setState(() {});
                                                 },
                                                 child: Text("تلقائي",
-                                                    style: blackBoldTextStyle(
-                                                      context: context,
-                                                      fontSize: 13,
-                                                      color: (globalSH.getString("ThemeMode") == "") ? Theme.of(context).primaryColor : iconsColor,
-                                                    )),
+                                                    style: blackBoldTextStyle(context: context, fontSize: 13, color: (globalSH.getString("ThemeMode") == "") ? Theme.of(context).primaryColor : iconsColor,)),
                                               ),
                                             ],
                                           ),
@@ -439,8 +379,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                   const EdgeInsets.only(top: 10, bottom: 10),
                               child: Column(
                                 children: [
-                                  const HeaderOptionWidget(
-                                    svg: 'assets/svgs/info.svg',
+                                   HeaderOptionWidget(
+                                    svg: ImgAssets.info,
                                     text: 'عن التطبيق',
                                     svgWidth: 29,
                                   ),
@@ -466,10 +406,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                   OptionWidget(
                                     onTap: () {
                                       Share.share(
-                                          // 'شاهد المنتج على كلشي اونلاين  https://kulshionline.com/product/${parentCategoryTitle.toLowerCase()}/$id '+
-                                          // ' حمّل التطبيق من google app:'+ 'https://play.google.com/store/apps/details?id=com.lucid.testkulshi'+
-                                          // 'حمّل التطبيق من App store:'+'https://apps.apple.com/us/app/kulshi-online/id1625655892'
-
                                           "watch--------- \n https://google.com  \n\n downloadTheAppFromGooglePlay \n https://play.google.com \n\n downloadTheAppFromAppStore\n https://apps.apple.com");
                                     },
                                     title: "شارك التطبيق مع أصدقائك",
@@ -498,12 +434,6 @@ class _ProfilePageState extends State<ProfilePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // SvgPicture.asset(
-                              //   "assets/svgs/Icon-whatsapp.svg",
-                              //   color: iconsColor,
-                              // ),
-
-
                               ///INSTAGRAM
                               GestureDetector(
                                 onTap: () async {
@@ -515,7 +445,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   }
                                 },
                                 child: SvgPicture.asset(
-                                  "assets/svgs/Icon-instagram.svg",
+                                  ImgAssets.iconInstagram,
                                   color: iconsColor,
                                 ),
                               ),
@@ -531,7 +461,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   }
                                 },
                                 child: SvgPicture.asset(
-                                  "assets/svgs/Icon-youtube.svg",
+                                  ImgAssets.iconYoutube,
                                   color: iconsColor,
                                 ),
                               ),
@@ -547,7 +477,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   }
                                 },
                                 child: SvgPicture.asset(
-                                  "assets/svgs/Icon-twitter.svg",
+                                  ImgAssets.iconTwitter,
                                   color: iconsColor,
                                 ),
                               ),
@@ -563,10 +493,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                   }
                                 },
                                 child: SvgPicture.asset(
-                                  "assets/svgs/Icon-linkedin.svg",
+                                  ImgAssets.iconLinkedin,
                                   color: iconsColor,
                                 ),
                               ),
+
                               ///FACEBOOK
                               GestureDetector(
                                 onTap: () async {
@@ -578,7 +509,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   }
                                 },
                                 child: SvgPicture.asset(
-                                  "assets/svgs/Icon-facebook.svg",
+                                  ImgAssets.iconFacebook,
                                   color: iconsColor,
                                 ),
                               ),
@@ -599,103 +530,8 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 }
 
-class HeaderOptionWidget extends StatelessWidget {
-  const HeaderOptionWidget(
-      {Key? key, required this.svg, required this.text, this.svgWidth})
-      : super(key: key);
 
-  final String svg;
-  final String text;
-  final double? svgWidth;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 17, right: 17, bottom: 12),
-          child: Row(
-            children: [
-              SvgPicture.asset(
-                svg,
-                color: iconsColor,
-                width: svgWidth,
-              ),
-              const SizedBox(
-                width: 9.2,
-              ),
-              Text(
-                text,
-                style: blackBoldTextStyle(fontSize: 13, context: context),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: 0.2,
-          width: double.infinity,
-          color: Theme.of(context).canvasColor,
-        ),
-      ],
-    );
-  }
-}
 
-class OptionWidget extends StatelessWidget {
-  const OptionWidget(
-      {Key? key, required this.onTap, required this.title, this.text2})
-      : super(key: key);
-  final String title;
-
-  final Function() onTap;
-  final String? text2;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        alignment: Alignment.topCenter,
-        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),
-        child: Padding(
-          padding:
-              const EdgeInsets.only(bottom: 16, top: 16, left: 17, right: 17),
-          child: Row(
-            // crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                title,
-                style: blackBoldTextStyle(context: context, fontSize: 13),
-              ),
-              Row(
-                children: [
-                  if (text2 != null)
-                    Row(
-                      children: [
-                        Text(
-                          text2!,
-                          style: blackBoldTextStyle(
-                              fontSize: 13, context: context),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                      ],
-                    ),
-                  const Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.grey,
-                    size: 20,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 void showCustomDialog(BuildContext context) {
   showGeneralDialog(
@@ -703,13 +539,17 @@ void showCustomDialog(BuildContext context) {
     barrierLabel: "Barrier",
     barrierDismissible: true,
     barrierColor: iconsColor.withOpacity(0.3),
-    transitionDuration: Duration(milliseconds: 200),
+    transitionDuration: const Duration(milliseconds: 200),
     pageBuilder: (contextt, __, ___) {
       var locale = AppLocalizations.of(context)!;
       return Center(
         child: Container(
           height: 130,
           width: double.infinity,
+          margin: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor,
+              borderRadius: BorderRadius.circular(15)),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Scaffold(
@@ -723,8 +563,7 @@ void showCustomDialog(BuildContext context) {
                       padding: const EdgeInsets.only(top: 17, bottom: 9.7),
                       child: Text(
                         locale.checkoutConfirmation!,
-                        style:
-                            blackBoldTextStyle(context: context, fontSize: 14),
+                        style: blackBoldTextStyle(context: context, fontSize: 14),
                       ),
                     ),
                     Text(
@@ -742,23 +581,14 @@ void showCustomDialog(BuildContext context) {
                               },
                               child: Text(
                                 locale.cancel!,
-                                style: blackBoldTextStyle(
-                                    context: context,
-                                    fontSize: 12,
-                                    color: Theme.of(context).primaryColor),
-                              )),
-                          // SizedBox(width: 52,),
-
+                                style: blackBoldTextStyle(context: context, fontSize: 12, color: Theme.of(context).primaryColor),)),
                           GestureDetector(
                               onTap: () {
                                 Navigator.pop(context, 200);
                               },
                               child: Text(
                                 locale.logOut!,
-                                style: blackBoldTextStyle(
-                                    context: context,
-                                    fontSize: 12,
-                                    color: Theme.of(context).primaryColor),
+                                style: blackBoldTextStyle(context: context, fontSize: 12, color: Theme.of(context).primaryColor),
                               )),
                         ],
                       ),
@@ -768,19 +598,15 @@ void showCustomDialog(BuildContext context) {
               ),
             ),
           ),
-          margin: EdgeInsets.symmetric(horizontal: 20),
-          decoration: BoxDecoration(
-              color: Theme.of(context).scaffoldBackgroundColor,
-              borderRadius: BorderRadius.circular(15)),
         ),
       );
     },
     transitionBuilder: (_, anim, __, child) {
       Tween<Offset> tween;
       if (anim.status == AnimationStatus.reverse) {
-        tween = Tween(begin: Offset(-1, 0), end: Offset.zero);
+        tween = Tween(begin: const Offset(-1, 0), end: Offset.zero);
       } else {
-        tween = Tween(begin: Offset(1, 0), end: Offset.zero);
+        tween = Tween(begin: const Offset(1, 0), end: Offset.zero);
       }
 
       return SlideTransition(

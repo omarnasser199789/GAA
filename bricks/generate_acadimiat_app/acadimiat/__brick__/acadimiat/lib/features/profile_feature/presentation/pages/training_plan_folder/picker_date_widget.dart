@@ -1,17 +1,14 @@
-import 'package:acadmiat/features/profile_feature/presentation/pages/training_plan_folder/test_picker_date.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiffy/jiffy.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/functions.dart';
-import '../../../../../core/globals.dart';
 import '../../../../../core/widgets/custom_botton.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
 
 class PickerDateWidget extends StatefulWidget {
-  const PickerDateWidget({Key? key}) : super(key: key);
+  const PickerDateWidget({super.key});
 
   @override
   State<PickerDateWidget> createState() => _PickerDateWidgetState();
@@ -130,9 +127,6 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
                             },
                             initialDateTime: fromDate,
                             minimumDate:fromDate ,
-                            // minimumYear:  fromDate.year,
-                            // maximumYear: DateTime.now().year,
-
                             use24hFormat: true,
                             // backgroundColor: CupertinoColors.systemBlue,
                           ),
@@ -140,11 +134,8 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
                       ),
                     ),
 
-
                     Padding(
-                      padding:  EdgeInsets.only(left: 17,right: 17,bottom: MediaQuery.of(context)
-                          .viewInsets
-                          .bottom),
+                      padding:  EdgeInsets.only(left: 17,right: 17,bottom: MediaQuery.of(context).viewInsets.bottom),
                       child: CustomTextField(
                         title: "عدد الساعات",
                         hint: 'أدخل عدد الساعات',
@@ -174,16 +165,11 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
                             child: Checkbox(
                               value: checkbox,
                               autofocus: true,
-                              activeColor: Theme
-                                  .of(context)
-                                  .primaryColor,
+                              activeColor: Theme.of(context).primaryColor,
                               checkColor: Colors.white,
-
                               onChanged: (value) {
                                 checkbox=!checkbox;
-                                mystate(() {
-
-                                });
+                                mystate(() {});
                               },
                             ),
                           ),
@@ -199,22 +185,19 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
                           child: CustomButton(
                               title: "حفظ خطة التعلم",
                               onTap: () {
-    FormState form =  _formKey.currentState!;
-    if (form.validate()) {
-      if(textController.text!="") {
-        Navigator.pop(context,[fromDate,toDate,checkbox,int.parse(textController.text) ]);
-      }else{
-        Navigator.pop(context, 500);
-        showMessage(message: "الرجاء اضافة نص للملاحظة", context: context);
+                                FormState form =  _formKey.currentState!;
+                                if (form.validate()) {
+                                  if(textController.text!="") {
+                                    Navigator.pop(context,[fromDate,toDate,checkbox,int.parse(textController.text) ]);
+                                  }else{
+                                    Navigator.pop(context, 500);
+                                    showMessage(message: "الرجاء اضافة نص للملاحظة", context: context);
 
-        mystate(() {
+                                    mystate(() {
 
-        });
-      }
-    }
-
-
-
+                                    });
+                                  }
+                                }
                               })),
                     )
                   ],

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../Theme/style.dart';
 
 class Option extends StatefulWidget {
-  const Option({Key? key,required this.text,required this.onTap}) : super(key: key);
+  const Option({super.key,required this.text,required this.onTap});
 
   final String text;
   final Function () onTap;

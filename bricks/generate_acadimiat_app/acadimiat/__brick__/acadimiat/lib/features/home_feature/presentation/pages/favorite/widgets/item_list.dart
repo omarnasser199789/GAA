@@ -1,10 +1,8 @@
 import 'dart:ui';
-
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../Theme/style.dart';
 import '../../../../../../core/widgets/cached_net_work_image.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import '../../../../../../core/widgets/price_widget.dart';
 
 class ItemList extends StatelessWidget {
@@ -85,7 +83,6 @@ class ItemList extends StatelessWidget {
                       children: [
                         PriceWidget(newPrice:newPrice,
                           price:oldPrice,),
-
 
                         Container(
                           decoration: BoxDecoration(

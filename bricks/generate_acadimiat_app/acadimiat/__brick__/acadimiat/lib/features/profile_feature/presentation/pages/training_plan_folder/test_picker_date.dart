@@ -1,15 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'package:nepali_date_picker/nepali_date_picker.dart' as picker;
-
 import '../../../../../Theme/style.dart';
 
 /// My app class to display the date range picker
 class PickerDateDialog extends StatefulWidget {
+  const PickerDateDialog({super.key});
+
   @override
   MyAppState createState() => MyAppState();
 }
@@ -25,7 +23,6 @@ class MyAppState extends State<PickerDateDialog> {
     Size size = MediaQuery.of(context).size;
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
-
     return Padding(
       padding:
           const EdgeInsets.only(left: 30, right: 30, top: 120, bottom: 120),
@@ -38,7 +35,7 @@ class MyAppState extends State<PickerDateDialog> {
               color: Colors.grey.withOpacity(0.1),
               spreadRadius: 5,
               blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
@@ -207,9 +204,7 @@ class MyAppState extends State<PickerDateDialog> {
                             },
                             initialDateTime: toDate,
                             minimumYear: fromDate.year,
-
                             use24hFormat: true,
-                            // backgroundColor: CupertinoColors.systemBlue,
                           ),
                         ),
                       ),

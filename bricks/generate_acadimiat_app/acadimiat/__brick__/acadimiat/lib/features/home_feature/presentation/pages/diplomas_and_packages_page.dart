@@ -1,9 +1,9 @@
 import 'package:acadmiat/features/home_feature/presentation/pages/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
-import 'package:flutter/foundation.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/classes/constants.dart';
+import '../../../../core/util/assets_manager.dart';
 import '../../../../core/widgets/course_cart_widget.dart';
 import 'course_content/pages/course_content_page.dart';
 import 'package:measure_size/measure_size.dart';
@@ -12,7 +12,7 @@ import 'courses_content_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DiplomasAndPackagesPage extends StatefulWidget {
-  const DiplomasAndPackagesPage({Key? key, required this.latestPEntity}) : super(key: key);
+  const DiplomasAndPackagesPage({super.key, required this.latestPEntity});
   final List<LatestPEntity> latestPEntity;
 
   @override
@@ -28,7 +28,7 @@ class _DiplomasAndPackagesPageState extends State<DiplomasAndPackagesPage> {
       appBar: appBarWidget("الدبلومات والباقات",context,true,[
         GestureDetector(
           onTap: (){
-            goTo(context, (context) =>  SearchPage());
+            goTo(context, (context) => const SearchPage());
           },
           child: Padding(
             padding: const EdgeInsets.all(10),
@@ -36,7 +36,7 @@ class _DiplomasAndPackagesPageState extends State<DiplomasAndPackagesPage> {
               width: 30,
               height: 30,
               child: SvgPicture.asset(
-                "assets/svgs/search.svg",
+                ImgAssets.search,
                 color:iconsColor,
               ),
             ),
