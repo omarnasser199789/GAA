@@ -25,7 +25,6 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
 
   @override
   Widget build(BuildContext context) {
-
     return FadedSlideAnimation(
       beginOffset: const Offset(0, 1),
       endOffset: const Offset(0, 0),
