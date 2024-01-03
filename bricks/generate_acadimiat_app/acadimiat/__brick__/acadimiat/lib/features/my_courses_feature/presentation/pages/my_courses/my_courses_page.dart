@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:acadmiat/core/widgets/waiting_widget.dart';
 import 'package:acadmiat/features/authentication_feature/presentation/pages/login_page.dart';

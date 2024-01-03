@@ -2,7 +2,8 @@
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../widgets/discussion_widget.dart';
+import '../../../../../widgets/discussion_widget/comment_widget.dart';
+import '../../../../../widgets/discussion_widget/discussion_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:comment_tree/data/comment.dart';

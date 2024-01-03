@@ -18,7 +18,6 @@ import '../../bloc/my_courses_event.dart';
 
 class RepliesPage extends StatefulWidget {
   const RepliesPage({super.key,required this.topic});
-
   final Topic topic;
   @override
   State<RepliesPage> createState() => _RepliesPageState();

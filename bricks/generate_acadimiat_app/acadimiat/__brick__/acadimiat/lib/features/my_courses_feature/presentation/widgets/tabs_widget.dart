@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/classes/constants.dart';
 import '../../domain/entities/my_lecture_entity.dart';
 
 class TabWidget extends StatelessWidget {
-  const TabWidget({Key? key,required this.myLectureEntity}) : super(key: key);
+  const TabWidget({super.key,required this.myLectureEntity});
   final MyLectureEntity myLectureEntity;
 
   @override

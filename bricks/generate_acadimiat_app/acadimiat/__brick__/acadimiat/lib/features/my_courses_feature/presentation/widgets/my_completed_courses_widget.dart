@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:percent_indicator/percent_indicator.dart';
 import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
@@ -10,7 +9,7 @@ import '../pages/my_course/course_page/course_page.dart';
 
 
 class MyCompletedCoursesWidget extends StatefulWidget {
-  const MyCompletedCoursesWidget({Key? key}) : super(key: key);
+  const MyCompletedCoursesWidget({super.key});
 
   @override
   State<MyCompletedCoursesWidget> createState() => _MyCompletedCoursesWidgetState();
@@ -34,10 +33,7 @@ class _MyCompletedCoursesWidgetState extends State<MyCompletedCoursesWidget> {
 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) =>  CoursePage(
-                          courseId: 0,userId: userId(), imageUrl: '',
-                        )),
+                    MaterialPageRoute(builder: (context) =>  CoursePage(courseId: 0,userId: userId(), imageUrl: '')),
                   );
                 },
                 child:   Container(

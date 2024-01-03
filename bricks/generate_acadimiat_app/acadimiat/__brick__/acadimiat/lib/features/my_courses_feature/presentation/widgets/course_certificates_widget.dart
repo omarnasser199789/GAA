@@ -1,12 +1,10 @@
-import '../../../../../core/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
 
 class CourseCertificatesWidget extends StatefulWidget {
-  const CourseCertificatesWidget({Key? key}) : super(key: key);
+  const CourseCertificatesWidget({super.key});
 
   @override
   State<CourseCertificatesWidget> createState() => _CourseCertificatesWidgetState();
@@ -33,8 +31,6 @@ class _CourseCertificatesWidgetState extends State<CourseCertificatesWidget> {
               padding: const EdgeInsets.only(left: 10,right: 10),
               child: Row(
                 children: [
-
-
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,14 +66,12 @@ class _CourseCertificatesWidgetState extends State<CourseCertificatesWidget> {
                         ),
                       ),
 
-
                       Padding(
                         padding: const EdgeInsets.only(top: 12),
                         child: Text(locale.howToWriteAndImplementASalesPlan!,style: blackBoldTextStyle(context: context,fontSize: 12),),
                       ),
 
-
-                      Container(
+                      SizedBox(
                         width: size.width-54,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,10 +95,6 @@ class _CourseCertificatesWidgetState extends State<CourseCertificatesWidget> {
                               width: 45,
                               height: 45,
                               alignment: Alignment.center,
-                              // decoration: BoxDecoration(
-                              //     color: Theme.of(context).primaryColor,
-                              //     borderRadius: BorderRadius.circular(200)
-                              // ),
                               child: SvgPicture.asset(
                                 "assets/svgs/certificate with bg.svg",
                                 // width: 20,
@@ -114,12 +104,8 @@ class _CourseCertificatesWidgetState extends State<CourseCertificatesWidget> {
                         ),
                       ),
                       const SizedBox(height: 16,)
-
                     ],
                   ),
-
-
-
                 ],
               ),
             ),

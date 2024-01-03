@@ -1,5 +1,3 @@
-import 'package:acadmiat/features/my_courses_feature/presentation/widgets/video_widget/amazon_video.dart';
-import 'package:acadmiat/features/my_courses_feature/presentation/widgets/video_widget/vimeo_video.dart';
 import 'package:flutter/material.dart';
 import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
@@ -20,7 +18,7 @@ import '../../../../home_feature/presentation/pages/search_page.dart';
 
 class BookMarksItemList extends StatefulWidget {
   BookMarksItemList(
-      {Key? key,
+      {super.key,
       required this.bookmarks,
       required this.atTime,
       required this.theTextOfNote,
@@ -28,10 +26,7 @@ class BookMarksItemList extends StatefulWidget {
       required this.isVimeo,
       required this.index,
       required this.bookmarkId,
-      // required this.amazonVideoWidgetKey,
-      // required this.vimeoVideoWidgetKey
-      })
-      : super(key: key);
+      });
   final int videoId;
   final int bookmarkId;
   final bool isVimeo;
@@ -39,9 +34,6 @@ class BookMarksItemList extends StatefulWidget {
   List<Bookmark> bookmarks;
   final int index;
   final String theTextOfNote;
-
-  // final GlobalKey<AmazonVideoWidgetState> amazonVideoWidgetKey;
-  // final GlobalKey<VimeoVideoWidgetState> vimeoVideoWidgetKey;
 
   @override
   State<BookMarksItemList> createState() => _BookMarksItemListState();
@@ -196,30 +188,7 @@ class _BookMarksItemListState extends State<BookMarksItemList> {
                     }));
               }).whenComplete(() {});
           if (result == 200) {
-            // bookMarksWidgetKey.currentState!.removeBookmarks(widget.bookmarkId);
-            // showMessage(message: "تم الحذف بنجاح", context: context);
-            // setState(() {});
           } else if (result == 201) {
-            // bookMarksWidgetKey.currentState!.updateBookmarks(Bookmark(
-            //     user: null,
-            //     videoId: widget.videoId,
-            //     id: widget.bookmarkId,
-            //     atTime: widget.atTime,
-            //     userId: userId(),
-            //     note: textController.text,
-            //     video: FileClass(
-            //         name: '',
-            //         uploadedBy: null,
-            //         fileSize: '',
-            //         type: -1,
-            //         clipId: null,
-            //         fileName: '',
-            //         isVimeo: null,
-            //         allMaterials: null,
-            //         length: -1,
-            //         uploadDate: DateTime.now(),
-            //         id: -1)));
-
             showMessage(message: "تم تعديل الملاحظة", context: context);
             setState(() {});
           } else if (result == 500) {
@@ -229,9 +198,6 @@ class _BookMarksItemListState extends State<BookMarksItemList> {
         },
         onTap: () {
           if (widget.isVimeo) {
-            // vimeoVideoWidgetKey.currentState!.geTo(
-            //    second: int.parse("${widget.bookmarks[widget.index].atTime}")
-            // );
           }
           else {
             amazonVideoWidgetKey.currentState!.geTo(

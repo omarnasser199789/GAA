@@ -1,51 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../Locale/locale.dart';
-import 'package:acadmiat/features/my_courses_feature/presentation/bloc/my_courses_state.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/functions.dart';
 import '../../../../../core/globals.dart';
 import '../../../../../core/widgets/custom_botton.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
-import '../../../../../injection_container.dart';
-import '../../../data/models/my_lecture_model.dart';
-import '../../../domain/use_cases/add_bookmark_usecase.dart';
-import '../../bloc/my_courses_bloc.dart';
-import '../../bloc/my_courses_event.dart';
-import '../../pages/my_course/tabs/notes_tab.dart';
+
 
 class AddBookmarkButton extends StatelessWidget {
-   AddBookmarkButton(
-      {Key? key,
+   AddBookmarkButton({
+     super.key,
       required this.allowSelectLecture,
       required this.isVimeo,
-      required this.videoId})
-      : super(key: key);
-  final bool allowSelectLecture;
+      required this.videoId});
+
+   final bool allowSelectLecture;
   final bool isVimeo;
   final int videoId;
-
   bool checkBoxValue = false;
-
   TextEditingController textController = TextEditingController();
 
-//
   @override
   Widget build(BuildContext context) {
     var locale = AppLocalizations.of(context)!;
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () async {
-        // vimeoVideoWidgetKey.currentState!.stopVideo();
+
         amazonVideoWidgetKey.currentState!.stopVideo();
         final result = await showModalBottomSheet(
             context: context,
             backgroundColor: Colors.transparent,
             isScrollControlled: true,
             builder: (context) {
-
               return Material(
                 color: Theme.of(context).scaffoldBackgroundColor,
                 borderRadius: const BorderRadius.only(
@@ -63,10 +51,7 @@ class AddBookmarkButton extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Container(
-                                      width: 50,
-                                      height: 3,
-                                      color: Theme.of(context).canvasColor)
+                                  Container(width: 50, height: 3, color: Theme.of(context).canvasColor)
                                 ],
                               ),
                             ),
@@ -75,18 +60,14 @@ class AddBookmarkButton extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(locale.addANote!,
-                                      style: blackBoldTextStyle(
-                                          context: context, fontSize: 15)),
+                                  Text(locale.addANote!, style: blackBoldTextStyle(context: context, fontSize: 15)),
                                 ],
                               ),
                             ),
                             Padding(
                               padding: EdgeInsets.only(
                                   top: 19,
-                                  bottom: MediaQuery.of(context)
-                                      .viewInsets
-                                      .bottom),
+                                  bottom: MediaQuery.of(context).viewInsets.bottom),
                               child: CustomTextField(
                                 title: '',
                                 hint: '${locale.writeYourNotes!}...',
@@ -109,9 +90,7 @@ class AddBookmarkButton extends StatelessWidget {
                                         }else{
                                           Navigator.pop(context, 500);
                                           showMessage(message: "الرجاء اضافة نص للملاحظة", context: context);
-
                                           mystate(() {
-
                                           });
                                         }
                                       })),
@@ -124,25 +103,7 @@ class AddBookmarkButton extends StatelessWidget {
             }).whenComplete(() {});
 
 
-        if (result == 200) {
-          // addBookMark=true;
-          // BlocProvider.of<MyCoursesBloc>(context)
-          //     .add(AddBookmarkEvent(
-          //     addBookMarkParams: AddBookMarkParams(
-          //         videoId: videoId,
-          //         userId: userId(),
-          //         atTime: convertDateTimeToSecond((isVimeo)
-          //             ? vimeoVideoWidgetKey
-          //             .currentState!
-          //             .tempDate
-          //             : amazonVideoWidgetKey
-          //             .currentState!
-          //             .tempDate),
-          //         id: null,
-          //         note: textController
-          //             .text)));
-
-        }
+        if (result == 200) {}
       },
       child: Container(
         color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),

@@ -5,7 +5,7 @@ import '../features/home_feature/domain/entities/fav_entity.dart';
 import '../features/my_courses_feature/presentation/pages/my_course/activety_by_id_page.dart';
 import '../features/my_courses_feature/presentation/pages/my_course/tabs/lessons_tab/pages/lecture_page.dart';
 import '../features/my_courses_feature/presentation/pages/my_course/tabs/notes_tab.dart';
-import '../features/my_courses_feature/presentation/widgets/discussion_widget.dart';
+import '../features/my_courses_feature/presentation/widgets/discussion_widget/discussion_widget.dart';
 import '../features/my_courses_feature/presentation/widgets/video_widget/amazon_video.dart';
 import '../features/my_courses_feature/presentation/widgets/video_widget/vimeo_video.dart';
 import 'package:sqflite/sqflite.dart';

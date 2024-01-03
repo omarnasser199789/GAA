@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../../../Locale/locale.dart';
 import '../../../../../../../Theme/style.dart';
 import '../../../../domain/entities/my_course_entity.dart';
 import 'ads_tab.dart';
-  
-import '../../../../../../../core/globals.dart';
 import 'lessons_tab/case_stady_folder/case_stady_tab.dart';
 import 'certificates_tab.dart';
 import 'discussions_tab.dart';
@@ -13,9 +10,9 @@ import 'glossary/glossary_tab.dart';
 import 'wiki_tab.dart';
 
 class OtherOptionsTab extends StatefulWidget {
-  const OtherOptionsTab({Key? key,
+  const OtherOptionsTab({super.key,
     required this.myCourseEntity,
-    required this.offset}) : super(key: key);
+    required this.offset});
   final MyCourseEntity myCourseEntity;
  final  double ? offset;
   @override
@@ -23,9 +20,6 @@ class OtherOptionsTab extends StatefulWidget {
 }
 
 class _OtherOptionsTabState extends State<OtherOptionsTab> {
-
-
-
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
@@ -38,9 +32,6 @@ class _OtherOptionsTabState extends State<OtherOptionsTab> {
     if(widget.myCourseEntity.wiki.articles.isEmpty){
       length--;
     }
-    print("fdvkdfnbkjvndfjknvwwwwwww");
-    print(length);
-
 
     return DefaultTabController(
       length: length,
@@ -70,17 +61,13 @@ class _OtherOptionsTabState extends State<OtherOptionsTab> {
                 indicatorSize: TabBarIndicatorSize.tab,
                 labelStyle:  blackBoldTextStyle(context: context,fontSize: 11,),
                 indicator: BoxDecoration(
-
                     borderRadius: BorderRadius.circular(7),
                     color: Theme.of(context).primaryColor.withOpacity(0.1)),
-
                 tabs:  [
                   if(widget.myCourseEntity.forum.forumName!="")
-                  Tab(
+                  const Tab(
                     height: 30,
-
                     child: Align(
-
                       alignment: Alignment.center,
                       child:Text("منتدى النقاشات",),
                     ),
@@ -88,17 +75,14 @@ class _OtherOptionsTabState extends State<OtherOptionsTab> {
 
                   Tab(
                     height: 30,
-
                     child: Align(
                       alignment: Alignment.center,
                       child:Text(locale.terminology!,),
                     ),
                   ),
 
-
                   const Tab(
                     height: 30,
-
                     child: Align(
                       alignment: Alignment.center,
                       child:Text("الحالات الدراسية",),
@@ -107,15 +91,14 @@ class _OtherOptionsTabState extends State<OtherOptionsTab> {
                   if(widget.myCourseEntity.wiki.articles.isNotEmpty)
                   Tab(
                     height: 30,
-
                     child: Align(
                       alignment: Alignment.center,
                       child:Text(locale.freeEncyclopedia!),
                     ),
                   ),
+
                   Tab(
                     height: 30,
-
                     child: Align(
                       alignment: Alignment.center,
                       child:Text(locale.ads!,),
@@ -145,17 +128,12 @@ class _OtherOptionsTabState extends State<OtherOptionsTab> {
               CaseStudyTab(caseStudy: widget.myCourseEntity.caseStudy, courseId: widget.myCourseEntity.id,),
               if(widget.myCourseEntity.wiki.articles.isNotEmpty)
               SingleChildScrollView(child: WikiTab(wiki:widget.myCourseEntity.wiki)),
-              AdsTab(),
-
-              CertificatesTab(),
-
+              const AdsTab(),
+              const CertificatesTab(),
             ],),
           ) ,
         ],
-
       ),
-
     );
-
   }
 }

@@ -1,20 +1,14 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/bloc/my_courses_bloc.dart';
 import 'package:better_player/better_player.dart';
 import 'package:flutter/foundation.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:http/io_client.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:convert';
 import '../../../../../core/functions.dart';
 import '../../../../../core/globals.dart';
-import '../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../injection_container.dart';
-
 import '../../../../../launch_page.dart';
 import '../../../data/models/my_lecture_model.dart';
 import '../../bloc/my_courses_event.dart';
@@ -22,9 +16,8 @@ import '../../bloc/my_courses_state.dart';
 import '../../pages/my_course/tabs/lessons_tab/widgets_for_lossonsTab_sidebarTab/loading_video_widget.dart';
 import '../../pages/my_course/tabs/lessons_tab/widgets_for_lossonsTab_sidebarTab/video_cover_widget.dart';
 import '../common.dart';
-import 'package:signalr_core/signalr_core.dart';
-import 'dart:io';
 import 'package:measure_size/measure_size.dart';
+
 class AmazonVideoWidget extends StatefulWidget {
   late String videoUrl;
   final NestedContent content;
@@ -35,15 +28,14 @@ class AmazonVideoWidget extends StatefulWidget {
   String  courseCover;
 
   AmazonVideoWidget(
-      {Key? key,
+      {super.key,
         required this.lectureId,
         required this.contentId,
         required this.courseId,
         required this.lectureLogId,
         required this.courseCover,
         required this.content,
-        required this.videoUrl})
-      : super(key: key);
+        required this.videoUrl});
 
   @override
   AmazonVideoWidgetState createState() => AmazonVideoWidgetState();
@@ -234,11 +226,6 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
                     );
                   }
 
-                  // timer = Timer.periodic(
-                  //     const Duration(minutes: 10),
-                  //     (Timer t) => BlocProvider.of<MyCoursesBloc>(context)
-                  //         .add(GetSignCookie()));
-
                   return const LoadingVideoWidget();
 
                 })),
@@ -253,29 +240,13 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
 
   Future<dynamic> initVideo({required String url, int? startFrom}) async {
 
-
-    ///Orientation on page started
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.landscapeLeft,
-    //   // DeviceOrientation.portraitDown,
-    // ]);
-
     _betterPlayerController = BetterPlayerController(
-
       configurationBetterPlayer(context: context, startFrom: startFrom),
-
       betterPlayerDataSource: BetterPlayerDataSource(
           BetterPlayerDataSourceType.network, url,
           useAsmsSubtitles: true, headers: headers),
     );
-
-
-
     _betterPlayerController.addEventsListener(statusListener);
-
-
-
-    // _betterPlayerController.play();
     return 200;
   }
 
@@ -286,25 +257,12 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
 
 
   initSignalR(int time,String methodName) async {
-    // if (connection.state == HubConnectionState.disconnected) {
-    //
-    //   await connection.start();
-    //
-    // }
-    print("vfdovndfivnd");
+
     if (kDebugMode) {
       print(connection.state);
     }
-    // connection.onclose((error) {
-    //   if (kDebugMode) {
-    //     print("Connection Closed:$error");
-    //   }
-    // });
-
-
     Map<String, dynamic> data = {};
     if(methodName=='AttendMeeting') {
-      // [{"courseId":"2","lectureLogId":138,"contentId":335,"userId":"12560","content":"","lectureId":353,"time":"141"}]
       data = {
         "courseId": "${widget.courseId}",
         "lectureLogId": widget.lectureLogId,
@@ -316,7 +274,6 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
       };
 
     }else {
-      // [{"contentId":335,"userId":"12560","lectureId":353,"connectionId":"woNE_Mu3VjI0aAGbC2cD8Q"}]
       data = {
         "contentId": widget.contentId,
         "userId": "${userId()}",
@@ -338,16 +295,11 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
       initSignalR(convertDateTimeToSecond(tempDate),'FinishedContent');
     }
     if (event.betterPlayerEventType == BetterPlayerEventType.progress) {
-      // tempDate = (event.parameters!["progress"]!="0:00:00.000000")?
-      // DateFormat.Hms().parse("${event.parameters!["progress"]}")
-      // :DateTime.now();
-
       if(convertDateTimeToSecond(tempDate)>=comparisonTime){
         comparisonTime=convertDateTimeToSecond(tempDate)+10;
         initSignalR(convertDateTimeToSecond(tempDate),'AttendMeeting');
       }
 
-      // setState(() {});
     }
   }
-}//
+}

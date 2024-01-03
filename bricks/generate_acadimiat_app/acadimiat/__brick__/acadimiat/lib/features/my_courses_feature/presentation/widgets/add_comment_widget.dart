@@ -71,26 +71,17 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
                     children: [
                       Container(
                         width: size.width*0.84,
-                        // height: 50,
                         color: Theme.of(context).scaffoldBackgroundColor,
                         child: FlutterMentions(
-                          // scrollPadding:  const EdgeInsets.only(right: 10,bottom: 5,left: 10),
                           key: key,
                           suggestionListDecoration: BoxDecoration(
                             color:    Theme.of(context).cardColor,
                             borderRadius: BorderRadius.circular(10),
-                            // border: Border.all(
-                            //   color: Theme.of(context).primaryColor,
-                            //   width: 1
-                            // )
                           ),
                           suggestionPosition: SuggestionPosition.Top,
                           maxLines: 5,
                           minLines: 1,
-                          // keyboardType: TextInputType.multiline,
                           keyboardType:TextInputType.text ,
-
-
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "ااضف تعليق ...",
@@ -149,17 +140,7 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
                                     ),
                                   );
                                 }),
-                            // Mention(
-                            //   trigger: '#',
-                            //   disableMarkup: true,
-                            //   style: blackBoldTextStyle(fontSize: 15, context: context,color: Theme.of(context).primaryColor),
-                            //
-                            //   data: [
-                            //     {'id': 'reactjs', 'display': 'reactjs'},
-                            //     {'id': 'javascript', 'display': 'javascript'},
-                            //   ],
-                            //   matchAll: true,
-                            // )
+
                           ],
                         ),
 
@@ -191,7 +172,6 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
                             padding: const EdgeInsets.only(bottom: 10),
                             child: Icon(Icons.send,color: iconsColor,size: 30,),
                           )),
-
                     ],
                   ),
                 ),
@@ -199,16 +179,8 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
             }));
 
         });
-
-
-
-
-
-
-
   }
 }
-
 
 class MentionUser{
   String id;

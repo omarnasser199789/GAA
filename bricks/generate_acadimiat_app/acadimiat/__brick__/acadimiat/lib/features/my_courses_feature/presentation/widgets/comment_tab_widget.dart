@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../../../../core/classes/constants.dart';
 import '../../../../core/globals.dart';
 import '../../domain/entities/my_lecture_entity.dart';
-
-import 'discussion_widget.dart';
 import 'package:measure_size/measure_size.dart';
 import 'package:acadmiat/Theme/style.dart';
 import 'package:acadmiat/injection_container.dart';
@@ -20,12 +18,12 @@ import 'package:comment_tree/data/comment.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'discussion_widget/comment_widget.dart';
+
 class CommentTabWidget extends StatefulWidget {
-  const CommentTabWidget({Key? key,required this.myLectureEntity,required this.lectureId}) : super(key: key);
+  const CommentTabWidget({super.key,required this.myLectureEntity,required this.lectureId});
   final MyLectureEntity myLectureEntity;
   final int lectureId;
-
-
   @override
   State<CommentTabWidget> createState() => _CommentTabWidgetState();
 }
@@ -57,40 +55,30 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
     if (widget.myLectureEntity.contents[0].type == Constants.VIDEO) {
       return BlocProvider(create: (BuildContext context) => sl<MyCoursesBloc>(),
           child: BlocBuilder<MyCoursesBloc, MyCoursesState>(
-          builder: (context, state) {
-    if (kDebugMode) {
-    print("State:$state");
-    }
+              builder: (context, state) {
+           if (kDebugMode) {
+           print("State:$state");
+           }
 
-    if (state is Empty) {
-    BlocProvider.of<MyCoursesBloc>(context).add(GetDiscussionEvent(lectureId: widget.lectureId));/// => SuccessGetDiscussionEntity
-    }
-    if(state is SuccessAddComment){
-      BlocProvider.of<MyCoursesBloc>(context).add(GetDiscussionEvent(lectureId: widget.lectureId));
-    }
+             if (state is Empty) {
+             BlocProvider.of<MyCoursesBloc>(context).add(GetDiscussionEvent(lectureId: widget.lectureId));/// => SuccessGetDiscussionEntity
+             }
+             if(state is SuccessAddComment){
+               BlocProvider.of<MyCoursesBloc>(context).add(GetDiscussionEvent(lectureId: widget.lectureId));
+             }
 
-    if(state is SuccessGetDiscussionEntity){
-
-      discussionEntity =DiscussionEntity(
-          discussionId: state.discussionEntity.discussionId,
-          lectureId: state.discussionEntity.lectureId,
-          timeline: state.discussionEntity.timeline.reversed.toList());
-
-
-      return Stack(
-        alignment: Alignment.bottomCenter,
-        // mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-                bottom: addCommentTabWidgetHeight),
-            // child: DiscussionWidget(
-            //   key: discussionWidgetKey,
-            //   lectureId: widget.lectureId,
-            // ),
-
-            child: (discussionEntity.timeline.isNotEmpty)?
-            ListView.builder(
+             if(state is SuccessGetDiscussionEntity){
+               discussionEntity =DiscussionEntity(
+                   discussionId: state.discussionEntity.discussionId,
+                   lectureId: state.discussionEntity.lectureId,
+                   timeline: state.discussionEntity.timeline.reversed.toList());
+               return Stack(
+                 alignment: Alignment.bottomCenter,
+                 children: [
+                   Padding(
+                     padding: EdgeInsets.only(bottom: addCommentTabWidgetHeight),
+                     child: (discussionEntity.timeline.isNotEmpty)?
+                     ListView.builder(
                 itemCount: discussionEntity.timeline.length,
                 itemBuilder: (context,index){
 
@@ -111,10 +99,8 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                   return Padding(
                     padding: const EdgeInsets.only(left: 17,right: 17,top:17),
                     child: CommentWidget(
-
-                      comments: comments
-
-                      ,hadeComment:
+                      comments: comments,
+                      hadeComment:
                     Comment(
                         avatar: discussionEntity.timeline[index].useravatar,
                         userName: discussionEntity.timeline[index].username,
@@ -123,7 +109,7 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                   );
 
                 }):
-            Column(
+                     Column(
               children: [
                 Padding(
                   padding:  EdgeInsets.only(bottom:size.height*0.1,top:80 ),
@@ -139,18 +125,14 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                 ),
               ],//
             ),
-          ),
-
-          MeasureSize(
+                   ),
+                   MeasureSize(
             onChange: (Size newSize) {
               setState(() {
                 addCommentTabWidgetHeight =
                     newSize.height;
               });
             },
-            // child:  AddCommentWidget(
-            //   lectureId: widget.lectureId,
-            // )
             child: FutureBuilder<dynamic> (
                 future: init(),
                 builder: (context, snapshot) {
@@ -173,18 +155,12 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                               suggestionListDecoration: BoxDecoration(
                                 color:    Theme.of(context).cardColor,
                                 borderRadius: BorderRadius.circular(10),
-                                // border: Border.all(
-                                //   color: Theme.of(context).primaryColor,
-                                //   width: 1
-                                // )
+
                               ),
                               suggestionPosition: SuggestionPosition.Top,
                               maxLines: 5,
                               minLines: 1,
-                              // keyboardType: TextInputType.multiline,
-                              keyboardType:TextInputType.text ,
-
-
+                              keyboardType:TextInputType.text,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "ااضف تعليق ...",
@@ -205,11 +181,8 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                                 Mention(
                                     trigger: '@',
                                     style: blackBoldTextStyle(fontSize: 15, context: context,color: Theme.of(context).primaryColor),
-
                                     data:mentionUserList,
-
                                     matchAll: false,
-
                                     suggestionBuilder: (data) {
                                       return Padding(
                                         padding: const EdgeInsets.only(right: 6,top: 10,left: 6),
@@ -221,13 +194,11 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                                           padding: const EdgeInsets.only(right: 10,bottom: 10,left: 10,top: 10),
                                           child: Row(
                                             children: <Widget>[
-
                                               CircleAvatar(
                                                 radius:15,
                                                 backgroundImage: NetworkImage(
                                                   data['photo'],
                                                 ),
-
                                               ),
                                               const SizedBox(
                                                 width: 10.0,
@@ -243,17 +214,6 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                                         ),
                                       );
                                     }),
-                                // Mention(
-                                //   trigger: '#',
-                                //   disableMarkup: true,
-                                //   style: blackBoldTextStyle(fontSize: 15, context: context,color: Theme.of(context).primaryColor),
-                                //
-                                //   data: [
-                                //     {'id': 'reactjs', 'display': 'reactjs'},
-                                //     {'id': 'javascript', 'display': 'javascript'},
-                                //   ],
-                                //   matchAll: true,
-                                // )
                               ],
                             ),
 
@@ -294,19 +254,15 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                 }),
 
           ),
-        ],
-      );
-    }
-
-
-
-
-    return Shimmer.fromColors(
-      baseColor: Theme.of(context).cardColor,
-      highlightColor: Color.fromRGBO(119, 118, 118, 0.5490196078431373),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 17,right: 17,top:17),
-        child: CommentWidget(
+                 ],
+               );
+             }
+            return Shimmer.fromColors(
+              baseColor: Theme.of(context).cardColor,
+              highlightColor: const Color.fromRGBO(119, 118, 118, 0.5490196078431373),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 17,right: 17,top:17),
+                child: CommentWidget(
 
           comments: [  Comment(
               avatar: "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
@@ -317,9 +273,7 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                 userName: "  ",
                 content: " *************************************** "),
 
-          ]
-
-          ,hadeComment:
+          ], hadeComment:
         Comment(
             avatar: "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
             userName: "********",
@@ -327,11 +281,7 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
         ),
       ),
     );
-
     }));
-
-
-
     }
     else{
       return Container();

@@ -3,18 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:better_player/better_player.dart';
 import 'package:flutter/services.dart';
 
-
-
-
 BetterPlayerConfiguration configurationBetterPlayer({required BuildContext context, int? startFrom}){
-
-  ///Orientation on page started
-  // SystemChrome.setPreferredOrientations([
-  //
-  //   // DeviceOrientation.landscapeRight,
-  //   DeviceOrientation.portraitUp,
-  //   DeviceOrientation.portraitDown,
-  // ]);
 
   return
   BetterPlayerConfiguration(
@@ -51,9 +40,7 @@ BetterPlayerConfiguration configurationBetterPlayer({required BuildContext conte
         DeviceOrientation.landscapeLeft,
         DeviceOrientation.landscapeRight,
       ],
-      // autoDetectFullscreenAspectRatio: true,
-      // autoDetectFullscreenDeviceOrientation: true,
-      // fullScreenByDefault: true,
+
       ///Orientation after full screen dismissed
       deviceOrientationsAfterFullScreen: [
         DeviceOrientation.portraitUp,
@@ -62,7 +49,6 @@ BetterPlayerConfiguration configurationBetterPlayer({required BuildContext conte
 
       startAt: Duration(seconds: (startFrom != null) ? startFrom : 0),
       aspectRatio: 16 / 9,
-      // fit: BoxFit.contain,
       subtitlesConfiguration: const BetterPlayerSubtitlesConfiguration(
         fontSize: 16.0,
       ));

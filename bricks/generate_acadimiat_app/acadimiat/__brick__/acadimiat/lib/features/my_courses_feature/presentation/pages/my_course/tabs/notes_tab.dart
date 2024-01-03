@@ -1,4 +1,3 @@
-
 import 'package:acadmiat/features/my_courses_feature/data/models/my_lecture_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,17 +11,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../../../../../../../injection_container.dart';
 import '../../../../../../core/functions.dart';
+import '../../../../../../core/util/assets_manager.dart';
 import '../../../../domain/use_cases/add_bookmark_usecase.dart';
 import '../../../bloc/my_courses_bloc.dart';
 import '../../../bloc/my_courses_event.dart';
-import '../../../widgets/bookmark_widget/add_bookmark_button.dart';
 
 class NotesTab extends StatefulWidget {
   const NotesTab({
-    Key? key,
+    super.key,
     required this.videoId,
     required this.isVimeo,
-  }) : super(key: key);
+  });
   final bool isVimeo;
   final int videoId;
 
@@ -34,18 +33,9 @@ bool addBookMark = false;
 class NotesTabState extends State<NotesTab> {
 
   void removeBookmarks(int id) {
-    for (int i = 0;
-        lecturePageKey
-                .currentState!.myLectureEntity.currentVideo.bookmarks.length >
-            i;
-        i++) {
-      // print(i);
-      if (id ==
-          lecturePageKey
-              .currentState!.myLectureEntity.currentVideo.bookmarks[i].id) {
-        // print("Item deleted is $i");
-        lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks
-            .removeAt(i);
+    for (int i = 0; lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks.length > i; i++) {
+      if (id == lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks[i].id) {
+        lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks.removeAt(i);
       }
     }
     setState(() {});
@@ -54,18 +44,14 @@ class NotesTabState extends State<NotesTab> {
   TextEditingController textController = TextEditingController();
   bool editBookMark = false;
   late int bookmarkIdForDelete;
-  // bool addBookmarks = true;
   bool showMsg = true;
-
   List<Bookmark> bookmarks =[];
   bool successDeleteBookmark = true;
-  // TextEditingController textController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    bookmarks =
-        lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks;
-
+    bookmarks = lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks;
     Size size = MediaQuery.of(context).size;
     var locale = AppLocalizations.of(context)!;
 
@@ -103,10 +89,6 @@ class NotesTabState extends State<NotesTab> {
               padding: const EdgeInsets.only(bottom: 10),
               child: FloatingActionButton(
                 onPressed: () async {
-
-
-
-                  // vimeoVideoWidgetKey.currentState!.stzopVideo();
                   amazonVideoWidgetKey.currentState!.stopVideo();
                   final result = await showModalBottomSheet(
                       context: context,
@@ -114,7 +96,6 @@ class NotesTabState extends State<NotesTab> {
                       isScrollControlled: true,
                       builder: (context) {
                         textController.text="";
-
                         return Material(
                           color: Theme.of(context).scaffoldBackgroundColor,
                           borderRadius: const BorderRadius.only(
@@ -157,9 +138,7 @@ class NotesTabState extends State<NotesTab> {
                                         Padding(
                                           padding: EdgeInsets.only(
                                               top: 19,
-                                              bottom: MediaQuery.of(context)
-                                                  .viewInsets
-                                                  .bottom),
+                                              bottom: MediaQuery.of(context).viewInsets.bottom),
                                           child: CustomTextField(
                                             title: '',
                                             hint: '${locale.writeYourNotes!}...',
@@ -182,23 +161,16 @@ class NotesTabState extends State<NotesTab> {
                                               child: CustomButton(
                                                   title: locale.saveNotes!,
                                                   onTap: () {
-              FormState form =  _formKey.currentState!;
-              if (form.validate()) {
-
-                if(textController.text!="") {
-                  Navigator.pop(context, 200);
-                }else{
-                  Navigator.pop(context, 500);
-                  showMessage(message: "الرجاء اضافة نص للملاحظة", context: context);
-
-                  mystate(() {
-
-                  });
-                }
-
-              }
-
-
+                                                    FormState form =  _formKey.currentState!;
+                                                    if (form.validate()) {
+                                                      if(textController.text!="") {
+                                                        Navigator.pop(context, 200);
+                                                      }else{
+                                                        Navigator.pop(context, 500);
+                                                        showMessage(message: "الرجاء اضافة نص للملاحظة", context: context);
+                                                        mystate(() {});
+                                                      }
+                                                    }
                                                   })),
                                         )
                                       ],
@@ -208,33 +180,11 @@ class NotesTabState extends State<NotesTab> {
                               }),
                         );
                       }).whenComplete(() { });
-
-
-                  if (result == 200) {
-                    // addBookMark=true;
-                    // BlocProvider.of<MyCoursesBloc>(context)
-                    //     .add(AddBookmarkEvent(
-                    //     addBookMarkParams: AddBookMarkParams(
-                    //         videoId: widget.videoId,
-                    //         userId: userId(),
-                    //         atTime: convertDateTimeToSecond((widget.isVimeo)
-                    //             ? vimeoVideoWidgetKey
-                    //             .currentState!
-                    //             .tempDate
-                    //             : amazonVideoWidgetKey
-                    //             .currentState!
-                    //             .tempDate),
-                    //         id: null,
-                    //         note: textController
-                    //             .text)));
-
-                  }
-
-
+                  if (result == 200) {}
                 },
                 backgroundColor: kMainColor,
                 child: SvgPicture.asset(
-                  "assets/svgs/bookmark.svg",
+                  ImgAssets.bookmark,
                   color: Colors.white,
                   width: 18,
                 ),
@@ -244,30 +194,12 @@ class NotesTabState extends State<NotesTab> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-
                 children: [
-                  // Padding(
-                  //   padding: const EdgeInsets.only(
-                  //       left: 27, right: 27, bottom: 10, top: 10),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //     children: [
-                  //       AddBookmarkButton(
-                  //         isVimeo: widget.isVimeo,
-                  //         allowSelectLecture: false,
-                  //         videoId: widget.videoId,
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-
                   (bookmarks.isNotEmpty)?
                   Padding(
                     padding: const EdgeInsets.only(left: 17, right: 17, top: 8),
                     child: SizedBox(
                       height: 149 * bookmarks.length / 1,
-
-                      // color: Colors.red,
                       child: ListView.builder(
                           padding: EdgeInsets.zero,
                           physics: const NeverScrollableScrollPhysics(),
@@ -275,15 +207,7 @@ class NotesTabState extends State<NotesTab> {
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: () {
-                                if (widget.isVimeo) {
-                                  // vimeoVideoWidgetKey.currentState!.geTo(
-                                  //     second:
-                                  //     int.parse("${bookmarks[index].atTime}"),
-                                  //     clipId: bookmarks[index]
-                                  //         .video!
-                                  //         .clipId
-                                  //         .toString());
-                                } else {
+                                if (widget.isVimeo) {} else {
                                   amazonVideoWidgetKey.currentState!.geTo(
                                     second:
                                     int.parse("${bookmarks[index].atTime}"),
@@ -296,15 +220,6 @@ class NotesTabState extends State<NotesTab> {
                                   decoration: BoxDecoration(
                                     color: Theme.of(context).cardColor,
                                     borderRadius: BorderRadius.circular(15),
-                                    // boxShadow: [
-                                    //   BoxShadow(
-                                    //     color: Colors.grey.withOpacity(0.1),
-                                    //     spreadRadius: 5,
-                                    //     blurRadius: 7,
-                                    //     offset: Offset(0,
-                                    //         3), // changes position of shadow
-                                    //   ),
-                                    // ],
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
@@ -338,13 +253,6 @@ class NotesTabState extends State<NotesTab> {
                                                             .primaryColor,
                                                         fontSize: 13),
                                                   ),
-
-
-
-
-
-
-
                                                 ),
                                               ],),
 
@@ -352,11 +260,11 @@ class NotesTabState extends State<NotesTab> {
                                                 children: [
                                                   GestureDetector(
                                                     onTap: (){
-                                                      showMsg=true;//
+                                                      showMsg=true;
                                                       showCustomDialog(context, bookmarks[index].id);
                                                     },
                                                     child: SvgPicture.asset(
-                                                      "assets/svgs/deleteIcon.svg",
+                                                      ImgAssets.deleteIcon,
                                                       color: iconsColor,
                                                       width: 20,
                                                     ),
@@ -436,35 +344,21 @@ class NotesTabState extends State<NotesTab> {
 
                                                           }).whenComplete(() {});
 
-
-
-
-
                                                       if (result == 200) {
                                                         editBookMark = true;
                                                         showMsg=true;
                                                         bookmarkIdForDelete =
-                                                            bookmarks[index]
-                                                                .id;
+                                                            bookmarks[index].id;
                                                         BlocProvider.of<MyCoursesBloc>(context).add(AddBookmarkEvent(
-                                                            addBookMarkParams: AddBookMarkParams(
-                                                                videoId: widget
-                                                                    .videoId,
-                                                                userId:
-                                                                userId(),
-                                                                atTime: bookmarks[
-                                                                index]
-                                                                    .atTime,
-                                                                id: bookmarks[
-                                                                index]
-                                                                    .id,
-                                                                note: textController
-                                                                    .text)));
+                                                            addBookMarkParams: AddBookMarkParams(videoId: widget.videoId,
+                                                                userId: userId(),
+                                                                atTime: bookmarks[index].atTime,
+                                                                id: bookmarks[index].id,
+                                                                note: textController.text)));
                                                       }
-
                                                     },
                                                     child: SvgPicture.asset(
-                                                      "assets/svgs/edit.svg",
+                                                      ImgAssets.edit,
                                                       color: iconsColor,
                                                       width: 20,
                                                     ),
@@ -484,12 +378,9 @@ class NotesTabState extends State<NotesTab> {
                                                 fontSize: 12,
                                                 height: 2,
                                                 context: context,
-                                                // color: Theme.of(context)
-                                                //     .accentColor
                                             ),
                                           ),
                                         ),
-
                                       ],
                                     ),
                                   ),
@@ -503,9 +394,7 @@ class NotesTabState extends State<NotesTab> {
                     children: [
                       Padding(
                         padding:  EdgeInsets.only(top:size.height*0.15),
-                        child: SvgPicture.asset(
-                          "assets/svgs/notes.svg",
-                        ),
+                        child: SvgPicture.asset(ImgAssets.notes),
                       ),
                     ],
                   ),
@@ -519,7 +408,6 @@ class NotesTabState extends State<NotesTab> {
   void deleteBookMark(int bookmarkIdForDelete) {
     successDeleteBookmark=true;
     Future.delayed(Duration.zero, () {
-
       removeBookmarks(bookmarkIdForDelete);
       if(showMsg) {
         showMsg=false;
@@ -531,10 +419,7 @@ class NotesTabState extends State<NotesTab> {
   void editBookmark(state) {
     String message ="";
     Future.delayed(Duration.zero, () {
-
-
         message ="تم التعديل بنجاح";
-
         for(int i=0; i<lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks.length;i++){
           if(lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks[i].id==state.bookmarkEntity.id) {
             lecturePageKey.currentState!.myLectureEntity.currentVideo
@@ -549,32 +434,21 @@ class NotesTabState extends State<NotesTab> {
           }
         }
         bookmarks = lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks;
-        setState(() {
-
-        });
+        setState(() {});
       if(showMsg) {
         showMessage(message: message, context: context);
         showMsg=false;
       }
-
-
     });
   }
+
   void addBookmark(state) {
     String message ="";
     Future.delayed(Duration.zero, () {
-
-
       message = "تم اضافة بنجاح";
       int i = 0;
-      for (var item in lecturePageKey.currentState!.myLectureEntity
-          .currentVideo.bookmarks) {
-        if (item.id == state.bookmarkEntity.id) {
-          i++;
-        }
-      }
-
-
+      for (var item in lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks) {
+        if (item.id == state.bookmarkEntity.id) {i++;}}
       if (i == 0) {
         lecturePageKey.currentState!.myLectureEntity.currentVideo
             .bookmarks
@@ -587,25 +461,13 @@ class NotesTabState extends State<NotesTab> {
             video: state.bookmarkEntity.video,
             user: state.bookmarkEntity.user)
         );
-        bookmarks =
-            lecturePageKey.currentState!.myLectureEntity.currentVideo
-                .bookmarks;
-        // BlocProvider.of<MyCoursesBloc>(context).add(ResetEvent());
-
+        bookmarks = lecturePageKey.currentState!.myLectureEntity.currentVideo.bookmarks;
       }
-
-
-
-
       if(showMsg) {
         showMessage(message: message, context: context,bgColor: percentIndicatorColor);
         showMsg=false;
       }
-
-      setState(() {
-
-      });
-
+      setState(() {});
     });
   }
 }
@@ -633,6 +495,10 @@ void showCustomDialog(BuildContext context, int bookmarkId) {
                     child: Container(
                       height: 130,
                       width: double.infinity,
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          borderRadius: BorderRadius.circular(15)),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Scaffold(
@@ -642,18 +508,15 @@ void showCustomDialog(BuildContext context, int bookmarkId) {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding:
-                                  const EdgeInsets.only(top: 17, bottom: 9.7),
+                                  padding: const EdgeInsets.only(top: 17, bottom: 9.7),
                                   child: Text(
                                     locale.confirmDeletion!,
-                                    style: blackBoldTextStyle(
-                                        context: context, fontSize: 14),
+                                    style: blackBoldTextStyle(context: context, fontSize: 14),
                                   ),
                                 ),
                                 Text(
                                   locale.areSureOfTheDeletingProcess!,
-                                  style: blackBoldTextStyle(
-                                      context: context, fontSize: 12),
+                                  style: blackBoldTextStyle(context: context, fontSize: 12),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 21),
@@ -665,16 +528,11 @@ void showCustomDialog(BuildContext context, int bookmarkId) {
                                           },
                                           child:Container(
                                             color: Theme.of(context).scaffoldBackgroundColor,
-
                                             child: Padding(
                                               padding: const EdgeInsets.all(7),
                                               child: Text(
                                                 locale.noCancelTheDeletion!,
-                                                style: blackBoldTextStyle(
-                                                    context: context,
-                                                    fontSize: 12,
-                                                    color:
-                                                    Theme.of(context).primaryColor),
+                                                style: blackBoldTextStyle(context: context, fontSize: 12, color: Theme.of(context).primaryColor),
                                               ),
                                             ),
                                           )),
@@ -691,11 +549,7 @@ void showCustomDialog(BuildContext context, int bookmarkId) {
                                               padding: const EdgeInsets.all(7),
                                               child: Text(
                                                 locale.yesIWantToDelete!,
-                                                style: blackBoldTextStyle(
-                                                    context: context,
-                                                    fontSize: 12,
-                                                    color:
-                                                    Theme.of(context).primaryColor),
+                                                style: blackBoldTextStyle(context: context, fontSize: 12, color: Theme.of(context).primaryColor),
                                               ),
                                             ),
                                           )),
@@ -707,10 +561,6 @@ void showCustomDialog(BuildContext context, int bookmarkId) {
                           ),
                         ),
                       ),
-                      margin: const EdgeInsets.symmetric(horizontal: 20),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                          borderRadius: BorderRadius.circular(15)),
                     ),
                   );
                 })),

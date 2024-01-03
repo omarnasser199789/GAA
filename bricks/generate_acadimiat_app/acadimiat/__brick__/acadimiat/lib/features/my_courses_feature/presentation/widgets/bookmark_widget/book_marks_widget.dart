@@ -1,5 +1,3 @@
-import 'package:acadmiat/features/my_courses_feature/presentation/widgets/video_widget/amazon_video.dart';
-import 'package:acadmiat/features/my_courses_feature/presentation/widgets/video_widget/vimeo_video.dart';
 import 'package:flutter/material.dart';
 import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
@@ -15,8 +13,6 @@ class BookMarksWidget extends StatefulWidget {
     required this.bookmarks,
     required this.videoId,
     required this.isVimeo,
-    // required this.amazonVideoWidgetKey,
-    // required this.vimeoVideoWidgetKey,
   }) : super(key: key);
   List<Bookmark> bookmarks;
   final bool isVimeo;
@@ -36,9 +32,7 @@ class BookMarksWidgetState extends State<BookMarksWidget> {
   }
   void removeBookmarks(int id) {
     for (int i = 0; widget.bookmarks.length > i; i++) {
-      print(i);
       if (id == widget.bookmarks[i].id) {
-        print("Item deleted is $i");
         widget.bookmarks.removeAt(i);
       }
     }
@@ -60,8 +54,6 @@ class BookMarksWidgetState extends State<BookMarksWidget> {
   bool checkBoxValue = false;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    var locale = AppLocalizations.of(context)!;
 
     if (widget.bookmarks.isNotEmpty) {
       return Column(
@@ -95,10 +87,8 @@ class BookMarksWidgetState extends State<BookMarksWidget> {
                     return BookMarksItemList(
                       index: index,
                       atTime: widget.bookmarks[index].atTime,
-                      // amazonVideoWidgetKey: widget.amazonVideoWidgetKey,
                       bookmarks: widget.bookmarks,
                       isVimeo: widget.isVimeo,
-                      // vimeoVideoWidgetKey: widget.vimeoVideoWidgetKey,
                       videoId: widget.videoId,
                       theTextOfNote: widget.bookmarks[index].note,
                       bookmarkId: widget.bookmarks[index].id,

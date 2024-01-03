@@ -39,6 +39,10 @@ class ImgAssets {
   static String nounDiscussion = '$_svgPath/noun-discussion.svg';
   static String discussion2 = '$_svgPath/discussion2.svg';
   static String glossary = '$_svgPath/glossary.svg';
+  static String bookmark = '$_svgPath/bookmark.svg';
+  static String deleteIcon = '$_svgPath/deleteIcon.svg';
+  static String edit = '$_svgPath/edit.svg';
+  static String notes = '$_svgPath/notes.svg';
 
 
 
