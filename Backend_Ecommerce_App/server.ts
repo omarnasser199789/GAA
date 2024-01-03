@@ -1,8 +1,8 @@
 require("dotenv").config();
 import App from "./app";
 import UsersController from "./Models/UserModels/UserController";
-import BannerController from "./Models/Banner/Banner.Controller";
+import GenerateAppController from "./Models/GenerateAppModel/GenerateApp.Controller";
 
-const app = new App([new UsersController(), new BannerController()], 3100);
+const app = new App([new UsersController(), new GenerateAppController()], 3100);
 
 app.listen();
