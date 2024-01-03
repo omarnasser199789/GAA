@@ -38,6 +38,7 @@ class ImgAssets {
   static String download = '$_svgPath/download.svg';
   static String nounDiscussion = '$_svgPath/noun-discussion.svg';
   static String discussion2 = '$_svgPath/discussion2.svg';
+  static String glossary = '$_svgPath/glossary.svg';
 
 
 

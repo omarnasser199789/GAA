@@ -9,7 +9,7 @@ import '../../../../../../../core/globals.dart';
 import 'lessons_tab/case_stady_folder/case_stady_tab.dart';
 import 'certificates_tab.dart';
 import 'discussions_tab.dart';
-import 'glossary_tab.dart';
+import 'glossary/glossary_tab.dart';
 import 'wiki_tab.dart';
 
 class OtherOptionsTab extends StatefulWidget {
