@@ -1,7 +1,6 @@
 import 'package:acadmiat/core/widgets/svg_code_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_wrappers/animation_wrappers.dart';
-import 'package:flutter/services.dart';
 import '../../Theme/style.dart';
 
 class EmptyStateWidget extends StatefulWidget {
@@ -16,7 +15,6 @@ class EmptyStateWidget extends StatefulWidget {
   final String text1;
   final String ? text2;
   final String? text3;
-
   final Function () ? onTap;
 
   @override
