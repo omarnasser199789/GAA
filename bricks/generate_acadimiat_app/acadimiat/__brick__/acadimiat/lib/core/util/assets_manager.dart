@@ -33,6 +33,7 @@ class ImgAssets {
   static String profileIcon = '$_svgPath/profileIcon.svg';
   static String articles = '$_svgPath/articles.svg';
   static String reply = '$_svgPath/reply.svg';
+  static String warning2 = '$_svgPath/warning-2.svg';
 
 
 }
