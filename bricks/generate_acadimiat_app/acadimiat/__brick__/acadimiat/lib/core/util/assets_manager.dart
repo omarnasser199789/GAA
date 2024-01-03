@@ -32,7 +32,7 @@ class ImgAssets {
   static String vuesaxLinearCalendar = '$_svgPath/vuesax-linear-calendar.svg';
   static String profileIcon = '$_svgPath/profileIcon.svg';
   static String articles = '$_svgPath/articles.svg';
-
+  static String reply = '$_svgPath/reply.svg';
 
 
 }

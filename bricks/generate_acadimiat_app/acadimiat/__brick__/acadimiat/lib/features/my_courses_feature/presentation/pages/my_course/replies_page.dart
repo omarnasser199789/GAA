@@ -1,26 +1,23 @@
 import 'package:acadmiat/core/widgets/empty_state_widget.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/bloc/my_courses_state.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/functions.dart';
-import '../../../../../core/globals.dart';
 import 'package:flutter_mentions/flutter_mentions.dart';
+import '../../../../../core/util/assets_manager.dart';
 import '../../../../../core/widgets/app_bar_widget.dart';
-import '../../../../../core/widgets/back_button.dart';
 import '../../../../../injection_container.dart';
 import '../../../../profile_feature/presentation/bloc/bloc.dart';
 import '../../../data/models/my_course_model.dart';
 import 'package:jiffy/jiffy.dart';
-
 import '../../../domain/use_cases/topic_reply_usecase.dart';
 import '../../bloc/my_courses_bloc.dart';
 import '../../bloc/my_courses_event.dart';
-import '../../widgets/add_comment_widget.dart';
+
 class RepliesPage extends StatefulWidget {
-  const RepliesPage({Key? key,required this.topic}) : super(key: key);
+  const RepliesPage({super.key,required this.topic});
 
   final Topic topic;
   @override
@@ -47,8 +44,6 @@ class _RepliesPageState extends State<RepliesPage> {
           }
 
           if(state is SuccessTopicReplyState){
-            print(state.topicReplyEntity.topic);
-
             int i=0;
             for(var item in  widget.topic.replies){
               if(item.replyId==state.topicReplyEntity.id) {
@@ -61,31 +56,20 @@ class _RepliesPageState extends State<RepliesPage> {
                   reply:  state.topicReplyEntity.reply,
                   attachment: null, date: state.topicReplyEntity.date,));
 
-
-
-
-
              updateData(size);
               if (msgShow) {
-
                 showMessage(message: "تم ارسال تعليقك",bgColor:Colors.green ,context: context,);
-
                 msgShow = false;
               }
-
-
-
-
             }
-            
-          }//
+          }
 
           return Scaffold(
             appBar:appBarWidget("النقاشات",context,true,null,null),
             body: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Container(
+                SizedBox(
                   height: size.height,
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 60),
@@ -96,7 +80,6 @@ class _RepliesPageState extends State<RepliesPage> {
                     ),
                   ),
                 ),
-
 
                 SafeArea(
                   child: Padding(
@@ -116,18 +99,11 @@ class _RepliesPageState extends State<RepliesPage> {
                             suggestionListDecoration: BoxDecoration(
                               color:    Theme.of(context).cardColor,
                               borderRadius: BorderRadius.circular(10),
-                              // border: Border.all(
-                              //   color: Theme.of(context).primaryColor,
-                              //   width: 1
-                              // )
                             ),
                             suggestionPosition: SuggestionPosition.Top,
                             maxLines: 5,
                             minLines: 1,
-                            // keyboardType: TextInputType.multiline,
                             keyboardType:TextInputType.text ,
-
-
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "ااضف تعليق ...",
@@ -148,11 +124,8 @@ class _RepliesPageState extends State<RepliesPage> {
                               Mention(
                                   trigger: '@',
                                   style: blackBoldTextStyle(fontSize: 15, context: context,color: Theme.of(context).primaryColor),
-
                                   data:[],
-
                                   matchAll: false,
-
                                   suggestionBuilder: (data) {
                                     return Padding(
                                       padding: const EdgeInsets.only(right: 6,top: 10,left: 6),
@@ -170,15 +143,11 @@ class _RepliesPageState extends State<RepliesPage> {
                                               backgroundImage: NetworkImage(
                                                 data['photo'],
                                               ),
-
                                             ),
-                                            const SizedBox(
-                                              width: 10.0,
-                                            ),
+                                            const SizedBox(width: 10.0),
                                             Column(
                                               children: <Widget>[
                                                 Text(data['full_name'],style: blackBoldTextStyle(fontSize: 12, context: context,color: Theme.of(context).canvasColor),),
-                                                // Text('@${data['display']}',style: blackBoldTextStyle(fontSize: 12, context: context,color: Theme.of(context).canvasColor),),
                                               ],
                                             )
                                           ],
@@ -186,10 +155,8 @@ class _RepliesPageState extends State<RepliesPage> {
                                       ),
                                     );
                                   }),
-
                             ],
                           ),
-
                         ),
                         GestureDetector(
                             onTap: (){
@@ -216,7 +183,6 @@ class _RepliesPageState extends State<RepliesPage> {
                               padding: const EdgeInsets.only(bottom: 10),
                               child: Icon(Icons.send,color: iconsColor,size: 30,),
                             )),
-
                       ],
                     ),
                   ),
@@ -226,24 +192,15 @@ class _RepliesPageState extends State<RepliesPage> {
           );
         }
     ));
-
-
-
   }
 
   void updateData(size) {
     widgetsList=[];
-
-
-
     widgetsList.add(Padding(
       padding: const EdgeInsets.only(top:10,left: 17,right: 17),
       child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-              borderRadius: BorderRadius.circular(8)
-          ),
+          decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(8)),
           child: Padding(
             padding: const EdgeInsets.only(top: 10,bottom: 10,left: 10,right: 10),
             child: Text(widget.topic.topic,style: blackBoldTextStyle(fontSize: 11,height: 1.5, context: context,),),
@@ -257,15 +214,11 @@ class _RepliesPageState extends State<RepliesPage> {
           padding: const EdgeInsets.only(top: 10, left: 17, right: 17),
           child: Container(
             width: double.infinity,
-            decoration: BoxDecoration(
-                color: Theme
-                    .of(context)
-                    .cardColor,
+            decoration: BoxDecoration(color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(8)
             ),
             child: Padding(
-              padding: const EdgeInsets.only(
-                  top: 10, bottom: 10, left: 10, right: 10),
+              padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -278,42 +231,27 @@ class _RepliesPageState extends State<RepliesPage> {
                           Container(
                             height: 35,
                             width: 35,
-                            decoration: BoxDecoration(
-                                color: Theme
-                                    .of(context)
-                                    .canvasColor
-                                    .withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(200)),
+                            decoration: BoxDecoration(color: Theme.of(context).canvasColor.withOpacity(0.1), borderRadius: BorderRadius.circular(200)),
                             child: Padding(
                               padding: const EdgeInsets.all(2.0),
-                              child: SvgPicture.asset(
-                                "assets/svgs/profileIcon.svg",
-                              ),
+                              child: SvgPicture.asset(ImgAssets.profileIcon),
                             ),
                           ),
-                          const SizedBox(
-                            width: 8,
-                          ),
+                          const SizedBox(width: 8),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(item.addedBy, style: blackBoldTextStyle(
-                                  fontSize: 12, context: context),),
+                              Text(item.addedBy, style: blackBoldTextStyle(fontSize: 12, context: context),),
                               Padding(
                                 padding: const EdgeInsets.only(top: 5),
                                 child: Text(Jiffy(item.date).yMMMdjm,
-                                  style: blackBoldTextStyle(
-                                      fontSize: 11,
-                                      context: context,
-                                      color: iconsColor
-                                  ),),
+                                  style: blackBoldTextStyle(fontSize: 11, context: context, color: iconsColor),),
                               ),
                             ],
                           ),
                         ],
                       ),
-
                     ],
                   ),
 
@@ -322,8 +260,7 @@ class _RepliesPageState extends State<RepliesPage> {
                     child: Text(
                       textWidthBasis: TextWidthBasis.longestLine,
                       parseHtmlString(item.reply),
-                      style: blackBoldTextStyle(
-                        fontSize: 11, height: 1.5, context: context,),),
+                      style: blackBoldTextStyle(fontSize: 11, height: 1.5, context: context,),),
                   ),
                 ],
               ),
@@ -332,9 +269,9 @@ class _RepliesPageState extends State<RepliesPage> {
         ));
       }
     }else{
-      widgetsList.add(const Padding(
-        padding: EdgeInsets.only(top:100),
-        child: EmptyStateWidget(svg: "assets/svgs/reply.svg", text1:"لا توجد ردود!",text3: "قم باضافة اول رد",),
+      widgetsList.add( Padding(
+        padding: const EdgeInsets.only(top:100),
+        child: EmptyStateWidget(svg: ImgAssets.reply, text1:"لا توجد ردود!",text3: "قم باضافة اول رد",),
       ));
     }
   }
