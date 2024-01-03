@@ -2,18 +2,15 @@ import 'package:acadmiat/core/widgets/svg_code_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../Theme/style.dart';
-import '../../Theme/theme_values.dart';
-import '../globals.dart';
+
 class EmptyStateWidget extends StatefulWidget {
-  const EmptyStateWidget({Key? key,required this.svg,
+  const EmptyStateWidget({super.key,required this.svg,
     required this.text1,
     this.text2,
      this.text3,
      this.onTap,
-  }) : super(key: key);
+  });
 
   final String svg;
   final String text1;
@@ -27,19 +24,13 @@ class EmptyStateWidget extends StatefulWidget {
 }
 
 class _EmptyStateWidgetState extends State<EmptyStateWidget> {
-  // String svgCode="";
-  // @override
-  // Future<void> didChangeDependencies() async {
-  //  String  code = await rootBundle.loadString(widget.svg);
-  //   svgCode=  code.replaceAll("ec5252",primaryColorTypeString);
-  //   setState(() {
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
 
     return FadedSlideAnimation(
+      beginOffset: const Offset(0, 1),
+      endOffset: const Offset(0, 0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,11 +62,8 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
           ),
           const  SizedBox(height: 130,),
 
-
         ],
       ),
-      beginOffset: const Offset(0, 1),
-      endOffset: const Offset(0, 0),
     );
   }
 }

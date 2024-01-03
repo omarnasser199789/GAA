@@ -156,9 +156,7 @@ class _ArticlePageState extends State<ArticlePage> {
                           );
                         }),
                       );//
-                    }).whenComplete(() {
-
-                });
+                    }).whenComplete(() {});
 
                         if (result == 200) {
                           allowAddIt=true;
@@ -168,8 +166,7 @@ class _ArticlePageState extends State<ArticlePage> {
                               userId: userId(),
                               body: definitionController.text, header:titleController.text, date: DateTime.now(),
                               isPublished: true)));
-                        }
-                        },
+                        }},
                       backgroundColor: kMainColor,
                       child: SvgPicture.asset(
                         ImgAssets.add,
