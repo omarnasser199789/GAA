@@ -20,7 +20,7 @@ import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
 import '../test_page/browser.dart';
 import '../widgets/session_number.dart';
-import 'book_consultation_page.dart';
+import 'book_consultation/book_consultation_page.dart';
 
 class SessionPage extends StatelessWidget {
   SessionPage(

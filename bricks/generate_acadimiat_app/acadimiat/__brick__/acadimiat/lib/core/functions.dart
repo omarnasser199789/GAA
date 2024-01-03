@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:jiffy/jiffy.dart';
 import '../features/authentication_feature/data/data_sources/remot_data_sources/authenticate_remote_data_functions.dart';
-import '../features/consultancies_feature/presentation/pages/book_consultation_page.dart';
+import '../features/consultancies_feature/presentation/pages/book_consultation/book_consultation_page.dart';
+import '../features/consultancies_feature/presentation/pages/book_consultation/custom_date.dart';
 import 'error/failures.dart';
 import 'package:html/parser.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -390,15 +391,11 @@ CustomDate generateDates(List<int> weekdays, int numDays) {
   for (var i = 0; i < numDays; i++) {
     // Check if the current day of the week is in the list of weekdays
     if (weekdays.contains(today.weekday)) {
-      // If it is, add it to the list of dates
-      // if (!takenDate.contains(today)) {
       dates.add( Jiffy(today).yMMMMd);
       dateTime.add(today);
-      // }
-
     }
     // Move to the next day
-    today = today.add(Duration(days: 1));
+    today = today.add(const Duration(days: 1));
   }
 
   return CustomDate(date: dates, dateTime: dateTime);
