@@ -30,13 +30,6 @@ class Question {
   List<Pair> pairs;
   List<Pair> pairsSelection;
 
-
-
-
-
-
-
-
   factory Question.fromJson(Map<String, dynamic> json) => Question(
     id: (json["id"]!=null)?json["id"]:-1,
     quizzId:( json["quizzId"]!=null)? json["quizzId"]:-1,

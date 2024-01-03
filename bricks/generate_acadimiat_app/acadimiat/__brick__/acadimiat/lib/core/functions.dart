@@ -10,7 +10,6 @@ import 'error/failures.dart';
 import 'package:html/parser.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'globals.dart';
-import '../../../../../core/classes/Response.dart' as R;
 
 List<int> loadMyCoursesList() {
   final jsonString = globalSH.getString(MY_COURSES_List);

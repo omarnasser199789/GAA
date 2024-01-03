@@ -5,15 +5,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../Theme/style.dart';
-// import 'package:pdftron_flutter/pdftron_flutter.dart';
 import '../../../../../core/functions.dart';
 import '../../../../../core/globals.dart';
 import 'package:http/http.dart';
+import '../../../../../core/util/assets_manager.dart';
 import '../../../../../core/widgets/app_bar_widget.dart';
 import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_filex/open_filex.dart';
-
 import '../../../../../core/widgets/waiting_widget.dart';
 import '../../../domain/entities/assignment_entity.dart';
 import '../../../domain/entities/files_entity.dart';
@@ -31,12 +30,11 @@ import 'package:flutter_folding_card/flutter_folding_card.dart';
 
 class ActivityByPageId extends StatefulWidget {
   const ActivityByPageId(
-      {Key? key,
+      {super.key,
       required this.assignmentId,
       required this.toDate,
       required this.fromDate,
-      required this.courseId})
-      : super(key: key);
+      required this.courseId});
 
   final int assignmentId;
   final int courseId;
@@ -50,7 +48,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
   final itemCount = 3;
   final foldOutList = <bool>[];
   bool firstOne = true;
-  int listHight = 0;
+  int listHeight = 0;
   int selectedItem = 0;
   bool loading = false;
   bool allowUP = true;
@@ -94,7 +92,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
             file;
             path = "";
             firstOne = true;
-            listHight = 0;
+            listHeight = 0;
             if (state is SuccessPostNewAssignmentEntityState) {
               allowUP = true;
               showMessage(
@@ -128,7 +126,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
               firstOne = false;
               for (var item in assignmentEntity.attempts) {
                 foldOutList.add(false);
-                listHight += 133;
+                listHeight += 133;
               }
             }
           }
@@ -175,15 +173,6 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                   ),
                                 ),
 
-                                // Padding(
-                                //   padding: const EdgeInsets.only(top: 15,left: 30,right: 30),
-                                //   child: CustomButton(
-                                //       color: Theme.of(context).primaryColor.withOpacity(0.1),//Theme.of(context).primaryColor.withOpacity(0.1),
-                                //       textColor: Theme.of(context).primaryColor,
-                                //       title: "قراءة المزيد", onTap: (){
-                                //
-                                //   }),
-                                // )
                               ],
                             ),
                           ),
@@ -205,47 +194,31 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       SvgPicture.asset(
-                                        "assets/svgs/vuesax-linear-calendar.svg",
+                                        ImgAssets.vuesaxLinearCalendar,
                                         color: iconsColor,
                                       ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
+                                      const SizedBox(width: 10),
                                       Text(
-                                        // DateFormat("yyyy/MM/dd").format(widget.assignments[index].fromDate)
                                         Jiffy(widget.fromDate).yMMMMd,
-                                        style: blackBoldTextStyle(
-                                          fontSize: 12,
-                                          context: context,
-                                          color: iconsColor,
-                                        ),
+                                        style: blackBoldTextStyle(fontSize: 12, context: context, color: iconsColor),
                                       ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
+                                      const SizedBox(width: 10),
                                       Text(
                                         "-",
                                         style: blackBoldTextStyle(
                                             fontSize: 12, context: context),
                                       ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
+                                      const SizedBox(width: 10),
                                       Text(
-                                        // DateFormat("yyyy/MM/dd").format(widget.assignments[index].toDate)
                                         Jiffy(widget.toDate).yMMMMd,
-                                        style: blackBoldTextStyle(
-                                            fontSize: 12,
-                                            context: context,
-                                            color: iconsColor),
+                                        style: blackBoldTextStyle(fontSize: 12, context: context, color: iconsColor),
                                       ),
                                     ],
                                   ),
                                 ),
                                 if (assignmentEntity.canAttend == true)
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 13, bottom: 15),
+                                    padding: const EdgeInsets.only(top: 13, bottom: 15),
                                     child: GestureDetector(
                                       onTap: () async {
                                         final result = await FilePicker.platform
@@ -291,25 +264,19 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                             left: 10,
                                                             right: 10),
                                                     child: Text(
-                                                      (path != "")
-                                                          ? path.split("/").last
-                                                          : "اختر ملف"
-//
-                                                      ,
+                                                      (path != "") ? path.split("/").last : "اختر ملف",
                                                       style: blackBoldTextStyle(
                                                         context: context,
                                                         fontSize: 11,
                                                         height: 1.5,
                                                         color: iconsColor,
                                                       ),
-                                                      textAlign:
-                                                          TextAlign.center,
+                                                      textAlign: TextAlign.center,
                                                     ),
                                                   ),
                                                   if ((path == ""))
                                                     Padding(
-                                                      padding: EdgeInsets.only(
-                                                          top: 17),
+                                                      padding: const EdgeInsets.only(top: 17),
                                                       child: Text(
                                                         "يمكن اختيار اي نوع من الملفات",
                                                         style: blackBoldTextStyle(
@@ -322,16 +289,11 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                 ],
                                               ),
                                             ),
-                                            Container(
+                                            SizedBox(
                                                 width: double.infinity,
-                                                height:
-                                                    (path == "") ? 150 : 100,
+                                                height: (path == "") ? 150 : 100,
                                                 child: DashedRect(
-                                                  color: (path == "")
-                                                      ? Theme.of(context)
-                                                          .primaryColor
-                                                      : Colors.grey
-                                                          .withOpacity(0.5),
+                                                  color: (path == "") ? Theme.of(context).primaryColor : Colors.grey.withOpacity(0.5),
                                                   strokeWidth: 2.0,
                                                   gap: 5.0,
                                                 )),
@@ -342,57 +304,34 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                   ),
                                 if (assignmentEntity.canAttend == false)
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 13, bottom: 15),
+                                    padding: const EdgeInsets.only(top: 13, bottom: 15),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: Theme.of(context)
-                                            .scaffoldBackgroundColor,
+                                        color: Theme.of(context).scaffoldBackgroundColor,
                                         borderRadius: BorderRadius.circular(5),
                                       ),
                                       child: Stack(
                                         alignment: Alignment.center,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 50, bottom: 50),
+                                            padding: const EdgeInsets.only(top: 50, bottom: 50),
                                             child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.center,
                                               children: [
-                                                SvgPicture.asset(
-                                                  "assets/svgs/expiry.svg",
-                                                  // width: 10,
-                                                ),
+                                                SvgPicture.asset(ImgAssets.expiry),
                                                 Padding(
                                                   padding:
-                                                      const EdgeInsets.only(
-                                                          top: 5,
-                                                          left: 10,
-                                                          right: 10),
+                                                      const EdgeInsets.only(top: 5, left: 10, right: 10),
                                                   child: Text(
                                                     "نأسف! انتهت مدة المشاركة في الواجب",
-                                                    style: blackBoldTextStyle(
-                                                        context: context,
-                                                        fontSize: 11,
-                                                        height: 1.5,
-                                                        color: iconsColor),
+                                                    style: blackBoldTextStyle(context: context, fontSize: 11, height: 1.5, color: iconsColor),
                                                     textAlign: TextAlign.center,
                                                   ),
                                                 ),
                                               ],
                                             ),
                                           ),
-                                          // Container(
-                                          //     width: double.infinity,
-                                          //     height: 150,
-                                          //     child: DashedRect(
-                                          //       color: Colors.grey
-                                          //           .withOpacity(0.5),
-                                          //       strokeWidth: 2.0,
-                                          //       gap: 5.0,
-                                          //     )),
                                         ],
                                       ),
                                     ),
@@ -413,16 +352,11 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                             allowUP = false;
                                             List<int> flieSize = file;
                                             if (flieSize.length < 11000000) {
-                                              BlocProvider.of<MyCoursesBloc>(
-                                                      context)
-                                                  .add(PostNewAssignmentEvent(
-                                                      postNewAssignmentParams:
-                                                          PostNewAssignmentParams(
+                                              BlocProvider.of<MyCoursesBloc>(context).add(PostNewAssignmentEvent(postNewAssignmentParams: PostNewAssignmentParams(
                                                 userId: userId(),
                                                 file: file,
                                                 fileName: path.split("/").last,
-                                                assignmentId:
-                                                    widget.assignmentId,
+                                                assignmentId: widget.assignmentId,
                                               )));
                                             } else {
                                               allowUP = true;
@@ -456,69 +390,41 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                         padding: const EdgeInsets.only(top: 11),
                                         child: AnimatedContainer(
                                           duration: Duration(
-                                              milliseconds:
-                                                  durationForAnimatedContainer),
-                                          height: listHight / 1,
+                                              milliseconds: durationForAnimatedContainer),
+                                          height: listHeight / 1,
                                           child: ListView.builder(
-                                              physics:
-                                                  NeverScrollableScrollPhysics(),
-                                              itemCount: assignmentEntity
-                                                  .attempts.length,
+                                              physics: const NeverScrollableScrollPhysics(),
+                                              itemCount: assignmentEntity.attempts.length,
                                               itemBuilder: (context, index) {
                                                 return Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          bottom: 20),
+                                                  padding: const EdgeInsets.only(bottom: 20),
                                                   child: Stack(
                                                     alignment: Alignment.center,
                                                     children: [
                                                       Stack(
-                                                        alignment: Alignment
-                                                            .bottomCenter,
+                                                        alignment: Alignment.bottomCenter,
                                                         children: [
                                                           Padding(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                        .only(
-                                                                    bottom: 2),
+                                                            padding: const EdgeInsets.only(bottom: 2),
                                                             child: FoldingCard(
-                                                              foldOut:
-                                                                  foldOutList[
-                                                                      index],
-                                                              curve: foldOutList[
-                                                                          index] ==
-                                                                      true
-                                                                  ? Curves
-                                                                      .easeInCubic
-                                                                  : Curves
-                                                                      .easeOutCubic,
-                                                              duration:
-                                                                  const Duration(
-                                                                      milliseconds:
-                                                                          900),
+                                                              foldOut: foldOutList[index],
+                                                              curve: foldOutList[index] == true
+                                                                  ? Curves.easeInCubic
+                                                                  : Curves.easeOutCubic,
+                                                              duration: const Duration(milliseconds: 900),
                                                               coverBackground:
                                                                   GestureDetector(
-                                                                onTap: () {
-                                                                  ///If the assignment still waiting, Don't open more data
-                                                                  if (assignmentEntity
-                                                                          .attempts[
-                                                                              index]
-                                                                          .status !=
-                                                                      4) {
-                                                                    setState(
-                                                                        () {
-                                                                      durationForAnimatedContainer =
-                                                                          500;
-                                                                      foldOutList[
-                                                                              index] =
-                                                                          true;
-                                                                      listHight +=
-                                                                          270;
-                                                                    });
-                                                                  }
-                                                                },
-                                                                child:
-                                                                    Container(
+                                                                    onTap: () {
+                                                                      ///If the assignment still waiting, Don't open more data
+                                                                      if (assignmentEntity.attempts[index].status != 4) {
+                                                                        setState(() {
+                                                                          durationForAnimatedContainer = 500;
+                                                                          foldOutList[index] = true;
+                                                                          listHeight += 270;
+                                                                        });
+                                                                      }
+                                                                      },
+                                                                    child: Container(
                                                                   alignment:
                                                                       Alignment
                                                                           .center,
@@ -531,20 +437,11 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                               12)),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsets
-                                                                            .only(
-                                                                        left:
-                                                                            14,
-                                                                        right:
-                                                                            14,
-                                                                        top: 14,
-                                                                        bottom:
-                                                                            14),
-                                                                    child:
+                                                                        padding: const EdgeInsets.only(left:14, right: 14, top: 14, bottom: 14),
+                                                                        child:
                                                                         Column(
-                                                                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                      children: [
-                                                                        GestureDetector(
+                                                                          children: [
+                                                                            GestureDetector(
                                                                           onTap:
                                                                               () async {
 
@@ -568,76 +465,63 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                             });
 
                                                                           },
-                                                                          child:
-                                                                              Container(
-                                                                            color:
-                                                                                Theme.of(context).scaffoldBackgroundColor,
-                                                                            height:
-                                                                                40,
-                                                                            child:
+                                                                          child: Container(
+                                                                                color: Theme.of(context).scaffoldBackgroundColor,
+                                                                                height: 40,
+                                                                                child:
                                                                                 Row(
-                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                              children: [
-                                                                                SvgPicture.asset(
-                                                                                  "assets/svgs/attachment.svg",
-                                                                                  // width: 0,
-                                                                                ),
-                                                                                Container(
-                                                                                  width: size.width * 0.45,
-                                                                                  // color: Colors.red,
-                                                                                  child: Row(
-                                                                                    children: [
-                                                                                      Container(
-                                                                                        constraints: const BoxConstraints(minWidth: 0, maxWidth: 55), //
-                                                                                        child: Text(
-                                                                                          assignmentEntity.attempts[index].file.split("/").last.split(".").last + "...",
-                                                                                          overflow: TextOverflow.ellipsis,
-                                                                                          style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
-                                                                                        ),
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  children: [
+                                                                                    SvgPicture.asset(ImgAssets.attachment),
+                                                                                    SizedBox(
+                                                                                      width: size.width * 0.45,
+                                                                                      child: Row(
+                                                                                        children: [
+                                                                                          Container(
+                                                                                            constraints: const BoxConstraints(minWidth: 0, maxWidth: 55),
+                                                                                            child: Text(
+                                                                                              "${assignmentEntity.attempts[index].file.split("/").last.split(".").last}...",
+                                                                                              overflow: TextOverflow.ellipsis,
+                                                                                              style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
+                                                                                            ),
+                                                                                          ),
+                                                                                          SizedBox(
+                                                                                            width: size.width * 0.28,
+                                                                                            child: Text(
+                                                                                              assignmentEntity.attempts[index].file.split("/").last..split(".").last,
+                                                                                              maxLines: 1,
+                                                                                              style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
                                                                                       ),
-                                                                                      Container(
-                                                                                        width: size.width * 0.28,
-                                                                                        child: Text(
-                                                                                          assignmentEntity.attempts[index].file.split("/").last..split(".").last,
-                                                                                          // overflow: TextOverflow.ellipsis,
-                                                                                          maxLines: 1,
-                                                                                          style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
-                                                                                        ),
+                                                                                    ),
+                                                                                    Text(
+                                                                                      Jiffy(assignmentEntity.attempts[index].date).yMMMMd,
+                                                                                      style: blackBoldTextStyle(
+                                                                                        fontSize: 12,
+                                                                                        context: context,
+                                                                                        color: iconsColor,
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
+                                                                                    ),
+                                                                                  ],
                                                                                 ),
-                                                                                Text(
-                                                                                  Jiffy(assignmentEntity.attempts[index].date).yMMMMd,
-                                                                                  style: blackBoldTextStyle(
-                                                                                    fontSize: 12,
-                                                                                    context: context,
-                                                                                    color: iconsColor,
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
+                                                                              ),
                                                                         ),
-                                                                        Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.only(top: 10),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
+                                                                            Padding(
+                                                                          padding: const EdgeInsets.only(top: 10),
+                                                                          child: Row(
+                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                             children: [
                                                                               if (assignmentEntity.attempts[index].status == 2)
                                                                                 Row(
                                                                                   children: [
                                                                                     SvgPicture.asset(
-                                                                                      "assets/svgs/Icon feather-check-circle.svg",
+                                                                                      ImgAssets.iconFeatherCheckCircle,
                                                                                       width: 20,
                                                                                       color: percentIndicatorColor,
                                                                                     ),
-                                                                                    SizedBox(
-                                                                                      width: 10,
-                                                                                    ),
+                                                                                    const SizedBox(width: 10),
                                                                                     Text(
                                                                                       "تم قبول الحل",
                                                                                       style: blackBoldTextStyle(fontSize: 11, context: context, color: percentIndicatorColor),
@@ -653,9 +537,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                                       width: 20,
                                                                                       color: Colors.red,
                                                                                     ),
-                                                                                    SizedBox(
-                                                                                      width: 10,
-                                                                                    ),
+                                                                                    const SizedBox(width: 10),
                                                                                     Text(
                                                                                       "تم رفض الحل",
                                                                                       style: blackBoldTextStyle(fontSize: 11, context: context, color: Colors.red),
@@ -666,21 +548,17 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                                 Row(
                                                                                   children: [
                                                                                     SvgPicture.asset(
-                                                                                      "assets/svgs/clock.svg",
+                                                                                      ImgAssets.clock,
                                                                                       width: 20,
                                                                                       color: Colors.orange,
                                                                                     ),
-                                                                                    SizedBox(
-                                                                                      width: 10,
-                                                                                    ),
+                                                                                    const SizedBox(width: 10),
                                                                                     Text(
                                                                                       "بالانتظار",
                                                                                       style: blackBoldTextStyle(fontSize: 11, context: context, color: Colors.orange),
                                                                                     ),
                                                                                   ],
                                                                                 ),
-
-                                                                              // Text(state.assignmentEntity.attempts[index].status.toString()),
 
                                                                               ValueListenableBuilder(
                                                                                   valueListenable: counterNotifier,
@@ -729,9 +607,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                                       "تفاصيل",
                                                                                       style: blackBoldTextStyle(fontSize: 11, context: context, color: Theme.of(context).primaryColor),
                                                                                     ),
-                                                                                    SizedBox(
-                                                                                      width: 10,
-                                                                                    ),
+                                                                                    const SizedBox(width: 10),
                                                                                     Container(
                                                                                       width: 20,
                                                                                       height: 20,
@@ -740,8 +616,8 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                                         borderRadius: BorderRadius.circular(2000),
                                                                                         color: Theme.of(context).primaryColor,
                                                                                       ),
-                                                                                      child: Padding(
-                                                                                        padding: const EdgeInsets.only(right: 3),
+                                                                                      child: const Padding(
+                                                                                        padding: EdgeInsets.only(right: 3),
                                                                                         child: Icon(
                                                                                           Icons.arrow_forward_ios,
                                                                                           size: 14,
@@ -754,13 +630,13 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                      ],
+                                                                          ],
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                              ),
                                                               expandedCard:
-                                                                  Container(
+                                                              Container(
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   borderRadius: const BorderRadius
@@ -920,8 +796,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                              cover:
-                                                                  GestureDetector(
+                                                              cover: GestureDetector(
                                                                 onTap: () {
                                                                   setState(() {
                                                                     durationForAnimatedContainer =
@@ -929,113 +804,61 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                     foldOutList[
                                                                             index] =
                                                                         false;
-                                                                    listHight -=
+                                                                    listHeight -=
                                                                         270;
                                                                   });
                                                                 },
                                                                 child:
                                                                     Container(
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .center,
-                                                                  decoration: BoxDecoration(
-                                                                      color: Theme.of(
-                                                                              context)
-                                                                          .scaffoldBackgroundColor,
-                                                                      borderRadius: BorderRadius.only(
-                                                                          bottomLeft: Radius.circular(
-                                                                              8),
-                                                                          bottomRight:
-                                                                              Radius.circular(8))),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsets
-                                                                            .only(
-                                                                        left:
-                                                                            14,
-                                                                        right:
-                                                                            14,
-                                                                        top: 14,
-                                                                        bottom:
-                                                                            14),
+                                                                      alignment: Alignment.center,
+                                                                      decoration: BoxDecoration(
+                                                                      color: Theme.of(context).scaffoldBackgroundColor,
+                                                                      borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8),
+                                                                          bottomRight: Radius.circular(8))),
+                                                                      child: Padding(
+                                                                        padding: const EdgeInsets.only(
+                                                                            left: 14,
+                                                                            right: 14,
+                                                                            top: 14,
+                                                                            bottom: 14),
                                                                     child:
-                                                                        Column(
-                                                                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                      children: [
-                                                                        SvgPicture
-                                                                            .asset(
-                                                                          "assets/svgs/Icon ionic-ios-arrow-back.svg",
-                                                                          width:
-                                                                              20,
-                                                                        ),
-                                                                        Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.only(top: 10), //
-                                                                          child:
-                                                                              GestureDetector(
-                                                                            onTap:
-                                                                                () async {
-                                                                              // selectedItem = index;
-                                                                              // setState(() {
-                                                                              //   loadingFile = true;
-                                                                              // });
-                                                                              // await downloadFile(
-                                                                              //   assignmentEntity.attempts[index].file,
-                                                                              //   assignmentEntity.attempts[index].file.split("/").last,
-                                                                              //
-                                                                              //   (List<int> newBytes) {
-                                                                              //     bytes.addAll(newBytes);
-                                                                              //     final downloadedLength = bytes.length;
-                                                                              //     _progress = downloadedLength / contentLength!;
-                                                                              //     counterNotifier.value = "$_progress%";
-                                                                              //   },
-                                                                              // );
-                                                                              // setState(() {
-                                                                              //   loadingFile = false;
-                                                                              // });
-                                                                              getFile = true;
-                                                                              BlocProvider.of<MyCoursesBloc>(context).add(GetFileByUrlEvent(params: GetFileParams(url: assignmentEntity.attempts[index].file.split("/").last, index: index)));
-
-                                                                              selectedItem = index;
-                                                                              setState(() {
-                                                                                loadingFile = true;
-                                                                              });
-                                                                            },
-                                                                            child:
+                                                                    Column(
+                                                                           children: [
+                                                                             SvgPicture.asset(
+                                                                               ImgAssets.iconIonicIosArrowBack,
+                                                                               width: 20,
+                                                                             ),
+                                                                             Padding(
+                                                                               padding: const EdgeInsets.only(top: 10),
+                                                                               child:
+                                                                               GestureDetector(
+                                                                                 onTap: () async {
+                                                                                   getFile = true;
+                                                                                   BlocProvider.of<MyCoursesBloc>(context).add(GetFileByUrlEvent(params: GetFileParams(url: assignmentEntity.attempts[index].file.split("/").last, index: index)));
+                                                                                   selectedItem = index;
+                                                                                   setState(() { loadingFile = true; });
+                                                                                   },
+                                                                                 child:
                                                                                 Row(
-                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                              children: [
-                                                                                SvgPicture.asset(
-                                                                                  "assets/svgs/attachment.svg",
-                                                                                  // width: 0,
-                                                                                ),
-                                                                                // Container(
-                                                                                //     width: size.width * 0.45,
-                                                                                //     // color: Colors.red,
-                                                                                //     child: Text(
-                                                                                //       assignmentEntity.attempts[index].file.split("/").last,
-                                                                                //       overflow: TextOverflow.ellipsis,
-                                                                                //       style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
-                                                                                //     )),
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  children: [
+                                                                                    SvgPicture.asset( ImgAssets.attachment ),
+                                                                                    SizedBox(
+                                                                                      width: size.width * 0.45,
+                                                                                      child: Row(
+                                                                                        children: [
+                                                                                          Container(
+                                                                                            constraints: const BoxConstraints(minWidth: 0, maxWidth: 55),
+                                                                                            child: Text("${assignmentEntity.attempts[index].file.split("/").last.split(".").last}...",
+                                                                                              overflow: TextOverflow.ellipsis,
+                                                                                              style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
+                                                                                            ),
+                                                                                          ),
 
-                                                                                Container(
-                                                                                  width: size.width * 0.45,
-                                                                                  // color: Colors.red,
-                                                                                  child: Row(
-                                                                                    children: [
-                                                                                      Container(
-                                                                                        constraints: const BoxConstraints(minWidth: 0, maxWidth: 55), //
-                                                                                        child: Text(
-                                                                                          assignmentEntity.attempts[index].file.split("/").last.split(".").last + "...",
-                                                                                          overflow: TextOverflow.ellipsis,
-                                                                                          style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Container(
+                                                                                      SizedBox(
                                                                                         width: size.width * 0.3,
                                                                                         child: Text(
                                                                                           assignmentEntity.attempts[index].file.split("/").last..split(".").last,
-                                                                                          // overflow: TextOverflow.ellipsis,
                                                                                           maxLines: 1,
                                                                                           style: blackBoldTextStyle(fontSize: 12, context: context, color: Colors.blue),
                                                                                         ),
@@ -1056,9 +879,8 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                        Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.only(top: 12),
+                                                                             Padding(
+                                                                          padding: const EdgeInsets.only(top: 12),
                                                                           child:
                                                                               Row(
                                                                             mainAxisAlignment:
@@ -1072,9 +894,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                                       width: 20,
                                                                                       color: percentIndicatorColor,
                                                                                     ),
-                                                                                    SizedBox(
-                                                                                      width: 10,
-                                                                                    ),
+                                                                                    const SizedBox(width: 10),
                                                                                     Text(
                                                                                       "تم قبول الحل",
                                                                                       style: blackBoldTextStyle(fontSize: 11, context: context, color: percentIndicatorColor),
@@ -1089,9 +909,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                                       width: 20,
                                                                                       color: Colors.red,
                                                                                     ),
-                                                                                    SizedBox(
-                                                                                      width: 10,
-                                                                                    ),
+                                                                                    const SizedBox(width: 10),
                                                                                     Text(
                                                                                       "تم رفض الحل",
                                                                                       style: blackBoldTextStyle(fontSize: 11, context: context, color: Colors.red),
@@ -1131,7 +949,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                                         ),
                                                                                       );
                                                                                     } else {
-                                                                                      return Container(
+                                                                                      return const SizedBox(
                                                                                         width: 30,
                                                                                         height: 30,
                                                                                       );
@@ -1145,24 +963,12 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                              foldingHeight:
-                                                                  111,
-                                                              expandedHeight:
-                                                                  270,
+                                                              foldingHeight: 111,
+                                                              expandedHeight: 270,
                                                             ),
                                                           ),
-                                                          // if(foldOutList[index]==false)
-                                                          //
-                                                          // Container(height: 5,width: double.infinity,decoration: BoxDecoration(
-                                                          //     color: Theme.of(context).scaffoldBackgroundColor,
-                                                          //     borderRadius: BorderRadius.circular(12)
-                                                          // ),
-                                                          // )
                                                         ],
                                                       ),
-                                                      // if (loadingFile &&
-                                                      //     index == selectedItem)
-                                                      //   WaitingWidget(),
                                                     ],
                                                   ),
                                                 );
@@ -1176,7 +982,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                           ),
                         ),
                       ),
-                      SafeArea(
+                      const SafeArea(
                           child: SizedBox(
                         height: 30,
                       )),
@@ -1186,7 +992,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
               ),
             );
           } else {
-            return WaitingWidget();
+            return const WaitingWidget();
           }
         }));
   }
@@ -1309,74 +1115,31 @@ Future<Uint8List> _readFileByte(String filePath) async {
   Uint8List bytes = Uint8List(0);
   await audioFile.readAsBytes().then((value) {
     bytes = Uint8List.fromList(value);
-    print('reading of bytes is completed');
+    if (kDebugMode) {
+      print('reading of bytes is completed');
+    }
   }).catchError((onError) {
-    print(
-        'Exception Error while reading audio from path:' + onError.toString());
+    if (kDebugMode) {
+      print('Exception Error while reading audio from path:$onError');
+    }
   });
 
   return bytes;
 }
-
-Future<File> _getFile(String filename) async {
-  final dir = await getApplicationDocumentsDirectory();
-  return File("${dir.path}/$filename");
-}
-
-// Future<dynamic> downloadFile(String url, String fileName, String dir) async {
-//   HttpClient httpClient = new HttpClient();
-//   File file;
-//   String filePath = '';
-//
-//   try {
-//
-//
-//
-//     var request = await httpClient.getUrl(Uri.parse(url));
-//     var response = await request.close();
-//
-//     if (response.statusCode == 200) {
-//       var bytes = await consolidateHttpClientResponseBytes(response);
-//       String dir = (await getApplicationDocumentsDirectory()).path;
-//       File file = File('$dir/$fileName');
-//       await file.writeAsBytes(bytes);
-//       print("kjfdnvjkdfnjkvndfv");
-//       try {
-//         OpenFilex.open(file.path);
-//         print("fvosfdbnkfjbnfdkjbnd");
-//       } catch (e) {
-//         print(e);
-//       }
-//       return file;
-//     } else
-//       filePath = 'Error code: ' + response.statusCode.toString();
-//   } catch (ex) {
-//     filePath = 'Can not fetch url';
-//   }
-//   print("fcfdcvfvfd");
-//   print(filePath);
-//
-//   return filePath;
-//     return "";
-// }
 
 class DashedRect extends StatelessWidget {
   final Color color;
   final double strokeWidth;
   final double gap;
 
-  DashedRect(
-      {this.color = Colors.black, this.strokeWidth = 1.0, this.gap = 5.0});
+  const DashedRect({super.key, this.color = Colors.black, this.strokeWidth = 1.0, this.gap = 5.0});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: EdgeInsets.all(strokeWidth / 2),
-        child: CustomPaint(
-          painter:
-              DashRectPainter(color: color, strokeWidth: strokeWidth, gap: gap),
-        ),
+    return Padding(
+      padding: EdgeInsets.all(strokeWidth / 2),
+      child: CustomPaint(
+        painter: DashRectPainter(color: color, strokeWidth: strokeWidth, gap: gap),
       ),
     );
   }
@@ -1387,8 +1150,7 @@ class DashRectPainter extends CustomPainter {
   Color color;
   double gap;
 
-  DashRectPainter(
-      {this.strokeWidth = 5.0, this.color = Colors.red, this.gap = 5.0});
+  DashRectPainter({this.strokeWidth = 5.0, this.color = Colors.red, this.gap = 5.0});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1400,34 +1162,34 @@ class DashRectPainter extends CustomPainter {
     double x = size.width;
     double y = size.height;
 
-    Path _topPath = getDashedPath(
-      a: math.Point(0, 0),
+    Path topPath = getDashedPath(
+      a: const math.Point(0, 0),
       b: math.Point(x, 0),
       gap: gap,
     );
 
-    Path _rightPath = getDashedPath(
+    Path rightPath = getDashedPath(
       a: math.Point(x, 0),
       b: math.Point(x, y),
       gap: gap,
     );
 
-    Path _bottomPath = getDashedPath(
+    Path bottomPath = getDashedPath(
       a: math.Point(0, y),
       b: math.Point(x, y),
       gap: gap,
     );
 
-    Path _leftPath = getDashedPath(
-      a: math.Point(0, 0),
+    Path leftPath = getDashedPath(
+      a: const math.Point(0, 0),
       b: math.Point(0.001, y),
       gap: gap,
     );
 
-    canvas.drawPath(_topPath, dashedPaint);
-    canvas.drawPath(_rightPath, dashedPaint);
-    canvas.drawPath(_bottomPath, dashedPaint);
-    canvas.drawPath(_leftPath, dashedPaint);
+    canvas.drawPath(topPath, dashedPaint);
+    canvas.drawPath(rightPath, dashedPaint);
+    canvas.drawPath(bottomPath, dashedPaint);
+    canvas.drawPath(leftPath, dashedPaint);
   }
 
   Path getDashedPath({

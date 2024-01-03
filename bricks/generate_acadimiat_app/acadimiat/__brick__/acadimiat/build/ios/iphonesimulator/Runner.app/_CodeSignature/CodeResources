@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		duQ5/73GUQudlzRc6ITIEZjA2ZA=
+		OZiD1MaC4/upCAcfr2WJZukk6pY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		DND4ZdINeZuSavTf/jxkOGxS/vI=
+		3goTmwL956pONc9xrh3iPrbXb8Y=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/.dev_env</key>
 		<data>
@@ -66,11 +66,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		sBBG2vz5XTd12nEcDsKdoxxphDw=
+		Ch57dwRZVsfj8nTu9iayTcA8D0A=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		ik2DbkN++Jfph0muk0Wl20bAyW0=
+		6L7YwsKogVko/kX2P/Iibl6whbY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -103,10 +103,6 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/images/bg43x.png</key>
 		<data>
 		h1FVxP/+I9kkHYi+NEo7pBMZIBw=
-		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/logo.png</key>
-		<data>
-		xGrWYQFOs4LpPbcYao2JgPXefu0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/svgs/Group%2013031.svg</key>
 		<data>
@@ -3321,7 +3317,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k6YktIwa1HSG78Z+lzVIzsWRZdJj5biVspOwvClxWZ8=
+			aYTj3h9RqrtDr7prhQK9+JiAO8ITKPP8YFhik1xANhc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -3335,7 +3331,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YZ6Lf7ja1JHbUUuj23LvxHusyEtz2h0F2gi4X8Pr96Y=
+			bDiSK/j7pIrPLi2ltHkurViACjVbwwlR08cKhZVRom0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/.dev_env</key>
@@ -3356,14 +3352,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			m2YluqD2CwWFmBpYXZBPAU1cd5TyWdF2RLTn9PmLtN4=
+			6/Ur/r1t2Mei8ljeK/tRAL03WtzIeb6NoEYlJvV74kk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wlQxM/JgeAaMkYg3kCUXu3GLFPXlJLeORl7F9W8AMH4=
+			MmjIUyxSwDks2VBYitBY4SzAvV+EmBuSDNJF6IWngak=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -3420,13 +3416,6 @@
 			<key>hash2</key>
 			<data>
 			F9S1vhD/qAaI8NZjcWTqVpC6ag8pSd0za/UHKPmnX6U=
-			</data>
-		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/logo.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			J+p8n4KDZVrKpQD+0oyyjjXIsHpN6kkSUxfcn8rf0ik=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/svgs/Group%2013031.svg</key>

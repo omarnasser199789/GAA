@@ -1,13 +1,11 @@
-import 'package:acadmiat/exam_folder/exam_page.dart';
 import 'package:acadmiat/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../Theme/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import '../core/classes/question.dart';
 import '../../core/classes/word_type3.dart';
 import '../../core/functions.dart';
-import '../../core/globals.dart';
+import '../../core/util/assets_manager.dart';
 import '../../core/widgets/app_bar_widget.dart';
 import '../../core/widgets/custom_botton.dart';
 import '../../features/my_courses_feature/data/models/my_lecture_model.dart' as p;
@@ -19,7 +17,7 @@ import '../../features/my_courses_feature/presentation/bloc/my_courses_state.dar
 import '../blanks_page.dart';
 
 class FillSpaceInner extends StatefulWidget {
-  const FillSpaceInner({Key? key,required this.nestedContent}) : super(key: key);
+  const FillSpaceInner({super.key,required this.nestedContent});
   final p.NestedContent nestedContent;
 
 
@@ -54,7 +52,7 @@ Size size = MediaQuery.of(context).size;
         for (var it in wordsList) {
           widgetList.add(MyClass(
               widget: Text(
-                it.replaceAll("\n", "") + " ",
+                "${it.replaceAll("\n", "")} ",
                 style: blackBoldTextStyle(fontSize: 12, context: context),
               )));
         }
@@ -138,7 +136,7 @@ Size size = MediaQuery.of(context).size;
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(bottom: 60,left: 17,right: 17),
-                    child: Container(
+                    child: SizedBox(
                       height: size.height,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -167,14 +165,10 @@ Size size = MediaQuery.of(context).size;
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(10),
                                             color: Theme.of(context).canvasColor,
-
                                           ),
-                                          //
-                                          child: SvgPicture.asset(
-                                            "assets/svgs/question.svg",
-                                          ),
+                                          child: SvgPicture.asset(ImgAssets.question),
                                         ),
-                                        SizedBox(width: 11,),
+                                        const SizedBox(width: 11,),
                                         Text(
                                           widget.nestedContent.activity.filling!.title,
                                           style: blackBoldTextStyle(fontSize: 14, context: context),
@@ -199,10 +193,8 @@ Size size = MediaQuery.of(context).size;
                                       constraints: BoxConstraints(
                                         maxHeight: size.height*0.15,
                                         maxWidth: MediaQuery.of(context).size.width,
-
                                       ),
                                       child: SingleChildScrollView(
-
                                         child: Padding(
                                           padding: const EdgeInsets.only(top: 10, bottom: 10),
                                           child: Wrap(
@@ -215,9 +207,7 @@ Size size = MediaQuery.of(context).size;
                                               child: Draggable(
                                                 data: e.id,
                                                 feedback: Material(
-                                                    color: Theme.of(context)
-                                                        .scaffoldBackgroundColor
-                                                        .withOpacity(0.1),
+                                                    color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),
                                                     child: e.widget),
                                                 child: e.widget,
                                               ),
@@ -242,36 +232,11 @@ Size size = MediaQuery.of(context).size;
                                           firstOne = true;
                                           setState(() {});
                                         },),
-                                      // child: GestureDetector(
-                                      //   onTap: () {
-                                      //     wordsList = [];
-                                      //     widgetList = [];
-                                      //     firstOne = true;
-                                      //     setState(() {});
-                                      //   },
-                                      //   child: Container(
-                                      //     width: 150,
-                                      //     height: 40,
-                                      //     // color: Colors.blue,
-                                      //     alignment: Alignment.center,
-                                      //     child: Text(
-                                      //       "اعادة ترتيب الكلمات",
-                                      //       style: blackBoldTextStyle(
-                                      //           fontSize: 15,
-                                      //           context: context,
-                                      //           color: Theme.of(context).primaryColor),
-                                      //     ),
-                                      //   ),
-                                      // ),
                                     ),
                                 ],
                               ),
                             ),
                           ),
-
-
-
-
 
                           ///WIDGETS LIST, Let user put selected fill here.
                           Padding(
@@ -280,17 +245,14 @@ Size size = MediaQuery.of(context).size;
                               decoration: BoxDecoration(
                                 color: Theme.of(context).cardColor,
                                 borderRadius: BorderRadius.circular(10),
-
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.only(top:18,bottom: 18),
                                 child: Column(
                                   children: [
-
                                     Padding(
                                       padding: const EdgeInsets.only(left: 12,right: 12),
                                       child: Row(
-
                                         children: [
                                           Container(
                                             width: 32,
@@ -299,12 +261,8 @@ Size size = MediaQuery.of(context).size;
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(10),
                                               color: Theme.of(context).canvasColor,
-
                                             ),
-                                            //
-                                            child: SvgPicture.asset(
-                                              "assets/svgs/comment  icon.svg",
-                                            ),
+                                            child: SvgPicture.asset(ImgAssets.commentIcon),
                                           ),
                                           const SizedBox(width: 11,),
                                           Text("العبارات",style: blackBoldTextStyle(fontSize: 14, context: context),),
@@ -319,9 +277,6 @@ Size size = MediaQuery.of(context).size;
                                         color: Colors.grey,
                                       ),
                                     ),
-
-
-
 
                                     Padding(
                                       padding: const EdgeInsets.only(left: 12,right: 12),
@@ -347,21 +302,13 @@ Size size = MediaQuery.of(context).size;
                                                   onWillAccept: (data) => true,
                                                   onAccept: (data) {
                                                     int? id = data as int?;
-                                                    // print(id);
-
                                                     late Widget _widget;
-
                                                     /// Get words from wordsList
                                                     for (var item in wordsList) {
                                                       if (item.id == id) {
                                                         _widget = item.widget;
                                                       }
                                                     }
-
-                                                    // print("fdkjvndfknvjkdfnjkvdfnbvkjbfd");
-                                                    // print(widgetList[i.index!].index);
-                                                    // print(widgetList[i.index!].wordIndex);
-                                                    // print(widgetList[i.index!].widget);
 
                                                     ///If blank was empty or not ( because we don't wont to let user but word in blank containing word )
                                                     if (widgetList[i.index!].wordIndex != null) {
@@ -399,8 +346,6 @@ Size size = MediaQuery.of(context).size;
                                                     ///word : selected word
                                                     WordType3 word = WordType3(questionId: -1, word: -1, order: '');
 
-                                                    // print("wordID:${id}");
-
                                                     ///Get selected word
                                                     for (var item in widget.nestedContent.activity.filling!.words) {
                                                       if (item.id == id) {
@@ -423,29 +368,7 @@ Size size = MediaQuery.of(context).size;
 
                                                     /// Add selected word in List<GivenWord>
                                                     givenWords.add(word);
-
-
-                                                    /// Make sure this AttendanceTable is not already in List<AttendanceTable>
-                                                    // for (int i = 0; attendanceTable.length > i; i++) {
-                                                    //   if (attendanceTable[i].questionId ==
-                                                    //       widget.question.id) {
-                                                    //     attendanceTable.removeAt(i);
-                                                    //   }
-                                                    // }
-                                                    //
-                                                    // /// Add AttendanceTable in List<AttendanceTable>
-                                                    // attendanceTable.add(AttendanceTable(
-                                                    //     questionId: widget.question.id,
-                                                    //     givenAnswers: [],
-                                                    //     givenWords: givenWords,
-                                                    //     pairs: []));
-
-                                                    // print("fvbjhdfnkvjndfkvsdbk");
-                                                    // print(id);
-                                                    // print("QuestionId:${widget.question.id}");
-                                                    // print(attendanceTable.length);
-
-                                                    setState(() {}); //
+                                                    setState(() {});
                                                   })
                                                   : i.widget,
                                             )
@@ -459,27 +382,6 @@ Size size = MediaQuery.of(context).size;
                               ),
                             ),
                           ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         ],
                       ),
                     ),
@@ -498,7 +400,6 @@ Size size = MediaQuery.of(context).size;
                             date: DateTime.now(),
                             words: givenWords,
                           )));
-
                         },
                       ),
                     ))
@@ -541,10 +442,7 @@ Size size = MediaQuery.of(context).size;
                                         color: Theme.of(context).canvasColor,
 
                                       ),
-                                      //
-                                      child: SvgPicture.asset(
-                                        "assets/svgs/comment  icon.svg",
-                                      ),
+                                      child: SvgPicture.asset( ImgAssets.commentIcon ),
                                     ),
                                     const SizedBox(width: 11,),
                                     Text(widget.nestedContent.activity.filling!.title,style: blackBoldTextStyle(fontSize: 14, context: context),),
@@ -560,30 +458,20 @@ Size size = MediaQuery.of(context).size;
                                 ),
                               ),
 
-
                               ///WIDGETS LIST
-
-
                               Padding(
                                 padding: const EdgeInsets.only(left: 12,right: 12,top: 18),
                                 child: Wrap(
                                   crossAxisAlignment: WrapCrossAlignment.center,
                                   direction: Axis.horizontal,
                                   children: widgetList
-                                      .map(
-                                        (i) => (i.index != null)
-                                        ?
-
-                                        correctWord(index:i.wordIndex!,list:widget.nestedContent.activity.filling!.attendanceTable)
-
+                                      .map((i) => (i.index != null) ?
+                                  correctWord(index:i.wordIndex!,list:widget.nestedContent.activity.filling!.attendanceTable)
                                         : i.widget,
                                   )
                                       .toList(),
                                 ),
                               ),
-
-
-
                             ],
                           ),
                         ),
@@ -594,18 +482,12 @@ Size size = MediaQuery.of(context).size;
               ),
             );
           }
-
-
-
         }));
-
-
   }
   Widget correctWord({required int index ,required List<AttendanceTable> list}){
     for(var item in  list[0].words){
       if(item.order==index){
         if(item.order==item.correctOrder) {
-
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -621,8 +503,6 @@ Size size = MediaQuery.of(context).size;
               ),
             ),
           );
-
-
         }
         else{
           return Padding(
