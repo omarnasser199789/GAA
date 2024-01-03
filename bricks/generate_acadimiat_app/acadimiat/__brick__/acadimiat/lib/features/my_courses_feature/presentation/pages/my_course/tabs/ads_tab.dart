@@ -17,15 +17,13 @@ class _AdsTabState extends State<AdsTab> {
     
     var locale = AppLocalizations.of(context)!;
     return  Padding(
-      padding:
-      const EdgeInsets.only(left: 17, right: 17),
+      padding: const EdgeInsets.only(left: 17, right: 17),
       child: ListView.builder(
           padding: EdgeInsets.zero,
           itemCount: 5,
           itemBuilder: (context, index) {
             return Padding(
-              padding:
-              const EdgeInsets.only(top: 15),
+              padding: const EdgeInsets.only(top: 15),
               child: Container(
                 decoration: BoxDecoration(
                   color:Theme.of(context).cardColor,
