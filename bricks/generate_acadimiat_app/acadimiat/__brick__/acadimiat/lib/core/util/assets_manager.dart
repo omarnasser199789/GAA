@@ -63,6 +63,11 @@ class ImgAssets {
   static String iconTwitter = '$_svgPath/Icon-twitter.svg';
   static String iconLinkedin = '$_svgPath/Icon-linkedin.svg';
   static String iconInstagram = '$_svgPath/Icon-instagram.svg';
+  static String liveLine = '$_svgPath/live-line.svg';
+  static String messageQuestion = '$_svgPath/message-question.svg';
+  static String consultations = '$_svgPath/consultations.svg';
+  static String date = '$_svgPath/date.svg';
+
 
 
 

@@ -15,7 +15,7 @@ import 'core/functions.dart';
 import 'core/widgets/double_back_to_close_widget.dart';
 import 'features/authentication_feature/data/data_sources/remot_data_sources/authenticate_remote_data_functions.dart';
 import 'features/authentication_feature/presentation/pages/login_page.dart';
-import 'features/consultancies_feature/presentation/pages/consultation_page.dart';
+import 'features/consultancies_feature/presentation/pages/consultation/consultation_page.dart';
 import 'features/home_feature/presentation/pages/favorite/pages/favorite_page.dart';
 import 'features/my_courses_feature/presentation/pages/my_courses/my_courses_page.dart';
 import '../../../../../core/classes/Response.dart' as R;
