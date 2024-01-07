@@ -1,10 +1,11 @@
 
-import 'package:acadmiat/features/consultancies_feature/presentation/test_page/webview_tab.dart';
+
+import 'package:acadmiat/features/consultancies_feature/presentation/browser_pages/webview_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/widgets/back_button.dart';
-import 'app_bar/webview_tab_app_bar.dart';
+
 import 'models/browser_model.dart';
 import 'models/webview_model.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -109,17 +110,6 @@ bool firstOne=true;
       IndexedStack(
         index: browserModel.getCurrentTabIndex(),
         children: browserModel.webViewTabs.map((webViewTab) {
-          var isCurrentTab = webViewTab.webViewModel.tabIndex ==
-              browserModel.getCurrentTabIndex();
-
-          // if (isCurrentTab) {
-          //   Future.delayed(const Duration(milliseconds: 100), () {
-          //     webViewTabStateKey.currentState?.onShowTab();
-          //   });
-          // } else {
-          //   webViewTabStateKey.currentState?.onHideTab();
-          // }
-
           return webViewTab;
         }).toList(),
       ),

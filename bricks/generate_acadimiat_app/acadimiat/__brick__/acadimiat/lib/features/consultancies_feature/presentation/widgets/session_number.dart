@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../Theme/style.dart';
 class SessionNumber extends StatelessWidget {
-  const SessionNumber({Key? key,required this.numberOfSessions,this.type2}) : super(key: key);
+  const SessionNumber({super.key,required this.numberOfSessions,this.type2});
   final int numberOfSessions;
   final bool? type2;
 

@@ -1,9 +1,7 @@
-import 'package:acadmiat/features/consultancies_feature/presentation/test_page/util.dart';
+import 'package:acadmiat/features/consultancies_feature/presentation/browser_pages/util.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -72,51 +70,6 @@ class _WebViewTabState extends State<WebViewTab> with WidgetsBindingObserver {
 
     super.dispose();
   }
-
-  // @override
-  // void didChangeAppLifecycleState(AppLifecycleState state) {
-  //   if (_webViewController != null && Util.isAndroid()) {
-  //     if (state == AppLifecycleState.paused) {
-  //       pauseAll();
-  //     } else {
-  //       resumeAll();
-  //     }
-  //   }
-  // }
-
-  // void pauseAll() {
-  //   if (Util.isAndroid()) {
-  //     _webViewController?.pause();
-  //   }
-  //   pauseTimers();
-  // }
-
-  // void resumeAll() {
-  //   if (Util.isAndroid()) {
-  //     _webViewController?.resume();
-  //   }
-  //   resumeTimers();
-  // }
-
-  // void pause() {
-  //   if (Util.isAndroid()) {
-  //     _webViewController?.pause();
-  //   }
-  // }
-
-  // void resume() {
-  //   if (Util.isAndroid()) {
-  //     _webViewController?.resume();
-  //   }
-  // }
-
-  // void pauseTimers() {
-  //   _webViewController?.pauseTimers();
-  // }
-
-  // void resumeTimers() {
-  //   _webViewController?.resumeTimers();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -521,17 +474,4 @@ class _WebViewTabState extends State<WebViewTab> with WidgetsBindingObserver {
 
     return action;
   }
-
-  // void onShowTab() async {
-  //   resume();
-  //   if (widget.webViewModel.needsToCompleteInitialLoad) {
-  //     widget.webViewModel.needsToCompleteInitialLoad = false;
-  //     await widget.webViewModel.webViewController
-  //         ?.loadUrl(urlRequest: URLRequest(url: widget.webViewModel.url));
-  //   }
-  // }
-  //
-  // void onHideTab() async {
-  //   pause();
-  // }
 }

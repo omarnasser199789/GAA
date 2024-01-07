@@ -18,7 +18,8 @@ import '../bloc/consultancies_event.dart';
 import '../bloc/consultancies_state.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../test_page/browser.dart';
+
+import '../browser_pages/browser.dart';
 import 'loading_consultation_page.dart';
 
 class ConsultationById extends StatefulWidget {
@@ -285,10 +286,7 @@ class _ConsultationByIdState extends State<ConsultationById> {
                     width: size.width - 34,
                     title: "${locale.buyNow!} ${consultancyEntity.consultancyPrice}\$",
                     onTap: () {
-                      goTo(
-                        context,
-                            (context) => Browser(url: "https://www.emasteryacademy.com/advice/${consultancyEntity.consultancyId}"),
-                      );
+                      goTo(context, (context) => Browser(url: "https://www.emasteryacademy.com/advice/${consultancyEntity.consultancyId}"),);
                     },
                   ),
                 ],

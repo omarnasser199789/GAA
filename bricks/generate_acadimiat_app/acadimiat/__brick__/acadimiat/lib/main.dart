@@ -8,10 +8,10 @@ import 'package:path_provider/path_provider.dart';
 import 'Theme/theme_notifier.dart';
 import 'Theme/theme_values.dart';
 import 'core/globals.dart';
+import 'features/consultancies_feature/presentation/browser_pages/models/browser_model.dart';
+import 'features/consultancies_feature/presentation/browser_pages/models/webview_model.dart';
 import 'injection_container.dart' as di;
 import 'launch_page.dart';
-import 'features/consultancies_feature/presentation/test_page/models/browser_model.dart';
-import 'features/consultancies_feature/presentation/test_page/models/webview_model.dart';
 
 /// Initialize the Purchases configuration
 final _configuration = PurchasesConfiguration('appl_LiGSQHdcvBowLFNanuAfhcBGihJ');

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:async';
 import 'dart:math';
-import 'package:acadmiat/features/consultancies_feature/presentation/test_page/models/webview_model.dart';
+import 'package:acadmiat/features/consultancies_feature/presentation/browser_pages/models/webview_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';

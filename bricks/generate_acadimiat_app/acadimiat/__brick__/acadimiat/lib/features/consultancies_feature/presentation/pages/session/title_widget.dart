@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/widgets/cached_net_work_image.dart';
 import 'package:jiffy/jiffy.dart';
