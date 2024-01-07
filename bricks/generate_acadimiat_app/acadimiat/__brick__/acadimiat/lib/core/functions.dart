@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:acadmiat/core/util/assets_manager.dart';
 import 'package:advance_notification/advance_notification.dart';
 import 'package:acadmiat/Locale/locale.dart';
 import 'package:flutter/material.dart';
@@ -213,104 +214,101 @@ String parseHtmlString(String htmlString) {
 }
 
 Widget getLinkIcon({required String  fileName}){
-
-
   if (fileName.contains("github")) {
-    return SvgPicture.asset( "assets/svgs/ggithub.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.ggithub,width: svgWidth,);
   }
   if (fileName.contains("google")) {
-    return SvgPicture.asset( "assets/svgs/googles.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.googles,width: svgWidth,);
   }
   if (fileName.contains(".aws")) {
-    return SvgPicture.asset("assets/svgs/aws.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.aws,width: svgWidth,);
   }
-
 
   if (fileName.contains("drv.ms")) {
-    return SvgPicture.asset("assets/svgs/onedrive.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.onedrive,width: svgWidth,);
   }
   if (fileName.contains("onedrive")) {
-    return SvgPicture.asset("assets/svgs/onedrive.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.onedrive,width: svgWidth,);
   }
-  return    SvgPicture.asset( "assets/svgs/url.svg",width: svgWidth,);
+  return    SvgPicture.asset( ImgAssets.url,width: svgWidth,);
 }
 
 Widget getIcon({required String  fileName}){
 
   if (fileName.contains(".ppt")) {
-    return SvgPicture.asset("assets/svgs/ppt.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.ppt,width: svgWidth,);
   }
   if (fileName.contains("q&A")) {
-    return SvgPicture.asset("assets/svgs/q&A.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.qA,width: svgWidth,);
   }
   if (fileName.contains(".py")) {
-    return SvgPicture.asset("assets/svgs/python.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.python,width: svgWidth,);
   }
   if (fileName.contains(".xls")) {
-    return SvgPicture.asset("assets/svgs/xls.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.xls,width: svgWidth,);
   }
   if (fileName.contains(".json")) {
-    return SvgPicture.asset("assets/svgs/json.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.json,width: svgWidth,);
   }
   if (fileName.contains(".eps")) {
-    return SvgPicture.asset("assets/svgs/eps.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.eps,width: svgWidth,);
   }
   if (fileName.contains(".cs")) {
-    return SvgPicture.asset("assets/svgs/cs.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.cs,width: svgWidth,);
   }
   if (fileName.contains(".html")) {
-    return SvgPicture.asset("assets/svgs/html.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.html,width: svgWidth,);
   }
   if (fileName.contains(".java")) {
-    return SvgPicture.asset("assets/svgs/java.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.java,width: svgWidth,);
   }
 
   if (fileName.contains(".css")) {
-    return SvgPicture.asset("assets/svgs/css.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.css,width: svgWidth,);
   }
   if (fileName.contains(".dart")) {
-    return SvgPicture.asset("assets/svgs/dart.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.dart,width: svgWidth,);
   }
   if (fileName.contains(".cpp")) {
-    return SvgPicture.asset("assets/svgs/c++.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.c__,width: svgWidth,);
   }
   if (fileName.contains(".ae")) {
-    return SvgPicture.asset("assets/svgs/ae.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.ae,width: svgWidth,);
   }
 
   if (fileName.contains(".pdf")) {
-    return SvgPicture.asset( "assets/svgs/pdf.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.pdf,width: svgWidth,);
   }
   if (fileName.contains(".jpg")) {
-    return SvgPicture.asset( "assets/svgs/jpg.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.jpg,width: svgWidth,);
   }
   if (fileName.contains(".png")) {
-    return SvgPicture.asset( "assets/svgs/png.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.png,width: svgWidth,);
   }
   if (fileName.contains(".sql")) {
-    return SvgPicture.asset( "assets/svgs/db.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.db,width: svgWidth,);
   }
   if (fileName.contains(".docx")) {
-    return SvgPicture.asset( "assets/svgs/doc.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.doc,width: svgWidth,);
   }
   if (fileName.contains(".svg")) {
-    return SvgPicture.asset( "assets/svgs/scvg.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.scvg,width: svgWidth,);
   }
   if (fileName.contains("link")) {
-    return SvgPicture.asset( "assets/svgs/url.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.url,width: svgWidth,);
   }
   if (fileName.contains("live-line")) {
-    return SvgPicture.asset( "assets/svgs/zoom.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.zoom,width: svgWidth,);
   }
   if (fileName.contains("txt")) {
-    return SvgPicture.asset( "assets/svgs/txt.svg",width: svgWidth,);
+    return SvgPicture.asset( ImgAssets.txt,width: svgWidth,);
   }
 
   if (fileName.contains("github")) {
-    return SvgPicture.asset( "assets/svgs/github.svg",width: svgWidth,);
+    return SvgPicture.asset(ImgAssets.github,width: svgWidth,);
   }
 
-  return SvgPicture.asset( "assets/svgs/default.svg",width: svgWidth,);
+  return SvgPicture.asset( ImgAssets.default_,width: svgWidth,);
 
 }
 
