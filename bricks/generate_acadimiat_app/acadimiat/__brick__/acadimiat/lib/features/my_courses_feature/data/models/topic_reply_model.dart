@@ -31,14 +31,14 @@ class TopicReplyModel extends TopicReplyEntity {
     topic:topic,
   );
 
-  int id;
-  int topicId;
-  int userId;
-  String reply;
-  String attachment;
-  DateTime date;
-  dynamic user;
-  dynamic topic;
+ final int id;
+ final int topicId;
+ final int userId;
+ final String reply;
+ final String attachment;
+ final DateTime date;
+ final dynamic user;
+ final dynamic topic;
 
   factory TopicReplyModel.fromJson(Map<String, dynamic> json) => TopicReplyModel(
     id: json["id"],

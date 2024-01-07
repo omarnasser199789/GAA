@@ -2,21 +2,21 @@ import 'package:equatable/equatable.dart';
 
 class ConsultanciesEntity extends Equatable{
 
-  int consultancyId;
-  String name;
-  dynamic body;
-  String image;
-  String consultantName;
-  int numberOfSessions;
-  dynamic subscriptionLimit;
-  dynamic typeOfSession;
-  dynamic squareImage;
-  String consultantImage;
-  String consultantInfo;
-  int consultantId;
-  double consultancyPrice;
-  double timeLimit;
-  dynamic info;
+ final int consultancyId;
+ final String name;
+ final dynamic body;
+ final String image;
+ final String consultantName;
+ final int numberOfSessions;
+ final dynamic subscriptionLimit;
+ final dynamic typeOfSession;
+ final dynamic squareImage;
+ final String consultantImage;
+ final String consultantInfo;
+ final int consultantId;
+ final double consultancyPrice;
+ final double timeLimit;
+ final dynamic info;
 
   ConsultanciesEntity({
     required this.consultancyId,

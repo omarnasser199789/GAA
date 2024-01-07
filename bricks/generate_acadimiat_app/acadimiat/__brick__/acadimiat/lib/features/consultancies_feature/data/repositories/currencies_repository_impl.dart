@@ -4,10 +4,8 @@ import 'package:acadmiat/features/consultancies_feature/domain/entities/room_hou
 import 'package:acadmiat/features/consultancies_feature/domain/use_cases/present_section/get_room_hours_usecase.dart';
 import 'package:acadmiat/features/consultancies_feature/domain/use_cases/present_section/reserve_meeting_usecase.dart';
 import 'package:dartz/dartz.dart';
-
 import '../../../../core/error/failures.dart';
 import '../../domain/entities/my_consultancies_entity.dart';
-import '../../domain/entities/reserve_meeting_entity.dart';
 import '../../domain/repositories/currencies_repository.dart';
 import '../data_sources/currencies_remot_data_source.dart';
 import 'convert_To.dart';
@@ -67,12 +65,5 @@ class MyConsultanciesRepositoryImpl extends MyConsultanciesRepository {
       return myConsultanciesRemoteDataSource.reserveMeeting(params);
     });
   }
-
-
-
-
-
-
-
 
 }

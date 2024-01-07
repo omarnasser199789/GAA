@@ -13,7 +13,6 @@ import '../../domain/use_cases/register_usecase.dart';
 import '../bloc/authenticate_bloc.dart';
 import '../bloc/authenticate_event.dart';
 import '../bloc/authenticate_state.dart';
-import 'otp_page.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -144,6 +143,7 @@ class _SignupPageState extends State<SignupPage> {
                                   if (value == null || value == "") {
                                     return 'الرجاء ادخال الاسم الكامل';
                                   }
+                                  return null;
                                 },
                               ),
                             ),
@@ -314,6 +314,7 @@ class _SignupPageState extends State<SignupPage> {
                                   if (value == null || value == "") {
                                     return 'كلمة السر مطلوبة';
                                   }
+                                  return null;
                                 },
                               ),
                             ),
@@ -335,6 +336,7 @@ class _SignupPageState extends State<SignupPage> {
                                   if (passwordController.text != value) {
                                     return "كلمة السر غير متطابقة";
                                   }
+                                  return null;
                                 },
                               ),
                             ),

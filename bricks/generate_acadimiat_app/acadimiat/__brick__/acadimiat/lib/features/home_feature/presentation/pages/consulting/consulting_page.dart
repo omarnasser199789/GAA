@@ -15,6 +15,7 @@ import '../../bloc/home_state.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// ignore: must_be_immutable
 class ConsultingPage extends StatefulWidget {
   ConsultingPage({super.key,required this.consultanciesEntity});
    List<ConsultanciesEntity> consultanciesEntity;
@@ -146,7 +147,7 @@ class _ConsultingPageState extends State<ConsultingPage> {
                 padding:  const EdgeInsets.only(bottom: 17,left: 17,right: 17,top:17),
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
-                    childAspectRatio: 1, //3 / 2,
+                    childAspectRatio: 1,
                     crossAxisSpacing: 17,
                     mainAxisSpacing: 17),
                 itemCount: widget.consultanciesEntity.length,

@@ -1,14 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
-import 'dart:async';
 import 'package:async/async.dart';
 import 'dart:core';
 import 'package:path/path.dart';
-
-import '../../../../core/error/error_model.dart';
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/globals.dart';
 import '../../../authentication_feature/domain/use_cases/update_user_info_usecase.dart';
@@ -20,21 +16,16 @@ import '../../domain/use_cases/my_certificate_folder/export_certificate_to_pdf_u
 import '../../domain/use_cases/my_notes/add_new_note_usecase.dart';
 import '../../domain/use_cases/my_plans/post_my_plan_usecase.dart';
 import '../../domain/use_cases/register_new_account_usecase.dart';
-import '../../domain/use_cases/update_user_info_usecase.dart';
 import '../models/add_new_note_model.dart';
-import '../models/my_assignments_model.dart';
-import '../models/my_bookmarks_model.dart';
 import '../models/my_certificates_model.dart';
 import '../models/my_notes_model.dart';
 import '../models/my_payments_model.dart';
 import '../models/my_plans_model.dart';
-import '../models/my_quizzes_model.dart';
 import '../../../authentication_feature/data/models/update_user_mode_info.dart';
 import '../models/user_info_model.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:dio/dio.dart' as d;
-
 import 'package:sqflite/sqflite.dart';
 
 class ProfileRemoteDataFunctions {
@@ -52,15 +43,12 @@ class ProfileRemoteDataFunctions {
       print(response.body);
 
       if (response.statusCode == 200) {
-        var data = jsonDecode(response.body);
-
         return 200;
       } else {
         throw ServerException();
       }
     } catch (e) {
       print(e);
-
       throw ServerException();
     }
   }
@@ -79,10 +67,6 @@ class ProfileRemoteDataFunctions {
         },
         body: jsonEncode(data),
       ).timeout(Duration(seconds: timeout));
-      print("ljvnkdfbvkjdfb");
-      print(response.statusCode);
-      print(response.body);
-
       if (response.statusCode == 200) {
         print(data);
         return 200;
@@ -91,7 +75,6 @@ class ProfileRemoteDataFunctions {
       }
     } catch (e) {
       print(e);
-      print("sdljcndskhbv");
       throw ServerException();
     }
   }
@@ -113,10 +96,6 @@ class ProfileRemoteDataFunctions {
         },
         body: jsonEncode(data),
       ).timeout(Duration(seconds: timeout));
-      print("ljvnkdfbvkjdfb");
-      print(response.statusCode);
-      print(response.body);
-
       if (response.statusCode == 200) {
         print(data);
         return 200;
@@ -125,7 +104,6 @@ class ProfileRemoteDataFunctions {
       }
     } catch (e) {
       print(e);
-      print("sdljcndskhbv");
       throw ServerException();
     }
   }
@@ -149,10 +127,6 @@ class ProfileRemoteDataFunctions {
         },
         body: jsonEncode(data),
       ).timeout(Duration(seconds: timeout));
-      print("ljvnkdfbvkjdfb");
-      print(response.statusCode);
-      print(response.body);
-
       if (response.statusCode == 200) {
         return 200;
       } else {
@@ -160,7 +134,6 @@ class ProfileRemoteDataFunctions {
       }
     } catch (e) {
       print(e);
-      print("sdljcndskhbv");
       throw ServerException();
     }
   }
@@ -183,7 +156,6 @@ class ProfileRemoteDataFunctions {
         print(response.body);
         return UserInfoModel.fromJson(data);
       } else {
-        print("fdfdcfdf");
         throw ServerException();
       }
     } catch (e) {
@@ -214,16 +186,12 @@ class ProfileRemoteDataFunctions {
               },
               body: jsonEncode(data))
           .timeout(Duration(seconds: timeout));
-
-      print("dbvdbfvbd");
-      print(response.statusCode);
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
         print(response.body);
 
         return UpdateUserInfoModel.fromJson(data);
       } else {
-        print("fdfdcfdf");
         throw ServerException();
       }
     } catch (e) {
@@ -251,13 +219,8 @@ class ProfileRemoteDataFunctions {
       print(response.statusCode);
       if (response.statusCode == 200) {
         var MyPaymentsModel = myPaymentsModelFromJson(response.body);
-        if (MyPaymentsModel != null) {
-          return MyPaymentsModel;
-        } else {
-          throw ServerException();
-        }
-      } else {
-        print("fdfdcfdf");
+        return MyPaymentsModel;
+            } else {
         throw ServerException();
       }
     } catch (e) {
@@ -267,7 +230,6 @@ class ProfileRemoteDataFunctions {
   }
 
   Future<int> updateMyAvatar(String url, String image) async {
-    print("jkvbsdkfbvkdfv");
     JWT = await globalSH.getString(CACHED_JWT_TOKEN).toString();
 
     print(image);
@@ -285,12 +247,8 @@ class ProfileRemoteDataFunctions {
     var multipartFile = new MultipartFile('file', stream, length,
         filename: basename(file.path));
     request.files.add(multipartFile);
-    //request.fields.addAll(data);
     try {
       final response = await request.send().timeout(Duration(seconds: 60));
-
-      print("avkbdfkvbdvkds");
-      print(response.statusCode);
       if (response.statusCode == 200) {
         return 200;
       } else {
@@ -298,7 +256,6 @@ class ProfileRemoteDataFunctions {
       }
     } catch (e) {
       print(e);
-
       throw ServerException();
     }
   }
@@ -318,11 +275,8 @@ class ProfileRemoteDataFunctions {
       ).timeout(Duration(seconds: timeout));
       print(response.statusCode);
       if (response.statusCode == 200) {
-        // print(response.body);
-
         return myCertificatesModelFromJson(response.body);
       } else {
-        print("fdfdcfdf");
         throw ServerException();
       }
     } catch (e) {
@@ -551,12 +505,8 @@ class ProfileRemoteDataFunctions {
       }
       if (response.statusCode == 200) {
         var model = addNewNoteModelFromJson(response.body);
-        if (model != null) {
-          return model;
-        } else {
-          throw ServerException();
-        }
-      } else {
+        return model;
+            } else {
         throw ServerException();
       }
     } catch (e) {

@@ -4,7 +4,6 @@ import 'package:equatable/equatable.dart';
 import '../../data/models/package_model.dart';
 class PackageEntity extends Equatable{
   @override
-  // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
 
   PackageEntity({
@@ -18,12 +17,12 @@ class PackageEntity extends Equatable{
     required  this.currentPrice,
   });
 
-  int packageId;
-  String packageName;
-  String packageImage;
-  double packagePrice;
-  String packageLink;
-  List<Course> courses;
-  double mainPrice;
-  double currentPrice;
+ final int packageId;
+ final String packageName;
+ final String packageImage;
+ final double packagePrice;
+ final String packageLink;
+ final List<Course> courses;
+ final double mainPrice;
+ final double currentPrice;
 }

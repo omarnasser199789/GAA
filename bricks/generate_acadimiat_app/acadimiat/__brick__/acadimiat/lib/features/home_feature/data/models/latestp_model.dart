@@ -1,22 +1,11 @@
-
 import 'dart:convert';
-
 import '../../domain/entities/latestp_entity.dart';
-
-// List<LatestPModel> latestpModelFromJson(String str) =>
-//     List<LatestPModel>.from(json.decode(str).map((x) => LatestPModel.fromJson(x)));
 
 List<LatestPModel> latestpModelFromJson(String str) {
   final parsed = json.decode(str);
   return List<LatestPModel>.from(parsed.map((x) => LatestPModel.fromJson(x)))
-      .where((model) =>
-  // model.appleId.isNotEmpty &&
-      model.price < 700)
-      .toList();
+      .where((model) => model.price < 700).toList();
 }
-
-// String latestpModelToJson(List<LatestPModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
 
 class LatestPModel extends LatestPEntity{
   LatestPModel({
@@ -39,21 +28,21 @@ class LatestPModel extends LatestPEntity{
   courseLink: courseLink,trainer: trainer,numberOfCourses: numberOfCourses,categoryId: categoryId,price: price,
       isCourse: isCourse,newPrice: newPrice,appleId: appleId,googleId: googleId);
 
-  int id;
-  String header;
-  bool authorized;
-  bool discount;
-  String image;
-  String squareImage;
-  String courseLink;
-  String trainer;
-  int numberOfCourses;
-  int categoryId;
-  double price;
-  bool isCourse;
-  double newPrice;
-  String appleId;
-  String googleId;
+final  int id;
+final  String header;
+final  bool authorized;
+final  bool discount;
+final  String image;
+final  String squareImage;
+final  String courseLink;
+final  String trainer;
+final  int numberOfCourses;
+final  int categoryId;
+final  double price;
+final  bool isCourse;
+final  double newPrice;
+final  String appleId;
+final  String googleId;
 
   factory LatestPModel.fromJson(Map<String, dynamic> json) => LatestPModel(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -73,19 +62,4 @@ class LatestPModel extends LatestPEntity{
     googleId: (json["googleId"]!=null)?json["googleId"]:"",
   );
 
-  // Map<String, dynamic> toJson() => {
-  //   "id": id,
-  //   "header": header,
-  //   "authorized": authorized,
-  //   "discount": discount,
-  //   "image": image,
-  //   "squareImage": squareImage,
-  //   "courseLink": courseLink,
-  //   "trainer": trainer,
-  //   "numberOfCourses": numberOfCourses == null ? null : numberOfCourses,
-  //   "categoryId": categoryId == null ? null : categoryId,
-  //   "price": price,
-  //   "isCourse": isCourse,
-  //   "newPrice": newPrice == null ? null : newPrice,
-  // };
 }

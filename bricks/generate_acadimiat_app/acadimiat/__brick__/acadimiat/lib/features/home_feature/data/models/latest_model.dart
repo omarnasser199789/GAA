@@ -32,21 +32,21 @@ class LatestModel extends LatestEntity{
       ,courseLink: courseLink,trainer: trainer,numberOfCourses: numberOfCourses,categories: categories,price: price,
   isCourse: isCourse,newPrice: newPrice);
 
-  int id;
-  String header;
-  bool authorized;
-  bool discount;
-  String image;
-  String squareImage;
-  String courseLink;
-  String trainer;
-  dynamic numberOfCourses;
-  List<Category> categories;
-  double price;
-  dynamic isCourse;
-  dynamic newPrice;
-  String appleId;
-  String googleId;
+ final int id;
+ final String header;
+ final bool authorized;
+ final bool discount;
+ final String image;
+ final String squareImage;
+ final String courseLink;
+ final String trainer;
+ final dynamic numberOfCourses;
+ final List<Category> categories;
+ final double price;
+ final dynamic isCourse;
+ final dynamic newPrice;
+ final String appleId;
+ final String googleId;
 
   factory LatestModel.fromJson(Map<String, dynamic> json) => LatestModel(
     id: json["id"] ?? -1,

@@ -1,12 +1,7 @@
 
 import 'package:equatable/equatable.dart';
 
-import '../../data/models/apply_coupon_model.dart';
 class ApplyCouponEntity extends Equatable{
-  @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
-
 
   ApplyCouponEntity({
     required  this.courseId,
@@ -16,14 +11,16 @@ class ApplyCouponEntity extends Equatable{
     required  this.isActive,
     required  this.amount,
     required  this.status,
-
   });
 
-  int courseId;
-  int type;
-  int couponId;
-  String code;
-  bool isActive;
-  double amount;
-  String status;
+ final int courseId;
+ final int type;
+ final int couponId;
+ final String code;
+ final bool isActive;
+ final double amount;
+ final String status;
+
+  @override
+  List<Object?> get props => [courseId];
 }

@@ -10,7 +10,7 @@ class RoomHourEntity extends Equatable{
     required  this.active,
   });
 
-  double startFrom;
-  double endAt;
-  bool active;
+ final double startFrom;
+ final double endAt;
+ final bool active;
 }

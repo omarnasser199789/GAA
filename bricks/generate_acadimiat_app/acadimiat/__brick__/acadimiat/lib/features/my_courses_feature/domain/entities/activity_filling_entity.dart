@@ -1,6 +1,4 @@
 import 'package:equatable/equatable.dart';
-
-import '../../../../core/classes/word_type3.dart';
 import '../../../../core/classes/word_type4.dart';
 class ActivityFillingEntity extends Equatable{
   @override
@@ -19,15 +17,15 @@ class ActivityFillingEntity extends Equatable{
     required  this.words,
   });
 
-  int id;
-  int userId;
-  dynamic email;
-  int questionId;
-  dynamic sentence;
-  dynamic correct;
-  dynamic isCorrect;
-  dynamic reply;
-  dynamic answer;
-  DateTime date;
-  List<WordType4> words;
+ final int id;
+ final int userId;
+ final dynamic email;
+ final int questionId;
+ final dynamic sentence;
+ final dynamic correct;
+ final dynamic isCorrect;
+ final dynamic reply;
+ final dynamic answer;
+ final DateTime date;
+ final List<WordType4> words;
 }

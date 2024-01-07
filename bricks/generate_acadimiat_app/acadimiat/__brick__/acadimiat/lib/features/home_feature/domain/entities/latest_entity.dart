@@ -5,19 +5,19 @@ import '../../../../core/classes/category.dart';
 class LatestEntity extends Equatable{
 
 
-  int id;
-  String header;
-  bool authorized;
-  bool discount;
-  String image;
-  String squareImage;
-  String courseLink;
-  String trainer;
-  dynamic numberOfCourses;
-  List<Category> categories;
-  double price;
-  dynamic isCourse;
-  dynamic newPrice;
+ final int id;
+ final String header;
+ final bool authorized;
+ final bool discount;
+ final String image;
+ final String squareImage;
+ final String courseLink;
+ final String trainer;
+ final dynamic numberOfCourses;
+ final List<Category> categories;
+ final double price;
+ final dynamic isCourse;
+ final dynamic newPrice;
 
   LatestEntity({
     required this.id,

@@ -18,7 +18,6 @@ import '../bloc/consultancies_event.dart';
 import '../bloc/consultancies_state.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../browser_pages/browser.dart';
 import 'loading_consultation_page.dart';
 
@@ -62,7 +61,6 @@ class _ConsultationByIdState extends State<ConsultationById> {
 
   @override
   Widget build(BuildContext context) {
-    var locale = AppLocalizations.of(context)!;
     Size size = MediaQuery.of(context).size;
     return BlocProvider(
       create: (BuildContext context) => sl<ConsultanciesBloc>(),
@@ -236,7 +234,6 @@ class _ConsultationByIdState extends State<ConsultationById> {
                   }
                   return null;
                 },
-                webView: true,
               ),
             ),
           ],

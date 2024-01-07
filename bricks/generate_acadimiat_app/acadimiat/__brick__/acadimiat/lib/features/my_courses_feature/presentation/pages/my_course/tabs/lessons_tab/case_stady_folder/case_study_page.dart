@@ -10,7 +10,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../../../../core/widgets/app_bar_widget.dart';
 import '../../../../../../../../core/widgets/custom_botton.dart';
 import '../../../../../../../../core/widgets/empty_state_widget.dart';
-import '../../../../../../../../core/widgets/error_widget.dart';
 import '../../../../../../../../injection_container.dart';
 import '../../../../../../data/models/my_lecture_model.dart' as MyLecture;
 import '../../../../../../domain/entities/activity_decision_entity.dart';

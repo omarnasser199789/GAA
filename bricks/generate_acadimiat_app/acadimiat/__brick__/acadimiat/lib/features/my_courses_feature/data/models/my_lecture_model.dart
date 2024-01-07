@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final myLectureModel = myLectureModelFromJson(jsonString);
-
 import 'dart:convert';
-
 import '../../../../core/classes/matched.dart';
 import '../../../../core/classes/order.dart';
 import '../../../../core/classes/question.dart';
@@ -44,18 +39,18 @@ class MyLectureModel  extends MyLectureEntity {
     contents:contents,
   );
 
-  int materialId;
-  String materialName;
-  int unitId;
-  int order;
-  String materialLink;
-  String materialLength;
-  bool isDone;
-  double totalScore;
-  dynamic completitionDate;
-  CurrentVideo  currentVideo;
-  Discussion   discussion;
-  List<NestedContent> contents;
+final  int materialId;
+final  String materialName;
+final  int unitId;
+final  int order;
+final  String materialLink;
+final  String materialLength;
+final  bool isDone;
+final  double totalScore;
+final  dynamic completitionDate;
+final  CurrentVideo  currentVideo;
+final  Discussion   discussion;
+final  List<NestedContent> contents;
 
   factory MyLectureModel.fromJson(Map<String, dynamic> json) => MyLectureModel(
     materialId: (json["materialId"]!=null)?json["materialId"]:-1,
@@ -92,17 +87,12 @@ class MyLectureModel  extends MyLectureEntity {
   };
 }
 
-
-
-
-
 class NestedContent {
   NestedContent({
   required  this.id,
   required  this.materialId,
   required  this.order,
   required  this.type,
-
   required  this.fileId,
   required  this.file,
   required  this.activityId,
@@ -233,12 +223,12 @@ class Activity {
     "title": title,
     "decision": decision,
     "caseStudy": caseStudy.toJson(),
-    "filling": filling == null ? null : filling,
     "filling": filling,
     "quizz": quizz,
     "logicalOrder": logicalOrder == null ? LogicalOrder(id: -1, title: '', sentences: [], attendanceTable: [], relations: []) : logicalOrder!.toJson(),
   };
 }
+
 class CaseStudy {
   CaseStudy({
   required  this.id,
@@ -290,6 +280,7 @@ class CaseStudy {
     "attendanceTable": List<dynamic>.from(attendanceTable.map((x) => x.toJson())),
   };
 }
+
 class AttendanceTable2 {
   AttendanceTable2({
   required this.id,
@@ -377,6 +368,7 @@ class Solution {
     "answers": List<dynamic>.from(answers.map((x) => x.toJson())),
   };
 }
+
 class LogicalOrder {
   LogicalOrder({
    required this.id,
@@ -405,10 +397,9 @@ class LogicalOrder {
     "title": title,
     "sentences": List<dynamic>.from(sentences.map((x) => x.toJson())),
     "attendanceTable": List<dynamic>.from(attendanceTable.map((x) => x.toJson())),
-    "relations": relations == null ? null : List<dynamic>.from(relations.map((x) => x.toJson())),
+    "relations": List<dynamic>.from(relations.map((x) => x.toJson())),
   };
 }
-
 
 class LogicalOrderAttendanceTable {
   LogicalOrderAttendanceTable({
@@ -449,33 +440,7 @@ class LogicalOrderAttendanceTable {
     "orders": List<dynamic>.from(orders.map((x) => x.toJson())),
   };
 }
-// class Order {
-//   Order({
-//   required  this.id,
-//   required  this.sentenceId,
-//   required  this.order,
-//   required  this.correct,
-//   });
-//
-//   int id;
-//   int sentenceId;
-//   int order;
-//   int correct;
-//
-//   factory Order.fromJson(Map<String, dynamic> json) => Order(
-//     id: json["id"],
-//     sentenceId: json["sentenceId"],
-//     order: json["order"],
-//     correct: json["correct"],
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "id": id,
-//     "sentenceId": sentenceId,
-//     "order": order,
-//     "correct": correct,
-//   };
-// }
+
 class MatchingAttendanceTable {
   MatchingAttendanceTable({
     required  this.id,
@@ -515,6 +480,7 @@ class MatchingAttendanceTable {
     "matched": List<dynamic>.from(matched.map((x) => x.toJson())),
   };
 }
+
 class AttendanceTable {
   AttendanceTable({
     this.id,
@@ -574,11 +540,6 @@ class AttendanceTable {
   };
 }
 
-
-
-
-
-
 class Filling {
   Filling({
   required  this.id,
@@ -610,6 +571,7 @@ class Filling {
     "attendanceTable": List<dynamic>.from(attendanceTable.map((x) => x.toJson())),
   };
 }
+
 class Sentence {
   Sentence({
     required  this.id,
@@ -629,7 +591,6 @@ class Sentence {
     "sentence": sentence,
   };
 }
-
 
 class Matching {
   Matching({
@@ -662,6 +623,7 @@ class Matching {
     "attendanceTable": List<dynamic>.from(attendanceTable.map((x) => x.toJson())),
   };
 }
+
 class Relation {
   Relation({
   required this.id,
@@ -681,6 +643,7 @@ class Relation {
     "sentence": sentence,
   };
 }
+
 class Bookmark {
   Bookmark({
   required  this.id,
@@ -725,6 +688,7 @@ class Bookmark {
     "user": user,
   };
 }
+
 class FileClass {
   FileClass({
   required this.id,
@@ -832,7 +796,8 @@ class Discussion {
     "timeline": timeline,
   };
 }
-class Quizz {//
+
+class Quizz {
   Quizz({
   required  this.id,
   required  this.title,
@@ -867,7 +832,6 @@ class Quizz {//
     "attendanceTable": List<dynamic>.from(attendanceTable.map((x) => x.toJson())),
   };
 }
-
 
 class QuizzAttendanceTable {
   QuizzAttendanceTable({
@@ -912,6 +876,7 @@ class QuizzAttendanceTable {
     "attendanceTable": List<dynamic>.from(attendanceTable.map((x) => x.toJson())),
   };
 }
+
 class AttendanceTableAttendanceTable {
   AttendanceTableAttendanceTable({
   required  this.id,
@@ -955,6 +920,7 @@ class AttendanceTableAttendanceTable {
     "degree": degree,
   };
 }
+
 class CorrectionElement {
   CorrectionElement({
   required  this.id,
@@ -982,12 +948,12 @@ class CorrectionElement {
   );
 
   Map<String, dynamic> toJson() => {
-    "id": id == null ? null : id,
+    "id": id,
     "questionId": questionId,
     "answerId": answerId,
     "answer": answer,
-    "explanation": explanation == null ? null : explanation,
-    "isCorrect": isCorrect == null ? null : isCorrect,
+    "explanation": explanation,
+    "isCorrect":  isCorrect,
   };
 }
 
@@ -1018,53 +984,3 @@ class Decision {
     "attendanceTable": List<dynamic>.from(attendanceTable.map((x) => x.toJson())),
   };
 }
-
-
-
-
-// class MatchedAttendanceTable {
-//   MatchedAttendanceTable({
-//   required  this.id,
-//   required  this.attendanceId,
-//   required  this.pairId,
-//   required  this.selectedId,
-//   required  this.first,
-//   required  this.second,
-//   required  this.shouldBe,
-//   required  this.attendance,
-//   });
-//
-//   int id;
-//   int attendanceId;
-//   dynamic pairId;
-//   dynamic selectedId;
-//   String first;
-//   String second;
-//   String shouldBe;
-//   dynamic attendance;
-//
-//   factory MatchedAttendanceTable.fromJson(Map<String, dynamic> json) => MatchedAttendanceTable(
-//     id: json["id"],
-//     attendanceId: json["attendanceId"],
-//     pairId: json["pairId"],
-//     selectedId: json["selectedId"],
-//     first: json["first"],
-//     second: json["second"],
-//     shouldBe: json["shouldBe"],
-//     attendance: json["attendance"],
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "id": id,
-//     "attendanceId": attendanceId,
-//     "pairId": pairId,
-//     "selectedId": selectedId,
-//     "first": first,
-//     "second": second,
-//     "shouldBe": shouldBe,
-//     "attendance": attendance,
-//   };
-// }
-
-
-

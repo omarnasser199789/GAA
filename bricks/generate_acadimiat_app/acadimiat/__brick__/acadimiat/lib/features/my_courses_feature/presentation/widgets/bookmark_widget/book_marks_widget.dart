@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
-import 'package:flutter/foundation.dart';
 import '../../../data/models/my_lecture_model.dart';
-
 import 'add_bookmark_button.dart';
 import 'book_marks_item_list.dart';
 
@@ -14,7 +11,7 @@ class BookMarksWidget extends StatefulWidget {
     required this.videoId,
     required this.isVimeo,
   }) : super(key: key);
-  List<Bookmark> bookmarks;
+  final List<Bookmark> bookmarks;
   final bool isVimeo;
   final int videoId;
 

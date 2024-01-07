@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../Locale/locale.dart';
 import '../../Theme/style.dart';
 
 class DoubleBackToCloseWidget extends StatefulWidget {

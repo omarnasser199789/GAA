@@ -8,10 +8,10 @@ class ConsultanciesFromLocalDbEntity extends Equatable {
     required  this.trainerName,
   });
 
-  int apiId;
-  String image;
-  String name;
-  String trainerName;
+ final int apiId;
+ final String image;
+ final String name;
+ final String trainerName;
 
   @override
   List<Object?> get props => [apiId,image,name,trainerName];

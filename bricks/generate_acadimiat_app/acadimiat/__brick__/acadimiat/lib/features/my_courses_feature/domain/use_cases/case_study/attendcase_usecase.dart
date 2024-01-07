@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecases/usecase.dart';
-import '../../entities/course_case_study_entity.dart';
 import '../../repositories/consultations_repository.dart';
 import 'dart:convert';
 

@@ -15,13 +15,13 @@ class ArticleDetailsEntity extends Equatable{
     required this.article,
   });
 
-  int id;
-  int articleId;
-  int userId;
-  String header;
-  String body;
-  DateTime date;
-  bool isPublished;
-  dynamic user;
-  dynamic article;
+ final int id;
+ final int articleId;
+ final int userId;
+ final String header;
+ final String body;
+ final DateTime date;
+ final bool isPublished;
+ final dynamic user;
+ final dynamic article;
 }

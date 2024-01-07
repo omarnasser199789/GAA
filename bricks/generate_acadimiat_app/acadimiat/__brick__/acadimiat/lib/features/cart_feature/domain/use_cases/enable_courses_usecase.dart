@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecases/usecase.dart';
-import '../entities/apply_coupon_entity.dart';
 import '../repositories/cart_repository.dart';
 import 'dart:convert';
 

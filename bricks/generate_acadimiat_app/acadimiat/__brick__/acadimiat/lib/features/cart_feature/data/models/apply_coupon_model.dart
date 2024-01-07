@@ -30,13 +30,13 @@ class ApplyCouponModel extends ApplyCouponEntity{
     status:status,
   );
 
-  int courseId;
-  int type;
-  int couponId;
-  String code;
-  bool isActive;
-  double amount;
-  String status;
+final int courseId;
+final int type;
+final int couponId;
+final String code;
+final bool isActive;
+final double amount;
+final String status;
 
   factory ApplyCouponModel.fromJson(Map<String, dynamic> json) => ApplyCouponModel(
     courseId: (json["courseId"]!=null)?json["courseId"]:-1,

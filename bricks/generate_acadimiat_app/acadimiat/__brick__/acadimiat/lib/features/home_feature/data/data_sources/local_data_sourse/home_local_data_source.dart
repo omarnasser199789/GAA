@@ -1,10 +1,5 @@
-import 'dart:convert';
-import 'dart:io';
-import 'package:flutter/foundation.dart';
 import '../../../../../core/globals.dart';
 import 'package:sqflite/sqflite.dart';
-
-import '../../../domain/entities/fav_entity.dart';
 import '../../../domain/use_cases/local_db_usecase/add_product_to_fav_db_usecase.dart';
 import '../../../domain/use_cases/local_db_usecase/update_categories_in_local_db_usecase.dart';
 import '../../../domain/use_cases/local_db_usecase/update_consultancies_in_local_db_usecase.dart';
@@ -44,13 +39,6 @@ class HomeLocalDataSourceImpl implements HomeLocalDataSource {
   Future<int> updateDiplomasAndPackages(List<UpdateDiplomasAndPackagesParams> params) async {
     ///Get a reference to the database.
     final db = await database;
-
-
-    ///Print the data entered into the database for the table.
-    // if (kDebugMode) {
-    //   print(updateDiplomasAndPackagesParamsToJson(params));
-    // }
-
 
     ///Delete all item from table.
     await db.rawQuery("DELETE  FROM diplomasAndPackages");

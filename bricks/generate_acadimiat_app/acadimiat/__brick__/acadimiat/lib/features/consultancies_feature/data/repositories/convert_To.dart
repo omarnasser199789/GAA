@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../core/error/exceptions.dart';
-import '../../domain/entities/consultancies_entity.dart';
 import '../../domain/entities/consultancy_entity.dart';
 import '../../domain/entities/consultation_session_entity.dart';
 import '../../domain/entities/my_consultancies_entity.dart';

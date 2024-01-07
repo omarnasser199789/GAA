@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../../../main.dart';
 import 'models/browser_model.dart';
 import 'models/webview_model.dart';
@@ -221,56 +220,9 @@ class _WebViewTabState extends State<WebViewTab> with WidgetsBindingObserver {
           currentWebViewModel.updateWithValue(widget.webViewModel);
         }
       },
-      // onLongPressHitTestResult: (controller, hitTestResult) async {
-      //   if (LongPressAlertDialog.hitTestResultSupported
-      //       .contains(hitTestResult.type)) {
-      //     var requestFocusNodeHrefResult =
-      //         await _webViewController?.requestFocusNodeHref();
-      //
-      //     if (requestFocusNodeHrefResult != null) {
-      //       showDialog(
-      //         context: context,
-      //         builder: (context) {
-      //           return LongPressAlertDialog(
-      //             webViewModel: widget.webViewModel,
-      //             hitTestResult: hitTestResult,
-      //             requestFocusNodeHrefResult: requestFocusNodeHrefResult,
-      //           );
-      //         },
-      //       );
-      //     }
-      //   }
-      // },
+
       onConsoleMessage: (controller, consoleMessage) {
-        Color consoleTextColor = Colors.black;
-        Color consoleBackgroundColor = Colors.transparent;
-        IconData? consoleIconData;
-        Color? consoleIconColor;
-        if (consoleMessage.messageLevel == ConsoleMessageLevel.ERROR) {
-          consoleTextColor = Colors.red;
-          consoleIconData = Icons.report_problem;
-          consoleIconColor = Colors.red;
-        } else if (consoleMessage.messageLevel == ConsoleMessageLevel.TIP) {
-          consoleTextColor = Colors.blue;
-          consoleIconData = Icons.info;
-          consoleIconColor = Colors.blueAccent;
-        } else if (consoleMessage.messageLevel == ConsoleMessageLevel.WARNING) {
-          consoleBackgroundColor = const Color.fromRGBO(255, 251, 227, 1);
-          consoleIconData = Icons.report_problem;
-          consoleIconColor = Colors.orangeAccent;
-        }
 
-        // widget.webViewModel.addJavaScriptConsoleResults(JavaScriptConsoleResult(
-        //   data: consoleMessage.message,
-        //   textColor: consoleTextColor,
-        //   backgroundColor: consoleBackgroundColor,
-        //   iconData: consoleIconData,
-        //   iconColor: consoleIconColor,
-        // ));
-
-        if (isCurrentTab(currentWebViewModel)) {
-          currentWebViewModel.updateWithValue(widget.webViewModel);
-        }
       },
       onLoadResource: (controller, resource) {
         widget.webViewModel.addLoadedResources(resource);
@@ -297,18 +249,7 @@ class _WebViewTabState extends State<WebViewTab> with WidgetsBindingObserver {
 
         return NavigationActionPolicy.ALLOW;
       },
-      // onDownloadStartRequest: (controller, url) async {
-      //   String path = url.url.path;
-      //   String fileName = path.substring(path.lastIndexOf('/') + 1);
-      //
-      //   await FlutterDownloader.enqueue(
-      //     url: url.toString(),
-      //     fileName: fileName,
-      //     savedDir: (await getTemporaryDirectory()).path,
-      //     showNotification: true,
-      //     openFileFromNotification: true,
-      //   );
-      // },
+
       onReceivedServerTrustAuthRequest: (controller, challenge) async {
         var sslError = challenge.protectionSpace.sslError;
         if (sslError != null && (sslError.code != null)) {

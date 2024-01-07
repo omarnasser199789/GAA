@@ -8,7 +8,6 @@ import '../../domain/use_cases/present_section/reserve_meeting_usecase.dart';
 import '../models/consultancies_model.dart';
 import '../models/consultancy_model.dart';
 import '../models/consultationSessionsModel.dart';
-import '../models/reserve_meeting_model.dart';
 import '../models/room_calender_model.dart';
 import '../models/room_hour_model.dart';
 

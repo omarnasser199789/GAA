@@ -1,6 +1,5 @@
 import 'package:acadmiat/Theme/style.dart';
 import 'package:acadmiat/core/widgets/empty_state_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -56,7 +55,6 @@ class _ArticlePageState extends State<ArticlePage> {
                       onPressed: () async {
                         TextEditingController titleController = TextEditingController();
                         TextEditingController definitionController = TextEditingController();
-                        TextEditingController keywordsController = TextEditingController();
                         bool definitionEmpty=false;
                         bool titleEmpty=false;
                         final result = await showModalBottomSheet(

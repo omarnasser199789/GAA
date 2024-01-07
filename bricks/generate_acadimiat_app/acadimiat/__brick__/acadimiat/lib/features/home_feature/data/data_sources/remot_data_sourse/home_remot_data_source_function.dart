@@ -1,13 +1,9 @@
-import 'dart:convert';
-
 import 'package:acadmiat/features/home_feature/data/models/consultancies_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
-
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/globals.dart';
 import '../../../../../core/network/api_manager.dart';
-import '../../../../consultancies_feature/data/models/consultancies_model.dart';
 import '../../../domain/use_cases/check_purchase_usecase.dart';
 import '../../models/banners_model.dart';
 import '../../models/card_by_id_model.dart';
@@ -27,13 +23,7 @@ class HomeRemoteDataFunctions {
 
       if (response.statusCode == 200) {
         var LatestModels = consultanciesModelFromJson(response.body);
-        if (LatestModels != null) {
-          return LatestModels;
-        } else {
-          throw ServerException();
-        }
-
-        // return LatestPModel.fromJson(data);
+        return LatestModels;
       } else {
         throw ServerException();
       }
@@ -63,9 +53,7 @@ class HomeRemoteDataFunctions {
 
       if (response.statusCode == 200) {
         var v = packageModelFromJson(response.body);
-
           return v;
-
       } else {
         throw ServerException();
       }
@@ -87,9 +75,7 @@ class HomeRemoteDataFunctions {
 
       if (response.statusCode == 200) {
         var v = searchModelFromJson(response.body);
-
           return v;
-
       } else {
         throw ServerException();
       }
@@ -134,17 +120,10 @@ class HomeRemoteDataFunctions {
         Uri.parse(url),
         headers: {},
       ).timeout(Duration(seconds: timeout));
-      // if (kDebugMode) {
-      //   print(response.body);
-      // }
       if (response.statusCode == 200) {
         await Future.delayed(const Duration(milliseconds: 9000));
         var LatestPModels = latestpModelFromJson(response.body);
-        if (LatestPModels != null) {
-          return LatestPModels;
-        } else {
-          throw ServerException();
-        }
+        return LatestPModels;
 
         // return LatestPModel.fromJson(data);
       } else {

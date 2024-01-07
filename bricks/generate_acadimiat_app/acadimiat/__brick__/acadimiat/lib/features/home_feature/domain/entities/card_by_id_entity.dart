@@ -3,27 +3,27 @@ import 'package:equatable/equatable.dart';
 import '../../data/models/card_by_id_model.dart';
 
 class CardByIdEntity extends Equatable{
-  int id;
-  String courseName;
-  String appleId;
-  String googleId;
-  String trainerName;
-  String courseDescription;
-  double mainPrice;
-  double currentPrice;
-  dynamic courseLink;
-  dynamic courseKeywords;
-  String courseCover;
-  String courseVideo;
-  String courseCertificateSample;
-  int numberOfUnites;
-  int numberOfLectures;
-  int videosLength;
-  List<Trainer> trainers;
-  dynamic coursePrices;
-  List<CourseUnit> courseUnits;
-  List<CourseInfo> courseInfo;
-  dynamic quizz;
+ final int id;
+ final String courseName;
+ final String appleId;
+ final String googleId;
+ final String trainerName;
+ final String courseDescription;
+ final double mainPrice;
+ final double currentPrice;
+ final dynamic courseLink;
+ final dynamic courseKeywords;
+ final String courseCover;
+ final String courseVideo;
+ final String courseCertificateSample;
+ final int numberOfUnites;
+ final int numberOfLectures;
+ final int videosLength;
+ final List<Trainer> trainers;
+ final dynamic coursePrices;
+ final List<CourseUnit> courseUnits;
+ final List<CourseInfo> courseInfo;
+ final dynamic quizz;
 
   CardByIdEntity(
   {
@@ -48,12 +48,6 @@ class CardByIdEntity extends Equatable{
   required this.courseUnits,
   required this.courseInfo,
     required this.quizz,
-
-
-
-
-
-
 
 }
       );

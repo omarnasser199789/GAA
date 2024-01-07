@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final CartModel = CartModelFromJson(jsonString);
-
 import 'dart:convert';
-
 import '../../domain/entities/files_entity.dart';
 
 CartModel CartModelFromJson(String str) => CartModel.fromJson(json.decode(str));
@@ -13,11 +8,9 @@ String CartModelToJson(CartModel data) => json.encode(data.toJson());
 class CartModel  extends CartEntity{
   CartModel({
    required this.carts,
-  }):super(
-      carts:carts
-  );
+  }):super(carts:carts);
 
-  List<Cart> carts;
+ final List<Cart> carts;
 
   factory CartModel.fromJson(Map<String, dynamic> json) => CartModel(
     carts: List<Cart>.from(json["carts"].map((x) => Cart.fromJson(x))),
@@ -42,16 +35,15 @@ class Cart {
   required  this.fav,
   });
 
-  int id;
-
-  int apiId;
-  int productType;
-  String name;
-  String image;
-  String trainer;
-  double newPrice;
-  double oldPrice;
-  int fav;
+ final int id;
+ final int apiId;
+ final int productType;
+ final String name;
+ final String image;
+ final String trainer;
+ final double newPrice;
+ final double oldPrice;
+ final int fav;
 
   factory Cart.fromJson(Map<String, dynamic> json) => Cart(
 

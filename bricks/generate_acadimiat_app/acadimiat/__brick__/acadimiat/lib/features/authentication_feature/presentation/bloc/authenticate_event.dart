@@ -8,9 +8,9 @@ abstract class AuthenticateEvent extends Equatable {
 }
 
 class ChangePasswordEvent extends AuthenticateEvent {
-  String id;
-  int userId;
-  String password;
+ final String id;
+ final int userId;
+ final String password;
 
   ChangePasswordEvent({
     required this.userId,
@@ -45,9 +45,9 @@ class ResetPassword extends AuthenticateEvent {
 }
 
 class ResetPasswordDbaEvent extends AuthenticateEvent {
-  String id;
-  int userId;
-  String password;
+ final String id;
+ final int userId;
+ final String password;
 
   ResetPasswordDbaEvent({
     required this.userId,
@@ -57,7 +57,7 @@ class ResetPasswordDbaEvent extends AuthenticateEvent {
 }
 
 class ReactivateEvent extends AuthenticateEvent {
-  String email;
+  final String email;
 
   ReactivateEvent({
     required this.email,
@@ -65,7 +65,7 @@ class ReactivateEvent extends AuthenticateEvent {
 }
 
 class ResetEvent extends AuthenticateEvent {
-  String email;
+  final String email;
 
   ResetEvent({
     required this.email,
@@ -74,8 +74,8 @@ class ResetEvent extends AuthenticateEvent {
 
 class ResetPasswordEvent extends AuthenticateEvent {
 
-  String userId;
-  String email;
+ final String userId;
+ final String email;
 
   ResetPasswordEvent({
     required this.email,
@@ -86,9 +86,9 @@ class ResetPasswordEvent extends AuthenticateEvent {
 }
 
 class GetInEvent extends AuthenticateEvent {
-  String id;
-  int userId;
-  String password;
+ final String id;
+ final int userId;
+ final String password;
 
   GetInEvent({
     required this.id,
@@ -100,8 +100,8 @@ class GetInEvent extends AuthenticateEvent {
 }
 
 class ConfirmEvent extends AuthenticateEvent {
-  String userId;
-  String email;
+ final String userId;
+ final String email;
 
   ConfirmEvent({
     required this.email,

@@ -22,16 +22,16 @@ class MyLectureEntity extends Equatable{
     required this.contents,
   });
 
-  int materialId;
-  String materialName;
-  int unitId;
-  int order;
-  String materialLink;
-  String materialLength;
-  bool isDone;
-  double totalScore;
-  dynamic completitionDate;
-  CurrentVideo  currentVideo;
-  Discussion  discussion;
-  List<NestedContent> contents;
+ final int materialId;
+ final String materialName;
+ final int unitId;
+ final int order;
+ final String materialLink;
+ final String materialLength;
+ final bool isDone;
+ final double totalScore;
+ final dynamic completitionDate;
+ final CurrentVideo  currentVideo;
+ final Discussion  discussion;
+ final List<NestedContent> contents;
 }

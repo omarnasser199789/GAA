@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import '../../../../../../../core/error/failures.dart';
 import '../../../../../../../core/usecases/usecase.dart';
-import '../../entities/reserve_meeting_entity.dart';
 import '../../repositories/currencies_repository.dart';
 import 'dart:convert';
 
@@ -13,8 +12,6 @@ class ReserveMeetingUseCase implements UseCase<int, ReserveMeetingParams> {
     return repository.reserveMeeting(params);
   }
 }
-
-
 
 ReserveMeetingParams reserveMeetingParamsFromJson(String str) => ReserveMeetingParams.fromJson(json.decode(str));
 

@@ -21,9 +21,9 @@ class CategoriesModel  extends CategoriesEntity  {
     categoryCourses:categoryCourses,
   );
 
-  int categoryId;
-  String categoryName;
-  int categoryCourses;
+ final int categoryId;
+ final String categoryName;
+ final int categoryCourses;
 
   factory CategoriesModel.fromJson(Map<String, dynamic> json) => CategoriesModel(
     categoryId: json["categoryId"],

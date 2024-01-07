@@ -1,30 +1,20 @@
 import 'dart:convert';
-
 import '../../domain/entities/sign_cookie_entity.dart';
 
-SignCookieModel signCookieModelFromJson(String str) =>
-    SignCookieModel.fromJson(json.decode(str));
+SignCookieModel signCookieModelFromJson(String str) => SignCookieModel.fromJson(json.decode(str));
 
-String signCookieModelToJson(SignCookieModel data) =>
-    json.encode(data.toJson());
+String signCookieModelToJson(SignCookieModel data) => json.encode(data.toJson());
 
 class SignCookieModel extends SignCookieEntity{
-
-
   SignCookieModel({
     required this.cookie,
   }):super(cookie:cookie);
 
-  Cookie cookie;
+  final Cookie cookie;
 
-  factory SignCookieModel.fromJson(Map<String, dynamic> json) =>
-      SignCookieModel(
-        cookie: Cookie.fromJson(json["cookie"]),
-      );
+  factory SignCookieModel.fromJson(Map<String, dynamic> json) => SignCookieModel(cookie: Cookie.fromJson(json["cookie"]));
 
-  Map<String, dynamic> toJson() => {
-        "cookie": cookie.toJson(),
-      };
+  Map<String, dynamic> toJson() => {"cookie": cookie.toJson()};
 }
 class Cookie {
   Cookie({

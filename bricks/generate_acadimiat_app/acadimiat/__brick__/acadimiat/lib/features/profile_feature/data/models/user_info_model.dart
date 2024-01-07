@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final userInfoModel = userInfoModelFromJson(jsonString);
-
 import 'dart:convert';
 
 import '../../domain/entities/user_info_entity.dart';
@@ -11,6 +7,7 @@ UserInfoModel userInfoModelFromJson(String str) => UserInfoModel.fromJson(json.d
 
 String userInfoModelToJson(UserInfoModel data) => json.encode(data.toJson());
 
+// ignore: must_be_immutable
 class UserInfoModel extends UserInfoEntity{
     UserInfoModel({
       required  this.id,
@@ -36,25 +33,25 @@ class UserInfoModel extends UserInfoEntity{
     name: name,email: email,phone: phone,profileImage: profileImage,notes: notes,addedBy: addedBy,addedDate: addedDate,
     updateAt: updateAt,user: user,b2Bcourses: b2Bcourses,courses: courses,path: path);
 
-    int id;
-    int groupId;
-    int userId;
-    int sex;
-    String dateOfBirth;
-    bool active;
-    String name;
-    String email;
-    dynamic phone;
-    String profileImage;
-    dynamic notes;
-    int addedBy;
-    String addedDate;
-    String updateAt;
-    dynamic user;
-    dynamic group;
-    dynamic b2Bcourses;
-    dynamic courses;
-    dynamic path;
+  final int id;
+  final int groupId;
+  final int userId;
+  final int sex;
+  final String dateOfBirth;
+  final bool active;
+  final String name;
+  final String email;
+  final dynamic phone;
+  final String profileImage;
+  final dynamic notes;
+  final int addedBy;
+  final String addedDate;
+  final String updateAt;
+  final dynamic user;
+  final dynamic group;
+  final dynamic b2Bcourses;
+  final dynamic courses;
+  final dynamic path;
 
     factory UserInfoModel.fromJson(Map<String, dynamic> json) => UserInfoModel(
         id: (json["id"]!=null)?json["id"]:-1,

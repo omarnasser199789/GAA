@@ -23,10 +23,10 @@ class ConsultanciesFromLocalDbModel extends ConsultanciesFromLocalDbEntity {
     trainerName:trainerName,
   );
 
-  int apiId;
-  String image;
-  String name;
-  String trainerName;
+ final int apiId;
+ final String image;
+ final String name;
+ final String trainerName;
 
   factory ConsultanciesFromLocalDbModel.fromJson(Map<String, dynamic> json) => ConsultanciesFromLocalDbModel(
     apiId: json["apiId"],

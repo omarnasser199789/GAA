@@ -124,7 +124,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
             assignmentEntity = state.assignmentEntity;
             if (firstOne) {
               firstOne = false;
-              for (var item in assignmentEntity.attempts) {
+              for (var _ in assignmentEntity.attempts) {
                 foldOutList.add(false);
                 listHeight += 133;
               }
@@ -799,13 +799,9 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                               cover: GestureDetector(
                                                                 onTap: () {
                                                                   setState(() {
-                                                                    durationForAnimatedContainer =
-                                                                        1500;
-                                                                    foldOutList[
-                                                                            index] =
-                                                                        false;
-                                                                    listHeight -=
-                                                                        270;
+                                                                    durationForAnimatedContainer = 1500;
+                                                                    foldOutList[index] = false;
+                                                                    listHeight -= 270;
                                                                   });
                                                                 },
                                                                 child:
@@ -816,11 +812,7 @@ class ActivityByPageIdState extends State<ActivityByPageId> {
                                                                       borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8),
                                                                           bottomRight: Radius.circular(8))),
                                                                       child: Padding(
-                                                                        padding: const EdgeInsets.only(
-                                                                            left: 14,
-                                                                            right: 14,
-                                                                            top: 14,
-                                                                            bottom: 14),
+                                                                        padding: const EdgeInsets.only(left: 14, right: 14, top: 14, bottom: 14),
                                                                     child:
                                                                     Column(
                                                                            children: [

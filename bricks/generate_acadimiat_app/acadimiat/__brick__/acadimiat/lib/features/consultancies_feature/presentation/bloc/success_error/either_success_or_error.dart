@@ -1,13 +1,9 @@
 import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/functions.dart';
-import '../../../../../core/globals.dart';
-
-import '../../../domain/entities/consultancies_entity.dart';
 import '../../../domain/entities/consultancy_entity.dart';
 import '../../../domain/entities/consultation_session_entity.dart';
 import '../../../domain/entities/my_consultancies_entity.dart';
-import '../../../domain/entities/reserve_meeting_entity.dart';
 import '../../../domain/entities/room_hour_entity.dart';
 import '../consultancies_state.dart';
 

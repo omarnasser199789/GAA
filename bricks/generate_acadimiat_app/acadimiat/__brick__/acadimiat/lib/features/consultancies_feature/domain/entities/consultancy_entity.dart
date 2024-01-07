@@ -23,21 +23,21 @@ class ConsultancyEntity extends Equatable{
     required  this.info,
   });
 
-  int consultancyId;
-  String name;
-  dynamic body;
-  String image;
-  String consultantName;
-  int numberOfSessions;
-  String subscriptionLimit;
-  String typeOfSession;
-  dynamic squareImage;
-  String consultantImage;
-  String consultantInfo;
-  int consultantId;
-  double consultancyPrice;
-  double timeLimit;
-  List<Info> info;
+ final int consultancyId;
+ final String name;
+ final dynamic body;
+ final String image;
+ final String consultantName;
+ final int numberOfSessions;
+ final String subscriptionLimit;
+ final String typeOfSession;
+ final dynamic squareImage;
+ final String consultantImage;
+ final String consultantInfo;
+ final int consultantId;
+ final double consultancyPrice;
+ final double timeLimit;
+ final List<Info> info;
 
 
   @override

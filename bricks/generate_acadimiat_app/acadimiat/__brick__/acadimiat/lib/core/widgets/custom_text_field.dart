@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import '../../Theme/style.dart';
 
-
-
+// ignore: must_be_immutable
 class CustomTextField extends StatefulWidget {
   CustomTextField({Key? key,required this.hint,
     required this.onTap,
@@ -26,15 +24,15 @@ class CustomTextField extends StatefulWidget {
   final bool ? isSearch;
   final Color ? titleColor;
   final FocusNode? focusNode;
-  late  bool ? isPassword;
-  late  TextAlign ? textAlign;
-  late  TextInputType ? keyboardType;
-  late Function () onTap;
-  late FormFieldValidator<String>? onChange;
-  late Function (dynamic) ? onFieldSubmitted;
-  late Function () ? onEditingComplete;
-  late TextEditingController ? controller;
-  late Widget ? suffixIcon;
+  bool ? isPassword;
+  final  TextAlign ? textAlign;
+  final  TextInputType ? keyboardType;
+  final Function () onTap;
+  final FormFieldValidator<String>? onChange;
+  final Function (dynamic) ? onFieldSubmitted;
+  final Function () ? onEditingComplete;
+  final TextEditingController ? controller;
+  final Widget ? suffixIcon;
   final TextInputAction ? textInputAction;
 
 
@@ -46,25 +44,13 @@ late Brightness keyboardAppearance;
 class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
-
-
-
-
-
-
-
-
     if(SchedulerBinding.instance.window.platformBrightness==Brightness.light) {
       keyboardAppearance = Brightness.light;
     }else{
       keyboardAppearance = Brightness.dark;
     }
 
-
-
-
     Size size =MediaQuery.of(context).size;
-
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -81,7 +67,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
               ],
             ),
           ),
-
 
         Padding(
           padding:  EdgeInsets.only(top:(widget.title!="")?size.height*0.011160714285714286:0),
@@ -101,34 +86,23 @@ class _CustomTextFieldState extends State<CustomTextField> {
               onFieldSubmitted: widget.onFieldSubmitted,
               textInputAction:widget.textInputAction,
               keyboardAppearance:keyboardAppearance,
-              // minLines: 2,
               maxLines: widget.maxLines,//(widget.isPassword==null&&widget.isPassword==false)?  widget.maxLines:1,
               autofocus:(widget.autofocus==null)?false:true,
               validator: widget.onChange,
-
               autovalidateMode: AutovalidateMode.onUserInteraction,
-
-
               obscureText: (widget.isPassword!=null&&widget.isPassword==true)? true:false,
-              // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: widget.hint,
-
                 hintStyle: blackBoldTextStyle(context: context,fontSize: 12,color: hintTextColor),
                 filled: true,
-
                 fillColor: textFormFieldFillColor,
                 errorStyle: blackBoldTextStyle(fontSize: 11, context: context,color: Colors.red),
-
-
                 suffixIcon:(widget.suffixIcon==null)? (widget.isPassword!=null&&widget.isPassword==true)? GestureDetector(
                     onTap: (){
-
                       setState((){
                         widget.isPassword=false;
                       });
-
                     },
                     child: const Icon(Icons.remove_red_eye_outlined,color: Colors.grey,)):null:widget.suffixIcon,
                 prefixIcon: (widget.isSearch!=null&&widget.isSearch==true)?Icon(Icons.search,color: hintTextColor,):null,
@@ -147,10 +121,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   borderRadius: BorderRadius.circular(6),
                 ),
               ),
-
               onChanged: (value) {
-                // if(value.length==11)
-                //   FocusScope.of(context).unfocus();
+
               },
             ),
           ),

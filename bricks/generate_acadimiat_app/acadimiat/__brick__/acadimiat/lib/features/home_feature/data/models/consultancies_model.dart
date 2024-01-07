@@ -34,21 +34,21 @@ class ConsultanciesModel extends ConsultanciesEntity {
     consultancyPrice: consultancyPrice,timeLimit: timeLimit,info: info
   );
 
-  int consultancyId;
-  String name;
-  dynamic body;
-  String image;
-  String consultantName;
-  int numberOfSessions;
-  dynamic subscriptionLimit;
-  dynamic typeOfSession;
-  dynamic squareImage;
-  String consultantImage;
-  String consultantInfo;
-  int consultantId;
-  double consultancyPrice;
-  double timeLimit;
-  dynamic info;
+ final int consultancyId;
+ final String name;
+ final dynamic body;
+ final String image;
+ final String consultantName;
+ final int numberOfSessions;
+ final dynamic subscriptionLimit;
+ final dynamic typeOfSession;
+ final dynamic squareImage;
+ final String consultantImage;
+ final String consultantInfo;
+ final int consultantId;
+ final double consultancyPrice;
+ final double timeLimit;
+ final dynamic info;
 
   factory ConsultanciesModel.fromJson(Map<String, dynamic> json) => ConsultanciesModel(
     consultancyId: json["consultancyId"],

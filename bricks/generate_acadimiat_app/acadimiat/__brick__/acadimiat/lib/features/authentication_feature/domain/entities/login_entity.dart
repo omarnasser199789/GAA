@@ -18,16 +18,16 @@ class LoginEntity extends Equatable{
     required  this.refreshToken,
   });
 
-  String id;
-  String email;
-  String name;
-  String avatar;
-  String groupId;
-  dynamic trainerId;
-  String userId;
-  String jwtToken;
-  List<MyCourse> myCourses;
-  String refreshToken;
+ final String id;
+ final String email;
+ final String name;
+ final String avatar;
+ final String groupId;
+ final dynamic trainerId;
+ final String userId;
+ final String jwtToken;
+ final List<MyCourse> myCourses;
+ final String refreshToken;
 
 
 }

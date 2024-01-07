@@ -1,7 +1,6 @@
 import 'package:acadmiat/Theme/style.dart';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../../data/models/my_course_model.dart';
 import 'case_study_page.dart';
 
@@ -69,29 +68,6 @@ class _CaseStudyTabState extends State<CaseStudyTab> {
                               ),),
                             ),
                           ),
-
-                        // if(widget.caseStudy[index].solution.answers.isNotEmpty)
-                        // Padding(
-                        //   padding: const EdgeInsets.only(top:10),
-                        //   child: Row(
-                        //     children: [
-                        //       SvgPicture
-                        //           .asset(
-                        //         "assets/svgs/Icon feather-check-circle.svg",
-                        //         color: percentIndicatorColor,
-                        //       ),
-                        //       SizedBox(
-                        //         width:
-                        //         7,
-                        //       ),
-                        //       Text(
-                        //         "تم ارسال الحل",
-                        //         style:
-                        //         blackBoldTextStyle(fontSize: 11, context: context,color: percentIndicatorColor),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
                       ],
                     ),
 
@@ -99,8 +75,6 @@ class _CaseStudyTabState extends State<CaseStudyTab> {
                       padding: const EdgeInsets.only(top:10),
                       child: Text(widget.caseStudy[index].header,style: blackBoldTextStyle(fontSize: 12, height: 1.7,context: context),),
                     ),
-
-
                   ],
                 ),
               )),

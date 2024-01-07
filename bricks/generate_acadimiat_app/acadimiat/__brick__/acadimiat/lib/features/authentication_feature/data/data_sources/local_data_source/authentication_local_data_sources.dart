@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/globals.dart';
-import '../../../domain/use_cases/login_usecase.dart';
 import '../../models/login_model.dart';
 
 // This abstract class defines the interface for a local data source that provides
@@ -48,7 +47,6 @@ class AuthenticationLocalDataSourceImpl implements AuthenticationLocalDataSource
 
   // Implementation of the `cacheAuthentication()` method defined in the `AuthenticationLocalDataSource` interface.
   // Caches the provided `LoginModel` object to be used for future authentication requests.
-  @override
   Future<void> cacheAuthentication(LoginModel loginModel) async {
     globalSH = await SharedPreferences.getInstance();
     // Store the JWT token

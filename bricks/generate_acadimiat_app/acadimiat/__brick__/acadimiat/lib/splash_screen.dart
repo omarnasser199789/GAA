@@ -22,7 +22,7 @@ Future<void> initConnection() async {
 
     print("ConnectionState: ${connection.connectionId}");
   }
-  
+
   connection.onclose((error) {
     if (kDebugMode) {
       print("Connection Closed:$error");

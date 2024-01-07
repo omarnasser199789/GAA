@@ -19,14 +19,14 @@ class MyQuizzInfoEntity extends Equatable{
     required  this.myAttempts,
   });
 
-  int quizzId;
-  String quizzName;
-  int totalAttempts;
-  int totalTime;
-  bool hasPassword;
-  double minScore;
-  bool beforeStart;
-  bool optional;
-  List<MyAttempt> myAttempts;
+final  int quizzId;
+final  String quizzName;
+final  int totalAttempts;
+final  int totalTime;
+final  bool hasPassword;
+final  double minScore;
+final  bool beforeStart;
+final  bool optional;
+final  List<MyAttempt> myAttempts;
 
 }

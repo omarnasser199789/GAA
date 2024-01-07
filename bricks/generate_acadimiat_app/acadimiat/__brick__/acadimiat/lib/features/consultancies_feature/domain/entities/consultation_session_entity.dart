@@ -17,16 +17,16 @@ class ConsultationSessionEntity extends Equatable {
     required  this.attendeePw,
   });
 
-  String meetingId;
-  String timezone;
-  String consultancyTimezone;
-  int id;
-  DateTime date;
-  DateTime hour;
-  bool isActive;
-  bool isDone;
-  String day;
-  String url;
-  dynamic meetingLongId;
-  dynamic attendeePw;
+ final String meetingId;
+ final String timezone;
+ final String consultancyTimezone;
+ final int id;
+ final DateTime date;
+ final DateTime hour;
+ final bool isActive;
+ final bool isDone;
+ final String day;
+ final String url;
+ final dynamic meetingLongId;
+ final dynamic attendeePw;
 }

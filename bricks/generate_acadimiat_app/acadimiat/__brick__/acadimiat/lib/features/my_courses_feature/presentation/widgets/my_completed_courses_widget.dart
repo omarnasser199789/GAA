@@ -174,7 +174,6 @@ class _MyCompletedCoursesWidgetState extends State<MyCompletedCoursesWidget> {
                                 animationDuration: 1000,
                                 barRadius: const Radius.circular(20),
                                 percent: 0.3,
-                                // center: Text("80.0%"),
                                 linearStrokeCap: LinearStrokeCap.roundAll,
                                 progressColor: percentIndicatorColor,
                               ),
@@ -237,16 +236,12 @@ class _MyCompletedCoursesWidgetState extends State<MyCompletedCoursesWidget> {
                                 ],
                               ),
                             ),
-
-
-
                           ],
                         ),
                       ),
 
                     ],
                   ),
-
                 ),
               ),
             );

@@ -60,9 +60,7 @@ class _CourseContentPageState extends State<CourseContentPage> {
   int animatedDuration = 2;
   bool allowGetCard = true;
 
-  @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight + MediaQuery.of(context).padding.top);
-
 
   @override
   Widget build(BuildContext context) {
@@ -355,10 +353,7 @@ class _CourseContentPageState extends State<CourseContentPage> {
                             loading=true;
                             allowGo=true;
                           });
-                          CustomerInfo customerInfo= await Purchases.getCustomerInfo();
-                          List<String> allPurchasedProductIdentifiers =  customerInfo.allPurchasedProductIdentifiers;
 
-                            // if (allPurchasedProductIdentifiers.contains(state.cardByIdEntity.appleId))
                             if (!coursePurchaseOrNot(state.cardByIdEntity.id))
                             {
                               if(!mounted) return;

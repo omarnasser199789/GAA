@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/bloc/my_courses_bloc.dart';
 import 'package:better_player/better_player.dart';
 import 'package:flutter/foundation.dart';
@@ -18,6 +17,7 @@ import '../../pages/my_course/tabs/lessons_tab/widgets_for_lossonsTab_sidebarTab
 import '../common.dart';
 import 'package:measure_size/measure_size.dart';
 
+// ignore: must_be_immutable
 class AmazonVideoWidget extends StatefulWidget {
   late String videoUrl;
   final NestedContent content;
@@ -25,7 +25,7 @@ class AmazonVideoWidget extends StatefulWidget {
   int contentId;
   int courseId;
   int lectureLogId;
-  String  courseCover;
+  final  String  courseCover;
 
   AmazonVideoWidget(
       {super.key,
@@ -91,56 +91,19 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
     required int contentId,
     required int lectureId,
   }) {
-    print("Old Data");
-    print("courseId:${widget.courseId}");
-    print("lectureId:${widget.lectureId}");
-    print("contentId:${widget.contentId}");
-    print("lectureLogId:${widget.lectureLogId}");
     widget.contentId = courseId;
     widget.courseId = contentId;
     widget.lectureLogId = lectureLogId;
     widget.lectureId = lectureId;
-    if (kDebugMode) {
-      print("Data edited successfully");
-      print("courseId:${widget.courseId}");
-      print("lectureId:${widget.lectureId}");
-      print("contentId:${widget.contentId}");
-      print("lectureLogId:${widget.lectureLogId}");
-
-    }
-
   }
 
 
   @override
-  void initState() {
-    // bookmarks = widget.content.bookmarks;
-    super.initState();
-  } // @override
-
-  // HubConnection connection = HubConnectionBuilder()
-  //     .withUrl(
-  //         baseSignalRUrl,
-  //         HttpConnectionOptions(
-  //           accessTokenFactory: () async =>
-  //               globalSH.getString(CACHED_JWT_TOKEN)!,
-  //           transport: HttpTransportType.webSockets,
-  //           client: IOClient(
-  //               HttpClient()..badCertificateCallback = (x, y, z) => true),
-  //           logging: (level, message) => print('$level: $message'),
-  //         ))
-  //     .withAutomaticReconnect()
-  //     .build();
-
-  @override
   void dispose() {
     super.dispose();
-    // connection.stop();
-
     try {
       _betterPlayerController.pause();
     } catch(e) {
-
       if (kDebugMode) {
         print(e);
       }
@@ -156,8 +119,6 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-
-
     if (widget.content.file.isVimeo == false ||
         widget.content.file.isVimeo == null) {
       return AspectRatio(
@@ -169,14 +130,12 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
                   if (kDebugMode) {
                     print("State:$state");
                   }
-
                   if (state is Empty) {
                     if(startGetSignCookie==false) {
                       startGetSignCookie=true;
                       BlocProvider.of<MyCoursesBloc>(context).add(GetSignCookie());
                     }
                   }
-
                   if (state is SuccessGetSignCookieEntity)  {
                     if(theFirstOne) {
                       theFirstOne=false;
@@ -188,10 +147,7 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
                       });
                     }
                   }
-
                   if (state is SuccessInitVideo) {
-
-
                     return Stack(
                       children: [
                         MeasureSize(
@@ -219,8 +175,6 @@ class AmazonVideoWidgetState extends State<AmazonVideoWidget> {
                               play_video=true;
                             });
                           }, height:  betterPlayerSize.height, coverUrl: widget.courseCover,),
-
-
 
                       ],
                     );

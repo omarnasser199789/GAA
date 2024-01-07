@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+
 class TopicReplyEntity extends Equatable{
   TopicReplyEntity({
     required this.id,
@@ -11,14 +12,14 @@ class TopicReplyEntity extends Equatable{
     required this.topic,
   });
 
-  int id;
-  int topicId;
-  int userId;
-  String reply;
-  String attachment;
-  DateTime date;
-  dynamic user;
-  dynamic topic;
+ final int id;
+ final int topicId;
+ final int userId;
+ final String reply;
+ final String attachment;
+ final DateTime date;
+ final dynamic user;
+ final dynamic topic;
 
   @override
   // TODO: implement props

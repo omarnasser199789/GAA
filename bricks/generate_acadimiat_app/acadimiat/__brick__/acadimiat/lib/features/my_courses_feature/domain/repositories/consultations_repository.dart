@@ -3,7 +3,6 @@ import 'package:acadmiat/features/my_courses_feature/domain/use_cases/activity_c
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/activity_quizz_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myqizizz_usecase.dart';
 import 'package:dartz/dartz.dart';
-
 import '../../../../core/error/failures.dart';
 import '../../data/models/files_model.dart';
 import '../../data/models/my_courses_model.dart';
@@ -22,7 +21,6 @@ import '../entities/discussion_entity.dart';
 import '../entities/files_entity.dart';
 import '../entities/my_course_entity.dart';
 import '../entities/my_courses_entity.dart';
-import '../entities/my_courses_from_local_db_entity.dart';
 import '../entities/my_lecture_entity.dart';
 import '../entities/my_quizz_info_entity.dart';
 import '../entities/sign_cookie_entity.dart';
@@ -42,7 +40,6 @@ import '../use_cases/get_my_course/get_my_course_usecase.dart';
 import '../use_cases/get_my_lecture/get_my_lecture_usecase.dart';
 import '../use_cases/get_my_qizizz/get_myquizzinfo_usecase.dart';
 import '../use_cases/activity_logical_usecase.dart';
-import '../use_cases/local_db_usecase/update_mycourses_in_local_db_usecase.dart';
 import '../use_cases/post_concept_usecase.dart';
 import '../use_cases/submit_quiz_usecase.dart';
 import '../use_cases/topic_reply_usecase.dart';

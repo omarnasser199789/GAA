@@ -1,13 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'dart:convert';
-import '../../../../core/classes/word_type3.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../data/models/my_lecture_model.dart';
-import '../entities/activity_filling_entity.dart';
 import '../entities/activity_logical_entity.dart';
 import '../repositories/consultations_repository.dart';
-
 
 class ActivityLogicalUseCase implements UseCase<ActiveLogicalEntity, ActivityLogicalParams> {
   final MyCoursesRepository repository;

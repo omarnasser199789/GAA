@@ -1,16 +1,16 @@
 import 'package:equatable/equatable.dart';
 
 class MyCoursesEntity extends Equatable{
-  int id;
-  String header;
-  bool authorized;
-  String image;
-  String courseLink;
-  String trainer;
-  int percent;
-  double total;
-  bool isCourse;
-  bool hasBeforeQuizz;
+ final int id;
+ final String header;
+ final bool authorized;
+ final String image;
+ final String courseLink;
+ final String trainer;
+ final int percent;
+ final double total;
+ final bool isCourse;
+ final bool hasBeforeQuizz;
 
   MyCoursesEntity({
     required this.id,

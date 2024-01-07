@@ -43,7 +43,6 @@ import '../../models/my_course_model.dart';
 import '../../models/my_courses_model.dart';
 import '../../models/my_lecture_model.dart';
 import '../../models/sign_cookie_model.dart';
-import 'dart:async';
 import 'dart:core';
 import '../../models/topic_reply_model.dart';
 
@@ -67,11 +66,7 @@ class MyCoursesRemoteDataFunctions {
       return MyCourseModelFromJson(response.body);
     }
     else if(response.statusCode == 500){
-      // if(json.decode(response.body)["error"]=="Not Active Subscription"){
-      //   throw NotActiveSubscription();
-      // }else{
         throw ServerException();
-      // }
     }
     else{
       throw ServerException();
@@ -772,16 +767,10 @@ class MyCoursesRemoteDataFunctions {
       var formData = FormData.fromMap({
       "jsonData": "{'userId':'${params.userId}','assignmentId':${params.assignmentId}}",
         'file': MultipartFile(
-          // imageData,
             Stream.fromIterable(imageData.map((e) => [e])),
-            fileSize,
-            filename: params.fileName,
-            // contentType: MediaType('image', imageType)
+            fileSize, filename: params.fileName,
         ),
       });
-
-
-
 
       dio.options.headers['Authorization'] ='Bearer $JWT';
       dio.options.headers['Accept'] = 'application/json';
@@ -791,7 +780,6 @@ class MyCoursesRemoteDataFunctions {
         onSendProgress: (int sent, int total){
         counterNotifier.value="${(sent / total * 100).toStringAsFixed(0)}%";
       }
-
       );
       if (kDebugMode) {
         print("RESPONSE:$response");
@@ -799,7 +787,6 @@ class MyCoursesRemoteDataFunctions {
       if (response.statusCode == 200) {
         return 200;
       } else {
-       
         return response.statusCode!;
       }
     } catch (e) {

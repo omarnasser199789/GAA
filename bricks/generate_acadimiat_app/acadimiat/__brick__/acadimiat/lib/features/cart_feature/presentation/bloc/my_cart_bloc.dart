@@ -10,9 +10,6 @@ import '../../domain/use_cases/payment_usecase.dart';
 import 'bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-const String SERVER_FAILURE_MESSAGE = 'Server Failure';
-const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
-
 class MyCartBloc extends Bloc<MyCartEvent, MyCartState> {
 
   final AddProductInLocalDBUseCase addProductInLocalDBUseCase;
@@ -24,10 +21,7 @@ class MyCartBloc extends Bloc<MyCartEvent, MyCartState> {
   final PaymentUseCase paymentUseCase;
   final EnableCoursesUseCase enableCoursesUseCase;
 
-
-
   MyCartBloc({
-
     required AddProductInLocalDBUseCase concreteAddProductInLocalDBUseCase,
     required CheckIfProductIsExitInDBUseCase concreteCheckIfProductIsExitInDBUseCase,
     required GetAllProductsFromLocalDBUseCase concreteGetAllProductsFromLocalDBUseCase,
@@ -36,13 +30,7 @@ class MyCartBloc extends Bloc<MyCartEvent, MyCartState> {
     required DeleteAllProductFromLocalDBUseCase concreteDeleteAllProductFromLocalDBUseCasee,
     required PaymentUseCase concretePaymentUseCase,
     required EnableCoursesUseCase concreteEnableCoursesUseCase,
-
-
-  })  : assert(concreteAddProductInLocalDBUseCase != null),
-
-
-
-        checkIfProductIsExitInDBUseCase = concreteCheckIfProductIsExitInDBUseCase,
+  })  : checkIfProductIsExitInDBUseCase = concreteCheckIfProductIsExitInDBUseCase,
         addProductInLocalDBUseCase = concreteAddProductInLocalDBUseCase,
         getAllProductsFromLocalDBUseCase = concreteGetAllProductsFromLocalDBUseCase,
         deleteProductFromLocalDBUseCase = concreteDeleteProductFromLocalDBUseCase,
@@ -50,8 +38,6 @@ class MyCartBloc extends Bloc<MyCartEvent, MyCartState> {
         deleteAllProductFromLocalDBUseCase = concreteDeleteAllProductFromLocalDBUseCasee,
         paymentUseCase = concretePaymentUseCase,
         enableCoursesUseCase = concreteEnableCoursesUseCase,
-
-
         super(Empty());
 
   @override
@@ -87,15 +73,10 @@ class MyCartBloc extends Bloc<MyCartEvent, MyCartState> {
     if(event is RestartEvent){
       yield Empty();
     }
-    // if(event is PaymentEvent){
-    //   final failureOrPhysician =  await  paymentUseCase(event.params);
-    //   yield* successPaymentOrErrorState(failureOrPhysician);
-    // }
     if(event is EnableCoursesEvent){
       yield Loading();
       final failureOrPhysician =  await  enableCoursesUseCase(event.params);
       yield* successEnableCoursesOrErrorState(failureOrPhysician);
     }
-
   }
 }

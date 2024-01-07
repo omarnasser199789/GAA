@@ -1,12 +1,7 @@
 import 'package:dartz/dartz.dart';
-
-import 'package:equatable/equatable.dart';
-import '../../../../core/classes/user.dart';
-import '../../../../core/error/failures.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../entities/concept_entity.dart';
-import '../entities/my_courses_entity.dart';
 import '../repositories/consultations_repository.dart';
 import 'dart:convert';
 

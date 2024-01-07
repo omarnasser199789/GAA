@@ -43,6 +43,7 @@ class _ExamPageState extends State<ExamPage> {
 
   @override
   void initState() {
+    super.initState();
     attendanceTable = [];
     int i = 0;
     for (var item in widget.myQuizizzEntity!.questions) {

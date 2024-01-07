@@ -35,16 +35,16 @@ class DiplomasAndPackagesModel extends DiplomasAndPackagesEntity{
     isCourse:isCourse,
   );
 
-  int id;
-  int apiId;
-  String image;
-  String courseName;
-  String trainerName;
-  double newPrice;
-  double oldPrice;
-  int fav;
-  int isCourse;
-  int numberOfCourses;
+ final int id;
+ final int apiId;
+ final String image;
+ final String courseName;
+ final String trainerName;
+ final double newPrice;
+ final double oldPrice;
+ final int fav;
+ final int isCourse;
+ final int numberOfCourses;
 
   factory DiplomasAndPackagesModel.fromJson(Map<String, dynamic> json) => DiplomasAndPackagesModel(
     id: json["id"],

@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecases/usecase.dart';
 import '../../entities/Categories_from_local_db_entity.dart';
-import '../../entities/consultancies_from_local_db_entity.dart';
 import '../../repositories/latestP_repository.dart';
 
 

@@ -9,7 +9,3 @@ abstract class Failure extends Equatable {
 class ServerFailure extends Failure {}
 
 class CacheFailure extends Failure {}
-class FFailure extends Failure {
-  FFailure({required this.StatusCode});
-  int StatusCode;
-}

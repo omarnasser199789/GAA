@@ -6,7 +6,6 @@ import '../../domain/entities/apply_coupon_entity.dart';
 import '../../domain/entities/files_entity.dart';
 import '../../domain/repositories/cart_repository.dart';
 import '../../domain/use_cases/add_product_in_local_db_usecase.dart';
-import '../../../home_feature/domain/use_cases/check_purchase_usecase.dart';
 import '../../domain/use_cases/payment_usecase.dart';
 import '../data_sources/local_data_source/myCart_local_data_source.dart';
 import '../data_sources/remot_data_sourse/cart_remot_data_source.dart';
@@ -14,24 +13,18 @@ import 'mycart_repository_functions.dart';
 
 class MyCartRepositoryImpl implements MyCartRepository {
 
-
   final MyCartLocalDataSource myCartLocalDataSource;
   final MyCartRemoteDataSource myCartRemoteDataSource;
-
   ConsultationsRepositoryFunctions functions = ConsultationsRepositoryFunctions();
-
   MyCartRepositoryImpl({
     required this.myCartLocalDataSource,
     required this.myCartRemoteDataSource,
   });
 
-
   @override
   Future<Either<Failure, int>> addProduct(AddProductParams params) async{
-
     return await functions.statusCode(() {
       return myCartLocalDataSource.addProduct(params);
-
     });
   }
 
@@ -39,7 +32,6 @@ class MyCartRepositoryImpl implements MyCartRepository {
   Future<Either<Failure, CartEntity>> getProductsFromLocaleDB() async{
     return await functions.convertToCartEntity(() {
       return myCartLocalDataSource.getProductsFromLocaleDB();
-
     });
   }
 

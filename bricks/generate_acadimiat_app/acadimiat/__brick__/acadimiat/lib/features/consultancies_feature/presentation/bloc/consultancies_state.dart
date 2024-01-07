@@ -1,15 +1,9 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-
-import '../../domain/entities/consultancies_entity.dart';
 import '../../domain/entities/consultancy_entity.dart';
 import '../../domain/entities/consultation_session_entity.dart';
 import '../../domain/entities/my_consultancies_entity.dart';
-import '../../domain/entities/reserve_meeting_entity.dart';
 import '../../domain/entities/room_hour_entity.dart';
-
-
 
 @immutable
 abstract class ConsultanciesState extends Equatable  {

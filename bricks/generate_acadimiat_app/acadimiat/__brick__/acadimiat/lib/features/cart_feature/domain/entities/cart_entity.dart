@@ -8,6 +8,6 @@ import 'package:equatable/equatable.dart';
     required  this.productId,
   });
 
-  int type;
-  int productId;
+ final int type;
+ final int productId;
 }

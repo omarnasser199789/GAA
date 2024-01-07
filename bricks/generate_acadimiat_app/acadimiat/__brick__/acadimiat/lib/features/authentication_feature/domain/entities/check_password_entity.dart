@@ -4,7 +4,7 @@ class CheckPasswordEntity extends Equatable{
     required this.result,
   });
 
-  String result;
+  final String result;
   @override
   List<Object?> get props => throw UnimplementedError();
 

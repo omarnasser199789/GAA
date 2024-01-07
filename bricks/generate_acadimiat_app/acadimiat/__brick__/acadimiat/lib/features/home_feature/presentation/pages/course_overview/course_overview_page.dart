@@ -62,7 +62,6 @@ class _CourseOverviewPageState extends State<CourseOverviewPage> {
                 }
                 return null;
               },
-              webView: true,
             ),
           ),
         ],

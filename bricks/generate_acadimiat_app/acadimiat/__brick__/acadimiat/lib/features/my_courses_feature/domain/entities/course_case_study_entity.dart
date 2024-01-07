@@ -14,10 +14,10 @@ class CourseCaseStudyEntity extends Equatable{
       this.attendanceTable,
   });
 
-  int casestudyId;
-  bool open;
-  String header;
-  String body;
-  Solution  ? solution;
-  AttendanceTable ?  attendanceTable;
+ final int casestudyId;
+ final bool open;
+ final String header;
+ final String body;
+ final Solution  ? solution;
+ final AttendanceTable ?  attendanceTable;
 }

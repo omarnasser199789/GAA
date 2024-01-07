@@ -17,14 +17,12 @@ import '../../domain/entities/discussion_entity.dart';
 import '../../domain/entities/files_entity.dart';
 import '../../domain/entities/my_course_entity.dart';
 import '../../domain/entities/my_courses_entity.dart';
-import '../../domain/entities/my_courses_from_local_db_entity.dart';
 import '../../domain/entities/my_lecture_entity.dart';
 import '../../domain/entities/my_quizz_info_entity.dart';
 import '../../domain/entities/sign_cookie_entity.dart';
 import '../../domain/entities/topic_reply_entity.dart';
 
 typedef Future<int> _StatusCodeInfoChooser();
-typedef Future< List<MyCoursesFromLocalDbEntity>> _MyCoursesFromLocalDbEntity();
 typedef Future<List<MyCoursesEntity>> _MyCoursesInfoChooser();
 typedef Future<MyQuizzInfoEntity> _MyQuizzInfoEntityInfoChooser();
 typedef Future<AssignmentEntity> _AssignmentEntityInfoChooser();
@@ -73,18 +71,6 @@ class ConsultationsRepositoryFunctions {
       return Left(ServerFailure());
     }
   }
-
-  // Future<Either<Failure,List<MyCoursesEntity>>> myCoursesFromLocalDbEntity(
-  //     _MyCoursesFromLocalDbEntity _myCoursesFromLocalDbEntity,
-  //     ) async {
-  //   try {
-  //     final remote = await _myCoursesFromLocalDbEntity();
-  //
-  //     return Right(remote);
-  //   } on ServerException {
-  //     return Left(ServerFailure());
-  //   }
-  // }
 
   Future<Either<Failure, List<MyCoursesEntity>>> getConsultations(
       _MyCoursesInfoChooser _myCoursesInfoChooser) async {

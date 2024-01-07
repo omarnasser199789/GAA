@@ -120,8 +120,8 @@ class _MyCoursesPageState extends State<MyCoursesPage> {
 }
 
 class ResultWidget extends StatefulWidget {
-  ResultWidget({super.key, required this.myCoursesEntity});
-  List<MyCoursesEntity> myCoursesEntity;
+   ResultWidget({super.key, required this.myCoursesEntity});
+  final List<MyCoursesEntity> myCoursesEntity;
 
   @override
   State<ResultWidget> createState() => _ResultWidgetState();

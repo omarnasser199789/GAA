@@ -28,21 +28,21 @@ class MyCourseEntity extends Equatable {
     required  this.caseStudy,
   });
 
-  int id;
-  String courseName;
-  int preCourseQuizzId;
-  String courseLink;
-  int progress;
-  String courseCover;
-  dynamic courseVideo;
-  CourseRecord courseRecord;
-  List<Trainer> trainers;
-  List<CourseContent> courseContents;
-  List<Quizz> quizz;
-  dynamic currentLecture;
-  List<Assignment> assignments;
-  Wiki wiki;
-  Forum forum;
-  Glossary glossary;
-  List<CaseStudy> caseStudy;
+ final int id;
+ final String courseName;
+ final int preCourseQuizzId;
+ final String courseLink;
+ final int progress;
+ final String courseCover;
+ final dynamic courseVideo;
+ final CourseRecord courseRecord;
+ final List<Trainer> trainers;
+ final List<CourseContent> courseContents;
+ final List<Quizz> quizz;
+ final dynamic currentLecture;
+ final List<Assignment> assignments;
+ final Wiki wiki;
+ final Forum forum;
+ final Glossary glossary;
+ final List<CaseStudy> caseStudy;
 }

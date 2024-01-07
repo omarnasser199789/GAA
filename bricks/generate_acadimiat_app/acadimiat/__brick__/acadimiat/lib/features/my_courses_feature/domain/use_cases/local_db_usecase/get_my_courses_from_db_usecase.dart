@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecases/usecase.dart';
 import '../../entities/my_courses_entity.dart';
-import '../../entities/my_courses_from_local_db_entity.dart';
 import '../../repositories/consultations_repository.dart';
 
 

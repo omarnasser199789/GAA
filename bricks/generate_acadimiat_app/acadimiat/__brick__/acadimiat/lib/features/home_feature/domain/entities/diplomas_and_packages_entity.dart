@@ -14,18 +14,17 @@ class DiplomasAndPackagesEntity extends Equatable{
     required this.numberOfCourses,
   });
 
-  int id;
-  int apiId;
-  String image;
-  String courseName;
-  String trainerName;
-  double newPrice;
-  double oldPrice;
-  int fav;
-  int isCourse;
-  int numberOfCourses;
+ final int id;
+ final int apiId;
+ final String image;
+ final String courseName;
+ final String trainerName;
+ final double newPrice;
+ final double oldPrice;
+ final int fav;
+ final int isCourse;
+ final int numberOfCourses;
 
   @override
-  // TODO: implement props
   List<Object?> get props => [id,apiId,image,courseName,trainerName,newPrice,oldPrice,fav,isCourse,numberOfCourses];
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../../../../core/functions.dart';
-import '../../../../../../../../core/globals.dart';
 import '../../../../../../data/models/my_lecture_model.dart';
 
 

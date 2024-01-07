@@ -31,7 +31,7 @@ class BookMarksItemList extends StatefulWidget {
   final int bookmarkId;
   final bool isVimeo;
   final int atTime;
-  List<Bookmark> bookmarks;
+  final List<Bookmark> bookmarks;
   final int index;
   final String theTextOfNote;
 

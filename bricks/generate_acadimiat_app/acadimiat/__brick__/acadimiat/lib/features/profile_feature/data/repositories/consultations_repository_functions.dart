@@ -1,14 +1,10 @@
 import 'package:acadmiat/features/profile_feature/domain/entities/my_certificates_entity.dart';
 import 'package:dartz/dartz.dart';
-
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failures.dart';
 import '../../domain/entities/add_new_note_entity.dart';
 import '../../domain/entities/my_assignments_entity.dart';
 import '../../domain/entities/my_bookmarks_entity.dart';
-import '../../domain/entities/my_certificates_entity.dart';
-import '../../domain/entities/my_certificates_entity.dart';
-import '../../domain/entities/my_certificates_entity.dart';
 import '../../domain/entities/my_notes_entity.dart';
 import '../../domain/entities/my_payments_entity.dart';
 import '../../domain/entities/my_plans_entity.dart';
@@ -20,7 +16,6 @@ typedef Future<int> _ResendActivationEmailInfoChooser();
 typedef Future<int> _StatusCodeInfoChooser();
 typedef Future<UpdateUserInfoEntity> _UpdateUserInfoEntityInfoChooser();
 typedef Future< List<MyCertificatesEntity>> _MyCertificatesEntityInfoChooser();
-
 typedef Future<List<MyQuizzesEntity>> _MyQuizzesListModelInfoChooser();
 typedef Future<List<MyAssignmentsEntity>> _MyAssignmentsEntityInfoChooser();
 typedef Future<List<MyBookmarksEntity>> _MyBookmarksEntityInfoChooser();
@@ -34,7 +29,6 @@ typedef Future<List<MyPlansEntity>> _MyPlansEntityInfoChooser();
 class ProfileRepositoryFunctions {
   Future<Either<Failure, int>> resendActivationEmail(
       _ResendActivationEmailInfoChooser _resendActivationEmailInfoChooser) async {
-    // if (await networkInfo.isConnected) {
       try {
         final remotePhysician = await _resendActivationEmailInfoChooser();
 
@@ -42,13 +36,9 @@ class ProfileRepositoryFunctions {
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
   }
   Future<Either<Failure, int>> resetPassword(
       _ResendActivationEmailInfoChooser _resendActivationEmailInfoChooser) async {
-    // if (await networkInfo.isConnected) {
       try {
         final remotePhysician = await _resendActivationEmailInfoChooser();
 
@@ -56,14 +46,10 @@ class ProfileRepositoryFunctions {
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
+
   }
 
-  Future<Either<Failure, int>> changePassword(
-      _ResendActivationEmailInfoChooser _resendActivationEmailInfoChooser) async {
-    // if (await networkInfo.isConnected) {
+  Future<Either<Failure, int>> changePassword(_ResendActivationEmailInfoChooser _resendActivationEmailInfoChooser) async {
       try {
         final remotePhysician = await _resendActivationEmailInfoChooser();
 
@@ -71,27 +57,19 @@ class ProfileRepositoryFunctions {
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
   }
   Future<Either<Failure, int>> registerNewAccount(
       _ResendActivationEmailInfoChooser _resendActivationEmailInfoChooser) async {
-    // if (await networkInfo.isConnected) {
       try {
         final remotePhysician = await _resendActivationEmailInfoChooser();
-    //
         return Right(remotePhysician);
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
+
   }
   Future<Either<Failure, List<MyQuizzesEntity>>> getMyQuizzesList(
       _MyQuizzesListModelInfoChooser _myQuizzesListModelInfoChooser) async {
-    // if (await networkInfo.isConnected) {
       try {
         final remotePhysician = await _myQuizzesListModelInfoChooser();
 
@@ -99,13 +77,9 @@ class ProfileRepositoryFunctions {
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
   }
    Future<Either<Failure, List<MyAssignmentsEntity>>> getMyAssignmentsList(
       _MyAssignmentsEntityInfoChooser _myAssignmentsEntityInfoChooser) async {
-    // if (await networkInfo.isConnected) {
       try {
         final remotePhysician = await _myAssignmentsEntityInfoChooser();
 
@@ -113,13 +87,9 @@ class ProfileRepositoryFunctions {
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
   }
    Future<Either<Failure, List<MyBookmarksEntity>>> getMyBookmarksList(
       _MyBookmarksEntityInfoChooser _myBookmarksEntityInfoChooser) async {
-    // if (await networkInfo.isConnected) {
       try {
         final remotePhysician = await _myBookmarksEntityInfoChooser();
 
@@ -127,16 +97,13 @@ class ProfileRepositoryFunctions {
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
+
   }
 
 
 
    Future<Either<Failure,UserInfoEntity>> getUserInfo(
       _UserInfoEntityInfoChooser _userInfoEntityInfoChooser) async {
-    // if (await networkInfo.isConnected) {
       try {
         final remotePhysician = await _userInfoEntityInfoChooser();
 
@@ -144,15 +111,11 @@ class ProfileRepositoryFunctions {
       } on ServerException {
         return Left(ServerFailure());
       }
-    // } else {
-    //   return Left(ServerFailure());
-    // }
   }
 
 
    Future<Either<Failure,UpdateUserInfoEntity>> updateUserInfo(
       _UpdateUserInfoEntityInfoChooser _updateUserInfoEntityInfoChooser) async {
-    // if (await networkInfo.isConnected) {
        try {
         final remotePhysician = await _updateUserInfoEntityInfoChooser();
 
@@ -226,8 +189,6 @@ class ProfileRepositoryFunctions {
       _MyPlansEntityInfoChooser _myPlansEntityInfoChooser) async {
     try {
         final remotePhysician = await _myPlansEntityInfoChooser();
-        print("fdjnvjkfnvkjnjkfnvkjdvjf");
-        print(remotePhysician);
         return Right(remotePhysician);
   } on ServerException {
   return Left(ServerFailure());

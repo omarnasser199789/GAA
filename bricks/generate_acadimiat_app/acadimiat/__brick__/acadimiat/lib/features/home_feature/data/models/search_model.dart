@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final searchModel = searchModelFromJson(jsonString);
-
 import 'dart:convert';
 
 import '../../domain/entities/search_entity.dart';
@@ -55,26 +51,26 @@ class SearchModel extends SearchEntity {
     courseDate:courseDate,
   );
 
-  int id;
-  String header;
-  bool authorized;
-  bool discount;
-  String image;
-  String squareImage;
-  String courseLink;
-  String trainer;
-  int numberOfCourses;
-  dynamic featured;
-  dynamic fromDate;
-  dynamic toDate;
-  int categoryId;
-  double price;
-  dynamic isCourse;
-  double newPrice;
-  int discountPercentage;
-  String category;
-  dynamic duration;
-  dynamic courseDate;
+ final int id;
+ final String header;
+ final bool authorized;
+ final bool discount;
+ final String image;
+ final String squareImage;
+ final String courseLink;
+ final String trainer;
+ final int numberOfCourses;
+ final dynamic featured;
+ final dynamic fromDate;
+ final dynamic toDate;
+ final int categoryId;
+ final double price;
+ final dynamic isCourse;
+ final double newPrice;
+ final int discountPercentage;
+ final String category;
+ final dynamic duration;
+ final dynamic courseDate;
 
   factory SearchModel.fromJson(Map<String, dynamic> json) => SearchModel(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -105,19 +101,19 @@ class SearchModel extends SearchEntity {
     "authorized": authorized,
     "discount": discount,
     "image": image,
-    "squareImage": squareImage == null ? null : squareImage,
+    "squareImage": squareImage,
     "courseLink": courseLink,
     "trainer": trainer,
-    "numberOfCourses": numberOfCourses == null ? null : numberOfCourses,
+    "numberOfCourses":  numberOfCourses,
     "featured": featured,
     "fromDate": fromDate,
     "toDate": toDate,
-    "categoryId": categoryId == null ? null : categoryId,
+    "categoryId":  categoryId,
     "price": price,
     "isCourse": isCourse == null ? null : isCourse,
-    "newPrice": newPrice == null ? null : newPrice,
-    "discountPercentage": discountPercentage == null ? null : discountPercentage,
-    "category": category == null ? null : category,
+    "newPrice":  newPrice,
+    "discountPercentage":  discountPercentage,
+    "category":  category,
     "duration": duration,
     "courseDate": courseDate,
   };

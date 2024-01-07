@@ -18,6 +18,7 @@ class _SvgCodeWidgetState extends State<SvgCodeWidget> {
 
   @override
   Future<void> didChangeDependencies() async {
+    super.didChangeDependencies();
     String  code="";
     if(widget.svg!=null){
         code = await rootBundle.loadString(widget.svg!);

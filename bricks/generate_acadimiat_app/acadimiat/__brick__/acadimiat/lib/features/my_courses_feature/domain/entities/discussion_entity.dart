@@ -12,7 +12,7 @@ class DiscussionEntity extends Equatable{
     required  this.timeline,
   });
 
-  int discussionId;
-  int lectureId;
-  List<Timeline> timeline;
+ final int discussionId;
+ final int lectureId;
+ final List<Timeline> timeline;
 }

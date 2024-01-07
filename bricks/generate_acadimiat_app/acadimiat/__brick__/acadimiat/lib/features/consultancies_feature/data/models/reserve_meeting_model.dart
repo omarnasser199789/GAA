@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final reserveMeetingModel = reserveMeetingModelFromJson(jsonString);
-
 import 'dart:convert';
-
 import '../../domain/entities/reserve_meeting_entity.dart';
 
 List<ReserveMeetingModel> reserveMeetingModelFromJson(String str) => List<ReserveMeetingModel>.from(json.decode(str).map((x) => ReserveMeetingModel.fromJson(x)));
@@ -39,18 +34,18 @@ class ReserveMeetingModel extends ReserveMeetingEntity {
     attendeePw:attendeePw,
   );
 
-  String meetingId;
-  String timezone;
-  String consultancyTimezone;
-  int id;
-  DateTime date;
-  DateTime hour;
-  bool isActive;
-  bool isDone;
-  String day;
-  String url;
-  dynamic meetingLongId;
-  dynamic attendeePw;
+ final String meetingId;
+ final String timezone;
+ final String consultancyTimezone;
+ final int id;
+ final DateTime date;
+ final DateTime hour;
+ final bool isActive;
+ final bool isDone;
+ final String day;
+ final String url;
+ final dynamic meetingLongId;
+ final dynamic attendeePw;
 
   factory ReserveMeetingModel.fromJson(Map<String, dynamic> json) => ReserveMeetingModel(
     meetingId: (json["meetingID"]!=null)?json["meetingID"]:"",

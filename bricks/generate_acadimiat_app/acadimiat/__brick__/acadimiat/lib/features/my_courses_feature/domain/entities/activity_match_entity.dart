@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
-
 import '../../../../core/classes/matched.dart';
-import '../../data/models/activity_match_model.dart';
+
 class ActivityMatchEntity extends Equatable {
   @override
   // TODO: implement props
@@ -16,11 +15,11 @@ class ActivityMatchEntity extends Equatable {
     required  this.matched,
   });
 
-  int id;
-  int userId;
-  dynamic questionId;
-  dynamic email;
-  dynamic isCorrect;
-  DateTime date;
-  List<Matched> matched;
+ final int id;
+ final int userId;
+ final dynamic questionId;
+ final dynamic email;
+ final dynamic isCorrect;
+ final DateTime date;
+ final List<Matched> matched;
 }

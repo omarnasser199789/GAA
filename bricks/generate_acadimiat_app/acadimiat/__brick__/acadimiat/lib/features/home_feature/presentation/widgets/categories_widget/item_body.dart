@@ -1,10 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/widgets/cached_net_work_image.dart';
-
 
 class ItemBody extends StatelessWidget {
   const ItemBody({
@@ -72,7 +70,6 @@ class ItemBody extends StatelessWidget {
                 ],
               ),
             ),
-
           ],
         ),
       ),

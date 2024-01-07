@@ -195,9 +195,7 @@ class _SearchPageState extends State<SearchPage> {
                                           children: [
                                             Text(
                                               "${searchEntityList.length} نتيجة",
-                                              style: blackBoldTextStyle(
-                                                  context: context,
-                                                  fontSize: 12),
+                                              style: blackBoldTextStyle(context: context, fontSize: 12),
                                             )
                                           ],
                                         ),
@@ -208,23 +206,17 @@ class _SearchPageState extends State<SearchPage> {
                                     padding: const EdgeInsets.only(bottom: 13),
                                     child: SizedBox(
                                       height: 140 * searchEntityList.length / 1,
-                                      // color: Colors.green,
                                       width: double.infinity,
                                       child: ListView.builder(
                                           padding: EdgeInsets.zero,
-                                          physics:
-                                              const NeverScrollableScrollPhysics(),
+                                          physics: const NeverScrollableScrollPhysics(),
                                           itemCount: searchEntityList.length,
                                           itemBuilder: (context, index) {
                                             return GestureDetector(
                                               onTap: () {
                                                 ///Package from courses
-                                                if (searchEntityList[index]
-                                                        .numberOfCourses >
-                                                    0) {
-                                                  goTo(
-                                                      context,
-                                                      (context) =>
+                                                if (searchEntityList[index].numberOfCourses >0) {
+                                                  goTo(context, (context) =>
                                                           CoursesContentPage(
                                                             cardId: searchEntityList[index].id,
                                                             courseCover: searchEntityList[index].image,
@@ -639,11 +631,10 @@ class OptionBox extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class Archives extends StatefulWidget {
   Archives({Key? key, required this.searchProcessEntity}) : super(key: key);
-
-   List<SearchProcessEntity> searchProcessEntity;
-
+     List<SearchProcessEntity> searchProcessEntity;
   @override
   State<Archives> createState() => _ArchivesState();
 }

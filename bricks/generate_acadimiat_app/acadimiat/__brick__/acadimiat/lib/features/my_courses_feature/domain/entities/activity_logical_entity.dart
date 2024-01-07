@@ -1,7 +1,6 @@
 import "package:equatable/equatable.dart";
-
 import '../../../../core/classes/order.dart';
-import '../../data/models/activity_logical_model.dart';
+
 class ActiveLogicalEntity extends Equatable {
   @override
   // TODO: implement props
@@ -19,13 +18,13 @@ class ActiveLogicalEntity extends Equatable {
     required  this.orders,
   });
 
-  int id;
-  int userId;
-  dynamic email;
-  int questionId;
-  dynamic isCorrect;
-  dynamic reply;
-  dynamic answer;
-  DateTime date;
-  List<Order> orders;
+ final int id;
+ final int userId;
+ final dynamic email;
+ final int questionId;
+ final dynamic isCorrect;
+ final dynamic reply;
+ final dynamic answer;
+ final DateTime date;
+ final List<Order> orders;
 }

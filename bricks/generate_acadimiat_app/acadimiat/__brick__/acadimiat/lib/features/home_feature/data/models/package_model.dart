@@ -31,14 +31,14 @@ class PackageModel extends PackageEntity {
     currentPrice:currentPrice,
   );
 
-  int packageId;
-  String packageName;
-  String packageImage;
-  double packagePrice;
-  String packageLink;
-  List<Course> courses;
-  double mainPrice;
-  double currentPrice;
+ final int packageId;
+ final String packageName;
+ final String packageImage;
+ final double packagePrice;
+ final String packageLink;
+ final List<Course> courses;
+ final double mainPrice;
+ final double currentPrice;
 
   factory PackageModel.fromJson(Map<String, dynamic> json) => PackageModel(
     packageId: json["packageId"],
@@ -138,7 +138,7 @@ class Course {
     "courseLink": courseLink,
     "courseKeywords": courseKeywords,
     "courseCover": courseCover,
-    "courseVideo": courseVideo == null ? null : courseVideo,
+    "courseVideo": courseVideo,
     "courseCertificateSample": courseCertificateSample,
     "numberOfUnites": numberOfUnites,
     "numberOfLectures": numberOfLectures,
@@ -147,7 +147,7 @@ class Course {
     "coursePrices": coursePrices,
     "courseUnits": List<dynamic>.from(courseUnits.map((x) => x.toJson())),
     "courseInfo": List<dynamic>.from(courseInfo.map((x) => x.toJson())),
-    "quizz": quizz == null ? null : quizz.toJson(),
+    "quizz": quizz.toJson(),
   };
 }
 
@@ -204,10 +204,10 @@ class CourseUnit {
   Map<String, dynamic> toJson() => {
     "id": id,
     "unitName": unitName,
-    "unitDesc": unitDesc == null ? null : unitDesc,
-    "unitBanner": unitBanner == null ? null : unitBanner,
+    "unitDesc":  unitDesc,
+    "unitBanner": unitBanner,
     "materials": List<dynamic>.from(materials.map((x) => x.toJson())),
-    "quizz": quizz == null ? null : quizz.toJson(),
+    "quizz":  quizz.toJson(),
   };
 }
 
@@ -237,7 +237,7 @@ class Material {
   Map<String, dynamic> toJson() => {
     "materialId": materialId,
     "materialName": materialName,
-    "materialLink": materialLink == null ? null : materialLink,
+    "materialLink": materialLink,
     "materialLength": materialLength,
     "materialContents": materialContents,
   };

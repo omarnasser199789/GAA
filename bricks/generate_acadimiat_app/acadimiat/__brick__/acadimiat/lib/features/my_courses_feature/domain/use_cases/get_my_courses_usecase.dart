@@ -1,8 +1,6 @@
 import 'package:dartz/dartz.dart';
-
 import 'package:equatable/equatable.dart';
 import '../../../../core/classes/user.dart';
-import '../../../../core/error/failures.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../entities/my_courses_entity.dart';
@@ -22,7 +20,7 @@ class GetMyCoursesUseCase implements UseCase< List<MyCoursesEntity>, Params> {
 
 
 class Params extends Equatable {
-  User  user;
+  final User  user;
 
   Params( this.user) ;
 

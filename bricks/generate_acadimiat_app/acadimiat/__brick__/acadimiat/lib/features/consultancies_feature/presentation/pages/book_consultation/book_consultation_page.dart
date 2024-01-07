@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:acadmiat/core/widgets/custom_botton.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,21 +29,37 @@ List<TimeOfDay> fromToTime(startFrom,endAt){
   return [timeOfDay,endTimeOfDay];
 }
 
-class BookConsultationPage extends StatelessWidget {
+class BookConsultationPage extends StatefulWidget {
   BookConsultationPage({super.key,required this.consultancyId,required this.takenDate});
 
   final int consultancyId;
   final List<DateTime> takenDate;
+
+  @override
+  State<BookConsultationPage> createState() => _BookConsultationPageState();
+}
+
+class _BookConsultationPageState extends State<BookConsultationPage> {
   DateTime fromDate = DateTime.now();
+
   List<FromTo> times=[];
+
   String timezone="";
+
   String day="";
+
   String dayy="";
+
   var hour=-1;
+
   bool loading=false;
+
   bool loadingBTN=false;
+
   List<RoomHourEntity> timeList=[];
+
   List<String> days = [];
+
   CustomDate customDate =CustomDate(date: [], dateTime: []);
 
   @override
@@ -78,7 +93,7 @@ class BookConsultationPage extends StatelessWidget {
                 /// Fetch the available times on the first day in the list
                 BlocProvider.of<ConsultanciesBloc>(context).add(
                     GetRoomHoursEvent(params: RoomHoursParams(
-                        consultancyId: consultancyId, date: customDate.dateTime[0].toString())));
+                        consultancyId: widget.consultancyId, date: customDate.dateTime[0].toString())));
               }
               if(state is Loading){
                 loading = true;
@@ -145,7 +160,7 @@ class BookConsultationPage extends StatelessWidget {
                             times = [];
                             BlocProvider.of<ConsultanciesBloc>(context).add(
                                 GetRoomHoursEvent(params: RoomHoursParams(
-                                    consultancyId: consultancyId, date: customDate.dateTime[index].toString())));
+                                    consultancyId: widget.consultancyId, date: customDate.dateTime[index].toString())));
                           });
                         },),
                         Padding(
@@ -182,7 +197,7 @@ class BookConsultationPage extends StatelessWidget {
                             if(dayy==""){Navigator.pop(context,500);}
                             BlocProvider.of<ConsultanciesBloc>(context).add(BookMeetingEvent(params:
                             ReserveMeetingParams(
-                              roomId: consultancyId,
+                              roomId: widget.consultancyId,
                               day: dayy,
                               hour: hour,
                               timezone: timezone.replaceAll('"', ''),

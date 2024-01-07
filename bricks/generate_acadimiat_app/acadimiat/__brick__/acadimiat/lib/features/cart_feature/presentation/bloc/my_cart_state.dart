@@ -14,7 +14,6 @@ class Error extends MyCartState {
 
   Error({required this.message}); //we use this constructor in ((BLOC & test))
 
-  @override
   List<Object> get props => [message];
 }
 class SuccessGetCartEntity extends MyCartState {

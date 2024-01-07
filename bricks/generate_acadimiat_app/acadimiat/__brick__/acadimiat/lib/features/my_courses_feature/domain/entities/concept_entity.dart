@@ -16,19 +16,19 @@ class ConceptEntity extends Equatable{
     required this.file,
   });
 
-  int id;
-  int glossaryId;
-  int userId;
-  String concept;
-  String definition;
-  String keywords;
-  String attachment;
-  dynamic fileId;
-  DateTime date;
-  bool approved;
-  dynamic user;
-  dynamic glossary;
-  dynamic file;
+ final int id;
+ final int glossaryId;
+ final int userId;
+ final String concept;
+ final String definition;
+ final String keywords;
+ final String attachment;
+ final dynamic fileId;
+ final DateTime date;
+ final bool approved;
+ final dynamic user;
+ final dynamic glossary;
+ final dynamic file;
 
   @override
   // TODO: implement props

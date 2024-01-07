@@ -1,6 +1,5 @@
-
 import 'package:equatable/equatable.dart';
-import '../../data/models/fav_model.dart';
+
 class FavEntity extends Equatable{
   FavEntity({
     required this.id,
@@ -14,18 +13,17 @@ class FavEntity extends Equatable{
     required  this.fav,
   });
 
-  int  id;
-  int apiId;
-  int productType;
-  String name;
-  String image;
-  String trainer;
-  double newPrice;
-  double oldPrice;
-  int fav;
+ final int  id;
+ final int apiId;
+ final int productType;
+ final String name;
+ final String image;
+ final String trainer;
+ final double newPrice;
+ final double oldPrice;
+ final int fav;
 
 
   @override
-  // TODO: implement props
   List<Object?> get props =>[id,apiId,productType,name,image,trainer,newPrice,oldPrice,fav];
 }

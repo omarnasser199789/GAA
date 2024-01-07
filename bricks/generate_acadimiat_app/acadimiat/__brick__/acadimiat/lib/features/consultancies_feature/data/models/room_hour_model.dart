@@ -17,9 +17,9 @@ class RoomHoursModel  extends RoomHourEntity{
     active:active,
   );
 
-  double startFrom;
-  double endAt;
-  bool active;
+ final double startFrom;
+ final double endAt;
+ final bool active;
 
   factory RoomHoursModel.fromJson(Map<String, dynamic> json) => RoomHoursModel(
     startFrom: json["startFrom"],

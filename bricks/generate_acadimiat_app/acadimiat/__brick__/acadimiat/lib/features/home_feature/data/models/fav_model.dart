@@ -33,15 +33,15 @@ class FavModel extends FavEntity  {
     fav:fav,
   );
 
-  int  id;
-  int apiId;
-  int productType;
-  String name;
-  String image;
-  String trainer;
-  double newPrice;
-  double oldPrice;
-  int fav;
+ final int  id;
+ final int apiId;
+ final int productType;
+ final String name;
+ final String image;
+ final String trainer;
+ final double newPrice;
+ final double oldPrice;
+ final int fav;
 
   factory FavModel.fromJson(Map<String, dynamic> json) => FavModel(
     id: json["id"],

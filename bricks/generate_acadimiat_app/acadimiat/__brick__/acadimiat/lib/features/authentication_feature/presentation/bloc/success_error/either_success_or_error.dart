@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/functions.dart';
-import '../../../../../core/globals.dart';
 import '../../../domain/entities/authenticate_entity.dart';
 import '../../../domain/entities/check_password_entity.dart';
 import '../../../domain/entities/update_user_info_entity.dart';

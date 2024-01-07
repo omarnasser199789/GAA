@@ -6,9 +6,9 @@ class CategoriesEntity extends Equatable{
     required  this.categoryCourses,
   });
 
-  int categoryId;
-  String categoryName;
-  int categoryCourses;
+ final int categoryId;
+ final String categoryName;
+ final int categoryCourses;
 
   @override
   // TODO: implement props

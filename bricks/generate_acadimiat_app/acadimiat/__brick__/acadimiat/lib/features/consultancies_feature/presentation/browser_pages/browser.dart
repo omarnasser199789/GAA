@@ -1,11 +1,7 @@
-
-
 import 'package:acadmiat/features/consultancies_feature/presentation/browser_pages/webview_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/widgets/back_button.dart';
-
 import 'models/browser_model.dart';
 import 'models/webview_model.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -38,18 +34,11 @@ bool firstOne=true;
         ],
       )
     );
-    return Stack(
-      children: [
-        _buildBrowser(widget.url),
-       const BackButton(),
-      ],
-    );
   }
 
   Widget _buildBrowser(String url) {
     var currentWebViewModel = Provider.of<WebViewModel>(context, listen: true);
     var browserModel = Provider.of<BrowserModel>(context, listen: true);
-
     browserModel.addListener(() {
       browserModel.save();
     });
@@ -57,14 +46,12 @@ bool firstOne=true;
       browserModel.save();
     });
 
-    var canShowTabScroller =
-        browserModel.showTabScroller && browserModel.webViewTabs.isNotEmpty;
+    var canShowTabScroller = browserModel.showTabScroller && browserModel.webViewTabs.isNotEmpty;
 
     return IndexedStack(
       index: canShowTabScroller ? 1 : 0,
       children: [
         _buildWebViewTabs(url),
-        // canShowTabScroller ? _buildWebViewTabsViewer() : Container()
       ],
     );
   }
@@ -77,12 +64,8 @@ bool firstOne=true;
               if(firstOne){
                 firstOne=false;
                 Future.delayed(const Duration(milliseconds: 1000), () {
-                  addNewTab(url: WebUri(
-                    url
-
-                  ));
+                  addNewTab(url: WebUri(url));
                 });
-
               }
 
               return _buildWebViewTabsContent();

@@ -28,7 +28,7 @@ class OTPPage extends StatefulWidget {
 }
 
 class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+
   final StreamController<ErrorAnimationType> errorController =
   StreamController<ErrorAnimationType>();
   final TextEditingController textEditingController = TextEditingController();
@@ -40,6 +40,7 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
   late Timer timer;
   @override
   void initState() {
+    super.initState();
     Duration timerTastoPremuto = Duration(seconds:60);
     start = timerTastoPremuto.inMilliseconds;
 
@@ -59,14 +60,10 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     var locale = AppLocalizations.of(context)!;
-    Size size = MediaQuery.of(context).size;
-
-
     Duration duration = Duration(milliseconds: start);
 
     if (duration.inSeconds == 0 && allowBack==true) {
       allowBack=false;
-
       Future.delayed(const Duration(milliseconds: 1000), () {
         Navigator.of(context).pop();
       });
@@ -124,9 +121,6 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
                       bgColor: Colors.red);
 
                 }
-
-
-
               }
 
               if(state is SuccessRegisterUserInFirebase){
@@ -214,18 +208,10 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
                           textDirection: TextDirection.ltr,
                           child: PinCodeTextField(
                             length: 6,
-                            // pinTheme:  PinTheme(shape:PinCodeFieldShape.circle
-                            //
-                            //     shape: PinCodeFieldShape.underline,
-                            //     fieldHeight: 40,
-                            //     fieldWidth: 40,
-                            // ),
                             pinTheme: PinTheme(
                               shape: PinCodeFieldShape.box,
                               borderRadius: BorderRadius.circular(6),
-                              //
                               borderWidth: 2,
-
                               fieldHeight: 40,
                               fieldWidth: 40,
                               activeFillColor: Colors.transparent,
@@ -233,11 +219,8 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
                               activeColor:Theme.of(context).primaryColor,
                               selectedColor: Theme.of(context).primaryColor,
                               selectedFillColor: Colors.transparent,
-
-
                               errorBorderColor: Colors.white,
                               inactiveFillColor: Colors.transparent,
-
                             ),
                             textStyle: blackBoldTextStyle(fontSize: 20, context: context,color: Theme.of(context).primaryColor),
                             obscureText: false,
@@ -246,21 +229,12 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
                             inputFormatters: [
                               FilteringTextInputFormatter.digitsOnly,
                             ],
-
-
                             keyboardType: TextInputType.phone,
-
-
                             animationDuration: Duration(milliseconds: 300),
-                            // backgroundColor: Colors.white,
                             enableActiveFill: true,
-                            // errorAnimationController: errorController,
                             controller: textEditingController,
-                            onCompleted: (v) {
-
-                            },
+                            onCompleted: (v) {},
                             onChanged: (value) {
-
                               setState(() {
                                 currentText = value;
                               });
@@ -286,20 +260,6 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
                               loading: loading,
                               borderRadius: 8,
                               onTap: () {
-                                // if(currentText.length>5) {
-                                //   firstOne=true;
-                                //   PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(verificationId: widget.verificationId, smsCode: currentText);
-                                //   BlocProvider.of<AuthenticateBloc>(context).add(
-                                //       RegisterUserInFirebaseEvent(phoneAuthCredential: phoneAuthCredential));/// => SuccessRegisterUserInFirebase
-                                // }else{
-                                //   showMessage(message: "الرجاء ادخال رمز الOTP",
-                                //       context: context,
-                                //       bgColor: Colors.red);
-                                //   setState(() {
-                                //
-                                //   });
-                                // }
-
                               }),
                         ),
                       ),
@@ -328,7 +288,5 @@ class _OTPPageState extends State<OTPPage> with SingleTickerProviderStateMixin {
                 ),
               );
             }));
-
-
   }
 }

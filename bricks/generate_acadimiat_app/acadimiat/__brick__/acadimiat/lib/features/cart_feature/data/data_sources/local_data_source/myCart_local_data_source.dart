@@ -1,10 +1,7 @@
-import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import '../../../../../core/globals.dart';
 import 'package:sqflite/sqflite.dart';
 import '../../../domain/use_cases/add_product_in_local_db_usecase.dart';
-import '../../../domain/use_cases/apply_coupon_to_cart_usecase.dart';
 import '../../models/cart_model.dart';
 
 abstract class MyCartLocalDataSource {
@@ -37,8 +34,7 @@ class MyCartLocalDataSourceImpl implements MyCartLocalDataSource {
     if (kDebugMode) {
       print("File Add it in DATABASE");
     }
-    final List<Map<String, dynamic>> maps = await db.query('cart');
-    // print(maps);
+    await db.query('cart');
     return 200;
   }
 

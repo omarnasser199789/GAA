@@ -1,25 +1,19 @@
-import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myqizizz_usecase.dart';
-
-import '../../data/models/cart_model.dart';
 import '../../domain/use_cases/add_product_in_local_db_usecase.dart';
 import '../../domain/use_cases/apply_coupon_to_cart_usecase.dart';
-import '../../../home_feature/domain/use_cases/check_purchase_usecase.dart';
 import '../../domain/use_cases/enable_courses_usecase.dart';
-import '../../domain/use_cases/payment_usecase.dart';
-
 
 abstract class MyCartEvent {}
 
 class GetAllProductsFromCart extends MyCartEvent {
 
 }
+
 class AddProductToCart extends MyCartEvent {
   AddProductParams params;
   AddProductToCart({
     required this.params
   });
 }
-
 
 class DeleteProductToCart extends MyCartEvent {
   int id;
@@ -29,14 +23,9 @@ class DeleteProductToCart extends MyCartEvent {
 }
 
 class DeleteAllProductsFromCart extends MyCartEvent {}
+
 class RestartEvent extends MyCartEvent {}
-// class PaymentEvent extends MyCartEvent {
-//   PaymentEvent({
-//     required this.params,
-// });
-//   PaymentParams params;
-//
-// }
+
 class EnableCoursesEvent extends MyCartEvent {
   EnableCoursesEvent({
     required this.params,
@@ -51,6 +40,7 @@ class ApplyCouponEvent extends MyCartEvent {
     required this.applyCouponParams
   });
 }
+
 class CheckIfProductIsExitEvent extends MyCartEvent {
   int id;
   CheckIfProductIsExitEvent({

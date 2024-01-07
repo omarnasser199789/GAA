@@ -1,10 +1,6 @@
 import 'dart:async';
-
 import 'package:acadmiat/features/home_feature/presentation/bloc/success_error/either_success_or_error.dart';
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
-
-
 import '../../domain/use_cases/check_purchase_usecase.dart';
 import '../../domain/use_cases/get_banners_usecase.dart';
 import '../../domain/use_cases/get_card_by_id_usecase.dart';
@@ -29,6 +25,7 @@ import '../../domain/use_cases/local_db_usecase/update_diplomas_and_packages_in_
 import '../../domain/use_cases/local_db_usecase/update_training_courses_in_local_db_usecase.dart';
 import '../../domain/use_cases/search_usecase.dart';
 import 'bloc.dart';
+
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
 const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 bool fetchData1 = false;
@@ -88,9 +85,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     required CheckPurchaseUseCase concreteCheckPurchaseUseCase,
 
 
-  })  : assert(concretegetLatestUseCase != null),
-        assert(concreteGetConsultanciesUseCase != null),
-        getConsultanciesUseCase = concreteGetConsultanciesUseCase,
+  })  : getConsultanciesUseCase = concreteGetConsultanciesUseCase,
         getLatestPUseCase = concretegetLatestPUseCase,
         getLatestUseCase = concretegetLatestUseCase,
         getCardByIdUseCase = concreteGetCardByIdUseCase,

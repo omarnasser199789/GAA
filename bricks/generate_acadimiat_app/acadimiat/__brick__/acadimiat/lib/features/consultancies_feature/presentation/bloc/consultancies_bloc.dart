@@ -32,22 +32,15 @@ class ConsultanciesBloc extends Bloc<ConsultanciesEvent, ConsultanciesState> {
     required GetRoomHoursUseCase concreteGetRoomHoursUseCase,
     required GetRoomTimezoneUseCase concreteGetRoomTimezoneUseCase,
     required ReserveMeetingUseCase concreteReserveMeetingUseCase,
-
-
   }
   )
-      : assert(
-  concreteGetMyConsultanciesUseCase != null,
-
-        ),
-        _getMyConsultanciesUseCase = concreteGetMyConsultanciesUseCase,
+      : _getMyConsultanciesUseCase = concreteGetMyConsultanciesUseCase,
         _getConsultancyUseCase = concreteGetConsultancyUseCase,
         _getConsultationSessionsUseCase= concreteGetConsultationSessionsUseCase,
         _getRoomCalendarUseCase= concreteGetRoomCalendarUseCase,
         _getRoomHoursUseCase= concreteGetRoomHoursUseCase,
         _getRoomTimezoneUseCase= concreteGetRoomTimezoneUseCase,
         _reserveMeetingUseCase= concreteReserveMeetingUseCase,
-
 
         super(Empty());
 
@@ -89,7 +82,6 @@ class ConsultanciesBloc extends Bloc<ConsultanciesEvent, ConsultanciesState> {
       final failureOrPhysician = await _getRoomCalendarUseCase(event.id);
       yield* eitherSuccessGetRoomCalendarOrErrorState(failureOrPhysician);
     }
-
 
   }
 }

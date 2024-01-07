@@ -31,14 +31,14 @@ class MyConsultanciesModel  extends MyConsultanciesEntity{
     numberOfSessions:numberOfSessions,
   );
 
-  int id;
-  String consultancy;
-  String consultancyImage;
-  String consultant;
-  String email;
-  String phone;
-  DateTime date;
-  int numberOfSessions;
+ final int id;
+ final String consultancy;
+ final String consultancyImage;
+ final String consultant;
+ final String email;
+ final String phone;
+ final DateTime date;
+ final int numberOfSessions;
 
   factory MyConsultanciesModel.fromJson(Map<String, dynamic> json) => MyConsultanciesModel(
     id: json["id"],

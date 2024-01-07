@@ -13,8 +13,6 @@ import '../../../../../../../core/util/assets_manager.dart';
 import '../../../../../../../injection_container.dart';
 import '../../../../../data/models/my_course_model.dart';
 import '../../../../../domain/use_cases/post_concept_usecase.dart';
-import '../../../../bloc/my_courses_bloc.dart';
-import '../../../../bloc/my_courses_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'index_widget.dart';
 import 'item_list.dart';
@@ -296,7 +294,7 @@ class _GlossaryTabState extends State<GlossaryTab> {
     carList.sort();
     ///A list containing lists of words is prepared according to the number of letters present
     lists = [];
-    for (var item in carList) {
+    for (var _ in carList) {
       lists.add([]);
     }
     /// The list of terms is scrolled

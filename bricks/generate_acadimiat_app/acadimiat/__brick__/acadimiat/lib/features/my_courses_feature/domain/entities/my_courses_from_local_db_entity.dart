@@ -11,8 +11,8 @@ class MyCoursesFromLocalDbEntity extends Equatable{
     required  this.percent,
   });
 
-  int apiId;
-  String image;
-  String name;
-  int percent;
+ final int apiId;
+ final String image;
+ final String name;
+ final int percent;
 }

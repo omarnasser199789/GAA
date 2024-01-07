@@ -11,7 +11,7 @@ class FilesEntity extends Equatable{
     required  this.items,
   });
 
-  int index;
-  List<Item> items;
+ final int index;
+ final List<Item> items;
 
 }
