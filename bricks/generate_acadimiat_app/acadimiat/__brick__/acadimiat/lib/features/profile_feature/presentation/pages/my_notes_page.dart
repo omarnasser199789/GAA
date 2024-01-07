@@ -28,7 +28,7 @@ class MyNotePage extends StatefulWidget {
 
 class _MyNotePageState extends State<MyNotePage> {
 
-  MyNoteEntity myNoteEntity = MyNoteEntity(id: -1, userId: -1, notes: []);
+  MyNoteEntity myNoteEntity = MyNoteEntity(id: -1, userId: -1, notes: const []);
   List<Widget> widgetList=[];
   TextEditingController textController = TextEditingController();
   bool addBookMark = false;
@@ -199,9 +199,8 @@ class _MyNotePageState extends State<MyNotePage> {
                                           }).whenComplete(() {});
 
                                       if (result == 200) {
-                                        BlocProvider.of<ProfileBloc>(context)
-                                            .add(AddNewNoteEvent(
-                                            params: AddNewNoteParams(bookId: myNoteEntity.id, notes: textController.text, createdAt: DateTime.now(),id: item.id)));
+                                        if (!mounted) return;
+                                        BlocProvider.of<ProfileBloc>(context).add(AddNewNoteEvent(params: AddNewNoteParams(bookId: myNoteEntity.id, notes: textController.text, createdAt: DateTime.now(),id: item.id)));
                                       }
                                     },
                                     child: SvgPicture.asset(
@@ -343,8 +342,8 @@ class _MyNotePageState extends State<MyNotePage> {
 
                   if (result == 200) {
                     addBookMark=true;
-                    BlocProvider.of<ProfileBloc>(context)
-                        .add(AddNewNoteEvent(
+                    if (!mounted) return;
+                    BlocProvider.of<ProfileBloc>(context).add(AddNewNoteEvent(
                         params: AddNewNoteParams(bookId: myNoteEntity.id, notes: textController.text, createdAt: DateTime.now())));
                   }
 

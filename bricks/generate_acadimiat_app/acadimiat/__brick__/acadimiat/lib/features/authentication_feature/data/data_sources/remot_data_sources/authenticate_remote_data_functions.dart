@@ -390,7 +390,7 @@ class AuthenticateRemoteDataFunctions {
         Uri.parse(url),
         headers: headersss,
       ).timeout(Duration(seconds: timeout));
-      var res = json.decode(response.body);
+       json.decode(response.body);
 
       if (kDebugMode) {
         print("RefreshToken:${response.statusCode}");

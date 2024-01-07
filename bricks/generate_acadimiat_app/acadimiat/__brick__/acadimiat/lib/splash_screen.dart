@@ -89,11 +89,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void dispose() {
     super.dispose();
-    if (_controller != null) {
-      _controller.dispose();
-      // _controller = null;
+    _controller.dispose();
     }
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,6 @@
 // To parse JSON data into an instance of this class, use the `registerModelFromJson` function.
 // To encode an instance of this class into a JSON string, use the `registerModelToJson` function.
 import 'dart:convert';
-import '../../domain/entities/register_entity.dart';
 
 RegisterModel registerModelFromJson(String str) => RegisterModel.fromJson(json.decode(str));
 

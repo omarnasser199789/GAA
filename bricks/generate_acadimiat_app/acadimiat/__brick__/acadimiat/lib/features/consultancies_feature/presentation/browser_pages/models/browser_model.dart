@@ -275,19 +275,6 @@ class BrowserModel extends ChangeNotifier {
 
         clearFavorites();
         closeAllTabs();
-        // clearWebArchives();
-
-        List<Map<String, dynamic>> favoritesList =
-            browserData["favorites"]?.cast<Map<String, dynamic>>() ?? [];
-        // List<FavoriteModel> favorites =
-        //     favoritesList.map((e) => FavoriteModel.fromMap(e)!).toList();
-
-        // Map<String, dynamic> webArchivesMap =
-        //     browserData["webArchives"]?.cast<String, dynamic>() ?? {};
-        // Map<String, WebArchiveModel> webArchives = webArchivesMap.map(
-        //     (key, value) => MapEntry(
-        //         key, WebArchiveModel.fromMap(value?.cast<String, dynamic>())!));
-
         BrowserSettings settings = BrowserSettings.fromMap(
                 browserData["settings"]?.cast<String, dynamic>()) ??
             BrowserSettings();
@@ -301,9 +288,6 @@ class BrowserModel extends ChangeNotifier {
             .toList();
         webViewTabs.sort((a, b) =>
             a.webViewModel.tabIndex!.compareTo(b.webViewModel.tabIndex!));
-
-        // addFavorites(favorites);
-        // addWebArchives(webArchives);
         updateSettings(settings);
         addTabs(webViewTabs);
 
@@ -325,10 +309,7 @@ class BrowserModel extends ChangeNotifier {
 
   Map<String, dynamic> toMap() {
     return {
-      // "favorites": _favorites.map((e) => e.toMap()).toList(),
       "webViewTabs": _webViewTabs.map((e) => e.webViewModel.toMap()).toList(),
-      // "webArchives":
-      //     _webArchives.map((key, value) => MapEntry(key, value.toMap())),
       "currentTabIndex": _currentTabIndex,
       "settings": _settings.toMap(),
       "currentWebViewModel": _currentWebViewModel.toMap(),

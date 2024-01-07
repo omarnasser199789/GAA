@@ -1,7 +1,6 @@
 import 'package:acadmiat/core/widgets/custom_botton.dart';
 import 'package:acadmiat/features/authentication_feature/presentation/pages/login_page.dart';
 import 'package:acadmiat/features/profile_feature/presentation/bloc/bloc.dart';
-import 'package:acadmiat/features/profile_feature/presentation/pages/profile_personly_folder/profile_personly_page.dart';
 import 'package:acadmiat/features/profile_feature/presentation/pages/training_plan_folder/training_plan_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -15,9 +14,10 @@ import '../../../../../core/functions.dart';
 import '../../../../../core/util/assets_manager.dart';
 import '../../../../../injection_container.dart';
 import '../../../../../launch_page.dart';
-import '../../widgets/app_versio.dart';
+import '../../widgets/app_version.dart';
 import '../privacy_policy_page.dart';
 import '../../../domain/entities/user_info_entity.dart';
+import '../profile_personal/profile_personal_page.dart';
 import '../terms_and_conditions_page.dart';
 import '../certificates_page.dart';
 import '../../../../../core/globals.dart';
@@ -159,6 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                             cropStyle: CropStyle.circle,
                                           );
                                           image = XFile(croppedFile!.path);
+                                          if (!mounted) return;
                                           BlocProvider.of<ProfileBloc>(context).add(UpdateMyAvatar(image: image!.path, userId: userId().toString()));
                                         },
                                         child: Container(
@@ -180,8 +181,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 31, left: 17, right: 17, bottom: 20),
+                              padding: const EdgeInsets.only(top: 31, left: 17, right: 17, bottom: 20),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -278,22 +278,17 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                   OptionWidget(
                                     onTap: () async {
-                                    await goTo(
-                                          context,
-                                          (context) => ProfilePersonlyPage(
-                                              userInfoEntity: userInfoEntity));
+                                    await goTo(context, (context) => ProfilePersonalPage(userInfoEntity: userInfoEntity));
                                       setState(() {});
                                     },
                                     title: "الملف الشخصي",
                                   ),
                                   OptionWidget(
                                     onTap: () {
-                                      goTo(context,
-                                          (context) =>const MyRequestsPage());
+                                      goTo(context, (context) =>const MyRequestsPage());
                                     },
                                     title: "طلباتي",
                                   ),
-
                                 ],
                               ),
                             ),
@@ -437,9 +432,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               ///INSTAGRAM
                               GestureDetector(
                                 onTap: () async {
-                                  const url = 'https://www.instagram.com/emasteryacademy/#wp';
-                                  if (await canLaunch(url)) {
-                                  await launch(url);
+                                  Uri url =  Uri.parse('https://www.instagram.com/emasteryacademy/#wp');
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
                                   } else {
                                   throw 'Could not launch $url';
                                   }
@@ -453,9 +448,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               ///YOUTUBE
                               GestureDetector(
                                 onTap: () async {
-                                  const url = 'https://www.youtube.com/c/eMasteryAcademy/#wp';
-                                  if (await canLaunch(url)) {
-                                    await launch(url);
+                                  Uri url =  Uri.parse('https://www.youtube.com/c/eMasteryAcademy/#wp');
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
                                   } else {
                                     throw 'Could not launch $url';
                                   }
@@ -469,9 +464,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               ///TWITTER
                               GestureDetector(
                                 onTap: () async {
-                                  const url = 'https://twitter.com/emasteryacademy/#wp';
-                                  if (await canLaunch(url)) {
-                                    await launch(url);
+                                  Uri url =  Uri.parse('https://twitter.com/emasteryacademy/#wp');
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
                                   } else {
                                     throw 'Could not launch $url';
                                   }
@@ -485,9 +480,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               ///LINKEDIN
                               GestureDetector(
                                 onTap: () async {
-                                  const url = 'https://www.linkedin.com/company/emasteryacademy/#wp';
-                                  if (await canLaunch(url)) {
-                                    await launch(url);
+                                  Uri url =  Uri.parse('https://www.linkedin.com/company/emasteryacademy/#wp');
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
                                   } else {
                                     throw 'Could not launch $url';
                                   }
@@ -501,9 +496,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               ///FACEBOOK
                               GestureDetector(
                                 onTap: () async {
-                                  const url = 'https://www.facebook.com/emasteryacademy/#wp';
-                                  if (await canLaunch(url)) {
-                                    await launch(url);
+                                  Uri url =  Uri.parse('https://www.facebook.com/emasteryacademy/#wp');
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
                                   } else {
                                     throw 'Could not launch $url';
                                   }
@@ -529,8 +524,6 @@ class _ProfilePageState extends State<ProfilePage> {
         }));
   }
 }
-
-
 
 
 void showCustomDialog(BuildContext context) {

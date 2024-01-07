@@ -1,14 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import '../../../../../../Locale/locale.dart';
 import '../../../../../../Theme/style.dart';
 import '../../../../../../core/globals.dart';
 import '../../../../../../core/widgets/cached_net_work_image.dart';
 
 class ItemList extends StatefulWidget {
-  const ItemList({Key? key,this.enableBroadcast,this.courseId,this.total,required this.onTap, this.typeCourse, this.imageUrl,this.percent,this.header,this.trainer})
-      : super(key: key);
+  const ItemList({super.key,this.enableBroadcast,this.courseId,this.total,required this.onTap, this.typeCourse, this.imageUrl,this.percent,this.header,this.trainer});
 
   final Function () onTap;
   final bool? enableBroadcast;
@@ -29,7 +26,6 @@ class _ItemListState extends State<ItemList> {
 
   @override
   Widget build(BuildContext context) {
-    var locale = AppLocalizations.of(context)!;
 
 
     return Padding(
@@ -97,22 +93,17 @@ class _ItemListState extends State<ItemList> {
                       padding: const EdgeInsets.only(top:5),
                       child: LinearPercentIndicator(
                         padding: EdgeInsets.zero,
-                        // width: 154,//size.width*0.4,
                         animation: true,
                         lineHeight: 8,
                         animationDuration: 1000,
                         barRadius: const Radius.circular(6),
-                        percent: widget.percent!/100,
-                        // center: Text("$percent"),
-                        linearStrokeCap: LinearStrokeCap.roundAll,
+                        percent: widget.percent! / 100,
                         progressColor: percentIndicatorColor,
-                      ),
+                      )
                     )
                   ],
                 ),
               ),
-
-
 
             ],
           ),

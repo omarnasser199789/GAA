@@ -24,11 +24,10 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
 
   @override
   Widget build(BuildContext context) {
-
     Jiffy.locale("ar");
-    Size size =MediaQuery.of(context).size;
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
+
     return Material(
       color: Theme.of(context).scaffoldBackgroundColor,
       borderRadius: const BorderRadius.only(
@@ -75,7 +74,7 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
 
                     Padding(
                       padding: const EdgeInsets.only(left: 8,right: 8),
-                      child: Container(
+                      child: SizedBox(
                         height: 130,
                         child: CupertinoTheme(
                           data:  CupertinoThemeData(
@@ -108,7 +107,7 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8,right: 8),
-                      child: Container(
+                      child: SizedBox(
                         height: 130,
                         child: CupertinoTheme(
                           data:  CupertinoThemeData(
@@ -145,12 +144,12 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
                         controller: textController,
                         maxLines: 1,
                         onTap: () {},
-                        onChange: (value){
-                          if (value == null || value=="") {
+                        onChange: (value) {
+                          if (value == null || value.isEmpty) {
                             return 'الرجاء ادخال عدد الساعات';
                           }
+                          return null; // Return null when the input is valid
                         },
-
                       ),
                     ),
 
@@ -192,10 +191,7 @@ class _PickerDateWidgetState extends State<PickerDateWidget> {
                                   }else{
                                     Navigator.pop(context, 500);
                                     showMessage(message: "الرجاء اضافة نص للملاحظة", context: context);
-
-                                    mystate(() {
-
-                                    });
+                                    mystate(() {});
                                   }
                                 }
                               })),

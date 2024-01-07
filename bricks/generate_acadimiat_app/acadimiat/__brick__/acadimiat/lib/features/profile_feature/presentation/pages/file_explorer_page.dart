@@ -26,7 +26,7 @@ class FileExplorerPage extends StatefulWidget {
 class _FileExplorerPageState extends State<FileExplorerPage> {
   List<Widget> widgetList=[];
   bool firstTime = true;
-  FilesEntity  filesEntity =FilesEntity(index: 0,items: []);
+  FilesEntity  filesEntity =FilesEntity(index: 0,items: const []);
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +73,7 @@ class _FileExplorerPageState extends State<FileExplorerPage> {
                             }
                           }
                         }else{
+                          if (!mounted) return;
                           showMessage(message: "هذا الملف غير موجود، سيتم حذفه من هذه القاءمة", context: context,bgColor: Colors.red);
                           Future.delayed(const Duration(milliseconds: 5000), () {
                             showCustomDialog(context,item);

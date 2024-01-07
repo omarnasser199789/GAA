@@ -24,7 +24,6 @@ class Error extends ProfileState {
 
   Error({required this.message}); //we use this constructor in ((BLOC & test))
 
-  @override
   List<Object> get props => [message];
 }
 

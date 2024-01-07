@@ -2,11 +2,9 @@
 import 'package:acadmiat/features/my_courses_feature/domain/entities/myquizizz_entity.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/activity_filling_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myqizizz_usecase.dart';
-import 'package:acadmiat/features/profile_feature/data/models/my_assignments_model.dart';
 import 'package:http/http.dart' as http;
 import '../../../../../core/globals.dart';
 import '../../../domain/entities/activity_quizz_entity.dart';
-import '../../../domain/entities/my_quizz_info_entity.dart';
 import '../../../domain/use_cases/Assignment/post_new_assignment_usecase.dart';
 import '../../../domain/use_cases/activity_case_usecase.dart';
 import '../../../domain/use_cases/activity_match_usecase.dart';

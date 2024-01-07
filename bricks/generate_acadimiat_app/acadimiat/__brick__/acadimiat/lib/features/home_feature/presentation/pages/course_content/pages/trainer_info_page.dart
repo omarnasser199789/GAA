@@ -10,7 +10,7 @@ import '../../../../data/models/card_by_id_model.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 class TrainerInfoPage extends StatefulWidget {
-  const TrainerInfoPage({Key? key, required this.trainer,required this.image,this.index}) : super(key: key);
+  const TrainerInfoPage({super.key, required this.trainer,required this.image,this.index});
   final Trainer trainer;
   final String image;
   final int ? index;
@@ -96,11 +96,11 @@ if(firstOne) {
             Padding(
               padding: const EdgeInsets.only(top: 20, left: 17, right: 17,bottom: 20),
               child: HtmlWidget(
-                "<div style='background-color:${Theme.of(context).scaffoldBackgroundColor} !important; font-size: 12px; line-height:${lineSpace};font-family:${"taleeq-bold"} !important; ' color:${Theme.of(context).primaryColor} !important'>${widget.trainer.trainerInfo.replaceAll("background-color", "").replaceAll("color", "").replaceAll("font-family", "")..replaceAll("font-size", "")}</div >",
+                "<div style='background-color:${Theme.of(context).scaffoldBackgroundColor} !important; font-size: 12px; line-height:$lineSpace;font-family:${"taleeq-bold"} !important; ' color:${Theme.of(context).primaryColor} !important'>${widget.trainer.trainerInfo.replaceAll("background-color", "").replaceAll("color", "").replaceAll("font-family", "")..replaceAll("font-size", "")}</div >",
                 customWidgetBuilder: (element) {
                   return null;
                 },
-                webView: true,
+                // webView: true,
               ),
             ),
           ],
@@ -128,11 +128,10 @@ if(firstOne) {
     img.Image? image = img.decodeImage(bytes);
     img.Image? transparentImage = await colorTransparent(image!, 255, 255, 255);
     var newPng = img.encodePng(transparentImage);
-    return newPng as Uint8List;
+    return newPng;
   }
 
   Future<img.Image> colorTransparent(img.Image src, int red, int green, int blue) async {
-    int i=0;
     var pixels = src.getBytes();
     for (int i = 0, len = pixels.length; i < len; i += 4) {
       if(pixels[i] ==255 && pixels[i+1] ==255 && pixels[i+2] ==255) {

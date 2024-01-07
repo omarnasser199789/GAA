@@ -2,7 +2,6 @@ import 'package:acadmiat/features/home_feature/presentation/pages/search_page.da
 import 'package:flutter/material.dart';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:flutter/foundation.dart';
-import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/classes/constants.dart';
 import '../../../../core/globals.dart';
@@ -19,7 +18,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/loading_courses_widget.dart';
 
 class TrainingCoursesPage extends StatefulWidget {
-   TrainingCoursesPage({Key? key,required this.latestEntity}) : super(key: key);
+    TrainingCoursesPage({super.key,required this.latestEntity});
    List<LatestEntity>  latestEntity;
 
   @override
@@ -27,11 +26,10 @@ class TrainingCoursesPage extends StatefulWidget {
 }
 
 class _TrainingCoursesPageState extends State<TrainingCoursesPage> {
-  Size itemSize = Size(0, 100);
+  Size itemSize = const Size(0, 100);
 
   @override
   Widget build(BuildContext context) {
-    var locale = AppLocalizations.of(context)!;
 
     return BlocProvider(
         create: (BuildContext context) => sl<HomeBloc>(),
@@ -75,7 +73,7 @@ class _TrainingCoursesPageState extends State<TrainingCoursesPage> {
                     squareImage: '',
                     courseLink: '',
                     price:  item.oldPrice,
-                    categories: [],
+                    categories: const [],
                     newPrice: item.newPrice,
                     numberOfCourses: 0,
                     discount: false, isCourse:true,
@@ -155,7 +153,7 @@ class _TrainingCoursesPageState extends State<TrainingCoursesPage> {
             appBar: appBarWidget("الدورات التدريبية",context,true,[
               GestureDetector(
                 onTap: (){
-                  goTo(context, (context) =>  SearchPage());
+                  goTo(context, (context) =>  const SearchPage());
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(10),

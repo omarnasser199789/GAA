@@ -1,8 +1,6 @@
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myqizizz_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/submit_quiz_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/bloc/success_error/either_success_or_error.dart';
-
-import '../../../../core/error/failures.dart';
 import '../../../../core/globals.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/use_cases/Assignment/get_assignment.dart';
@@ -27,7 +25,6 @@ import '../../domain/use_cases/post_concept_usecase.dart';
 import '../../domain/use_cases/topic_reply_usecase.dart';
 import '../../domain/use_cases/wiki/article_details_usecase.dart';
 import '../pages/my_course/tabs/lessons_tab/pages/lecture_page.dart';
-import '../../domain/entities/my_courses_entity.dart';
 import '../../domain/use_cases/add_bookmark_usecase.dart';
 import '../../domain/use_cases/add_comment_usecase.dart';
 import '../../domain/use_cases/delete_bookmark_usecase.dart';
@@ -38,9 +35,6 @@ import '../../domain/use_cases/get_my_lecture/get_my_lecture_usecase.dart';
 import '../../domain/use_cases/sign_cookie_usecase.dart';
 import 'bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-const String SERVER_FAILURE_MESSAGE = 'Server Failure';
-const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 
 class MyCoursesBloc extends Bloc<MyCoursesEvent, MyCoursesState> {
   final GetMyCoursesUseCase getMyCoursesUseCase;
@@ -107,17 +101,7 @@ class MyCoursesBloc extends Bloc<MyCoursesEvent, MyCoursesState> {
     required AddCommentUseCase concreteAddCommentUseCase,
     required UpdateMyCoursesInLocalDBUseCase concreteUpdateMyCoursesInLocalDBUseCase,
     required GetMyCoursesFromLocaleDBUseCase concreteGetMyCoursesFromLocaleDBUseCase,
-  })  : assert(concreteGetMyCoursesUseCase != null),
-        assert(concreteGetMyCourseUseCase != null),
-        assert(concreteSignCookieUseCase != null),
-        assert(concreteMyLectureUseCase != null),
-        assert(concreteGetDiscussionUseCase != null),
-        assert(concreteAddBookmarkUseCase != null),
-        assert(concreteDeleteBookmarkUseCase != null),
-        assert(concretePostConceptUseCase != null),
-        assert(concreteAddFileInLocalDBUseCase != null),
-
-        deleteAllFilesFromLocalDBUseCase = concreteDeleteAllFilesFromLocalDBUseCase,
+  })  : deleteAllFilesFromLocalDBUseCase = concreteDeleteAllFilesFromLocalDBUseCase,
         deleteFileFromLocalDBUseCase = concreteDeleteFileFromLocalDBUseCase,
         getAllFilesUseCase = concreteGetAllFilesUseCase,
         activityDecisionUseCase = concreteActivityDecisionUseCase,
@@ -317,16 +301,5 @@ class MyCoursesBloc extends Bloc<MyCoursesEvent, MyCoursesState> {
     }
 
 
-    // else if (event is GeToNewPageEvent){
-    //
-    //   yield Loading();
-    //   await Future.delayed(const Duration(milliseconds: 500));
-    //   yield LecturePage(
-    //     part: event.part,
-    //     index: event.index,
-    //     myCourseEntity: event.myCourseEntity,
-    //     lectureId: event.lectureId,
-    //   );
-    // }
   }
 }

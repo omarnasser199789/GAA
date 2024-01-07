@@ -1,6 +1,4 @@
-import 'package:acadmiat/core/widgets/error_widget.dart';
 import 'package:acadmiat/features/profile_feature/presentation/pages/training_plan_folder/picker_date_widget.dart';
-import 'package:acadmiat/features/profile_feature/presentation/pages/training_plan_folder/test_picker_date.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
@@ -9,12 +7,11 @@ import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/functions.dart';
 import '../../../../../core/globals.dart';
+import '../../../../../core/util/assets_manager.dart';
 import '../../../../../core/widgets/app_bar_widget.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiffy/jiffy.dart';
-import '../../../../../core/widgets/custom_botton.dart';
-import '../../../../../core/widgets/custom_text_field.dart';
 import '../../../../../core/widgets/empty_state_widget.dart';
 import '../../../../../injection_container.dart';
 import '../../../domain/entities/my_plans_entity.dart';
@@ -22,9 +19,9 @@ import '../../../domain/use_cases/my_plans/post_my_plan_usecase.dart';
 import '../../bloc/profile_bloc.dart';
 import '../../bloc/profile_event.dart';
 import '../../bloc/profile_state.dart';
-import 'package:intl/intl.dart';
+
 class TrainingPlanPage extends StatefulWidget {
-  const TrainingPlanPage({Key? key}) : super(key: key);
+  const TrainingPlanPage({super.key});
 
   @override
   State<TrainingPlanPage> createState() => _TrainingPlanPageState();
@@ -38,7 +35,6 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
   @override
   Widget build(BuildContext context) {
     Jiffy.locale("ar");
-    var locale = AppLocalizations.of(context)!;
     Size size = MediaQuery.of(context).size;
     return BlocProvider(
         create: (BuildContext context) => sl<ProfileBloc>(),
@@ -71,7 +67,7 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                 padding: const EdgeInsets.only(left: 17,right: 17),
                 child: Shimmer.fromColors(
                   baseColor: Theme.of(context).cardColor,
-                  highlightColor: Color.fromRGBO(119, 118, 118, 0.5490196078431373),
+                  highlightColor: const Color.fromRGBO(119, 118, 118, 0.5490196078431373),
                   child: ListView.builder(
                       itemCount: 3,
                       itemBuilder: (context,index){
@@ -93,10 +89,8 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
             );
           }
           if(state is Error){
-            // return Error_Widget();
-
             return Scaffold(appBar:appBarWidget("",context,true,null,null),
-              body: EmptyStateWidget(svg:"assets/svgs/error.svg",
+              body: EmptyStateWidget(svg:ImgAssets.error,
                 text1:"عذرا! حدثت مشكلة غير متوقعة",
                 text3: "حدث الان",
                 onTap: () async {  BlocProvider.of<ProfileBloc>(context).add(
@@ -104,15 +98,12 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                 },
               ),
             );
-
-
           }
           widgetList=[];
           for(var item in myPlans){
             widgetList.add(  Padding(
               padding: const EdgeInsets.only(top:20),
               child: Container(
-                // height:130,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: Theme.of(context).cardColor,
@@ -155,7 +146,7 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                                 showCustomDialog(context,item.planId);
                               },
                               child: SvgPicture.asset(
-                                "assets/svgs/deleteIcon.svg",
+                                ImgAssets.deleteIcon,
                                 color: iconsColor,
                               ),
                             ),
@@ -172,10 +163,10 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                             Row(
                               children: [
                                 SvgPicture.asset(
-                                  "assets/svgs/vuesax-linear-calendar.svg",
+                                  ImgAssets.vuesaxLinearCalendar,
                                   color: iconsColor,
                                 ),
-                                SizedBox(width: 8,),
+                                const SizedBox(width: 8,),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,15 +180,15 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                               ],
                             ),
 
-                            SizedBox(width: 70,),
+                            const SizedBox(width: 70,),
 
                             Row(
                               children: [
                                 SvgPicture.asset(
-                                  "assets/svgs/vuesax-linear-calendar.svg",
+                                  ImgAssets.vuesaxLinearCalendar,
                                   color: iconsColor,
                                 ),
-                                SizedBox(width: 8,),
+                                const SizedBox(width: 8,),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -226,14 +217,12 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                           children: [
                             LinearPercentIndicator(
                               padding: EdgeInsets.zero,
-                              width: size.width-58,//size.width*0.4,
+                              width: size.width-58,
                               animation: true,
                               lineHeight: 8,
                               animationDuration: 1000,
                               barRadius: const Radius.circular(20),
                               percent: (item.progress/100>1)?1:item.progress/100,
-                              // center: Text("$percent"),
-                              linearStrokeCap: LinearStrokeCap.roundAll,
                               progressColor: percentIndicatorColor,
                             ),
                           ],
@@ -252,25 +241,17 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
               padding: const EdgeInsets.only(bottom: 10),
               child: FloatingActionButton(
                 onPressed: () async {
-
-
-
                   List result = await showModalBottomSheet(
                       context: context,
                       backgroundColor: Colors.transparent,
                       isScrollControlled: true,
                       builder: (context) {
-
-                        return PickerDateWidget();
-
+                        return const PickerDateWidget();
                       }).whenComplete(() {});
 
-
-
                   if (result.length>2) {
-
-                    BlocProvider.of<ProfileBloc>(context)
-                        .add(PostMyPlanEvent(postMyPlanParams:
+                    if (!mounted) return;
+                    BlocProvider.of<ProfileBloc>(context).add(PostMyPlanEvent(postMyPlanParams:
                     PostMyPlanParams(
                         id: null,
                         userId: userId().toString(),
@@ -280,21 +261,17 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                         reminder: result[2],
                         isCompleted: false,
                         timePlan: TimePlan(id: null, totalToAchieve: result[3]*60))));
-
                   }
-
-
                 },
                 backgroundColor: kMainColor,
                 child: SvgPicture.asset(
-                  "assets/svgs/add plan.svg",
+                  ImgAssets.addPlan,
                   color: Colors.white,
                   width: 23,
                 ),
               ),
             ),
             body:
-
             (widgetList.isNotEmpty)?
             Padding(
               padding: const EdgeInsets.only(left: 17,right: 17),
@@ -307,17 +284,12 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
             SizedBox(
               width: size.width,
               height: size.height-200,
-
-              // alignment: Alignment.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     width: size.width,
-                    child: SvgPicture.asset(
-                      "assets/svgs/plan.svg",
-                    ),
+                    child: SvgPicture.asset(ImgAssets.plan),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top:30),
@@ -332,7 +304,6 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                           textAlign: TextAlign.center,
                           style: blackBoldTextStyle(fontSize: 12,context: context,height: lineSpace),)),
                   ),
-
                 ],
               ),
             ),
@@ -348,9 +319,8 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
       barrierDismissible: true,
       barrierColor: iconsColor.withOpacity(0.3),
       transitionDuration: const Duration(milliseconds: 200),
-      pageBuilder: (contextt, __, ___) {
+      pageBuilder: (customContext, __, ___) {
         var locale = AppLocalizations.of(context)!;
-
         return Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor.withOpacity(0),
           body: BlocProvider(
@@ -396,7 +366,7 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                                       children: [
                                         GestureDetector(
                                             onTap: () {
-                                              Navigator.pop(contextt);
+                                              Navigator.pop(customContext);
                                             },
                                             child:Container(
                                               color: Theme.of(context).scaffoldBackgroundColor,
@@ -408,17 +378,14 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                                                   style: blackBoldTextStyle(
                                                       context: context,
                                                       fontSize: 12,
-                                                      color:
-                                                      Theme.of(context).primaryColor),
+                                                      color: Theme.of(context).primaryColor),
                                                 ),
                                               ),
                                             )),
-                                        const SizedBox(
-                                          width: 52,
-                                        ),
+                                        const SizedBox(width: 52),
                                         GestureDetector(
                                             onTap: () {
-                                              Navigator.pop(contextt, 200);
+                                              Navigator.pop(customContext, 200);
                                             },
                                             child: Container(
                                               color: Theme.of(context).scaffoldBackgroundColor,
@@ -429,8 +396,7 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
                                                   style: blackBoldTextStyle(
                                                       context: context,
                                                       fontSize: 12,
-                                                      color:
-                                                      Theme.of(context).primaryColor),
+                                                      color: Theme.of(context).primaryColor),
                                                 ),
                                               ),
                                             )),
@@ -454,7 +420,6 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
         } else {
           tween = Tween(begin: const Offset(1, 0), end: Offset.zero);
         }
-
         return SlideTransition(
           position: tween.animate(anim),
           child: FadeTransition(

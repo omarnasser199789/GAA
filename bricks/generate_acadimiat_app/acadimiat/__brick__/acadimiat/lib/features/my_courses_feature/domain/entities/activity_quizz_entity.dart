@@ -1,16 +1,19 @@
 import 'package:equatable/equatable.dart';
-class ActivityQuizzEntity extends Equatable{
-  @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
-  ActivityQuizzEntity({
-    required  this.lectureId,
-    required  this.userId,
-    required  this.courseId,
+import 'package:flutter/cupertino.dart';
+
+@immutable
+class ActivityQuizzEntity extends Equatable {
+  final String lectureId;
+  final String userId;
+  final String courseId;
+
+  const ActivityQuizzEntity({
+    required this.lectureId,
+    required this.userId,
+    required this.courseId,
   });
 
-  String lectureId;
-  String userId;
-  String courseId;
-
+  @override
+  List<Object?> get props => [lectureId, userId, courseId];
 }
+

@@ -7,7 +7,7 @@ import '../../../../../../Locale/locale.dart';
 import '../../../../../../Theme/style.dart';
 import '../../../../../../core/util/assets_manager.dart';
 import '../../../../../../core/widgets/custom_text_field.dart';
-import 'Info.dart';
+import 'delete_account_info.dart';
 
 class DeleteAccountPage extends StatefulWidget {
   const DeleteAccountPage({super.key});
@@ -18,7 +18,7 @@ class DeleteAccountPage extends StatefulWidget {
 }
 
 class _DeleteAccountPageState extends State<DeleteAccountPage> {
-  var val ;
+  int? val ;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -60,10 +60,10 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                           ),
                            Padding(
                             padding: const EdgeInsets.only(top: 5  ),
-                            child: Info(svg:ImgAssets.warning ,text:locale.logoutAllDevices!,)
+                            child: DeleteAccountInfo(svg:ImgAssets.warning ,text:locale.logoutAllDevices!,)
                           ),
-                           Info(svg:ImgAssets.warning ,text: locale.deleteAllAccountData!,),
-                           Info(svg:ImgAssets.warning ,text: locale.theAccountCannotBeRestoredAgain!,),
+                          DeleteAccountInfo(svg:ImgAssets.warning ,text: locale.deleteAllAccountData!,),
+                          DeleteAccountInfo(svg:ImgAssets.warning ,text: locale.theAccountCannotBeRestoredAgain!,),
 
 
                         ],
@@ -103,7 +103,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                                     value: 0,
                                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                     groupValue: val,
-                                    onChanged: (value) {
+                                    onChanged: (int? value) {
                                       setState(() {
                                         val = value;
 
@@ -124,7 +124,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
 
                                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                   groupValue: val,
-                                  onChanged: (value) {
+                                  onChanged: (int? value) {
                                     setState(() {
                                       val = value;
 
@@ -144,7 +144,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
 
                                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                   groupValue: val,
-                                  onChanged: (value) {
+                                  onChanged: (int? value) {
                                     setState(() {
                                       val = value;
 
@@ -164,7 +164,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
 
                                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                   groupValue: val,
-                                  onChanged: (value) {
+                                  onChanged: (int? value) {
                                     setState(() {
                                       val = value;
 
@@ -182,7 +182,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                                   value: 4,
                                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                   groupValue: val,
-                                  onChanged: (value) {
+                                  onChanged: (int? value) {
                                     setState(() {
                                       val = value;
                                     });
@@ -202,8 +202,6 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                       ),
                     ),
                   ),
-
-
                 ],
               ),
 
@@ -213,9 +211,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                 child: SafeArea(
                   child: Padding(
                     padding:  const EdgeInsets.only(bottom: bottomPadding),
-                    child: CustomButton(title: locale.confirmAccountDeletion!, onTap: (){
-
-                    }),
+                    child: CustomButton(title: locale.confirmAccountDeletion!, onTap: (){}),
                   ),
                 ),
               ),
@@ -225,8 +221,6 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
       ),
     );
   }
-
-
 
 }
 

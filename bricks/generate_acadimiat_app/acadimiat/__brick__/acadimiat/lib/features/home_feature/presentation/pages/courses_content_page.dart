@@ -1,7 +1,6 @@
 import 'package:acadmiat/core/widgets/waiting_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../../../Locale/locale.dart';
 import '../../../../Theme/style.dart';
 import '../../../../core/classes/constants.dart';
 import '../../../../core/widgets/empty_state_widget.dart';
@@ -24,11 +23,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:better_player/better_player.dart';
 import 'package:measure_size/measure_size.dart';
 import 'course_content/pages/course_content_page.dart';
-import '../../../cart_feature/presentation/bloc/my_cart_state.dart' as cartState;
+import '../../../cart_feature/presentation/bloc/my_cart_state.dart' as cart_state;
 
 
 class CoursesContentPage extends StatefulWidget {
-  const CoursesContentPage({Key? key,required this.cardId,required this.courseCover}) : super(key: key);
+  const CoursesContentPage({super.key,required this.cardId,required this.courseCover});
 
   final int cardId;
   final String courseCover;
@@ -87,18 +86,18 @@ class _CoursesContentPageState extends State<CoursesContentPage> {
                   builder: (context, orientation) {
                     return BlocProvider(
                         create: (BuildContext context) => sl<MyCartBloc>(),
-                        child: BlocBuilder<MyCartBloc, cartState.MyCartState>(
-                            builder: (context, statee) {
+                        child: BlocBuilder<MyCartBloc, cart_state.MyCartState>(
+                            builder: (context, customState) {
                               if (kDebugMode) {
-                                print("state:$statee");
+                                print("state:$customState");
                               }
-                              if (statee is cartState.Empty) {
+                              if (customState is cart_state.Empty) {
                                 ///Check if product exit already in (cart)DB or not.
                                 BlocProvider.of<MyCartBloc>(context).add(CheckIfProductIsExitEvent(id: state.packageEntity.packageId));
                               }
-                              if (statee is cartState.SuccessCheckProductEntity) {
+                              if (customState is cart_state.SuccessCheckProductEntity) {
                                 ///Product is already exit
-                                if (statee.statusCode == 200) {
+                                if (customState.statusCode == 200) {
                                   if (kDebugMode) {
                                     print("item exit already");
                                   }
@@ -108,7 +107,7 @@ class _CoursesContentPageState extends State<CoursesContentPage> {
                                 }
 
                                 ///Product is not exit in DB
-                                else if (statee.statusCode == 404 && allowAddNewProduct) {
+                                else if (customState.statusCode == 404 && allowAddNewProduct) {
                                   allowAddNewProduct = false;
                                   BlocProvider.of<MyCartBloc>(context)
                                       .add(AddProductToCart(

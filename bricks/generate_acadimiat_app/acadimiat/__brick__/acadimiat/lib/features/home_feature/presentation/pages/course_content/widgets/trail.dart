@@ -4,8 +4,7 @@ import '../../../../../../core/widgets/custom_botton.dart';
 
 
 class Trail extends StatelessWidget {
-   Trail({Key? key,required this.orientation,required this.price,required this.newPrice, required this.onTap,required this.loading, this.title}) : super(key: key);
-  final orientation;
+   Trail({super.key,required this.price,required this.newPrice, required this.onTap,required this.loading, this.title});
   final double price;
   final double newPrice;
   final Function () onTap;

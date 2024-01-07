@@ -20,7 +20,6 @@ import '../../domain/use_cases/case_study/course_case_study_usecase.dart';
 import '../../domain/use_cases/get_my_course/get_my_course_usecase.dart';
 import '../../domain/use_cases/get_my_lecture/get_my_lecture_usecase.dart';
 import '../../domain/use_cases/get_my_qizizz/get_myquizzinfo_usecase.dart';
-import '../../domain/use_cases/local_db_usecase/update_mycourses_in_local_db_usecase.dart';
 import '../../domain/use_cases/post_concept_usecase.dart';
 import '../../domain/use_cases/submit_quiz_usecase.dart';
 import '../../domain/use_cases/topic_reply_usecase.dart';

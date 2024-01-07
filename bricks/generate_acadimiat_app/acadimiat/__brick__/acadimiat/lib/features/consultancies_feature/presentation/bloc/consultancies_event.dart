@@ -1,43 +1,41 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
-
 import '../../domain/use_cases/present_section/get_room_hours_usecase.dart';
 import '../../domain/use_cases/present_section/reserve_meeting_usecase.dart';
 
-@immutable
 abstract class ConsultanciesEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
 
+
 class GetMyConsultanciesEvent extends ConsultanciesEvent {
-  int id;
+  final int id;
   GetMyConsultanciesEvent({required this.id});
 }
 class GetConsultancyEvent extends ConsultanciesEvent {
-  int id;
+  final int id;
   GetConsultancyEvent({required this.id});
 }
 class GetConsultationSessionsEvent extends ConsultanciesEvent {
-  int consultationID;
+  final int consultationID;
   GetConsultationSessionsEvent({required this.consultationID});
 }
 
 class BookMeetingEvent extends ConsultanciesEvent {
-  ReserveMeetingParams params;
+  final ReserveMeetingParams params;
   BookMeetingEvent({required this.params});
 }
 class GetRoomHoursEvent extends ConsultanciesEvent {
-  RoomHoursParams params;
+  final RoomHoursParams params;
   GetRoomHoursEvent({required this.params});
 }
 class GetRoomTimezoneEvent extends ConsultanciesEvent {
-  int id;
+  final int id;
   GetRoomTimezoneEvent({required this.id});
 }
 
 class GetRoomCalendarEvent extends ConsultanciesEvent {
-  int id;
+  final int id;
   GetRoomCalendarEvent({required this.id});
 }
 

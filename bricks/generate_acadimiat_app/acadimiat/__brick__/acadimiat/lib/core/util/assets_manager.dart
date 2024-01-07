@@ -67,6 +67,10 @@ class ImgAssets {
   static String liveLine = '$_svgPath/live-line.svg';
   static String consultations = '$_svgPath/consultations.svg';
   static String date = '$_svgPath/date.svg';
+  static String addPlan = '$_svgPath/add plan.svg';
+  static String plan = '$_svgPath/plan.svg';
+  static String certificate = '$_svgPath/certificate.svg';
+  static String wishlist = '$_svgPath/wishlist.svg';
 
 
 

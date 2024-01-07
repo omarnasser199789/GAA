@@ -89,18 +89,14 @@ class MyCoursesRemoteDataFunctions {
       JWT = globalSH.getString(CACHED_JWT_TOKEN).toString();
       final response = await client.get(Uri.parse(url), headers: {
         'content-type': 'application/json',
-        'Authorization': 'Bearer ' + JWT,
+        'Authorization': 'Bearer $JWT',
       }).timeout(Duration(seconds: timeout));
       if (response.statusCode == 200) {
         await updateCookiee(response);
 
         var value = signCookieModelFromJson(response.body);
-        if (value != null) {
-          return value;
-        } else {
-          throw ServerException();
-        }
-      } else {
+        return value;
+            } else {
         throw ServerException();
       }
     } catch (e) {
@@ -148,7 +144,7 @@ class MyCoursesRemoteDataFunctions {
       if (cookie.isNotEmpty) {
         cookie += ";";
       }
-      cookie += key + "=" + cookies[key]!;
+      cookie += "$key=${cookies[key]!}";
     }
 
     return cookie;
@@ -171,27 +167,25 @@ class MyCoursesRemoteDataFunctions {
       print(data);
     }
     try {
-      JWT = await globalSH.getString(CACHED_JWT_TOKEN).toString();
+      JWT = globalSH.getString(CACHED_JWT_TOKEN).toString();
       final response = await client
           .post(
             Uri.parse(url),
             headers: {
               'content-type': 'application/json',
-              'Authorization': 'Bearer ' + JWT,
+              'Authorization': 'Bearer $JWT',
             },
             body: jsonEncode(data),
           )
           .timeout(Duration(seconds: timeout));
-      print("${data} >>>> StatusCode${response.statusCode}");
+      if (kDebugMode) {
+        print("$data >>>> StatusCode${response.statusCode}");
+      }
       if (response.statusCode == 200) {
-        // print(response.body);
+
         var value = myLectureModelFromJson(response.body);
-        if (value != null) {
-          return value;
-        } else {
-          throw ServerException();
-        }
-      } else {
+        return value;
+            } else {
         throw ServerException();
       }
     } catch (e) {
@@ -202,82 +196,69 @@ class MyCoursesRemoteDataFunctions {
 
   ///////////////////////////////////
   Future<DiscussionModel> getDiscussion(String url) async {
-    print(url);
+    if (kDebugMode) {
+      print(url);
+    }
     var client = http.Client();
 
     JWT = globalSH.getString(CACHED_JWT_TOKEN)!;
 
-    // print(data);
     try {
-      JWT = await globalSH.getString(CACHED_JWT_TOKEN).toString();
+      JWT = globalSH.getString(CACHED_JWT_TOKEN).toString();
       final response = await client.get(
         Uri.parse(url),
         headers: {
           'content-type': 'application/json',
-          'Authorization': 'Bearer ' + JWT,
+          'Authorization': 'Bearer $JWT',
         },
       ).timeout(Duration(seconds: timeout));
       if (response.statusCode == 200) {
-        // print(response.body);
         var value = discussionModelFromJson(response.body);
-        if (value != null) {
-          return value;
-        } else {
-          throw ServerException();
-        }
-      } else {
+        return value;
+            } else {
         throw ServerException();
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       throw ServerException();
     }
   }
 
   Future<BookmarkModel> addBookmark(
       String url, AddBookMarkParams params) async {
-    print(url);
+    if (kDebugMode) {
+      print(url);
+    }
     var client = http.Client();
 
     JWT = globalSH.getString(CACHED_JWT_TOKEN)!;
 
-    // Map<String, dynamic> data = {
-    //   // "loginName": params.loginName,
-    //   // "password": params.password,
-    // };
-
-    print("kjdfnvkjn");
-    print(addBookMarkParamsToJson(params));
     try {
       final response = await client
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
-              body: addBookMarkParamsToJson(
-                  params) //jsonEncode(addBookMarkParamsToJson(params))
+              body: addBookMarkParamsToJson(params) //jsonEncode(addBookMarkParamsToJson(params))
               )
           .timeout(Duration(seconds: timeout));
       if (response.statusCode == 200) {
-        // print(response.body);
         var value = bookmarkModelFromJson(response.body);
-        if (value != null) {
-          return value;
-        } else {
-          throw ServerException();
-        }
-      } else {
+        return value;
+            } else {
         throw ServerException();
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       throw ServerException();
     }
   }
 
   Future<int> deleteBookmark(String url) async {
-    print(url);
+    if (kDebugMode) {
+      print(url);
+    }
     var client = http.Client();
 
     JWT = globalSH.getString(CACHED_JWT_TOKEN)!;
@@ -287,7 +268,7 @@ class MyCoursesRemoteDataFunctions {
         Uri.parse(url),
         headers: {
           'content-type': 'application/json',
-          'Authorization': 'Bearer ' + JWT,
+          'Authorization': 'Bearer $JWT',
         },
       ).timeout(Duration(seconds: timeout));
       if (response.statusCode == 200) {
@@ -296,7 +277,7 @@ class MyCoursesRemoteDataFunctions {
         throw ServerException();
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -314,7 +295,7 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: addCommentParamsToJson(params))
           .timeout(Duration(seconds: timeout));
@@ -324,7 +305,7 @@ class MyCoursesRemoteDataFunctions {
         throw ServerException();
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -335,8 +316,10 @@ class MyCoursesRemoteDataFunctions {
       'userId': params.userId,
       'lectureId': params.lectureId,
     };
-    print(url);
-    print(data);
+    if (kDebugMode) {
+      print(url);
+    }
+
 
     try {
       var client = http.Client();
@@ -344,27 +327,18 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: jsonEncode(data))
           .timeout(Duration(seconds: timeout));
-      // if (kDebugMode) {
-      //   print(response.body);
-      // }
-      if (response.statusCode == 200) {
-        var LatestModels = MyQuizizzModelFromJson(response.body);
-        if (LatestModels != null) {
-          return LatestModels;
-        } else {
-          throw ServerException();
-        }
 
-        // return LatestPModel.fromJson(data);
+      if (response.statusCode == 200) {
+        return MyQuizizzModelFromJson(response.body);
       } else {
         throw ServerException();
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -375,16 +349,13 @@ class MyCoursesRemoteDataFunctions {
       print(SubmitQuizToJson(params.submitQuiz));
     }
 
-    print("dlfjnvdfnvkjdfnkvjndf");
-    print(SubmitQuizToJson(params.submitQuiz));
-
     try {
       var client = http.Client();
       final response = await client
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: SubmitQuizToJson(params.submitQuiz))
           .timeout(Duration(seconds: timeout));
@@ -397,7 +368,7 @@ class MyCoursesRemoteDataFunctions {
         throw ServerException();
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -419,18 +390,14 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: jsonEncode(data))
           .timeout(Duration(seconds: timeout));
       var models = myQuizzInfoModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -444,7 +411,7 @@ class MyCoursesRemoteDataFunctions {
     };
 
     if (kDebugMode) {
-      print(url);
+      debugPrint(url);
       print(data);
     }
 
@@ -454,21 +421,15 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: jsonEncode(data))
           .timeout(Duration(seconds: timeout));
-      print("fdvndfkvnkjdfnvndf");
-
-      print(response.body);
+      
       var models = AssignmentModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -487,21 +448,15 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: postConceptParamsToJson(params))
           .timeout(Duration(seconds: timeout));
-      print("fdvndfkvnkjdfnvndf");
-
-      print(response.body);
+  
       var models = conceptModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -520,21 +475,14 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: topicReplyParamsToJson(params))
           .timeout(Duration(seconds: timeout));
-      print("fdvndfkvnkjdfnvndf");
-
-      print(response.body);
       var models = topicReplyModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -554,20 +502,15 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: courseCaseStudyParamsToJson(params))
           .timeout(Duration(seconds: timeout));
-
-      print(response.body);
+      
       var models = courseCaseStudyModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -585,21 +528,15 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: articleDetailsParamsToJson(params))
           .timeout(Duration(seconds: timeout));
-      print("fdvndfkvnkjdfnvndf");
-
-      print(response.body);
+ 
       var models = articleDetailsModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -617,20 +554,15 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: activityFillingParamsToJson(params))
           .timeout(Duration(seconds: timeout));
-      print(response.body);
 
       var models = activityFillingModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -649,21 +581,16 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: activityMatchParamsToJson(params))
           .timeout(Duration(seconds: timeout));
 
-      // print(response.body);
 
       var models = activityMatchModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -681,20 +608,16 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: activityLogicalParamsToJson(params))
           .timeout(Duration(seconds: timeout));
       print(response.body);
 
       var models = activityLogicalModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -712,7 +635,7 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: activityCaseParamsToJson(params))
           .timeout(Duration(seconds: timeout));
@@ -720,13 +643,9 @@ class MyCoursesRemoteDataFunctions {
       print(response.body);
 
       var models = activityCaseModelFromJson(response.body);
-      if (models != null) {
-        return models;
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      print(e);
+      return models;
+        } catch (e) {
+      debugPrint("$e");
       throw ServerException();
     }
   }
@@ -744,7 +663,7 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: activityQuizzParamsToJson(params.quizzParams))
           .timeout(Duration(seconds: timeout));
@@ -757,7 +676,7 @@ class MyCoursesRemoteDataFunctions {
 
     } catch (e) {
       if (kDebugMode) {
-        print(e);
+        debugPrint("$e");
       }
       throw ServerException();
     }
@@ -775,7 +694,7 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: attendCaseParamsToJson(params))
           .timeout(Duration(seconds: timeout));
@@ -788,7 +707,7 @@ class MyCoursesRemoteDataFunctions {
 
     } catch (e) {
       if (kDebugMode) {
-        print(e);
+        debugPrint("$e");
       }
       throw ServerException();
     }
@@ -807,7 +726,7 @@ class MyCoursesRemoteDataFunctions {
           .post(Uri.parse(url),
               headers: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + JWT,
+                'Authorization': 'Bearer $JWT',
               },
               body: activityDecisionParamsToJson(params))
           .timeout(Duration(seconds: timeout));
@@ -820,7 +739,7 @@ class MyCoursesRemoteDataFunctions {
 
     } catch (e) {
       if (kDebugMode) {
-        print(e);
+        debugPrint("$e");
       }
       throw ServerException();
     }
@@ -835,7 +754,7 @@ class MyCoursesRemoteDataFunctions {
 
 
     Dio dio = Dio();
-    FormData formData;
+
     try {
 
 
@@ -864,13 +783,13 @@ class MyCoursesRemoteDataFunctions {
 
 
 
-      dio.options.headers['Authorization'] ='Bearer ' + JWT;
+      dio.options.headers['Authorization'] ='Bearer $JWT';
       dio.options.headers['Accept'] = 'application/json';
       dio.options.headers['Content-type'] = 'application/json';
 
       var response = await dio.post(url, data: formData,
         onSendProgress: (int sent, int total){
-        counterNotifier.value=(sent / total * 100).toStringAsFixed(0)+"%";
+        counterNotifier.value="${(sent / total * 100).toStringAsFixed(0)}%";
       }
 
       );
@@ -878,14 +797,13 @@ class MyCoursesRemoteDataFunctions {
         print("RESPONSE:$response");
       }
       if (response.statusCode == 200) {
-        print(response.data);
         return 200;
       } else {
-        print(response.statusCode);
+       
         return response.statusCode!;
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       throw ServerException();
     }
 

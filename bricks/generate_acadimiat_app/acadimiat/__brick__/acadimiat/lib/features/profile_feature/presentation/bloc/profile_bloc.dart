@@ -15,9 +15,6 @@ import '../../domain/use_cases/my_plans/post_my_plan_usecase.dart';
 import 'bloc.dart';
 
 
-const String SERVER_FAILURE_MESSAGE = 'Server Failure';
-const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
-
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final ChangePasswordUseCase changePasswordUseCase;
   final GetMyPaymentsUseCase getMyPaymentsUseCase;

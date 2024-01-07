@@ -1,5 +1,4 @@
 import 'package:acadmiat/core/widgets/custom_botton.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_folding_card/flutter_folding_card.dart';
@@ -8,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/functions.dart';
 import '../../../../core/globals.dart';
+import '../../../../core/util/assets_manager.dart';
 import '../../../../core/widgets/app_bar_widget.dart';
 import '../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../core/widgets/empty_state_widget.dart';
@@ -16,11 +16,10 @@ import '../../domain/entities/my_certificates_entity.dart';
 import '../../domain/use_cases/my_certificate_folder/export_certificate_to_pdf_usecase.dart';
 import '../bloc/bloc.dart';
 import 'package:flutter/services.dart';
-import '../bloc/profile_bloc.dart';
-import '../bloc/profile_state.dart';
+
 
 class CertificatesPage extends StatefulWidget {
-  const CertificatesPage({Key? key}) : super(key: key);
+  const CertificatesPage({super.key});
 
   @override
   State<CertificatesPage> createState() => _CertificatesPageState();
@@ -30,7 +29,6 @@ class _CertificatesPageState extends State<CertificatesPage> {
   final itemCount = 3;
   final foldOutList = <bool>[];
   bool firstOne = true;
-  double _progress = 0;
   int selectedItem = 0;
   bool loadingFile = false;
   List<MyCertificatesEntity> myCertificatesListEntity=[];
@@ -56,7 +54,7 @@ class _CertificatesPageState extends State<CertificatesPage> {
           if (state is SuccessGetMyCertificatesEntity) {
             if (firstOne) {
               firstOne = false;
-              for (var item in state.myCertificatesListEntity) {
+              for (var _ in state.myCertificatesListEntity) {
                 foldOutList.add(false);
               }
               if(foldOutList.isNotEmpty) {
@@ -75,7 +73,7 @@ class _CertificatesPageState extends State<CertificatesPage> {
               itemCount: myCertificatesListEntity.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(left: 17, right: 17, top: 13),
+                  padding: const EdgeInsets.only(left: 17, right: 17, top: 13),
                   child: FoldingCard(
                     foldOut: foldOutList[index],
                     curve: foldOutList[index] == true
@@ -100,9 +98,9 @@ class _CertificatesPageState extends State<CertificatesPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SvgPicture.asset(
-                                "assets/svgs/certificate.svg",
+                                ImgAssets.certificate,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 11,
                               ),
                               Column(
@@ -154,7 +152,7 @@ class _CertificatesPageState extends State<CertificatesPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
+                                SizedBox(
                                     width: size.width - 58,
                                     height: 225,
                                     child: CachedNetWorkImage(
@@ -169,7 +167,7 @@ class _CertificatesPageState extends State<CertificatesPage> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(top: 12),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 130,
                                     child: Row(
                                       mainAxisAlignment:
@@ -285,11 +283,11 @@ class _CertificatesPageState extends State<CertificatesPage> {
                                                                         // <a target="_blank" onclick="window._paq.push(['trackEvent', 'Learning Activity', 'User clicks the button “Add to LinkedIn Profile” at the instruction (how to add certificate) page', 'Blend', 'Core']);" href="https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME">Add to LinkedIn Profile</a>
 
                                                                         final Uri
-                                                                        _url =
+                                                                        url =
                                                                         Uri.parse("https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME");
                                                                         if (!await launchUrl(
-                                                                            _url)) {
-                                                                          throw 'Could not launch $_url';
+                                                                            url)) {
+                                                                          throw 'Could not launch $url';
                                                                         }
                                                                       },
                                                                       borderRadius:
@@ -319,10 +317,6 @@ class _CertificatesPageState extends State<CertificatesPage> {
                                             valueListenable: counterNotifier,
                                             builder: (context, value, _) {
 
-
-                                              if(value!=""){
-                                                _progress=double.parse("$value".replaceAll("%",""));
-                                              }
                                                 if (loadingFile && index == selectedItem) {
                                                 return SizedBox(
                                                   width: 30,

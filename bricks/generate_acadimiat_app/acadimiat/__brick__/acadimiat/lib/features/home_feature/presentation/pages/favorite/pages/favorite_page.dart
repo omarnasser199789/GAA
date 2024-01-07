@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../Locale/locale.dart';
 import '../../../../../../core/classes/constants.dart';
 import '../../../../../../core/globals.dart';
+import '../../../../../../core/util/assets_manager.dart';
 import '../../../../../../core/widgets/empty_state_widget.dart';
 import '../../../bloc/home_bloc.dart';
 import '../../../bloc/home_event.dart';
@@ -25,7 +26,6 @@ class FavoritePage extends StatefulWidget {
 class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     var locale = AppLocalizations.of(context)!;
 
     return BlocProvider(
@@ -102,11 +102,12 @@ class _FavoritePageState extends State<FavoritePage> {
                     ],
                   ),
                 ),
-              ):  EmptyStateWidget(svg:"assets/svgs/wishlist.svg",
+              ):  EmptyStateWidget(svg:ImgAssets.wishlist,
                 text1:"المفضلة فارغة!",
                 text3: "تصفح الدورات",
                 onTap: () async {
-                  await goTo(context, (context) => TrainingCoursesPage(latestEntity: [],));
+                  await goTo(context, (context) => TrainingCoursesPage(latestEntity: const [],));
+                  if(!mounted) return;
                   BlocProvider.of<HomeBloc>(context).add(GetAllProductsFromFavLocalDBEvent());
                 },
               ),

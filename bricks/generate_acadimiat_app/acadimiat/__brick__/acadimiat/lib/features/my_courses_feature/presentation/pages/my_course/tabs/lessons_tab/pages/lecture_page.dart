@@ -4,23 +4,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:comment_tree/data/comment.dart';
-import 'package:shimmer/shimmer.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart';
 import 'package:open_filex/open_filex.dart';
-
 import 'package:acadmiat/core/globals.dart';
 import '../../../../../../../../../../../../../injection_container.dart';
 import 'package:acadmiat/Theme/style.dart';
-import 'package:acadmiat/features/my_courses_feature/presentation/widgets/video_widget/vimeo_video.dart';
-import '../../../../../../../../../../../../Locale/locale.dart';
 import '../../../../../../../../core/classes/constants.dart';
 import '../../../../../../../../core/functions.dart';
 import '../../../../../../../../core/widgets/empty_state_widget.dart';
-import '../../../../../../../../core/widgets/error_widget.dart';
 import '../../../../../../../../core/widgets/waiting_widget.dart';
 import '../../../../../../../../exam_folder/exam_result_page.dart';
 import '../../../../../../../../exam_folder/decision_making_page.dart';
@@ -48,8 +42,7 @@ import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import '../widgets_for_lossonsTab_sidebarTab/cover_widget.dart';
 import '../widgets_for_lossonsTab_sidebarTab/loading_lecture_page.dart';
 import '../widgets_for_lossonsTab_sidebarTab/video_widget.dart';
-
-import 'package:acadmiat/features/my_courses_feature/data/models/my_course_model.dart'as CS;
+import 'package:acadmiat/features/my_courses_feature/data/models/my_course_model.dart'as cs;
 
 class LectureParams{
   final int lectureId;
@@ -69,11 +62,9 @@ class LectureParams{
 
 class LecturePage extends StatefulWidget with MyCoursesState {
   const LecturePage(
-      {Key? key,
+      {super.key,
       required this.lectureParams,
-
-      })
-      : super(key: key);
+      });
 
   final LectureParams lectureParams;
 
@@ -100,7 +91,7 @@ class LecturePageState extends State<LecturePage> {
           url: '', currentTime: null, questions: [], bookmarks: []),
       discussion: Discussion(discussionId: -1, lectureId: -1, timeline: null),
       unitId: -1,
-      contents: []);
+      contents: const []);
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   int selectedItem = 0;
@@ -116,7 +107,6 @@ class LecturePageState extends State<LecturePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    var locale = AppLocalizations.of(context)!;
 
     if (isLight()) {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
@@ -388,15 +378,11 @@ class LecturePageState extends State<LecturePage> {
                                               left: 5, right: 5, top: 10),
                                           child: GestureDetector(
                                             onTap: () async {
-                                              final result = await showModalBottomSheet(
+                                              await showModalBottomSheet(
                                                   context: context,
                                                   backgroundColor: Colors.transparent,
                                                   isScrollControlled: true,
                                                   builder: (context) {
-                                                    //
-                                                    // print("vdkfnvjkfnjkvndfjknvjkdf");
-                                                    // print("<div style='background-color:blue !important; color:red !important'>${myLectureEntity.contents[index].body}</div >");
-                                                    // print("dfnjkvnfjkdnvjknfdjkvnjkdfnv");
                                                     return Padding(
                                                       padding: const EdgeInsets.only(top:87),
                                                       child: Material(
@@ -459,12 +445,6 @@ class LecturePageState extends State<LecturePage> {
 
                                                                                   return null;
                                                                                 },
-
-
-                                                                                webView: true,
-
-
-
                                                                               ),
                                                                             ),
 
@@ -482,35 +462,24 @@ class LecturePageState extends State<LecturePage> {
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .cardColor,
-                                                  borderRadius:
-                                                  BorderRadius.circular(5),
-                                                  border: Border.all(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      width: 1)),
+                                                  color: Theme.of(context).cardColor,
+                                                  borderRadius: BorderRadius.circular(5),
+                                                  border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                               child: Padding(
                                                 padding: defaultPadding,
                                                 child: Row(
-                                                  //
                                                   children: [
                                                     getIcon(
                                                         fileName:"txt"),
                                                     const SizedBox(
                                                       width: 8,
                                                     ),
-                                                    Container(
-                                                      // color: Colors.red,
+                                                    SizedBox(
                                                       width: size.width - 120,
                                                       child: Text(
                                                         parseHtmlString(myLectureEntity.contents[index].body),maxLines: 1,
-
                                                         style:
-                                                        blackBoldTextStyle(
-                                                            context:
-                                                            context,
-                                                            fontSize: 11),
+                                                        blackBoldTextStyle(context: context, fontSize: 11),
                                                       ),
                                                     ),
 
@@ -532,12 +501,12 @@ class LecturePageState extends State<LecturePage> {
                                               goTo(context, (context) => CaseStudyPage(
                                                 fromLectureContents: true,
                                                 caseStudy:
-                                                CS.CaseStudy(
+                                                cs.CaseStudy(
                                                     casestudyId:myLectureEntity.contents[index].activity.decision!.id,
                                                     open:true,
                                                     header:parseHtmlString(myLectureEntity.contents[index].activity.decision!.body),
                                                     body:"BODY",
-                                                    solution:CS.Solution(solutionId: -1, answers: []),
+                                                    solution:cs.Solution(solutionId: -1, answers: []),
                                                     attendanceTable:null
                                                 ),
                                                 attendanceTable: myLectureEntity.contents[index].activity.decision!.attendanceTable,
@@ -573,17 +542,13 @@ class LecturePageState extends State<LecturePage> {
                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
-                                                        Container(
-                                                          // color: Colors.red,
+                                                        SizedBox(
                                                           width: size.width - 150,
                                                           child: Text(
                                                             myLectureEntity.contents[index].activity.title.toString(),
                                                             maxLines: 1,
                                                             style:
-                                                            blackBoldTextStyle(
-                                                                context:
-                                                                context,
-                                                                fontSize: 11),
+                                                            blackBoldTextStyle(context: context, fontSize: 11),
                                                           ),
                                                         ),
                                                         Padding(
@@ -606,24 +571,6 @@ class LecturePageState extends State<LecturePage> {
                                               left: 5, right: 5, top: 10),
                                           child: GestureDetector(
                                             onTap: () async {
-                                              // goTo(context, (context) =>
-                                              //     TestPages(myQuizizzEntity:
-                                              //     MyQuizizzEntity(id: -1,
-                                              //         materialId: null,
-                                              //         courseId: -1, name: '',
-                                              //         beforeStart: false,
-                                              //         optional: false,
-                                              //         timeLimit: 0,
-                                              //         shuffle: false,
-                                              //         repetition: 0,
-                                              //         myAttempts: 0,
-                                              //         ifPassed: 0,
-                                              //         ifFailed: 0,
-                                              //         minScore: 0,
-                                              //         attendance: null,
-                                              //         questions: myLectureEntity.contents[index].activity.quizz!.questions
-                                              //     ))
-                                              // );
                                               goTo(context, (context) =>DecisionMakingPage(nestedContent:myLectureEntity.contents[index]));
                                             },
                                             child: Container(
@@ -655,11 +602,9 @@ class LecturePageState extends State<LecturePage> {
                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
-                                                        Container(
-                                                          // color: Colors.red,
+                                                        SizedBox(
                                                           width: size.width - 150,
                                                           child: Text(
-                                                            //parseHtmlString(widget.nestedContent.activity.caseStudy.caseHeader)
                                                             parseHtmlString(myLectureEntity.contents[index].activity.caseStudy.caseHeader),
                                                             maxLines: 1,
                                                             style:
@@ -669,12 +614,6 @@ class LecturePageState extends State<LecturePage> {
                                                                 fontSize: 11),
                                                           ),
                                                         ),
-                                                        // Padding(
-                                                        //   padding: const EdgeInsets.only(top:5),
-                                                        //   child: Text(
-                                                        //     "${myLectureEntity.contents[index].activity.quizz!.questions.length} سؤال",
-                                                        //     style: blackBoldTextStyle(fontSize: 11, context: context,color: iconsColor),),
-                                                        // ),
                                                       ],
                                                     ),
                                                   ],
@@ -717,7 +656,6 @@ class LecturePageState extends State<LecturePage> {
                                                         questions: myLectureEntity.contents[index].activity.quizz!.questions
                                                     ))
                                                 );
-                                                // goTo(context, (context) =>FillSpaceInner(nestedContent:myLectureEntity.contents[index]));
                                               },
                                               child: Container(
                                                 decoration: BoxDecoration(
@@ -748,17 +686,13 @@ class LecturePageState extends State<LecturePage> {
                                                         mainAxisAlignment: MainAxisAlignment.start,
                                                         crossAxisAlignment: CrossAxisAlignment.start,
                                                         children: [
-                                                          Container(
-                                                            // color: Colors.red,
+                                                          SizedBox(
                                                             width: size.width - 150,
                                                             child: Text(
                                                               myLectureEntity.contents[index].activity.title.toString(),
                                                               maxLines: 1,
                                                               style:
-                                                              blackBoldTextStyle(
-                                                                  context:
-                                                                  context,
-                                                                  fontSize: 11),
+                                                              blackBoldTextStyle(context: context, fontSize: 11),
                                                             ),
                                                           ),
                                                           Padding(
@@ -785,7 +719,6 @@ class LecturePageState extends State<LecturePage> {
                                                 goTo(context, (context) =>
                                                     ExamResultPage(nestedContent: myLectureEntity.contents[index],)
                                                 );
-                                                // goTo(context, (context) =>FillSpaceInner(nestedContent:myLectureEntity.contents[index]));
                                               },
                                               child: Container(
                                                 decoration: BoxDecoration(
@@ -794,21 +727,13 @@ class LecturePageState extends State<LecturePage> {
                                                     borderRadius:
                                                     BorderRadius.circular(5),
                                                     border: Border.all(
-                                                        color: Theme.of(context)
-                                                            .cardColor,
+                                                        color: Theme.of(context).cardColor,
                                                         width: 1)),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      bottom: 13,
-                                                      top: 13,
-                                                      left: 17,
-                                                      right: 17),
+                                                  padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                   child: Row(
-                                                    //
                                                     children: [
                                                       getIcon( fileName: "q&A",),
-
-
                                                       const SizedBox(
                                                         width: 8,
                                                       ),
@@ -816,17 +741,13 @@ class LecturePageState extends State<LecturePage> {
                                                         mainAxisAlignment: MainAxisAlignment.start,
                                                         crossAxisAlignment: CrossAxisAlignment.start,
                                                         children: [
-                                                          Container(
-                                                            // color: Colors.red,
+                                                          SizedBox(
                                                             width: size.width - 150,
                                                             child: Text(
                                                               myLectureEntity.contents[index].activity.title.toString(),
                                                               maxLines: 1,
                                                               style:
-                                                              blackBoldTextStyle(
-                                                                  context:
-                                                                  context,
-                                                                  fontSize: 11),
+                                                              blackBoldTextStyle(context: context, fontSize: 11),
                                                             ),
                                                           ),
                                                           Padding(
@@ -885,8 +806,7 @@ class LecturePageState extends State<LecturePage> {
                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
-                                                        Container(
-                                                          // color: Colors.red,
+                                                        SizedBox(
                                                           width: size.width - 150,
                                                           child: Text(
                                                             myLectureEntity.contents[index].activity.title.toString(),
@@ -949,8 +869,7 @@ class LecturePageState extends State<LecturePage> {
                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
-                                                        Container(
-                                                          // color: Colors.red,
+                                                        SizedBox(
                                                           width: size.width - 150,
                                                           child: Text(
                                                             myLectureEntity.contents[index].activity.title.toString(),
@@ -1013,8 +932,7 @@ class LecturePageState extends State<LecturePage> {
                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
-                                                        Container(
-                                                          // color: Colors.red,
+                                                        SizedBox(
                                                           width: size.width - 150,
                                                           child: Text(
                                                             myLectureEntity.contents[index].activity.title.toString(),
@@ -1046,53 +964,32 @@ class LecturePageState extends State<LecturePage> {
                                               left: 5, right: 5, top: 10),
                                           child: GestureDetector(
                                             onTap: () async {
-                                              print(parseHtmlString(myLectureEntity.contents[index].body));
-
-                                              // if(await canLaunch(
-                                              //     parseHtmlString(myLectureEntity.contents[index].body)
-                                              // )){
-                                              //   await launch(
-                                              //
-                                              //       parseHtmlString(myLectureEntity.contents[index].body)
-                                              //   );
-                                              // }else {
-                                              //   throw 'Could not launch ${parseHtmlString(myLectureEntity.contents[index].body)}';
-                                              // }
-
+                                              if (kDebugMode) {
+                                                print(parseHtmlString(myLectureEntity.contents[index].body));
+                                              }
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .cardColor,
+                                                  color: Theme.of(context).cardColor,
                                                   borderRadius:
                                                   BorderRadius.circular(5),
-                                                  border: Border.all(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      width: 1)),
+                                                  border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                               child: Padding(
                                                 padding: defaultPadding,
                                                 child: Row(
-                                                  //
                                                   children: [
                                                     getLinkIcon(
                                                         fileName:parseHtmlString(myLectureEntity.contents[index].body)),
-
-
                                                     const SizedBox(
                                                       width: 8,
                                                     ),
-                                                    Container(
-                                                      // color: Colors.red,
+                                                    SizedBox(
                                                       width: size.width - 120,
                                                       child: Text(
                                                         parseHtmlString(myLectureEntity.contents[index].body),
                                                         maxLines: 1,
                                                         style:
-                                                        blackBoldTextStyle(
-                                                            context:
-                                                            context,
-                                                            fontSize: 11),
+                                                        blackBoldTextStyle(context: context, fontSize: 11),
                                                       ),
                                                     ),
                                                   ],
@@ -1108,55 +1005,33 @@ class LecturePageState extends State<LecturePage> {
                                               left: 5, right: 5, top: 10),
                                           child: GestureDetector(
                                             onTap: () async {
-
-
-                                              if(await canLaunch(
-                                                // "https://us05web.zoom.us/j/87268325321?pwd=dTBoTXZlUUUyUEl5MTQyQ1pyaEs0QT09"
-                                                  myLectureEntity.contents[index].meetingLink
-                                              )){
-                                                await launch(
-                                                  // "https://us05web.zoom.us/j/87268325321?pwd=dTBoTXZlUUUyUEl5MTQyQ1pyaEs0QT09"
-                                                    myLectureEntity.contents[index].meetingLink
-                                                );
-                                              }else {
-                                                throw 'Could not launch ${myLectureEntity.contents[index].meetingLink}';
+                                              Uri url =  Uri.parse(myLectureEntity.contents[index].meetingLink);
+                                              if (await canLaunchUrl(url)) {
+                                                await launchUrl(url);
+                                              } else {
+                                                throw 'Could not launch $url';
                                               }
-
-
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .cardColor,
-                                                  borderRadius:
-                                                  BorderRadius.circular(5),
-                                                  border: Border.all(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      width: 1)),
+                                                  color: Theme.of(context).cardColor,
+                                                  borderRadius: BorderRadius.circular(5),
+                                                  border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                               child: Padding(
                                                 padding: defaultPadding,
                                                 child: Row(
-                                                  //
                                                   children: [
                                                     getIcon(
                                                         fileName:"live-line"),
-
-
                                                     const SizedBox(
                                                       width: 8,
                                                     ),
-                                                    Container(
-                                                      // color: Colors.red,
+                                                    SizedBox(
                                                       width: size.width - 120,
                                                       child: Text(
                                                         parseHtmlString(myLectureEntity.contents[index].body),
                                                         maxLines: 1,
-                                                        style:
-                                                        blackBoldTextStyle(
-                                                            context:
-                                                            context,
-                                                            fontSize: 11),
+                                                        style: blackBoldTextStyle(context: context, fontSize: 11),
                                                       ),
                                                     ),
                                                   ],
@@ -1168,9 +1043,7 @@ class LecturePageState extends State<LecturePage> {
                                       }
 
                                       if (myLectureEntity.contents[index].type != 1) {
-                                        return Text(myLectureEntity
-                                            .contents[index].type
-                                            .toString());
+                                        return Text(myLectureEntity.contents[index].type.toString());
                                       }
                                       return Container();
                                     }),
@@ -1204,7 +1077,9 @@ class LecturePageState extends State<LecturePage> {
 
   Future<void> openOrDownloadFile(FilesEntity filesEntity, BuildContext context) async {
     ///If the file has already been set in Locale DB, the filesEntity.items list will not be empty.
-    print("If the file has already been set in Locale DB, the filesEntity.items list will not be empty? ${filesEntity.items.isEmpty}");
+    if (kDebugMode) {
+      print("If the file has already been set in Locale DB, the filesEntity.items list will not be empty? ${filesEntity.items.isEmpty}");
+    }
     if (filesEntity.items.isNotEmpty){
       ///Open file
       if (kDebugMode) {
@@ -1240,6 +1115,7 @@ class LecturePageState extends State<LecturePage> {
           print("file (NOT) exists");
         }
         deleteFromDB();
+        if(!mounted) return;
         downloadAndOpenFile(filesEntity, context);
       }
     }
@@ -1294,6 +1170,7 @@ class LecturePageState extends State<LecturePage> {
           print("the file path is now stored in the database by URL");
         }
 
+        if(!mounted) return;
         BlocProvider.of<MyCoursesBloc>(context).add(AddFileEvent(
             params: AddFileParams(name: fileName, path: file.path, url: url)));
 

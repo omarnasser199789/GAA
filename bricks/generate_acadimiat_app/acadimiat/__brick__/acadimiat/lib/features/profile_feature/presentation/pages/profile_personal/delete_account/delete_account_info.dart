@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../../Theme/style.dart';
 
-class Info extends StatelessWidget {
-  const Info({super.key,required this.svg, required this.text});
+class DeleteAccountInfo extends StatelessWidget {
+  const DeleteAccountInfo({super.key,required this.svg, required this.text});
 
   final String svg;
   final String text;

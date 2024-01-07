@@ -1,10 +1,8 @@
 import '../../../../../core/widgets/app_bar_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../../../Locale/language_cubit.dart';
 import '../../../../../../../../Locale/locale.dart';
 import '../../../../../../../../core/globals.dart';
-import 'dart:ui';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../Theme/style.dart';
 
@@ -18,7 +16,7 @@ class SelectLanguagePage extends StatefulWidget {
 class SelectLanguagePageState extends State<SelectLanguagePage> {
   FocusNode focusNode = FocusNode();
   late LanguageCubit _languageCubit;
-  var val ;
+  int? val ;
   bool theFirst = true;
 
   @override

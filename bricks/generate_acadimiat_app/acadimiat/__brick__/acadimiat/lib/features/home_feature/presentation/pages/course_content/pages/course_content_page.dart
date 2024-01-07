@@ -349,7 +349,7 @@ class _CourseContentPageState extends State<CourseContentPage> {
                         ),
                       ),
                       if(state.cardByIdEntity.appleId!="")
-                        Trail(orientation: orientation, newPrice: state.cardByIdEntity.currentPrice, price: state.cardByIdEntity.mainPrice,loading:loading,
+                        Trail(newPrice: state.cardByIdEntity.currentPrice, price: state.cardByIdEntity.mainPrice,loading:loading,
                           onTap: () async {
                             setState(() {
                             loading=true;
@@ -361,6 +361,7 @@ class _CourseContentPageState extends State<CourseContentPage> {
                             // if (allPurchasedProductIdentifiers.contains(state.cardByIdEntity.appleId))
                             if (!coursePurchaseOrNot(state.cardByIdEntity.id))
                             {
+                              if(!mounted) return;
                               goTo(context, (context) => CoursePage(
                                     userId: userId(),
                                     courseId:state.cardByIdEntity.id,
@@ -369,8 +370,9 @@ class _CourseContentPageState extends State<CourseContentPage> {
                               );
                             }else{
                               try{
-                                var pur = await Purchases.purchaseProduct(state.cardByIdEntity.appleId);
+                                await Purchases.purchaseProduct(state.cardByIdEntity.appleId);
                                 String appUserId = await Purchases.appUserID;
+                                if(!mounted) return;
                                 BlocProvider.of<HomeBloc>(context).add(CheckPurchaseEvent(params:
                                 CheckPurchaseModel(subscriberId: appUserId, productId: state.cardByIdEntity.appleId, userId: "${userId()}")));
                               }catch(e){

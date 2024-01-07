@@ -1,5 +1,4 @@
 import 'package:acadmiat/Theme/style.dart';
-import 'package:acadmiat/features/profile_feature/presentation/pages/profile_personly_folder/edit_personal_info_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../Locale/locale.dart';
@@ -8,15 +7,16 @@ import '../../../../../core/widgets/app_bar_widget.dart';
 import '../../../domain/entities/user_info_entity.dart';
 import 'creare_new_password_page.dart';
 import 'delete_account/delete_account_page.dart';
+import 'edit_personal_info_page.dart';
 
-class ProfilePersonlyPage extends StatefulWidget {
-  const ProfilePersonlyPage({super.key,required this.userInfoEntity});
+class ProfilePersonalPage extends StatefulWidget {
+  const ProfilePersonalPage({super.key,required this.userInfoEntity});
   final UserInfoEntity userInfoEntity;
   @override
-  State<ProfilePersonlyPage> createState() => _ProfilePersonlyPageState();
+  State<ProfilePersonalPage> createState() => _ProfilePersonalPageState();
 }
 
-class _ProfilePersonlyPageState extends State<ProfilePersonlyPage> {
+class _ProfilePersonalPageState extends State<ProfilePersonalPage> {
   @override
   Widget build(BuildContext context) {
     var locale = AppLocalizations.of(context)!;
@@ -59,13 +59,10 @@ class _ProfilePersonlyPageState extends State<ProfilePersonlyPage> {
 
                           GestureDetector(
                               onTap: ()async{
-                             var v= await   goTo(context,(context)=>  EditPersonalInfoPage(userInfoEntity:widget.userInfoEntity));
-                             setState(() {
-
-                             });
-                              },
+                                await   goTo(context,(context)=>  EditPersonalInfoPage(userInfoEntity:widget.userInfoEntity));
+                                setState(() {});
+                                },
                               child: Text("تعديل ",style: blackBoldTextStyle(fontSize: 12, context: context,color: Theme.of(context).primaryColor),)),
-
                         ],
                       ),
 
@@ -107,7 +104,7 @@ class _ProfilePersonlyPageState extends State<ProfilePersonlyPage> {
                                 "assets/svgs/lock.svg",
                                 color: iconsColor,
                               ),
-                              SizedBox(width: 7,),
+                              const SizedBox(width: 7,),
                               Text("تغيير كلمة المرور",style: blackBoldTextStyle(fontSize: 13, context: context),),
                             ],
                           ),

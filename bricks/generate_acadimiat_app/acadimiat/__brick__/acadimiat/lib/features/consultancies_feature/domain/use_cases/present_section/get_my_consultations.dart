@@ -2,7 +2,6 @@ import 'package:acadmiat/features/consultancies_feature/domain/entities/my_consu
 import 'package:dartz/dartz.dart';
 import '../../../../../../../core/error/failures.dart';
 import '../../../../../../../core/usecases/usecase.dart';
-import '../../entities/consultancies_entity.dart';
 import '../../repositories/currencies_repository.dart';
 
 class GetMyConsultanciesUseCase implements UseCase<List<MyConsultanciesEntity>, int> {
