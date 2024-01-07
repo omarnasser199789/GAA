@@ -1,5 +1,4 @@
 import 'package:acadmiat/core/widgets/custom_botton.dart';
-import 'package:acadmiat/exam_folder/exam_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../Theme/style.dart';
@@ -8,14 +7,12 @@ import '../../core/globals.dart';
 import '../../core/widgets/app_bar_widget.dart';
 import '../../core/widgets/right_answer.dart';
 import '../../features/my_courses_feature/data/models/my_lecture_model.dart';
-import '../../features/my_courses_feature/domain/entities/activity_match_entity.dart';
 import '../../features/my_courses_feature/domain/use_cases/activity_match_usecase.dart';
 import '../../features/my_courses_feature/presentation/bloc/my_courses_bloc.dart';
 import '../../features/my_courses_feature/presentation/bloc/my_courses_event.dart';
 import '../../features/my_courses_feature/presentation/bloc/my_courses_state.dart';
 import '../../features/profile_feature/presentation/bloc/bloc.dart';
 import '../../injection_container.dart';
-import '../drag_and_drop_page.dart';
 
 class MatchBetweenInnerTest extends StatefulWidget {
   const MatchBetweenInnerTest({Key? key, required this.nestedContent})
@@ -45,10 +42,7 @@ class RelationClass {
 class _MatchBetweenInnerTestState extends State<MatchBetweenInnerTest> {
   List<RelationClass> sentences = [];
   List<RelationClass> relations = [];
-  // List<Pair> pairs=[];
-
   bool firstOne = true;
-
   List<Matched> matched = [];
 
   @override
@@ -78,17 +72,12 @@ class _MatchBetweenInnerTestState extends State<MatchBetweenInnerTest> {
                           height: 32,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            // color: Colors.red,
                             borderRadius: BorderRadius.circular(9000),
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 1,
-                            ),
+                            border: Border.all(color: Colors.grey, width: 1,),
                           ),
                           child: Text(
                             arabicAlphabet(i),
-                            style: blackBoldTextStyle(
-                                context: context, fontSize: 15),
+                            style: blackBoldTextStyle(context: context, fontSize: 15),
                           ),
                         ))),
                 child: Container(
@@ -110,8 +99,6 @@ class _MatchBetweenInnerTestState extends State<MatchBetweenInnerTest> {
                 )),
             text: Padding(
               padding: const EdgeInsets.only(top: 10),
-              // child: OptionsWidget(
-              //   title: 'أ', body: parseHtmlString(item.sentence),),
               child: Row(
                 children: [
                   const SizedBox(
@@ -120,10 +107,8 @@ class _MatchBetweenInnerTestState extends State<MatchBetweenInnerTest> {
                   Container(
                       width: size.width - 100,
                       child: Text(
-                        parseHtmlString(widget.nestedContent.activity.matching!
-                            .sentences[i].sentence),
-                        style: blackBoldTextStyle(
-                            context: context, fontSize: 13, height: lineSpace),
+                        parseHtmlString(widget.nestedContent.activity.matching!.sentences[i].sentence),
+                        style: blackBoldTextStyle(context: context, fontSize: 13, height: lineSpace),
                       )),
                 ],
               ),
@@ -372,12 +357,6 @@ class _MatchBetweenInnerTestState extends State<MatchBetweenInnerTest> {
               ),
             );
           }
-
-          
-          
-          
-          
-          
           
           ///User not answer yet.
           return Scaffold(
@@ -480,11 +459,6 @@ class _MatchBetweenInnerTestState extends State<MatchBetweenInnerTest> {
                                                   }
                                                 }
 
-                                                // for(var item in matched){
-                                                //   if(item.selectedId==88){
-                                                //
-                                                //   }
-                                                // }
 
                                                 for (var item in relations) {
                                                   if (item.pairId ==

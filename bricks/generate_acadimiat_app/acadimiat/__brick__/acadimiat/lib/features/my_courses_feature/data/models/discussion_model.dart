@@ -86,7 +86,6 @@ class Timeline {
     "username": username == null ? "" : username,
     "useravatar": useravatar == null ? "" : useravatar,
     "message": message == null ? "" : message,
-    // "addedAt": addedAt == null ? null : DateTime.parse(json["addedAt"]),
     "isReply": isReply,
     "orginialId": orginialId == null ? -1 : orginialId,
     "original": original == null ? null : original!.toJson(),

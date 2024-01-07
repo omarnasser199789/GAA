@@ -1,3 +1,4 @@
+import 'package:acadmiat/exam_folder/widgets/box_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../Theme/style.dart';
@@ -20,8 +21,7 @@ class _ExamResultPageState extends State<ExamResultPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     Jiffy.locale("ar");
-    String date = Jiffy( widget.nestedContent.activity.quizz!.attendanceTable[0].attendedAt)
-        .yMMMMd;
+    String date = Jiffy( widget.nestedContent.activity.quizz!.attendanceTable[0].attendedAt).yMMMMd;
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: appBarWidget(widget.nestedContent.activity.quizz!.name, context,
@@ -48,7 +48,6 @@ class _ExamResultPageState extends State<ExamResultPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 19, right: 19, top: 20),
                   child: Container(
-                    // height: 343,
                     decoration: BoxDecoration(
                         color: Theme.of(context).cardColor,
                         borderRadius: BorderRadius.circular(12)),
@@ -62,8 +61,7 @@ class _ExamResultPageState extends State<ExamResultPage> {
                             children: [
                               Text(
                                 "الوقت المسموح لتقديم الاختبار",
-                                style: blackBoldTextStyle(
-                                    context: context, fontSize: 13),
+                                style: blackBoldTextStyle(context: context, fontSize: 13),
                               ),
                             ],
                           ),
@@ -127,7 +125,6 @@ class _ExamResultPageState extends State<ExamResultPage> {
                             padding: const EdgeInsets.only(top: 19),
                             child: SizedBox(
                               height: 85 * 1 / 1,
-                              // color: Colors.green,
                               child: SizedBox(
                                 height: 85,
                                 child: Column(
@@ -148,11 +145,8 @@ class _ExamResultPageState extends State<ExamResultPage> {
                                               Padding(
                                                 padding: const EdgeInsets.only(
                                                     top: 10),
-                                                child: Text(
-                                                  "المحاولة ${1}",
-                                                  style: blackBoldTextStyle(
-                                                      fontSize: 13,
-                                                      context: context),
+                                                child: Text("المحاولة ${1}",
+                                                  style: blackBoldTextStyle(fontSize: 13, context: context),
                                                 ),
                                               ),
                                               Padding(
@@ -163,25 +157,16 @@ class _ExamResultPageState extends State<ExamResultPage> {
                                                     10),
                                                 child: Text(
                                                   date,
-                                                  style: blackBoldTextStyle(
-                                                      fontSize:
-                                                      11,
-                                                      context:
-                                                      context),
+                                                  style: blackBoldTextStyle(fontSize: 11, context: context),
                                                 ),
                                               ),
                                               (widget.nestedContent.activity.quizz!.attendanceTable[0].didPass)
                                                   ? Row(
                                                 children: [
-                                                  SvgPicture
-                                                      .asset(
-                                                    "assets/svgs/Icon feather-check-circle.svg",
+                                                  SvgPicture.asset("assets/svgs/Icon feather-check-circle.svg",
                                                     color: percentIndicatorColor,
                                                   ),
-                                                  SizedBox(
-                                                    width:
-                                                    7,
-                                                  ),
+                                                  SizedBox(width: 7),
                                                   Text(
                                                     "لقد اجتزت الاختبار",
                                                     style:
@@ -211,13 +196,10 @@ class _ExamResultPageState extends State<ExamResultPage> {
                                           ),
                                           Container(
                                             decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                    .scaffoldBackgroundColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(5)),
+                                                color: Theme.of(context).scaffoldBackgroundColor,
+                                                borderRadius: BorderRadius.circular(5)),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Row(
                                                 children: [
                                                   SvgPicture.asset(
@@ -229,31 +211,14 @@ class _ExamResultPageState extends State<ExamResultPage> {
                                                   Column(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                       Text(
-
-                                                        widget
-                                                            .nestedContent
-                                                            .activity
-                                                            .quizz!
-                                                            .attendanceTable[0]
-                                                            .totalDegree.toInt().toString(),
-                                                        style:
-                                                            blackBoldTextStyle(
-                                                                fontSize: 15,
-                                                                context:
-                                                                    context),
+                                                        widget.nestedContent.activity.quizz!.attendanceTable[0].totalDegree.toInt().toString(),
+                                                        style: blackBoldTextStyle(fontSize: 15, context: context),
                                                       ),
-                                                      Text(
-                                                        "الدرجة المستحقة",
-                                                        style:
-                                                            blackBoldTextStyle(
-                                                                fontSize: 9,
-                                                                context:
-                                                                    context),
+                                                      Text("الدرجة المستحقة",
+                                                        style: blackBoldTextStyle(fontSize: 9, context: context),
                                                       ),
                                                     ],
                                                   )
@@ -264,20 +229,6 @@ class _ExamResultPageState extends State<ExamResultPage> {
                                         ],
                                       ),
                                     ),
-                                    // if (index !=
-                                    //     myQuizzInfoEntity
-                                    //         .myAttempts
-                                    //         .length -
-                                    //         1)
-                                    //   Container(
-                                    //     height: 0.5,
-                                    //     color: Theme.of(
-                                    //         context)
-                                    //         .canvasColor
-                                    //         .withOpacity(0.5),
-                                    //     width:
-                                    //     double.infinity,
-                                    //   )
                                   ],
                                 ),
                               ),
@@ -286,9 +237,7 @@ class _ExamResultPageState extends State<ExamResultPage> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 80,
-                ),
+                SizedBox(height: 80),
               ],
             ),
           ),

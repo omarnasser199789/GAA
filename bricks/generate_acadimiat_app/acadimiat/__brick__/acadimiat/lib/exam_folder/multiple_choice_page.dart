@@ -1,13 +1,10 @@
 import 'package:acadmiat/exam_folder/widgets/question_number.dart';
-
 import '../Theme/style.dart';
 import 'package:acadmiat/exam_folder/exam_page.dart';
 import 'package:flutter/material.dart';
 import '../core/classes/question.dart';
 import '../core/functions.dart';
 import '../core/globals.dart';
-
-import 'package:flutter/foundation.dart';
 import '../features/my_courses_feature/domain/use_cases/submit_quiz_usecase.dart';
 
 class MultipleChoicePage extends StatefulWidget {
@@ -45,9 +42,7 @@ class _MultipleChoicePageState extends State<MultipleChoicePage> {
             width: size.width - 76,
             child: Text(
               parseHtmlString(widget.question.question),
-
-              style:
-              blackBoldTextStyle(context: context, fontSize: 14),
+              style: blackBoldTextStyle(context: context, fontSize: 14),
             )),
       ],
     ),);
@@ -56,7 +51,6 @@ class _MultipleChoicePageState extends State<MultipleChoicePage> {
       child: Row(
         children: [
           SizedBox(
-            // width: size.width * 0.79,
               child: Text(
                 "يمكن اختيار اكثر من خيار",
                 style: blackRegularTextStyle(
@@ -146,7 +140,6 @@ class _MultipleChoicePageState extends State<MultipleChoicePage> {
                             }
                           }
 
-
                           attendanceTable.add(AttendanceTable(
                               questionId: widget.question.id,
                               givenAnswers: givenAnswers,
@@ -181,13 +174,9 @@ class _MultipleChoicePageState extends State<MultipleChoicePage> {
       padding: const EdgeInsets.only(top: 30),
       child: Container(
         height: size.height * 0.75,
-
         child: Padding(
           padding: const EdgeInsets.only(left: 17, right: 17),
-          child: Column(
-            children: answerList,
-
-          ),
+          child: Column(children: answerList),
         ),
       ),
     );

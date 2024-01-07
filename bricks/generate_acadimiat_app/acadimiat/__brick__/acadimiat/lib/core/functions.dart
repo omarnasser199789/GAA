@@ -175,14 +175,11 @@ bool isShowCase(){
 
 
 int convertDateTimeToSecond( DateTime dateTime){
-
   return Duration(
       hours: dateTime.hour,
       minutes: dateTime.minute,
       seconds: dateTime.second
   ).inSeconds;
-
-  return 0;
 }
 
 int isFavOrNot(int id){

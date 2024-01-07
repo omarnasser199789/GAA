@@ -125,20 +125,12 @@ class _BlanksPageState extends State<BlanksPage> {
             child: Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               direction: Axis.horizontal,
-              children: wordsList
-                  .map((e) => Padding(
-                        padding: const EdgeInsets.all(4),
-                        child: Draggable(
-                          data: e.id,
-                          feedback: Material(
-                              color: Theme.of(context)
-                                  .scaffoldBackgroundColor
-                                  .withOpacity(0.1),
-                              child: e.widget),
-                          child: e.widget,
-                        ),
-                      ))
-                  .toList(),
+              children: wordsList.map((e) => Padding(
+                padding: const EdgeInsets.all(4),
+                child: Draggable(
+                  data: e.id,
+                  feedback: Material(color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1), child: e.widget),
+                  child: e.widget),)).toList(),
             ),
           ),
 
@@ -244,12 +236,6 @@ class _BlanksPageState extends State<BlanksPage> {
                                 givenAnswers: [],
                                 givenWords: givenWords,
                                 pairs: []));
-
-                            // print("fvbjhdfnkvjndfkvsdbk");
-                            // print(id);
-                            // print("QuestionId:${widget.question.id}");
-                            // print(attendanceTable.length);
-
                             setState(() {}); //
                           })
                       : i.widget,

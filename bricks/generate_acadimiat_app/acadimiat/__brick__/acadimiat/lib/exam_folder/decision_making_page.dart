@@ -102,7 +102,6 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
             ),
             child: GestureDetector(
               onTap: () {
-                // addToAttendanceTableList(item);
                 setState(() {
                   val = item.id;
                 });
@@ -117,7 +116,6 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
                         unselectedWidgetColor: iconsColor,
                       ),
                       child: Radio(
-
                         value: item.id,
                         groupValue: val,
                         onChanged: (value) {
@@ -125,9 +123,7 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
                             val = value;
                           });
                         },
-                        activeColor: Theme
-                            .of(context)
-                            .primaryColor,
+                        activeColor: Theme.of(context).primaryColor,
                       ),
                     ),
 
@@ -158,7 +154,6 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 12,right: 12,top: 18),
                 child: Row(
-
                   children: [
                     Container(
                       width: 32,
@@ -167,7 +162,6 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Theme.of(context).canvasColor,
-
                       ),
                       //
                       child: SvgPicture.asset(
@@ -284,9 +278,7 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
           if(widget.nestedContent.activity.caseStudy.attendanceTable[0].correctAnswerId==item.id){
             answer.add(
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 10
-                ),
+                padding: const EdgeInsets.only(top: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -304,15 +296,13 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
                               width: size.width-80,
                               // color: Colors.red,
                               child: Text(parseHtmlString(item.answer),
-                                style: blackBoldTextStyle(
-                                    context: context, fontSize: 13,color: percentIndicatorColor,height: lineSpace),),
+                                style: blackBoldTextStyle(context: context, fontSize: 13,color: percentIndicatorColor,height: lineSpace),),
                             ),
                           )
                         ],
                       ),
                     ),
                     const RightAnswer()
-
                   ],
                 ),
               ),
@@ -408,13 +398,11 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
         builder: (context, state) {
           print(state);
           if(state is SuccessActivityCaseState){
-
             if(firstOne) {
               firstOne=false;
               showMessage(message: "تم ارسال الحل",
                   context: context,
                   bgColor: percentIndicatorColor);
-
 
               widget.nestedContent.activity.caseStudy.attendanceTable=[
                 AttendanceTable2(id: state.activityCaseEntity.id,
@@ -433,10 +421,7 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
 
 
               Future.delayed(Duration(milliseconds: 1000), () {
-                setState(() {
-
-
-                });
+                setState(() {});
               });
             }
           }
@@ -449,10 +434,7 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
                 padding: const EdgeInsets.only(left: 17,right: 17),
                 child: Stack(
                   alignment: Alignment.bottomCenter,
-                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
-
                     SingleChildScrollView(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -468,7 +450,6 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
                           print(val);
                           firstOne=true;
                           BlocProvider.of<MyCoursesBloc>(context).add(ActivityCaseEvent(params:
-
                           ActivityCaseParams(
                               answerId: val,
                               caseId: widget.nestedContent.activity.caseStudy.id,
@@ -478,15 +459,11 @@ class _DecisionMakingPageState extends State<DecisionMakingPage> {
 
                         },)),
                       ),
-
-
                   ],
                 ),
               ),
             );
 
         }));
-
-
   }
 }

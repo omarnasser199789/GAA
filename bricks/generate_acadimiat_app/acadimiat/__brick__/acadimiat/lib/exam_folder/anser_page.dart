@@ -9,8 +9,6 @@ import 'exam_info_page.dart';
 import 'exam_page.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/bloc/bloc.dart';
-import 'package:acadmiat/features/my_courses_feature/presentation/bloc/my_courses_bloc.dart';
-import 'package:acadmiat/features/my_courses_feature/presentation/bloc/my_courses_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../features/my_courses_feature/domain/entities/myquizizz_entity.dart';
 import '../injection_container.dart';
@@ -247,11 +245,7 @@ class _AnswerPageState extends State<AnswerPage> {
                                     Navigator.pop(context,200);
                                     Navigator.pop(context,200);
                                   });
-                                  //         Navigator.of(context).pushAndRemoveUntil(
-                                  // MaterialPageRoute(builder: (context) => const NavPage()),
-                                  //     (route) => false);
 
-//
                                 }),
                               )
                             ],
@@ -267,59 +261,6 @@ class _AnswerPageState extends State<AnswerPage> {
         }
     ));
 
-
-
   }
 }
 
-
-
-class RightAnswers extends StatelessWidget {
-  const RightAnswers({super.key,required this.text,required this.answerNumber,required this.number,required this.isItRight});
-
-  final int answerNumber;
-  final bool isItRight;
-  final int number;
-  final String text;
-
-
-  @override
-  Widget build(BuildContext context) {
-    Size size =MediaQuery.of(context).size;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-             const QuestionNumber(text: '?',),
-           const SizedBox(width: 9,),
-            SizedBox(
-                width: size.width*0.79,
-
-                child: Text(text,style: blackBoldTextStyle(context: context,fontSize: 13),)),
-
-          ],
-        ),
-
-
-
-        Padding(
-          padding:  const EdgeInsets.only(top: 8,right: 40,left: 40),
-          child:Text(number.toString(),style: blackBoldTextStyle(context: context,fontSize: 25,color: (isItRight)?percentIndicatorColor:Colors.red),),
-
-        ),
-
-
-        Padding(
-          padding: const EdgeInsets.only(top: 20,bottom: 20),
-          child: Container(width: double.infinity,
-            height: 1,
-            color: Colors.grey.withOpacity(0.5),),
-        )
-
-
-      ],
-    );
-  }
-}

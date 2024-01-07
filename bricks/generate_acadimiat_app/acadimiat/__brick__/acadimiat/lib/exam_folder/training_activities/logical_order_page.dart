@@ -38,14 +38,7 @@ class _LogicalOrderPageState extends State<LogicalOrderPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-
     widgetList=[];
-    // widgetList.add(Row(
-    //   children: [
-    //     Text(widget.nestedContent.activity.logicalOrder!.title,style: blackBoldTextStyle(fontSize: 15, context: context),),
-    //   ],
-    // ));
 
     ///User not answer yest.
     if(widget.nestedContent.activity.logicalOrder!.attendanceTable.isEmpty) {
@@ -95,9 +88,7 @@ class _LogicalOrderPageState extends State<LogicalOrderPage> {
                     .replaceRange(targetItemIndex, targetItemIndex, [movingItem]);
 
 
-                setState(() {
-
-                });
+                setState(() {});
               }
           ),
         ));
@@ -114,9 +105,6 @@ class _LogicalOrderPageState extends State<LogicalOrderPage> {
               padding: const EdgeInsets.only(top:18,bottom: 18),
               child: Column(
                 children: [
-
-
-
                   Padding(
                     padding: const EdgeInsets.only(left: 12,right: 12),
                     child: Row(
@@ -170,17 +158,6 @@ class _LogicalOrderPageState extends State<LogicalOrderPage> {
                      ),
                   ),
 
-
-                  // Column(
-                  //   // controller: myScrollController,
-                  //   children: answerList,
-                  // ),
-
-
-                  // Padding(
-                  //   padding: const EdgeInsets.only(left: 12,right: 12),
-                  //   child: Column(children: answerList,),
-                  // ),
                 ],
               ),
             )),
@@ -196,14 +173,7 @@ class _LogicalOrderPageState extends State<LogicalOrderPage> {
       // widgetList
       ///User answer, and need to show result
       List<Widget> answerList=[];
-      // answerList.add(Padding(
-      //   padding: const EdgeInsets.only(left: 12,right: 12),
-      //   child: Row(
-      //     children: [
-      //       Text(widget.nestedContent.activity.logicalOrder!.title,style: blackBoldTextStyle(fontSize: 15, context: context),),
-      //     ],
-      //   ),
-      // ));
+
       for (int index = 0; widget.nestedContent.activity.logicalOrder!.attendanceTable[0].orders.length > index; index++) {
         if( widget.nestedContent.activity.logicalOrder!.attendanceTable[0].orders[index].order
             ==widget.nestedContent.activity.logicalOrder!.attendanceTable[0].orders[index].correct){
@@ -411,31 +381,6 @@ class _LogicalOrderPageState extends State<LogicalOrderPage> {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class ItemList extends StatelessWidget {
   const ItemList({Key? key, this.sentence,this.color,this.fontColor}) : super(key: key);
 
@@ -456,9 +401,7 @@ class ItemList extends StatelessWidget {
               ),
               color:Theme.of(context).cardColor
           ),
-
           alignment: Alignment.center,
-
           child: Padding(
             padding: const EdgeInsets.only(top:17,bottom: 17,left: 8,right: 8),
             child: Text(sentence!.sentence,style: blackBoldTextStyle(fontSize: 12, context: context,color: fontColor),),

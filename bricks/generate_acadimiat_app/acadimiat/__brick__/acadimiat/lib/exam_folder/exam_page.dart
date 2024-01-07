@@ -40,7 +40,6 @@ class _ExamPageState extends State<ExamPage> {
   List<Widget> _list = <Widget>[];
 
   int _curr = 0;
-  // String nextBtnName = "التالي";
 
   @override
   void initState() {
@@ -96,9 +95,6 @@ class _ExamPageState extends State<ExamPage> {
   bool goToAnswerPage = true;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-
 
     return BlocProvider(
         create: (BuildContext context) => sl<MyCoursesBloc>(),
@@ -181,7 +177,6 @@ class _ExamPageState extends State<ExamPage> {
                                     attendedAt: DateTime.now(),
                                     finished: true,
                                     attendanceTable: attendanceTable,),
-
 
                                 ),
 
@@ -381,10 +376,6 @@ void showCustomDialog(BuildContext context, MyQuizizzEntity myQuizizzEntity) {
 
     if (value == 200) {
       Navigator.pop(context);
-
-      // Navigator.of(context).pushAndRemoveUntil(
-      //     MaterialPageRoute(builder: (context) => const NavPage()),
-      //         (route) => false);
     }
   });
 }

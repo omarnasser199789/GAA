@@ -1,8 +1,5 @@
-
 import 'package:acadmiat/exam_folder/widgets/question_number.dart';
-
 import '../Theme/style.dart';
-import 'package:acadmiat/exam_folder/exam_page.dart';
 import 'package:flutter/material.dart';
 
 class SentenceRearrangementPage extends StatefulWidget {
@@ -37,8 +34,6 @@ class _SentenceRearrangementPageState extends State<SentenceRearrangementPage> {
             children: [
               Row(
                 children: [
-
-
                   const QuestionNumber(text: '05',),
                   const SizedBox(width: 5,),
                     SizedBox(
@@ -46,10 +41,6 @@ class _SentenceRearrangementPageState extends State<SentenceRearrangementPage> {
                       child: Text(": اعد ترتيب الجمل التالية بسحب الرقم للصندوق المناسب",style: blackBoldTextStyle(context: context,fontSize: 14),)),
                 ],
               ),
-
-
-
-
 
               Padding(
                 padding: const EdgeInsets.only(left: 95,right: 95,top: 33),
@@ -69,10 +60,6 @@ class _SentenceRearrangementPageState extends State<SentenceRearrangementPage> {
               const InfoBox(text: "زيادة حجم المبيعات بنسية كبيره خلال الربع"),
               const InfoBox(text: "زيادة حجم المبيعات بنسية كبيره السنة الأولى"),
 
-
-
-
-
             ],
           ),
         ),
@@ -80,11 +67,6 @@ class _SentenceRearrangementPageState extends State<SentenceRearrangementPage> {
     );
   }
 }
-
-// ForwardOrReverseWidget(whenNextTap: (){
-// goTo(context, (context) => const ResultsPage());
-// },currentQuestionNumber: "05", numberOfQuestion: "05",),
-
 
 class IndicatorWidget extends StatefulWidget {
   const IndicatorWidget({Key? key,required this.title}) : super(key: key);

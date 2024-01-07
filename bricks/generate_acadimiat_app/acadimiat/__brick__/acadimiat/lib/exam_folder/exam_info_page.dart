@@ -1,7 +1,7 @@
 
 import 'package:acadmiat/core/widgets/custom_botton.dart';
-import 'package:acadmiat/core/widgets/error_widget.dart';
 import 'package:acadmiat/exam_folder/exam_page.dart';
+import 'package:acadmiat/exam_folder/widgets/box_info.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myqizizz_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/bloc/my_courses_bloc.dart';
 import 'package:acadmiat/injection_container.dart';
@@ -36,8 +36,6 @@ class _ExamInfoPageState extends State<ExamInfoPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-
     return BlocProvider(
         create: (BuildContext context) => sl<MyCoursesBloc>(),
         child: BlocBuilder<MyCoursesBloc, MyCoursesState>(
@@ -444,62 +442,5 @@ class _ExamInfoPageState extends State<ExamInfoPage> {
 
           return WaitingWidget();
         }));
-  }
-}
-
-class BoxInfo extends StatelessWidget {
-  const BoxInfo({
-    Key? key,
-    required this.size,
-    required this.svg,
-    required this.text,
-    required this.title,
-  }) : super(key: key);
-
-  final Size size;
-
-  final String svg;
-  final String text;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 119,
-      width: size.width * 0.265,
-      decoration: BoxDecoration(
-          // color: Theme.of(context).cursorColor,
-          borderRadius: BorderRadius.circular(8)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 10, bottom: 10),
-                child: SvgPicture.asset(
-                  svg,
-                ),
-              ),
-              Text(
-                title,
-                style: blackBoldTextStyle(
-                    context: context, fontSize: 16, color: Colors.white),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 5, right: 5, bottom: 10),
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: blackBoldTextStyle(context: context, fontSize: 13),
-            ),
-          )
-        ],
-      ),
-    );
   }
 }

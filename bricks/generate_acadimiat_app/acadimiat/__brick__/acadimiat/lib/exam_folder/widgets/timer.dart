@@ -96,25 +96,6 @@ class _TimerWidgetState extends State<TimerWidget> {
             ),
           ),
         ),
-        // const SizedBox(
-        //   width: 16,
-        // ),
-        // Stack(
-        //   alignment: Alignment.center,
-        //   children: [
-        //     SvgPicture.asset(
-        //       "assets/svgs/timer.svg",
-        //     ),
-        //     CircularPercentIndicator(
-        //       animation: true,
-        //       animationDuration: 1000,
-        //       radius: 10,
-        //       lineWidth: 10.0,
-        //       percent: 50 / 100,
-        //       progressColor: Theme.of(context).primaryColor,
-        //     ),
-        //   ],
-        // ),
       ],
     );
   }

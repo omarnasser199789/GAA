@@ -6,7 +6,6 @@ import '../Theme/style.dart';
 import '../core/classes/question.dart';
 import '../core/functions.dart';
 import '../core/globals.dart';
-// import '../features/my_courses_feature/data/models/myqizz_model.dart'as q;
 import '../features/my_courses_feature/domain/use_cases/submit_quiz_usecase.dart';
 
 class DragAndDropPage extends StatefulWidget {
@@ -16,6 +15,7 @@ class DragAndDropPage extends StatefulWidget {
   @override
   State<DragAndDropPage> createState() => _DragAndDropPageState();
 }
+
 class MyClass {
   MyClass({required this.text,required this.widget,required this.questionId,required this.answerId});
   Widget text;
@@ -52,11 +52,7 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(9000),
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 1,
-                    ),
-
+                    border: Border.all(color: Colors.grey, width: 1),
                   ),
                   child: Text(item.id.toString(),
                     style: blackBoldTextStyle(context: context, fontSize: 15),
@@ -85,7 +81,6 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
 
                   Container(
                     width: size.width-100,
-                    // color: Colors.green,
                     child: Text(parseHtmlString(item.sentence),
                       style: blackBoldTextStyle(context: context, fontSize: 12,height: lineSpace),),
                   ),
@@ -150,10 +145,7 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                                 child: Container(
                                     width: 70,
                                     height: 70,
-                                    decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        borderRadius: BorderRadius.circular(20000)
-                                    ),
+                                    decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(20000)),
                                     child: pairsList[index].widget)),
                             child: pairsList[index].widget
                         ),
@@ -211,38 +203,12 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                                             height: 45,
                                             decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(90000),
-                                                border: Border.all(
-                                                  color: Theme.of(context).primaryColor,
-                                                  width: 1,
-
-                                                )
+                                                border: Border.all(color: Theme.of(context).primaryColor, width: 1)
                                             ),
                                           ),
                                           pairsList[i!].widget,
-
                                         ],
                                       );
-
-
-                                  // for(int j=0;givenAnswers.length>j;j++){
-                                  //   if(givenAnswers[j].questionId==pairsList[i].questionId){
-                                  //     givenAnswers.removeAt(j);
-                                  //   }
-                                  // }
-                                  //
-                                  // givenAnswers.add(GivenAnswer(
-                                  //     questionId: pairsList[i].questionId,
-                                  //     answerId: pairsList[i].answerId));
-                                  // setState(() {
-                                  //
-                                  // });
-
-
-                                  print("fknjkvndfkvndfkjvnfnvkdfn");
-                                  print(i);
-
-
-
 
                                   for(int j=0;pairs.length>j;j++){
                                     if(pairs[j].selectedId==pairsSelection[index].answerId){
@@ -250,12 +216,9 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                                     }
                                   }
 
-
                                   pairs.add(Pair(questionId: pairsList[i].questionId, pairId: widget.question.pairs[i].id, selectedId: pairsSelection[index].answerId));
 
                                   print(pairs.length);
-
-                                  // pairs=[];
 
 
                                   for(int i=0;attendanceTable.length>i;i++){
@@ -270,13 +233,6 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                                       givenWords: [],
                                       pairs:pairs
                                   ));
-
-                                  // print("fdnvkfnvkndfvjkdfn");
-                                  // print(attendanceTable.length);
-
-
-
-
                                 }
                             ),
                           ],
@@ -287,14 +243,6 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
             ),
           ),
         )
-
-
-
-
-
-
-
-
       ],
     );
   }

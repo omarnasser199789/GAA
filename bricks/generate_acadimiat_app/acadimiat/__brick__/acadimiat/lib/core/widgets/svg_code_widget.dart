@@ -15,6 +15,7 @@ class SvgCodeWidget extends StatefulWidget {
 
 class _SvgCodeWidgetState extends State<SvgCodeWidget> {
   String svgCode="";
+
   @override
   Future<void> didChangeDependencies() async {
     String  code="";
@@ -24,7 +25,6 @@ class _SvgCodeWidgetState extends State<SvgCodeWidget> {
       code=widget.code!;
     }
 
-
     svgCode=  code.replaceAll("ec5252",primaryColorTypeString);
     if (!mounted) {
       return;
@@ -32,6 +32,7 @@ class _SvgCodeWidgetState extends State<SvgCodeWidget> {
     setState(() {
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return SvgPicture.string(svgCode);

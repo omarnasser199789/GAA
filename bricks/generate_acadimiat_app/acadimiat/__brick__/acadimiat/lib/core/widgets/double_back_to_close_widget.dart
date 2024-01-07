@@ -36,8 +36,7 @@ class _DoubleBackToCloseWidgetState extends State<DoubleBackToCloseWidget> {
   Future<bool> _handleWillPop() async {
     final _currentTime = DateTime.now().millisecondsSinceEpoch;
 
-    if (_lastTimeBackButtonWasTapped != null &&
-        (_currentTime - _lastTimeBackButtonWasTapped) < exitTimeInMillis) {
+    if ((_currentTime - _lastTimeBackButtonWasTapped) < exitTimeInMillis) {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
       return true;
     } else {
@@ -52,10 +51,7 @@ class _DoubleBackToCloseWidgetState extends State<DoubleBackToCloseWidget> {
     }
   }
 
-  SnackBar _getExitSnackBar(
-      BuildContext context,
-      ) {
-    var locale = AppLocalizations.of(context)!;
+  SnackBar _getExitSnackBar(BuildContext context) {
     return  SnackBar(
       content: Text(
         "انقر مرة أخرى للخروج",

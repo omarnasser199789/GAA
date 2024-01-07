@@ -1,8 +1,7 @@
 import '../Theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'exam_info_page.dart';
+import 'widgets/box_info.dart';
 
 
 class ResultsPage extends StatefulWidget {
@@ -30,14 +29,10 @@ class _ResultsPageState extends State<ResultsPage> {
                 height: 343,
                 decoration: BoxDecoration(
                     color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.circular(12
-
-                    )
-
+                    borderRadius: BorderRadius.circular(12)
                 ),
                 child: Column(
                   children: [
-
 
                     Padding(
                       padding: const EdgeInsets.only(top:90),

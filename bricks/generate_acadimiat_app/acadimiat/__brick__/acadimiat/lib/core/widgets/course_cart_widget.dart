@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:favorite_button/favorite_button.dart';
 import '../../Theme/style.dart';
 import '../../features/home_feature/data/models/fav_model.dart';
-import '../../features/home_feature/domain/entities/fav_entity.dart';
 import '../../features/home_feature/domain/use_cases/local_db_usecase/add_product_to_fav_db_usecase.dart';
 import '../../features/home_feature/presentation/bloc/home_bloc.dart';
 import '../../features/home_feature/presentation/bloc/home_event.dart';
