@@ -46,6 +46,7 @@ class _BookMarksItemListState extends State<BookMarksItemList> {
 
   @override
   void initState() {
+    super.initState();
     textController.text = widget.theTextOfNote;
   }
 
@@ -189,9 +190,11 @@ class _BookMarksItemListState extends State<BookMarksItemList> {
               }).whenComplete(() {});
           if (result == 200) {
           } else if (result == 201) {
+            if(!mounted) return;
             showMessage(message: "تم تعديل الملاحظة", context: context);
             setState(() {});
           } else if (result == 500) {
+            if(!mounted) return;
             showMessage(message: "لم يتم الحذف", context: context);
             setState(() {});
           }

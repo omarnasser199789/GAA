@@ -3,7 +3,6 @@ import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_cours
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../../../core/functions.dart';
-import '../../../../../../../../core/globals.dart';
 import '../../../../../../../../core/widgets/app_bar_widget.dart';
 import '../../../../../../../../exam_folder/exam_info_page.dart';
 import '../../../../../bloc/my_courses_bloc.dart';
@@ -12,7 +11,7 @@ import '../../../../../../../../item.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ItemBody extends StatefulWidget {
-  const ItemBody({Key? key, required this.nestedList,required this.courseCover, this.fromSideBar}) : super(key: key);
+  const ItemBody({super.key, required this.nestedList,required this.courseCover, this.fromSideBar});
 
   final List<Item> nestedList;
   final bool? fromSideBar;

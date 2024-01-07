@@ -2,25 +2,20 @@ import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_cours
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/lessons_tab/widgets_for_lossonsTab_sidebarTab/item_header.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/lessons_tab/widgets_for_lossonsTab_sidebarTab/nested_body.dart';
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/lessons_tab/widgets_for_lossonsTab_sidebarTab/nested_header.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../../../item.dart';
-
-import '../../../../../../../core/widgets/app_bar_widget.dart';
-import '../../../../../../../exam_folder/exam_info_page.dart';
 import '../../../../../../../splash_screen.dart';
 import '../../../../../domain/entities/my_course_entity.dart';
 
 
 class LessonsTab extends StatefulWidget {
   const LessonsTab(
-      {Key? key,
+      {super.key,
       required this.myCourseEntity,
       this.part,
       this.isVimeo,
      required   this.courseCover,
-      this.currentVideoIndex})
-      : super(key: key);
+      this.currentVideoIndex});
 
   final MyCourseEntity myCourseEntity;
   final int? part;
@@ -39,6 +34,7 @@ class _LessonsTabState extends State<LessonsTab> {
 
   @override
    void initState()  {
+     super.initState();
      initConnection();
     items = [];
     for (int j = 0; widget.myCourseEntity.courseContents.length > j; j++) {

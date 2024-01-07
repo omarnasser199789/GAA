@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:acadmiat/core/widgets/waiting_widget.dart';
 import 'package:acadmiat/features/authentication_feature/presentation/pages/login_page.dart';
@@ -9,6 +8,7 @@ import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
 import '../../../../../core/functions.dart';
 import '../../../../../core/globals.dart';
+import '../../../../../core/util/assets_manager.dart';
 import '../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../core/widgets/empty_state_widget.dart';
 import '../../../../home_feature/presentation/pages/training_courses_page.dart';
@@ -21,7 +21,7 @@ import '../../bloc/bloc.dart';
 import 'package:measure_size/measure_size.dart';
 
 class MyCoursesPage extends StatefulWidget {
-  const MyCoursesPage({Key? key}) : super(key: key);
+  const MyCoursesPage({super.key});
 
   @override
   State<MyCoursesPage> createState() => _MyCoursesPageState();
@@ -120,7 +120,7 @@ class _MyCoursesPageState extends State<MyCoursesPage> {
 }
 
 class ResultWidget extends StatefulWidget {
-  ResultWidget({Key? key, required this.myCoursesEntity}) : super(key: key);
+  ResultWidget({super.key, required this.myCoursesEntity});
   List<MyCoursesEntity> myCoursesEntity;
 
   @override
@@ -219,7 +219,7 @@ class _ResultWidgetState extends State<ResultWidget> {
                                   data: Theme.of(context).copyWith(),
                                   child: Column(
                                     children: [
-                                      appBarWidget(locale.myCourses! + " " + "(${widget.myCoursesEntity.length})", context, false, null, null),
+                                      appBarWidget("${locale.myCourses!} (${widget.myCoursesEntity.length})", context, false, null, null),
                                     ],
                                   ),
                                 ),
@@ -273,13 +273,13 @@ class _ResultWidgetState extends State<ResultWidget> {
                       text3: "تصفح الدورات",
                       onTap: () async {
                         await goTo(context, (context) => TrainingCoursesPage(latestEntity: const []));
-                        BlocProvider.of<MyCoursesBloc>(context).add(GetMyCoursesFromLocaleDBEvent());
-                        /// : => SuccessGetMyCoursesFromLocaleDBState.
+                        if(!mounted) return;
+                        BlocProvider.of<MyCoursesBloc>(context).add(GetMyCoursesFromLocaleDBEvent());/// : => SuccessGetMyCoursesFromLocaleDBState.
                       },
                     ),
             )
           : EmptyStateWidget(
-              svg: "assets/svgs/login.svg",
+              svg: ImgAssets.login,
               text1: "من فضلك! سجل دخولك لمشاهدة دوراتك",
               text3: "تسجيل الدخول",
               onTap: () async {
@@ -292,7 +292,7 @@ class _ResultWidgetState extends State<ResultWidget> {
 
 class ItemList extends StatefulWidget {
   const ItemList(
-      {Key? key,
+      {super.key,
       this.enableBroadcast,
       this.courseId,
       this.total,
@@ -301,8 +301,7 @@ class ItemList extends StatefulWidget {
       this.imageUrl,
       this.percent,
       this.header,
-      this.trainer})
-      : super(key: key);
+      this.trainer});
 
   final Function() onTap;
   final bool? enableBroadcast;
@@ -323,8 +322,6 @@ class _ItemListState extends State<ItemList> {
 
   @override
   Widget build(BuildContext context) {
-    var locale = AppLocalizations.of(context)!;
-
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
@@ -388,10 +385,12 @@ class _ItemListState extends State<ItemList> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MeasureSize(
-                  onChange: (Size) {
-                    setState(() {
-                      width = Size.width;
-                    });
+                  onChange: (Size? size) {
+                    if(size!=null){
+                      setState(() {
+                        width = size.width;
+                      });
+                    }
                   },
                   child: Padding(
                     padding:
@@ -426,7 +425,6 @@ class _ItemListState extends State<ItemList> {
                         animationDuration: 1000,
                         barRadius: const Radius.circular(20),
                         percent: widget.percent! / 100,
-                        // center: Text("$percent"),
                         linearStrokeCap: LinearStrokeCap.roundAll,
                         progressColor: percentIndicatorColor,
                       ),

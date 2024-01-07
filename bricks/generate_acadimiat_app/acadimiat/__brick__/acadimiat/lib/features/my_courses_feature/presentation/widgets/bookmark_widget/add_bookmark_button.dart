@@ -24,7 +24,6 @@ class AddBookmarkButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var locale = AppLocalizations.of(context)!;
-    Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () async {
 

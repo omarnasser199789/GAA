@@ -22,7 +22,6 @@ class OtherOptionsTab extends StatefulWidget {
 class _OtherOptionsTabState extends State<OtherOptionsTab> {
   @override
   Widget build(BuildContext context) {
-    Size size =MediaQuery.of(context).size;
     var locale = AppLocalizations.of(context)!;
 
     int length=6;

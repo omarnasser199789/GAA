@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 class MyPlansEntity extends Equatable {
-  MyPlansEntity({
+  const MyPlansEntity({
     required  this.planId,
     required  this.fromDate,
     required  this.toDate,
@@ -8,11 +8,11 @@ class MyPlansEntity extends Equatable {
     required  this.daysLeft,
   });
 
-  int planId;
-  DateTime fromDate;
-  DateTime toDate;
-  int progress;
-  int daysLeft;
+  final int planId;
+  final DateTime fromDate;
+  final DateTime toDate;
+  final int progress;
+  final int daysLeft;
 
   @override
   List<Object?> get props =>   [planId, fromDate, toDate, progress, daysLeft];

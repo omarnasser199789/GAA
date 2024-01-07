@@ -2,18 +2,17 @@ import 'package:equatable/equatable.dart';
 
 class MyQuizzesEntity extends Equatable{
 
+ final int quizzId;
+ final String quizzName;
+ final String courseName;
+ final int courseId;
+ final double progress;
+ final double mark;
+ final bool isPassed;
+ final DateTime date;
 
-  int quizzId;
-  String quizzName;
-  String courseName;
-  int courseId;
-  double progress;
-  double mark;
-  bool isPassed;
-  DateTime date;
 
-
-  MyQuizzesEntity({
+  const MyQuizzesEntity({
     required this.quizzId,
     required this.quizzName,
     required this.courseName,

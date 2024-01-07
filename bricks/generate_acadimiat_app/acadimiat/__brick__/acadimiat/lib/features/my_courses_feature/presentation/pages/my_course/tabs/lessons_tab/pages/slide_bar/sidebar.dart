@@ -1,12 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../../../../../../../../../core/widgets/app_bar_widget.dart';
-import '../../../../../../../../../exam_folder/exam_info_page.dart';
 import '../../../../../../../domain/entities/my_course_entity.dart';
 import '../../../../../../../../../item.dart';
-
 import 'package:rxdart/rxdart.dart';
-
 import '../../widgets_for_lossonsTab_sidebarTab/item_body.dart';
 import '../../widgets_for_lossonsTab_sidebarTab/item_header.dart';
 import '../../widgets_for_lossonsTab_sidebarTab/nested_body.dart';

@@ -1,19 +1,17 @@
-
 import 'package:equatable/equatable.dart';
-
 import '../../data/models/my_assignments_model.dart';
 
 class MyAssignmentsEntity extends Equatable {
-  int assignmentId;
-  String assignment;
-  String courseName;
-  int courseId;
-  bool isAccepted;
-  int allAccepted;
-  int allDeclined;
-  List<Attempt> attempts;
+  final int assignmentId;
+  final String assignment;
+  final String courseName;
+  final int courseId;
+  final bool isAccepted;
+  final int allAccepted;
+  final int allDeclined;
+  final List<Attempt> attempts;
 
-  MyAssignmentsEntity({
+  const MyAssignmentsEntity({
     required this.assignmentId,
     required this.assignment,
     required this.courseName,
@@ -26,6 +24,5 @@ class MyAssignmentsEntity extends Equatable {
   });
 
   @override
-  // TODO: implement props
-  List<Object> get props => throw UnimplementedError();
+  List<Object> get props => [assignmentId];
 }

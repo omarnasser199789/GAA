@@ -25,13 +25,13 @@ HubConnection connection = HubConnectionBuilder()
       transport: HttpTransportType.webSockets,
       client: IOClient(
           HttpClient()..badCertificateCallback = (x, y, z) => true),
-      logging: (level, message) => print('HubConnectionState: $level: $message'),
+      logging: (level, message) => debugPrint('HubConnectionState: $level: $message'),
     ))
     .withAutomaticReconnect()
     .build();
 
 class LaunchPage extends StatelessWidget {
-  LaunchPage({Key? key}) : super(key: key);
+  LaunchPage({super.key});
 
   static final ValueNotifier<ThemeMode> themeNotifier =  ValueNotifier(ThemeMode.system);
   String lan = "";
@@ -50,7 +50,7 @@ class LaunchPage extends StatelessWidget {
     }
 
     return BlocProvider<LanguageCubit>(
-      create: (context) => LanguageCubit(Locale("ar")),
+      create: (context) => LanguageCubit(const Locale("ar")),
       child: BlocBuilder<LanguageCubit, Locale>(
           builder: (context, locale) =>
               ValueListenableBuilder<ThemeMode>(
@@ -89,6 +89,7 @@ class LaunchPage extends StatelessWidget {
                            lan = 'en';
                          }
                        }
+                       return null;
                      },
                       supportedLocales: const [
                         Locale('en'),

@@ -1,16 +1,16 @@
 import 'package:equatable/equatable.dart';
 
 class MyBookmarksEntity extends Equatable {
-  int bookmarkId;
-  int lectureId;
-  int courseId;
-  String lecture;
-  String course;
-  double atTime;
-  String notes;
-  String unit;
+  final int bookmarkId;
+  final int lectureId;
+  final int courseId;
+  final String lecture;
+  final String course;
+  final double atTime;
+  final String notes;
+  final String unit;
 
-  MyBookmarksEntity({
+  const MyBookmarksEntity({
     required this.bookmarkId,
     required this.lectureId,
     required this.courseId,
@@ -22,7 +22,6 @@ class MyBookmarksEntity extends Equatable {
   });
 
   @override
-  // TODO: implement props
   List<Object> get props =>
       [bookmarkId, lectureId, courseId, lecture, course, atTime, notes, unit];
 }

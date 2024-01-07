@@ -151,6 +151,7 @@ class NotesTabState extends State<NotesTab> {
                                               if (value == null || value=="") {
                                                 return 'الرجاء ادخال نص الملاحظة';
                                               }
+                                              return null;
                                             },
                                           ),
                                         ),

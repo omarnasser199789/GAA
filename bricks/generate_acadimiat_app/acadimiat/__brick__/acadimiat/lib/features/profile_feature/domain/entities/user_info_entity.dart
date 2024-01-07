@@ -1,27 +1,27 @@
 import 'package:equatable/equatable.dart';
 
 class UserInfoEntity extends Equatable {
-  int id;
-  int groupId;
-  int userId;
-  int sex;
-  String dateOfBirth;
-  bool active;
-  String name;
-  String email;
-  dynamic phone;
-  String profileImage;
-  dynamic notes;
-  int addedBy;
-  String addedDate;
-  String updateAt;
-  dynamic user;
-  dynamic group;
-  dynamic b2Bcourses;
-  dynamic courses;
-  dynamic path;
+  final int id;
+  final int groupId;
+  final int userId;
+  final int sex;
+  final String dateOfBirth;
+  final bool active;
+   String name;
+   String email;
+   dynamic phone;
+  final String profileImage;
+  final dynamic notes;
+  final int addedBy;
+  final String addedDate;
+  final String updateAt;
+  final dynamic user;
+  final dynamic group;
+  final dynamic b2Bcourses;
+  final dynamic courses;
+  final dynamic path;
 
-  UserInfoEntity({
+   UserInfoEntity({
     required this.id,
     required this.groupId,
     required this.userId,

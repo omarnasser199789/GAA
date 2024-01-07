@@ -4,22 +4,17 @@ import 'package:acadmiat/features/profile_feature/domain/use_cases/my_certificat
 import 'package:acadmiat/features/profile_feature/domain/use_cases/my_notes/add_new_note_usecase.dart';
 import 'package:acadmiat/features/profile_feature/domain/use_cases/my_plans/post_my_plan_usecase.dart';
 import 'package:dartz/dartz.dart';
-
 import '../../../../core/error/failures.dart';
 import '../../../authentication_feature/domain/use_cases/update_user_info_usecase.dart';
-import '../../domain/entities/my_assignments_entity.dart';
-import '../../domain/entities/my_bookmarks_entity.dart';
 import '../../domain/entities/my_certificates_entity.dart';
 import '../../domain/entities/my_notes_entity.dart';
 import '../../domain/entities/my_payments_entity.dart';
-import '../../domain/entities/my_quizzes_entity.dart';
 import '../../../authentication_feature/domain/entities/update_user_info_entity.dart';
 import '../../domain/entities/user_info_entity.dart';
 import '../../domain/repositories/profile_repository.dart';
 import '../../domain/use_cases/change_password_usecase.dart';
 import '../../domain/use_cases/register_new_account_usecase.dart';
 import '../../domain/use_cases/update_my_avatar_usecase.dart';
-import '../../domain/use_cases/update_user_info_usecase.dart';
 import '../data_sources/consultations_remot_data_source.dart';
 import 'consultations_repository_functions.dart';
 

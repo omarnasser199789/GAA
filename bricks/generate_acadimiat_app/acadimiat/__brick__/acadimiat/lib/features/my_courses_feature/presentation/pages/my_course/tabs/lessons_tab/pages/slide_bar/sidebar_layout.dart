@@ -1,6 +1,5 @@
 import 'package:acadmiat/features/my_courses_feature/presentation/pages/my_course/tabs/lessons_tab/pages/slide_bar/sidebar.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../../domain/entities/my_course_entity.dart';
 import '../../../../../../bloc/my_courses_bloc.dart';
@@ -24,7 +23,6 @@ class SideBarLayout extends StatelessWidget {
   final String courseCover;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return BlocProvider(
         create: (BuildContext context) => sl<MyCoursesBloc>(),
         child: BlocBuilder<MyCoursesBloc, MyCoursesState>(
@@ -50,11 +48,6 @@ class SideBarLayout extends StatelessWidget {
               ],
             );
           }
-          // if (state is Loading) {
-          //   return Container(
-          //     color: Colors.green,
-          //   );
-          // }
           return Container();
         }));
   }

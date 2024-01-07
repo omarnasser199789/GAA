@@ -71,6 +71,7 @@ class ImgAssets {
   static String plan = '$_svgPath/plan.svg';
   static String certificate = '$_svgPath/certificate.svg';
   static String wishlist = '$_svgPath/wishlist.svg';
+  static String login = '$_svgPath/login.svg';
 
 
 

@@ -1,16 +1,13 @@
 import 'dart:async';
 import 'package:acadmiat/core/globals.dart';
-import 'package:acadmiat/core/widgets/app_bar_widget.dart';
 import 'package:acadmiat/features/home_feature/presentation/pages/home/pages/home_page.dart';
 import 'package:acadmiat/features/profile_feature/presentation/pages/profile/profile_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'Locale/locale.dart';
 import 'Theme/style.dart';
 import 'core/bottom_sheet/update_bottom_sheet.dart';
-import 'core/classes/constants.dart';
 import 'core/functions.dart';
 import 'core/widgets/double_back_to_close_widget.dart';
 import 'features/authentication_feature/data/data_sources/remot_data_sources/authenticate_remote_data_functions.dart';
@@ -18,7 +15,6 @@ import 'features/authentication_feature/presentation/pages/login_page.dart';
 import 'features/consultancies_feature/presentation/pages/consultation/consultation_page.dart';
 import 'features/home_feature/presentation/pages/favorite/pages/favorite_page.dart';
 import 'features/my_courses_feature/presentation/pages/my_courses/my_courses_page.dart';
-import '../../../../../core/classes/Response.dart' as R;
 import 'package:app_version_update_lite/app_version_update_lite.dart';
 
 class NavPage extends StatefulWidget {

@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../../../../Locale/locale.dart';
 import '../../../../../../../../Theme/style.dart';
 import '../../../../../../../../core/functions.dart';
-import '../../../../../../../../core/globals.dart';
-
 
 class NestedHeader extends StatefulWidget {
-  const NestedHeader({Key? key, this.startHere,
-    // required this.name,
-    required this.lessonNumber}) : super(key: key);
+  const NestedHeader({super.key, this.startHere,
+    required this.lessonNumber});
   final bool ? startHere;
-  // final String  name;
   final int lessonNumber;
 
   @override
@@ -24,11 +18,10 @@ class _NestedHeaderState extends State<NestedHeader> {
     return Row(
       children: [
         Text(
-         lessonsNumber(widget.lessonNumber)+":  ",
+         "${lessonsNumber(widget.lessonNumber)}:  ",
           style: blackBoldTextStyle(context: context,
               fontSize: 11, color:   hintTextColor),
         ),
-
       ],
     );
   }

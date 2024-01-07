@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:encrypt/encrypt.dart' as encrypt ;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../core/error/exceptions.dart';

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:jiffy/jiffy.dart';
 import '../features/authentication_feature/data/data_sources/remot_data_sources/authenticate_remote_data_functions.dart';
-import '../features/consultancies_feature/presentation/pages/book_consultation/book_consultation_page.dart';
 import '../features/consultancies_feature/presentation/pages/book_consultation/custom_date.dart';
 import 'error/failures.dart';
 import 'package:html/parser.dart';

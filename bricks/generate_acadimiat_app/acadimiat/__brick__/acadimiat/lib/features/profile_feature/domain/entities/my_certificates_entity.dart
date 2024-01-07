@@ -1,9 +1,7 @@
 import 'package:equatable/equatable.dart';
 class MyCertificatesEntity extends Equatable{
-  @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
-  MyCertificatesEntity({
+
+  const MyCertificatesEntity({
     required  this.id,
     required  this.courseId,
     required  this.course,
@@ -16,14 +14,17 @@ class MyCertificatesEntity extends Equatable{
     required  this.certificates,
   });
 
-  int id;
-  int courseId;
-  dynamic course;
-  dynamic userId;
-  dynamic curriculaId;
-  String certificateName;
-  String image;
-  String courseName;
-  dynamic curricula;
-  dynamic certificates;
+  final int id;
+  final int courseId;
+  final dynamic course;
+  final dynamic userId;
+  final dynamic curriculaId;
+  final String certificateName;
+  final String image;
+  final String courseName;
+  final dynamic curricula;
+  final dynamic certificates;
+
+  @override
+  List<Object?> get props => [id];
 }

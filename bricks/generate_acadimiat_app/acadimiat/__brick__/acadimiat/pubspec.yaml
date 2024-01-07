@@ -30,6 +30,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
   #  flutter_svg: This library provides a way to display SVG images in Flutter apps.
   flutter_svg:
 
@@ -96,168 +99,77 @@ dependencies:
   # path_provider: This package provides a way to access common storage locations on the device, such as the application's cache directory or external storage directory.
   path_provider: ^2.1.1
 
+  #  comment_tree: This library provides a widget for displaying threaded comment threads in Flutter apps.
+  comment_tree: ^0.3.0
+
+  # dartz: This package provides functional programming constructs such as Option and Either.
+  dartz: ^0.10.1
+
+  #  curved_navigation_bar: This library provides a customizable navigation bar widget with smooth animation curves.
+  curved_navigation_bar: ^1.0.3
+
+  #  flutter_mentions: This library provides a widget that allows users to mention others in a text field, similar to the feature in social media platforms.
+  flutter_mentions: ^2.0.1
+
+  #  signalr_core: This package provides support for real-time communication using SignalR, a library for building real-time web applications.
+  signalr_core: ^1.1.1
+
+  #  carousel_slider: This library provides a simple carousel widget for Flutter.
+  #  It includes support for customizing the carousel's appearance and behavior.
+  carousel_slider: ^4.2.1
+
+  #  screen_protector: This library provides a widget that can be used to protect the screen of a Flutter app from being accidentally touched.
+  screen_protector: ^1.4.2
+
+  #  favorite_button: A Flutter button widget that can be used to implement a favorite/like button in your application, with customizable icons and animations.
+  favorite_button: ^0.0.4
+
+  #  animation_wrappers: A collection of animation widgets for Flutter, which can be used to add various animations to your application, such as page transitions, fade-ins, and spinners.
+  animation_wrappers: ^3.0.0
+
+  #  draggable_scrollbar: This package provides a scrollbar widget that can be dragged to quickly navigate a long list of items.
+  draggable_scrollbar: ^0.1.0
+
+  #  file_picker: A Flutter plugin for picking files from the device's storage, with support for various file formats and options.
+  file_picker:
+
+  #  awesome_notifications: This package provides a way to display local and scheduled notifications in a customizable way.
+  awesome_notifications: ^0.8.2
+
+  #  permission_handler: This package provides a way to request and check permissions for various system resources, such as the camera or microphone.
+  permission_handler:
+
+  #  get_it: This package provides a simple way to implement dependency injection in Flutter.
+  get_it: ^7.6.4
+
+  #  dio: This library is a powerful HTTP client for Flutter that supports a variety of features, including file uploads, download progress tracking, and more.
+  dio: ^5.4.0
+
+  #  pin_code_fields: ^7.4.0 - A Flutter widget to input pin code.
+  #  It provides a simple way to input a pin code with a customizable interface.
+  pin_code_fields: ^8.0.1
+
+  #  advance_notification: ^1.0.6 - A Flutter plugin to show advanced notifications.
+  #  It allows users to customize notification layouts and add actions to notifications.
+  advance_notification: ^1.0.6
+
+  #  showcaseview: ^2.0.0+1 - A Flutter plugin to display showcase views.
+  #  It provides a way to highlight specific parts of the app to the user.
+  showcaseview: ^2.0.3
+
   in_app_review: ^2.0.8
   package_info: ^2.0.2
   app_version_update_lite: ^4.0.4
   purchases_flutter: ^4.12.0
+  flutter_inappwebview: 6.0.0-beta.22
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
+
   flutter_launcher_icons: ^0.13.1
-
-#  chopper_generator: This is a build tool that generates code based on Chopper's annotations.
-#  It is used to create boilerplate code for making API requests.
-  chopper_generator:
-
-#  built_value_generator: This is a code generation tool that creates code based on the
-  built_value_generator:
-
-#build_runner: This is a build tool that can automatically generate code and run build scripts. It is used by chopper_generator and built_value_generator to generate code.
-  build_runner: ^2.4.7
-
-#  flutter_stripe: This library provides integration with the Stripe payment service.
-#  It includes support for making payments and handling payments in Flutter apps.
-#  flutter_stripe: ^7.0.0
-
-#  carousel_slider: This library provides a simple carousel widget for Flutter.
-#  It includes support for customizing the carousel's appearance and behavior.
-  carousel_slider: ^4.2.1
-
-#  screen_protector: This library provides a widget that can be used to protect the screen of a Flutter app from being accidentally touched.
-  screen_protector: ^1.4.2
-
-#  remedi_vimeo_player: This library provides a widget for playing Vimeo videos in Flutter apps.
-#  remedi_vimeo_player: ^0.2.1
-
-#  comment_tree: This library provides a widget for displaying threaded comment threads in Flutter apps.
-  comment_tree: ^0.3.0
-
-#  nepali_date_picker: This library provides a date picker widget for Nepali dates in Flutter apps.
-  nepali_date_picker: ^6.0.0
-
-
-
-
-#  favorite_button: A Flutter button widget that can be used to implement a favorite/like button in your application, with customizable icons and animations.
-  favorite_button: ^0.0.4
-
-#  animation_wrappers: A collection of animation widgets for Flutter, which can be used to add various animations to your application, such as page transitions, fade-ins, and spinners.
-  animation_wrappers: ^3.0.0
-
-#  progressive_image: A Flutter widget for displaying images in a progressive manner, where the image is initially displayed in a low-resolution format and then progressively refined to a higher-resolution format.
-  progressive_image: ^2.0.1
-
-
-#  file_picker: A Flutter plugin for picking files from the device's storage, with support for various file formats and options.
-  file_picker:
-
-
-
-#  signalr_core: This package provides support for real-time communication using SignalR, a library for building real-time web applications.
-  signalr_core: ^1.1.1
-
-
-
-#  draggable_scrollbar: This package provides a scrollbar widget that can be dragged to quickly navigate a long list of items.
-  draggable_scrollbar: ^0.1.0
-
-#  awesome_notifications: This package provides a way to display local and scheduled notifications in a customizable way.
-  awesome_notifications: ^0.8.2
-
-#  webview_flutter and flutter_inappwebview: These packages provide support for displaying web content within a Flutter app, either in a native WebView or an in-app browser.
-  webview_flutter:
-  flutter_inappwebview: 6.0.0-beta.22
-
-#  permission_handler: This package provides a way to request and check permissions for various system resources, such as the camera or microphone.
-  permission_handler:
-
-#  flutter_material_color_picker: This package provides a material design color picker widget.
-  flutter_material_color_picker: ^1.2.0
-
-#  get_it: This package provides a simple way to implement dependency injection in Flutter.
-  get_it: ^7.6.4
-
-# dartz: This package provides functional programming constructs such as Option and Either.
-  dartz: ^0.10.1
-
-
-#  readmore: This package provides a widget that can display long text with a "read more" button to show the full text when clicked.
-  readmore: ^2.2.0
-
-# cached_network_image: This library provides an easy way to cache images from the network in Flutter apps.
-  cached_network_image: ^3.3.0
-
-#  auto_size_text: This library provides a widget that automatically adjusts the font size of its text to fit within a specified width.
-  auto_size_text: ^3.0.0
-
-
-#  dio: This library is a powerful HTTP client for Flutter that supports a variety of features, including file uploads, download progress tracking, and more.
-  dio: ^5.4.0
-
-#  xml: This library provides a simple API for parsing and creating XML documents in Dart.
-  xml: ^6.5.0
-
-#  curved_navigation_bar: This library provides a customizable navigation bar widget with smooth animation curves.
-  curved_navigation_bar: ^1.0.3
-
-
-
-#  flutter_mentions: This library provides a widget that allows users to mention others in a text field, similar to the feature in social media platforms.
-  flutter_mentions: ^2.0.1
-
-#  appinio_animated_toggle_tab: This library provides a widget that displays a set of tabs with a toggle animation effect.
-  appinio_animated_toggle_tab: ^1.0.2
-
-# sqflite: ^2.1.0+1 - A Flutter plugin for SQLite database.
-#  It provides a simple way to access SQLite databases in Flutter.
-  sqflite: ^2.3.0
-
-#  path: ^1.8.2 - A library to work with paths in a cross-platform way.
-#  It provides functions to manipulate paths, such as joining and splitting paths, getting the file name or the directory name, and more.
-  path:
-
-# video_trimmer: ^1.1.3 - A Flutter plugin to trim videos. It allows users to select a portion of a video, and then trim it down to that portion.
-  video_trimmer: ^3.0.1
-
-#  pin_code_fields: ^7.4.0 - A Flutter widget to input pin code.
-#  It provides a simple way to input a pin code with a customizable interface.
-  pin_code_fields: ^8.0.1
-
-#  advance_notification: ^1.0.6 - A Flutter plugin to show advanced notifications.
-#  It allows users to customize notification layouts and add actions to notifications.
-  advance_notification: ^1.0.6
-
-#  flutter_linkify: ^5.0.2 - A Flutter plugin to convert URLs and email addresses into clickable links.
-#  It provides a widget to display text with clickable links.
-  flutter_linkify: ^6.0.0
-
-#  showcaseview: ^2.0.0+1 - A Flutter plugin to display showcase views.
-#  It provides a way to highlight specific parts of the app to the user.
-  showcaseview: ^2.0.3
-
-#  encrypt: ^5.0.1 - A Flutter plugin to encrypt and decrypt data.
-#  It provides a way to encrypt sensitive data, such as passwords or credit card numbers.
-  encrypt: ^5.0.3
-
-  in_app_purchase: ^3.1.11
-  flutter_spinkit:
-
-
   flutter_dotenv: ^5.1.0
 
-
-
-
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^3.0.1
 
 flutter_icons:
   android: true
