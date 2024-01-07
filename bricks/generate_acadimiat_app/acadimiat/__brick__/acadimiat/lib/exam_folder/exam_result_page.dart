@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../Theme/style.dart';
 import '../core/widgets/app_bar_widget.dart';
 import '../features/my_courses_feature/data/models/my_lecture_model.dart';
-import 'exam_info_page.dart';
 import 'package:jiffy/jiffy.dart';
 
 class ExamResultPage extends StatefulWidget {

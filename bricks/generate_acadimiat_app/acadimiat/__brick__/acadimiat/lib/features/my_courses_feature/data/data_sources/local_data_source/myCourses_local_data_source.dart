@@ -1,14 +1,11 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import '../../../../../core/globals.dart';
-import '../../../domain/entities/my_courses_from_local_db_entity.dart';
 import '../../../domain/use_cases/local_db_usecase/add_file_in_local_db_usecase.dart';
 import '../../../domain/use_cases/local_db_usecase/get_file_by_name_usecase.dart';
 import 'package:sqflite/sqflite.dart';
-import '../../../domain/use_cases/local_db_usecase/update_mycourses_in_local_db_usecase.dart';
 import '../../models/files_model.dart';
 import '../../models/my_courses_model.dart';
-import '../../models/mycourses_from_local_db_model.dart';
 
 abstract class MyCoursesLocalDataSource {
   Future<int> addFile(AddFileParams params);
@@ -110,13 +107,6 @@ class MyCoursesLocalDataSourceImpl implements MyCoursesLocalDataSource {
   Future<int> updateMyCourses(List<MyCoursesModel> params) async{
     ///Get a reference to the database.
     final db = await database;
-
-
-    ///Print the data entered into the database for the table.
-    // if (kDebugMode) {
-    //   print(myCoursesModelToJson(params));
-    // }
-
 
     ///Delete all item from table.
     await db.rawQuery("DELETE  FROM myCourses");

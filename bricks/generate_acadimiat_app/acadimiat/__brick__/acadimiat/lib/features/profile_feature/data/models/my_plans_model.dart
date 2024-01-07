@@ -25,11 +25,11 @@ class MyPlansModel extends MyPlansEntity{
     daysLeft:daysLeft,
   );
 
-  int planId;
-  DateTime fromDate;
-  DateTime toDate;
-  int progress;
-  int daysLeft;
+ final int planId;
+ final DateTime fromDate;
+ final DateTime toDate;
+ final int progress;
+ final int daysLeft;
 
   factory MyPlansModel.fromJson(Map<String, dynamic> json) => MyPlansModel(
     planId: json["planId"],

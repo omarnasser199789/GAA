@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final MyCourseModel = MyCourseModelFromJson(jsonString);
-
 import 'dart:convert';
 
 import 'package:acadmiat/features/my_courses_feature/domain/entities/my_course_entity.dart';
@@ -50,23 +46,23 @@ class MyCourseModel extends MyCourseEntity {
 
   );
 
-  int id;
-  String courseName;
-  int preCourseQuizzId;
-  String courseLink;
-  int progress;
-  String courseCover;
-  dynamic courseVideo;
-  CourseRecord courseRecord;
-  List<Trainer> trainers;
-  List<CourseContent> courseContents;
-  List<Quizz> quizz;
-  dynamic currentLecture;
-  List<Assignment> assignments;
-  Wiki wiki;
-  Forum forum;
-  Glossary glossary;
-  List<CaseStudy> caseStudy;
+ final int id;
+ final String courseName;
+ final int preCourseQuizzId;
+ final String courseLink;
+ final int progress;
+ final String courseCover;
+ final dynamic courseVideo;
+ final CourseRecord courseRecord;
+ final List<Trainer> trainers;
+ final List<CourseContent> courseContents;
+ final List<Quizz> quizz;
+ final dynamic currentLecture;
+ final List<Assignment> assignments;
+ final Wiki wiki;
+ final Forum forum;
+ final Glossary glossary;
+ final List<CaseStudy> caseStudy;
 
   factory MyCourseModel.fromJson(Map<String, dynamic> json) => MyCourseModel(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -167,12 +163,12 @@ class CaseStudy {
   this.attendanceTable,
   });
 
-  int casestudyId;
-  bool open;
-  String header;
-  String body;
-  Solution solution;
-  List<AttendanceTable> ? attendanceTable;
+final int casestudyId;
+final bool open;
+final String header;
+final String body;
+final Solution solution;
+final List<AttendanceTable> ? attendanceTable;
 
   factory CaseStudy.fromJson(Map<String, dynamic> json) => CaseStudy(
     casestudyId: (json["casestudyId"]!=null)?json["casestudyId"]:-1,
@@ -218,9 +214,9 @@ class Answer {
   required  this.explain,
   });
 
-  int answerId;
-  String answer;
-  dynamic explain;
+ final int answerId;
+ final String answer;
+ final dynamic explain;
 
   factory Answer.fromJson(Map<String, dynamic> json) => Answer(
     answerId: json["answerId"],
@@ -230,7 +226,7 @@ class Answer {
 
   Map<String, dynamic> toJson() => {
     "answerId": answerId,
-    "answer": answer == null ? null : answer,
+    "answer": answer,
     "explain": explain,
   };
 }
@@ -250,17 +246,17 @@ class Assignment {
   required  this.toDate,
   });
 
-  int id;
-  String assignemnet;
-  String body;
-  String file;
-  int year;
-  bool ? isDone;
-  String rule;
-  DateTime appliedAt;
-  String notes;
-  DateTime fromDate;
-  DateTime toDate;
+final  int id;
+final  String assignemnet;
+final  String body;
+final  String file;
+final  int year;
+final  bool ? isDone;
+final  String rule;
+final  DateTime appliedAt;
+final  String notes;
+final  DateTime fromDate;
+final  DateTime toDate;
 
   factory Assignment.fromJson(Map<String, dynamic> json) => Assignment(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -285,7 +281,7 @@ class Assignment {
     "isDone": isDone,
     "rule": rule,
     "appliedAt": appliedAt.toIso8601String(),
-    "notes": notes == null ? null : notes,
+    "notes": notes,
     "fromDate": fromDate.toIso8601String(),
     "toDate": toDate.toIso8601String(),
   };
@@ -304,16 +300,16 @@ class CourseContent {
   required this.quizz,
   });
 
-  int id;
-  String unitName;
-  String unitDesc;
-  String unitBanner;
-  bool isDone;
-  double percent;
-  double totalScore;
-  dynamic completitionDate;
-  List<Content> contents;
-  Quizz quizz;
+ final int id;
+ final String unitName;
+ final String unitDesc;
+ final String unitBanner;
+ final bool isDone;
+ final double percent;
+ final double totalScore;
+ final dynamic completitionDate;
+ final List<Content> contents;
+ final Quizz quizz;
 
   factory CourseContent.fromJson(Map<String, dynamic> json) => CourseContent(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -353,11 +349,11 @@ class Content {
   required  this.lectureContents,
   });
 
-  int id;
-  String name;
-  int type;
-  bool isDone;
-  List<LectureContent> lectureContents;
+ final int id;
+ final String name;
+ final int type;
+ final bool isDone;
+ final List<LectureContent> lectureContents;
 
   factory Content.fromJson(Map<String, dynamic> json) => Content(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -384,10 +380,10 @@ class LectureContent {
   required  this.time,
   });
 
-  int id;
-  int type;
-  String title;
-  double time;
+final int id;
+final int type;
+final String title;
+final double time;
 
   factory LectureContent.fromJson(Map<String, dynamic> json) => LectureContent(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -411,9 +407,9 @@ class Quizz {
   required  this.attempts,
   });
 
-  int quizzId;
-  String quizzName;
-  int attempts;
+final  int quizzId;
+final  String quizzName;
+final  int attempts;
 
   factory Quizz.fromJson(Map<String, dynamic> json) => Quizz(
     quizzId: (json["quizzId"]!=null)?json["quizzId"]:-1,
@@ -440,14 +436,14 @@ class CourseRecord {
    required this.activitiesLog,
   });
 
-  int id;
-  int traineeId;
-  int courseId;
-  bool isFinished;
-  double currentProgress;
-  dynamic completedAt;
-  List<UnitsLog> unitsLog;
-  List<dynamic> activitiesLog;
+final int id;
+final int traineeId;
+final int courseId;
+final bool isFinished;
+final double currentProgress;
+final dynamic completedAt;
+final List<UnitsLog> unitsLog;
+final List<dynamic> activitiesLog;
 
   factory CourseRecord.fromJson(Map<String, dynamic> json) => CourseRecord(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -485,15 +481,15 @@ class UnitsLog {
   required  this.quizzesLog,
   });
 
-  int id;
-  int traineeId;
-  int unitId;
-  int courselogId;
-  bool isFinished;
-  double currentProgress;
-  dynamic completedAt;
-  List<LecturesLog> lecturesLog;
-  List<dynamic> quizzesLog;
+final int id;
+final int traineeId;
+final int unitId;
+final int courselogId;
+final bool isFinished;
+final double currentProgress;
+final dynamic completedAt;
+final List<LecturesLog> lecturesLog;
+final List<dynamic> quizzesLog;
 
   factory UnitsLog.fromJson(Map<String, dynamic> json) => UnitsLog(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -531,13 +527,13 @@ class LecturesLog {
   required  this.completedAt,
   });
 
-  int id;
-  int traineeId;
-  int lectureId;
-  int unitlogId;
-  bool isFinished;
-  double currentProgress;
-  DateTime completedAt;
+final int id;
+final int traineeId;
+final int lectureId;
+final int unitlogId;
+final bool isFinished;
+final double currentProgress;
+final DateTime completedAt;
 
   factory LecturesLog.fromJson(Map<String, dynamic> json) => LecturesLog(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -556,7 +552,7 @@ class LecturesLog {
     "unitlogId": unitlogId,
     "isFinished": isFinished,
     "currentProgress": currentProgress,
-    "completedAt": completedAt == null ? null : completedAt.toIso8601String(),
+    "completedAt": completedAt.toIso8601String(),
   };
 }
 
@@ -570,12 +566,12 @@ class Forum {
   required  this.topics,
   });
 
-  int forumId;
-  dynamic forumName;
-  dynamic description;
-  dynamic fromDate;
-  dynamic toDate;
-  List<Topic> topics;
+final int forumId;
+final dynamic forumName;
+final dynamic description;
+final dynamic fromDate;
+final dynamic toDate;
+final List<Topic> topics;
 
   factory Forum.fromJson(Map<String, dynamic> json) => Forum(
     forumId: (json["forumId"]!=null)?json["forumId"]:-1,
@@ -605,12 +601,12 @@ class Topic {
   required  this.replies,
   });
 
-  int topicId;
-  String addedBy;
-  String topic;
-  String attachment;
-  DateTime date;
-  List<Reply> replies;
+final  int topicId;
+final  String addedBy;
+final  String topic;
+final  String attachment;
+final  DateTime date;
+final  List<Reply> replies;
 
   factory Topic.fromJson(Map<String, dynamic> json) => Topic(
     topicId: json["topicId"],
@@ -641,11 +637,11 @@ class Reply {
   required  this.date,
   });
 
-  int replyId;
-  String addedBy;
-  String reply;
-  dynamic attachment;
-  DateTime date;
+final int replyId;
+final String addedBy;
+final String reply;
+final dynamic attachment;
+final DateTime date;
 
   factory Reply.fromJson(Map<String, dynamic> json) => Reply(
     replyId: json["replyId"],
@@ -673,11 +669,11 @@ class Glossary {
   required  this.concepts,
   });
 
-  int glossaryId;
-  dynamic name;
-  dynamic description;
-  int numberOfConcepts;
-  List<Concept> concepts;
+ final int glossaryId;
+ final dynamic name;
+ final dynamic description;
+ final int numberOfConcepts;
+ final List<Concept> concepts;
 
   factory Glossary.fromJson(Map<String, dynamic> json) => Glossary(
     glossaryId: (json["glossaryId"]!=null)?json["glossaryId"]:-1,
@@ -711,14 +707,14 @@ class Concept {
   required  this.date,
   });
 
-  int conceptId;
-  String addedBy;
-  String concept;
-  dynamic file;
-  String definition;
-  String keywords;
-  dynamic attachment;
-  DateTime date;
+final int conceptId;
+final String addedBy;
+final String concept;
+final dynamic file;
+final String definition;
+final String keywords;
+final dynamic attachment;
+final DateTime date;
 
   factory Concept.fromJson(Map<String, dynamic> json) => Concept(
     conceptId: json["conceptId"],
@@ -754,12 +750,12 @@ class Trainer {
   required  this.trainerCourses,
   });
 
-  int id;
-  String trainerName;
-  String trainerInfo;
-  String trainerAvatar;
-  String trainerMoreInfo;
-  dynamic trainerCourses;
+final int id;
+final String trainerName;
+final String trainerInfo;
+final String trainerAvatar;
+final String trainerMoreInfo;
+final dynamic trainerCourses;
 
   factory Trainer.fromJson(Map<String, dynamic> json) => Trainer(
     id: (json["id"]!=null)?json["id"]:-1,
@@ -787,9 +783,9 @@ class Wiki {
   required  this.articles,
   });
 
-  int wikiId;
-  String wikiName;
-  List<Article> articles;
+final int wikiId;
+final String wikiName;
+final List<Article> articles;
 
   factory Wiki.fromJson(Map<String, dynamic> json) => Wiki(
     wikiId: (json["wikiId"]!=null)?json["wikiId"]:-1,
@@ -813,11 +809,11 @@ class Article {
   required  this.details,
   });
 
-  int articleId;
-  String articleName;
-  String addedBy;
-  DateTime date;
-  List<Detail> details;
+final  int articleId;
+final  String articleName;
+final  String addedBy;
+final  DateTime date;
+final  List<Detail> details;
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
     articleId: (json["articleId"]!=null)?json["articleId"]:-1,
@@ -845,11 +841,11 @@ class Detail {
   required  this.date,
   });
 
-  int detailId;
-  String addedBy;
-  String header;
-  String body;
-  DateTime date;
+final  int detailId;
+final  String addedBy;
+final  String header;
+final  String body;
+final  DateTime date;
 
   factory Detail.fromJson(Map<String, dynamic> json) => Detail(
     detailId: (json["detailId"]!=null)?json["detailId"]:-1,
@@ -881,13 +877,13 @@ class AttendanceTable {
   required  this.comments,
   });
 
-  int id;
-  dynamic decisionId;
-  DateTime repliedAt;
-  int userId;
-  DateTime attendanceAt;
-  String opinion;
-  List<dynamic> comments;
+final int id;
+final dynamic decisionId;
+final DateTime repliedAt;
+final int userId;
+final DateTime attendanceAt;
+final String opinion;
+final List<dynamic> comments;
 
   factory AttendanceTable.fromJson(Map<String, dynamic> json) => AttendanceTable(
     id: (json["id"]!=null)?json["id"]:-1,

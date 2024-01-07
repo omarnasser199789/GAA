@@ -24,7 +24,7 @@ class EmailVerificationCodePage extends StatefulWidget {
 }
 
 class _EmailVerificationCodePageState extends State<EmailVerificationCodePage> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+
   final StreamController<ErrorAnimationType> errorController =
   StreamController<ErrorAnimationType>();
   final TextEditingController textEditingController = TextEditingController();
@@ -41,6 +41,7 @@ class _EmailVerificationCodePageState extends State<EmailVerificationCodePage> w
 
   @override
   void initState() {
+    super.initState();
     Duration timerTastoPremuto = const Duration(seconds:60);
     start = timerTastoPremuto.inMilliseconds;
     timer= Timer.periodic(oneDecimal,

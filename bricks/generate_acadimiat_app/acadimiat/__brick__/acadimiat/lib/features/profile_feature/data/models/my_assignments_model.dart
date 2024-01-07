@@ -30,14 +30,14 @@ class MyAssignmentsModel extends MyAssignmentsEntity {
             allDeclined: allDeclined,
             attempts: attempts);
 
-  int assignmentId;
-  String assignment;
-  String courseName;
-  int courseId;
-  bool isAccepted;
-  int allAccepted;
-  int allDeclined;
-  List<Attempt> attempts;
+ final int assignmentId;
+ final String assignment;
+ final String courseName;
+ final int courseId;
+ final bool isAccepted;
+ final int allAccepted;
+ final int allDeclined;
+ final List<Attempt> attempts;
 
   factory MyAssignmentsModel.fromJson(Map<String, dynamic> json) => MyAssignmentsModel(
         assignmentId: json["assignmentId"],

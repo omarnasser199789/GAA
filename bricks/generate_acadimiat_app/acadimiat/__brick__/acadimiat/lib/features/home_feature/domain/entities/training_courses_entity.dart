@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+
 class TrainingCoursesEntity extends Equatable{
 
   TrainingCoursesEntity({
@@ -12,16 +13,15 @@ class TrainingCoursesEntity extends Equatable{
     required  this.fav,
   });
 
-  int id;
-  int apiId;
-  String image;
-  String courseName;
-  String trainerName;
-  double newPrice;
-  double oldPrice;
-  int fav;
+ final int id;
+ final int apiId;
+ final String image;
+ final String courseName;
+ final String trainerName;
+ final double newPrice;
+ final double oldPrice;
+ final int fav;
 
   @override
-  // TODO: implement props
   List<Object?> get props => [id,apiId,image,courseName,trainerName,newPrice,oldPrice,fav];
 }

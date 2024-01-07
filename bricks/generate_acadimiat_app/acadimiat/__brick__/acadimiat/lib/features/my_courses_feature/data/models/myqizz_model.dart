@@ -51,22 +51,22 @@ class MyQuizizzModel  extends  MyQuizizzEntity{
     questions:questions,
   );
 
-  int id;
-  dynamic materialId;
-  int courseId;
-  int  ? unitId;
-  String name;
-  bool beforeStart;
-  bool optional;
-  int timeLimit;
-  bool shuffle;
-  int repetition;
-  int myAttempts;
-  int ifPassed;
-  int ifFailed;
-  double minScore;
-  dynamic attendance;
-  List<Question> questions;
+ final int id;
+ final dynamic materialId;
+ final int courseId;
+ final int  ? unitId;
+ final String name;
+ final bool beforeStart;
+ final bool optional;
+ final int timeLimit;
+ final bool shuffle;
+ final int repetition;
+ final int myAttempts;
+ final int ifPassed;
+ final int ifFailed;
+ final double minScore;
+ final dynamic attendance;
+ final List<Question> questions;
 
   factory MyQuizizzModel.fromJson(Map<String, dynamic> json) => MyQuizizzModel(
     id: json["id"],

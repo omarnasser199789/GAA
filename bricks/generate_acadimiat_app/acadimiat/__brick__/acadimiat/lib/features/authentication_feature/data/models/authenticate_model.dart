@@ -8,8 +8,8 @@ String authenticateModelToJson(AuthenticateModel data) =>
     json.encode(data.toJson());
 
 class AuthenticateModel extends AuthenticateEntity {
-  String email;
-  String userId;
+ final String email;
+ final String userId;
 
   AuthenticateModel({
     required this.email,

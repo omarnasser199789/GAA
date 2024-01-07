@@ -17,7 +17,7 @@ import '../../../../../core/widgets/app_bar_widget.dart';
 import '../../../../../injection_container.dart';
 import '../../../../../Theme/style.dart';
 
-class SessionPage extends StatelessWidget {
+class SessionPage extends StatefulWidget {
   SessionPage({
     super.key,
     required this.consultationID,
@@ -35,6 +35,11 @@ class SessionPage extends StatelessWidget {
   final String image;
   final DateTime date;
 
+  @override
+  State<SessionPage> createState() => _SessionPageState();
+}
+
+class _SessionPageState extends State<SessionPage> {
   List<ConsultationSessionEntity> consultationSessionList = [];
 
   @override
@@ -51,7 +56,7 @@ class SessionPage extends StatelessWidget {
             }
             if (state is Empty) {
               BlocProvider.of<ConsultanciesBloc>(context)
-                  .add(GetConsultationSessionsEvent(consultationID: consultationID));
+                  .add(GetConsultationSessionsEvent(consultationID: widget.consultationID));
             }
             if (state is SuccessGetConsultationSession) {
               consultationSessionList = state.consultationSessionList;
@@ -98,7 +103,7 @@ class SessionPage extends StatelessWidget {
                     child: StatefulBuilder(builder:
                         (BuildContext context, StateSetter mystate) {
                       return BookConsultationPage(
-                        consultancyId: consultationID,
+                        consultancyId: widget.consultationID,
                         takenDate:takenDate,
                       );
                     }
@@ -109,7 +114,7 @@ class SessionPage extends StatelessWidget {
             });
 
             if(result == 200){
-              BlocProvider.of<ConsultanciesBloc>(context).add(GetConsultationSessionsEvent(consultationID: consultationID));
+              BlocProvider.of<ConsultanciesBloc>(context).add(GetConsultationSessionsEvent(consultationID: widget.consultationID));
             }else if (result == 500 || result == 501) {
               showMessage(
                 message: result == 500 ? "الرجاء اختيار الوقت والتاريخ" : "لم يتم حجز الجلسة الرجاء التواصل مع مركذ الدعم",
@@ -138,11 +143,11 @@ class SessionPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TitleWidget(
-                    date: date,
-                    numberOfSessions: numberOfSessions,
-                    image: image,
-                    consultancy: consultancy,
-                    consultant: consultant,
+                    date: widget.date,
+                    numberOfSessions: widget.numberOfSessions,
+                    image: widget.image,
+                    consultancy: widget.consultancy,
+                    consultant: widget.consultant,
                   ),
                   _buildSessionsList(context,size),
                 ],
@@ -150,7 +155,7 @@ class SessionPage extends StatelessWidget {
             ),
           ),
         ),
-        if (numberOfSessions > consultationSessionList.length)
+        if (widget.numberOfSessions > consultationSessionList.length)
           _buildBookConsultationButton(context),
       ],
     );

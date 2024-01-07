@@ -41,19 +41,19 @@ class BannersModel extends BannersEntity{
     subtitle:subtitle,
   );
 
-  int id;
-  int? courseId;
-  dynamic packageId;
-  dynamic consultancyId;
-  dynamic articleId;
-  String linkUrl;
-  int type;
-  int order;
-  String header;
-  String imageUrl;
-  String videoUrl;
-  String body;
-  String subtitle;
+ final int id;
+ final int? courseId;
+ final dynamic packageId;
+ final dynamic consultancyId;
+ final dynamic articleId;
+ final String linkUrl;
+ final int type;
+ final int order;
+ final String header;
+ final String imageUrl;
+ final String videoUrl;
+ final String body;
+ final String subtitle;
 
   factory BannersModel.fromJson(Map<String, dynamic> json) => BannersModel(
     id: json["id"]??-1,

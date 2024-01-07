@@ -34,15 +34,15 @@ class ActivityLogicalModel extends ActiveLogicalEntity{
     orders:orders,
   );
 
-  int id;
-  int userId;
-  dynamic email;
-  int questionId;
-  dynamic isCorrect;
-  dynamic reply;
-  dynamic answer;
-  DateTime date;
-  List<Order> orders;
+ final int id;
+ final int userId;
+ final dynamic email;
+ final int questionId;
+ final dynamic isCorrect;
+ final dynamic reply;
+ final dynamic answer;
+ final DateTime date;
+ final List<Order> orders;
 
   factory ActivityLogicalModel.fromJson(Map<String, dynamic> json) => ActivityLogicalModel(
     id: (json["id"]!=null)?json["id"]:-1,

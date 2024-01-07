@@ -43,20 +43,20 @@ class ActivityCaseModel extends ActivityCaseEntity {
     date:date,
   );
 
-  int id;
-  int userId;
-  int answerId;
-  int caseId;
-  int correctAnswerId;
-  String correctAnswer;
-  dynamic email;
-  dynamic solution;
-  String explanation;
-  String explanation2;
-  bool isCorrect;
-  dynamic reply;
-  dynamic answer;
-  DateTime date;
+ final int id;
+ final int userId;
+ final int answerId;
+ final int caseId;
+ final int correctAnswerId;
+ final String correctAnswer;
+ final dynamic email;
+ final dynamic solution;
+ final String explanation;
+ final String explanation2;
+ final bool isCorrect;
+ final dynamic reply;
+ final dynamic answer;
+ final DateTime date;
 
   factory ActivityCaseModel.fromJson(Map<String, dynamic> json) => ActivityCaseModel(
     id: (json["id"]!=null)?json["id"]:-1,

@@ -41,15 +41,15 @@ class UpdateUserInfoModel extends UpdateUserInfoEntity {
   );
 
   // Fields that represent the specific information to update for a user.
-  int id;
-  int groupId;
-  int userId;
-  int sex;
-  DateTime dateOfBirth;
-  bool active;
-  String name;
-  String email;
-  String phone;
+ final int id;
+ final int groupId;
+ final int userId;
+ final int sex;
+ final DateTime dateOfBirth;
+ final bool active;
+ final String name;
+ final String email;
+ final String phone;
 
   // The `fromJson` factory method creates an instance of `UpdateUserInfoModel` from a
   // `Map<String, dynamic>` object, assuming that the keys correspond to the field names.

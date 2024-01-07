@@ -179,6 +179,7 @@ class _LoginPageState extends State<LoginPage> {
                                             if (value == null || value=="") {
                                               return 'كلمة السر مطلوبة';
                                             }
+                                            return null;
                                           },
 
                                           isPassword: true,

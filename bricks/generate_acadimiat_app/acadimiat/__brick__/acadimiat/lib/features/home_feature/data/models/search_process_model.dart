@@ -19,8 +19,8 @@ class SearchProcessModel  extends SearchProcessEntity{
     text:text
   );
 
-  int id;
-  String text;
+ final int id;
+ final String text;
 
   factory SearchProcessModel.fromJson(Map<String, dynamic> json) => SearchProcessModel(
     id: json["id"],

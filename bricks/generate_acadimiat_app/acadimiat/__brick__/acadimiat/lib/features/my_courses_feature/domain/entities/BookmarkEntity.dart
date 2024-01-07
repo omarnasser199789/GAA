@@ -18,12 +18,12 @@ class BookmarkEntity extends Equatable{
     required this.user,
   });
 
-  int id;
-  int userId;
-  int videoId;
-  int atTime;
-  String note;
-  FileClass ? video;
-  dynamic user;
+ final int id;
+ final int userId;
+ final int videoId;
+ final int atTime;
+ final String note;
+ final FileClass ? video;
+ final dynamic user;
 
 }

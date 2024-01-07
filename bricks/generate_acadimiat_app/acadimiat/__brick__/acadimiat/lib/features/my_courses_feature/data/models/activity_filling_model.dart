@@ -1,10 +1,4 @@
-// To parse this JSON data, do
-//
-//     final activityFillingModel = activityFillingModelFromJson(jsonString);
-
 import 'dart:convert';
-
-import '../../../../core/classes/word_type3.dart';
 import '../../../../core/classes/word_type4.dart';
 import '../../domain/entities/activity_filling_entity.dart';
 
@@ -39,17 +33,17 @@ class ActivityFillingModel  extends ActivityFillingEntity{
     words:words,
   );
 
-  int id;
-  int userId;
-  dynamic email;
-  int questionId;
-  dynamic sentence;
-  dynamic correct;
-  dynamic isCorrect;
-  dynamic reply;
-  dynamic answer;
-  DateTime date;
-  List<WordType4> words;
+ final int id;
+ final int userId;
+ final dynamic email;
+ final int questionId;
+ final dynamic sentence;
+ final dynamic correct;
+ final dynamic isCorrect;
+ final dynamic reply;
+ final dynamic answer;
+ final DateTime date;
+ final List<WordType4> words;
 
   factory ActivityFillingModel.fromJson(Map<String, dynamic> json) => ActivityFillingModel(
     id: json["id"],
@@ -79,39 +73,3 @@ class ActivityFillingModel  extends ActivityFillingEntity{
     "words": List<dynamic>.from(words.map((x) => x.toJson())),
   };
 }
-
-// class Word {
-//   Word({
-//   required  this.id,
-//   required  this.attendanceId,
-//   required  this.word,
-//   required  this.order,
-//   required  this.correctOrder,
-//   required  this.correctWord,
-//   });
-//
-//   int id;
-//   int attendanceId;
-//   int word;
-//   int order;
-//   int correctOrder;
-//   String correctWord;
-//
-//   factory Word.fromJson(Map<String, dynamic> json) => Word(
-//     id: json["id"],
-//     attendanceId: json["attendanceId"],
-//     word: json["word"],
-//     order: json["order"],
-//     correctOrder: json["correctOrder"],
-//     correctWord: json["correctWord"],
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "id": id,
-//     "attendanceId": attendanceId,
-//     "word": word,
-//     "order": order,
-//     "correctOrder": correctOrder,
-//     "correctWord": correctWord,
-//   };
-// }

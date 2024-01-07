@@ -21,9 +21,9 @@ class MyNotesModel extends MyNoteEntity {
     notes:notes,
   );
 
-  int id;
-  int userId;
-  List<Note> notes;
+ final int id;
+ final int userId;
+ final List<Note> notes;
 
   factory MyNotesModel.fromJson(Map<String, dynamic> json) => MyNotesModel(
     id: json["id"],

@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecases/usecase.dart';
 import '../../entities/activity_decision_entity.dart';
-import '../../entities/course_case_study_entity.dart';
 import '../../repositories/consultations_repository.dart';
 import 'dart:convert';
 
@@ -14,11 +13,6 @@ class ActivityDecisionUseCase implements UseCase< ActivityDecisionEntity, Activi
     return repository.activityDecision(params);
   }
 }
-
-
-
-
-
 
 ActivityDecisionParams activityDecisionParamsFromJson(String str) => ActivityDecisionParams.fromJson(json.decode(str));
 
@@ -34,12 +28,12 @@ class ActivityDecisionParams {
   required  this.repliedAt,
   });
 
-  int decisionId;
-  String opinion;
-  String email;
-  String userId;
-  DateTime attendanceAt;
-  DateTime repliedAt;
+ final int decisionId;
+ final String opinion;
+ final String email;
+ final String userId;
+ final DateTime attendanceAt;
+ final DateTime repliedAt;
 
   factory ActivityDecisionParams.fromJson(Map<String, dynamic> json) => ActivityDecisionParams(
     decisionId: json["decisionId"],

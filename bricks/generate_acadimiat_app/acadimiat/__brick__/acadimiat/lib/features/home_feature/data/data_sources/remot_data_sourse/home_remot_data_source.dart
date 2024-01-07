@@ -1,13 +1,7 @@
-import 'dart:convert';
-
-
 import 'package:acadmiat/features/home_feature/data/models/consultancies_model.dart';
 import 'package:http/http.dart' as http;
-
 import '../../../../../core/globals.dart';
-import '../../../../consultancies_feature/data/models/consultancies_model.dart';
 import '../../../domain/use_cases/check_purchase_usecase.dart';
-import '../../../domain/use_cases/local_db_usecase/update_diplomas_and_packages_in_local_db_usecase.dart';
 import '../../models/banners_model.dart';
 import '../../models/card_by_id_model.dart';
 import '../../models/categories_model.dart';
@@ -27,7 +21,6 @@ abstract class HomeRemoteDataSource {
   Future<List<SearchModel>> search(String text);
   Future< List<BannersModel>> getBanners();
   Future<int> checkPurchase(CheckPurchaseModel params);
-
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -51,8 +44,6 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     }else{
       return function.getLatestRequest('$baseUrl/v1/latest');
     }
-
-
   }
 
   @override
@@ -84,7 +75,4 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   Future<int> checkPurchase(CheckPurchaseModel params) {
     return function.checkPurchase('$baseUrl/v1/check-purchase', params);
   }
-
-
-
 }

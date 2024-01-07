@@ -35,16 +35,16 @@ class MyCertificatesModel extends MyCertificatesEntity{
     certificates:certificates,
   );
 
-  int id;
-  int courseId;
-  dynamic course;
-  dynamic userId;
-  dynamic curriculaId;
-  String certificateName;
-  String image;
-  String courseName;
-  dynamic curricula;
-  dynamic certificates;
+ final int id;
+ final int courseId;
+ final dynamic course;
+ final dynamic userId;
+ final dynamic curriculaId;
+ final String certificateName;
+ final String image;
+ final String courseName;
+ final dynamic curricula;
+ final dynamic certificates;
 
   factory MyCertificatesModel.fromJson(Map<String, dynamic> json) => MyCertificatesModel(
     id: json["id"],

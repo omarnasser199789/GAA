@@ -24,7 +24,7 @@ class CheckPasswordModel extends CheckPasswordEntity {
   );
 
   // Field that represents the password check result.
-  String result;
+  final String result;
 
   // The `fromJson` factory method creates an instance of `CheckPasswordModel` from a
   // `Map<String, dynamic>` object, assuming that the keys correspond to the field names.

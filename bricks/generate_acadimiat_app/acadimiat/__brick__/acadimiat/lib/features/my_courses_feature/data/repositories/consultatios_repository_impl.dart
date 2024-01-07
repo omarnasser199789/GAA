@@ -11,7 +11,6 @@ import 'package:acadmiat/features/my_courses_feature/domain/entities/course_case
 import 'package:acadmiat/features/my_courses_feature/domain/entities/discussion_entity.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/entities/files_entity.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/entities/my_course_entity.dart';
-import 'package:acadmiat/features/my_courses_feature/domain/entities/my_courses_from_local_db_entity.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/entities/my_lecture_entity.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/entities/my_quizz_info_entity.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/entities/myquizizz_entity.dart';
@@ -34,7 +33,6 @@ import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_lec
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myqizizz_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myquizzinfo_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/activity_logical_usecase.dart';
-import 'package:acadmiat/features/my_courses_feature/domain/use_cases/local_db_usecase/update_mycourses_in_local_db_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/post_concept_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/submit_quiz_usecase.dart';
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/topic_reply_usecase.dart';

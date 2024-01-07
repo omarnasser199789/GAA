@@ -7,8 +7,7 @@ import '../../../../../core/globals.dart';
 import '../../../../../core/widgets/custom_botton.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
 
-
-class AddBookmarkButton extends StatelessWidget {
+class AddBookmarkButton extends StatefulWidget {
    AddBookmarkButton({
      super.key,
       required this.allowSelectLecture,
@@ -18,7 +17,14 @@ class AddBookmarkButton extends StatelessWidget {
    final bool allowSelectLecture;
   final bool isVimeo;
   final int videoId;
+
+  @override
+  State<AddBookmarkButton> createState() => _AddBookmarkButtonState();
+}
+
+class _AddBookmarkButtonState extends State<AddBookmarkButton> {
   bool checkBoxValue = false;
+
   TextEditingController textController = TextEditingController();
 
   @override

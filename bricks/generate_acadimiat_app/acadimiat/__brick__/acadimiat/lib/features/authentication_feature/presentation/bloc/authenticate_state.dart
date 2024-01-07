@@ -52,7 +52,7 @@ class SuccessCheckPassword extends AuthenticateState {
   List<Object> get props => [];
 }
 class SuccessRegisterUserInFirebase extends  AuthenticateState {
-  int statusCode;
+  final int statusCode;
   SuccessRegisterUserInFirebase({required this.statusCode});
 }
 class SuccessChangePassword extends AuthenticateState {

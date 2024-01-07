@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final filesModel = filesModelFromJson(jsonString);
-
 import 'dart:convert';
-
 import '../../domain/entities/files_entity.dart';
 
 FilesModel filesModelFromJson(String str) => FilesModel.fromJson(json.decode(str));
@@ -19,8 +14,8 @@ class FilesModel extends FilesEntity {
     items:items
   );
 
-  int index;
-  List<Item> items;
+ final int index;
+ final List<Item> items;
 
   factory FilesModel.fromJson(Map<String, dynamic> json) => FilesModel(
     index: json["index"],
@@ -41,10 +36,10 @@ class Item {
     required this.url,
   });
 
-  int id;
-  String name;
-  String path;
-  String url;
+ final int id;
+ final String name;
+ final String path;
+ final String url;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
     id: json["id"],

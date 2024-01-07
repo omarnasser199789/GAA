@@ -30,12 +30,12 @@ class MyPaymentsModel extends MyPaymentEntity {
             price: price,
             orignalPrice: orignalPrice);
 
-  int orderId;
-  DateTime orderDate;
-  String courseName;
-  String packageName;
-  double price;
-  dynamic orignalPrice;
+ final int orderId;
+ final DateTime orderDate;
+ final String courseName;
+ final String packageName;
+ final double price;
+ final dynamic orignalPrice;
 
   factory MyPaymentsModel.fromJson(Map<String, dynamic> json) =>
       MyPaymentsModel(

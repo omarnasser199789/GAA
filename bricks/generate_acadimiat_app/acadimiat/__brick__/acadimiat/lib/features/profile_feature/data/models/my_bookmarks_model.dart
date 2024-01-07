@@ -30,14 +30,14 @@ class MyBookmarksModel extends MyBookmarksEntity {
             notes: notes,
             unit: unit);
 
-  int bookmarkId;
-  int lectureId;
-  int courseId;
-  String lecture;
-  String course;
-  double atTime;
-  String notes;
-  String unit;
+ final int bookmarkId;
+ final int lectureId;
+ final int courseId;
+ final String lecture;
+ final String course;
+ final double atTime;
+ final String notes;
+ final String unit;
 
   factory MyBookmarksModel.fromJson(Map<String, dynamic> json) =>
       MyBookmarksModel(

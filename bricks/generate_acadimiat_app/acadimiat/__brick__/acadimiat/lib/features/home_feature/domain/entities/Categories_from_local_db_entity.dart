@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-class CategoriesFromLocalDBEntity extends Equatable{
 
+class CategoriesFromLocalDBEntity extends Equatable{
 
   @override
   List<Object?> get props => [categoryId,image,name,numberOfCourses];
@@ -13,8 +13,9 @@ class CategoriesFromLocalDBEntity extends Equatable{
     required  this.numberOfCourses,
   });
 
-  int categoryId;
-  String image;
-  String name;
-  int numberOfCourses;
+final int categoryId;
+final String image;
+final String name;
+final int numberOfCourses;
+
 }

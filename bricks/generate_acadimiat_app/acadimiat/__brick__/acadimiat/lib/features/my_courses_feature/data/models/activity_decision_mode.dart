@@ -29,13 +29,13 @@ class ActivityDecisionModel  extends ActivityDecisionEntity{
     comments:comments,
   );
 
-  int id;
-  dynamic decisionId;
-  DateTime repliedAt;
-  int userId;
-  DateTime attendanceAt;
-  String opinion;
-  List<dynamic> comments;
+ final int id;
+ final dynamic decisionId;
+ final DateTime repliedAt;
+ final int userId;
+ final DateTime attendanceAt;
+ final String opinion;
+ final List<dynamic> comments;
 
   factory ActivityDecisionModel.fromJson(Map<String, dynamic> json) => ActivityDecisionModel(
     id: json["id"],

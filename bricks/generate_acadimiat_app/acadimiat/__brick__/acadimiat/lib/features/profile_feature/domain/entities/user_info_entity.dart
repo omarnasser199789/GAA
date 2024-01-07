@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class UserInfoEntity extends Equatable {
   final int id;
   final int groupId;

@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final TrainingCoursesModel = TrainingCoursesModelFromJson(jsonString);
-
 import 'dart:convert';
 import '../../domain/entities/training_courses_entity.dart';
 
@@ -32,14 +28,14 @@ class TrainingCoursesModel extends TrainingCoursesEntity{
 
   );
 
-  int id;
-  int apiId;
-  String image;
-  String courseName;
-  String trainerName;
-  double newPrice;
-  double oldPrice;
-  int fav;
+ final int id;
+ final int apiId;
+ final String image;
+ final String courseName;
+ final String trainerName;
+ final double newPrice;
+ final double oldPrice;
+ final int fav;
 
 
   factory TrainingCoursesModel.fromJson(Map<String, dynamic> json) => TrainingCoursesModel(

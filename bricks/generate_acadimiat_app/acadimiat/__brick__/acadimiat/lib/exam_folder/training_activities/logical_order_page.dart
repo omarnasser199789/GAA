@@ -378,6 +378,7 @@ class _LogicalOrderPageState extends State<LogicalOrderPage> {
         return item;
       }
     }
+    return null;
     }
   }
 

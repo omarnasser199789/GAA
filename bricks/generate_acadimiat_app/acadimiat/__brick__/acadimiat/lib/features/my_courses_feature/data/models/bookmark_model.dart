@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final bookmarkModel = bookmarkModelFromJson(jsonString);
-
 import 'dart:convert';
-
 import '../../domain/entities/BookmarkEntity.dart';
 import 'my_lecture_model.dart';
 
@@ -30,13 +25,13 @@ class BookmarkModel extends BookmarkEntity{
     user: user,
   );
 
-  int id;
-  int userId;
-  int videoId;
-  int atTime;
-  String note;
-  FileClass ? video;
-  dynamic user;
+ final int id;
+ final int userId;
+ final int videoId;
+ final int atTime;
+ final String note;
+ final FileClass ? video;
+ final dynamic user;
 
   factory BookmarkModel.fromJson(Map<String, dynamic> json) => BookmarkModel(
     id: json["id"],

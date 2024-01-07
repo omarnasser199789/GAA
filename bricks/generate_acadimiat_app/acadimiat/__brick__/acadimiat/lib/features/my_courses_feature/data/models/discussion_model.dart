@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final discussionModel = discussionModelFromJson(jsonString);
-
 import 'dart:convert';
-
 import 'package:acadmiat/features/my_courses_feature/domain/entities/discussion_entity.dart';
 
 DiscussionModel discussionModelFromJson(String str) => DiscussionModel.fromJson(json.decode(str));
@@ -21,9 +16,9 @@ class DiscussionModel extends DiscussionEntity {
     timeline: timeline,
   );
 
-  int discussionId;
-  int lectureId;
-  List<Timeline> timeline;
+ final int discussionId;
+ final int lectureId;
+ final List<Timeline> timeline;
 
   factory DiscussionModel.fromJson(Map<String, dynamic> json) => DiscussionModel(
     discussionId: (json["discussionId"]!=null)?json["discussionId"]:-1,
@@ -81,13 +76,13 @@ class Timeline {
 
   Map<String, dynamic> toJson() => {
     "id": id,
-    "discussionId": discussionId == null ? -1 : discussionId,
-    "userId": userId == null ? -1 : userId,
-    "username": username == null ? "" : username,
-    "useravatar": useravatar == null ? "" : useravatar,
-    "message": message == null ? "" : message,
+    "discussionId":  discussionId,
+    "userId":  userId,
+    "username":  username,
+    "useravatar": useravatar,
+    "message": message,
     "isReply": isReply,
-    "orginialId": orginialId == null ? -1 : orginialId,
+    "orginialId": orginialId,
     "original": original == null ? null : original!.toJson(),
     "replies": replies == null ? null : List<dynamic>.from(replies!.map((x) => x.toJson())),
   };

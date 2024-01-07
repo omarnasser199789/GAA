@@ -23,10 +23,10 @@ class MyCoursesFromLocalDbModel  extends MyCoursesFromLocalDbEntity{
     percent:percent,
   );
 
-  int apiId;
-  String image;
-  String name;
-  int percent;
+ final int apiId;
+ final String image;
+ final String name;
+ final int percent;
 
   factory MyCoursesFromLocalDbModel.fromJson(Map<String, dynamic> json) => MyCoursesFromLocalDbModel(
     apiId: json["apiId"],

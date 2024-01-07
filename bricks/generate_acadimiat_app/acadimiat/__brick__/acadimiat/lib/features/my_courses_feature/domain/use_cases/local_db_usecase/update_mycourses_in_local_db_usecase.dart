@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecases/usecase.dart';
 import '../../../data/models/my_courses_model.dart';
-import '../../entities/files_entity.dart';
 import '../../repositories/consultations_repository.dart';
 import 'dart:convert';
 
@@ -30,10 +29,10 @@ class UpdateMyCoursesParams {
     required this.percent,
   });
 
-  int apiId;
-  String image;
-  String name;
-  int percent;
+ final int apiId;
+ final String image;
+ final String name;
+ final int percent;
 
 
   factory UpdateMyCoursesParams.fromJson(Map<String, dynamic> json) => UpdateMyCoursesParams(

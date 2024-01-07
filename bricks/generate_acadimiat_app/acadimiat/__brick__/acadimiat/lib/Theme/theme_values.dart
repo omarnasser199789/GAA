@@ -44,8 +44,6 @@ final ThemeData darkTheme = ThemeData(
 
 /// ----  BlueTheme  ----
 final blueTheme = ThemeData(
-  // primaryColor: const Color({{primary_color}}),
-  backgroundColor: blueBackground,
   scaffoldBackgroundColor: blueBackground,
   disabledColor: const Color.fromRGBO(18, 18, 18, 1),
   canvasColor: const Color.fromRGBO(18, 18, 18, 1),

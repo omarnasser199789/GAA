@@ -3,7 +3,6 @@ import 'dart:convert';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../entities/BookmarkEntity.dart';
-import '../entities/discussion_entity.dart';
 import '../repositories/consultations_repository.dart';
 
 

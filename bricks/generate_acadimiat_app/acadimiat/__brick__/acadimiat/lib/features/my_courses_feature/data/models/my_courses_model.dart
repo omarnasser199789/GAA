@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import '../../domain/entities/my_courses_entity.dart';
 
@@ -21,16 +20,16 @@ class MyCoursesModel  extends MyCoursesEntity{
   }):super(id: id,percent: percent,header: header,authorized: authorized,image: image,courseLink: courseLink,
   trainer: trainer,total: total,isCourse: isCourse,hasBeforeQuizz: hasBeforeQuizz);
 
-  int id;
-  String header;
-  bool authorized;
-  String image;
-  String courseLink;
-  String trainer;
-  int percent;
-  double total;
-  bool isCourse;
-  bool hasBeforeQuizz;
+ final int id;
+ final String header;
+ final bool authorized;
+ final String image;
+ final String courseLink;
+ final String trainer;
+ final int percent;
+ final double total;
+ final bool isCourse;
+ final bool hasBeforeQuizz;
 
   factory MyCoursesModel.fromJson(Map<String, dynamic> json) => MyCoursesModel(
     id: json["id"],
@@ -42,8 +41,6 @@ class MyCoursesModel  extends MyCoursesEntity{
     percent: json["percent"],
     total: json["total"].toDouble(),
     isCourse:(json["isCourse"]==1||json["isCourse"]==0)? (json["isCourse"]==1)?true:false: json["isCourse"],
-    // isCourse: json["isCourse"],
-    // hasBeforeQuizz: json["hasBeforeQuizz"],
     hasBeforeQuizz:(json["hasBeforeQuizz"]==1||json["hasBeforeQuizz"]==0)? (json["hasBeforeQuizz"]==1)?true:false: json["hasBeforeQuizz"],
   );
 
@@ -60,7 +57,3 @@ class MyCoursesModel  extends MyCoursesEntity{
     "hasBeforeQuizz": hasBeforeQuizz,
   };
 }
-
-
-/// a person can receive only one pension
-///

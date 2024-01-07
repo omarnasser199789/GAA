@@ -17,7 +17,6 @@ import '../../../domain/entities/discussion_entity.dart';
 import '../../../domain/entities/files_entity.dart';
 import '../../../domain/entities/my_course_entity.dart';
 import '../../../domain/entities/my_courses_entity.dart';
-import '../../../domain/entities/my_courses_from_local_db_entity.dart';
 import '../../../domain/entities/my_lecture_entity.dart';
 import '../../../domain/entities/my_quizz_info_entity.dart';
 import '../../../domain/entities/sign_cookie_entity.dart';

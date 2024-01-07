@@ -3,10 +3,7 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
 import 'dart:convert';
-import 'dart:convert';
-
 import '../entities/topic_reply_entity.dart';
-
 
 class TopicReplyUseCase implements UseCase<TopicReplyEntity, TopicReplyParams> {
   final MyCoursesRepository repository;
@@ -17,9 +14,6 @@ class TopicReplyUseCase implements UseCase<TopicReplyEntity, TopicReplyParams> {
     return repository.topicReply(params);
   }
 }
-
-
-
 
 TopicReplyParams topicReplyParamsFromJson(String str) => TopicReplyParams.fromJson(json.decode(str));
 
@@ -35,12 +29,12 @@ class TopicReplyParams {
   required this.date,
   });
 
-  int ? id;
-  int topicId;
-  int userId;
-  String reply;
-  String attachment;
-  DateTime date;
+ final  int ? id;
+ final  int topicId;
+ final  int userId;
+ final  String reply;
+ final  String attachment;
+ final  DateTime date;
 
   factory TopicReplyParams.fromJson(Map<String, dynamic> json) => TopicReplyParams(
     id: json["id"],

@@ -17,6 +17,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/loading_courses_widget.dart';
 
+// ignore: must_be_immutable
 class TrainingCoursesPage extends StatefulWidget {
     TrainingCoursesPage({super.key,required this.latestEntity});
    List<LatestEntity>  latestEntity;

@@ -23,10 +23,10 @@ class CategoriesFromLocalDbModel  extends CategoriesFromLocalDBEntity{
     numberOfCourses:numberOfCourses,
   );
 
-  int categoryId;
-  String image;
-  String name;
-  int numberOfCourses;
+ final int categoryId;
+ final String image;
+ final String name;
+ final int numberOfCourses;
 
   factory CategoriesFromLocalDbModel.fromJson(Map<String, dynamic> json) => CategoriesFromLocalDbModel(
     categoryId: json["categoryId"],

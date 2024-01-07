@@ -30,6 +30,7 @@ HubConnection connection = HubConnectionBuilder()
     .withAutomaticReconnect()
     .build();
 
+// ignore: must_be_immutable
 class LaunchPage extends StatelessWidget {
   LaunchPage({super.key});
 

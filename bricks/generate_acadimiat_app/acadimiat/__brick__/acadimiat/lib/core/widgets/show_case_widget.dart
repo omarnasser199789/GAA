@@ -2,10 +2,8 @@ import 'package:acadmiat/Theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../globals.dart';
 class ShowCaseView extends StatelessWidget {
   const ShowCaseView({Key? key,
-
     required this.globalKey,
     required this.child,
     required this.description,
@@ -19,13 +17,8 @@ class ShowCaseView extends StatelessWidget {
   final Widget child;
   final bool enable;
 
-
   @override
   Widget build(BuildContext context) {
-
-
-
-
     return (enable==true)?
     Showcase(
       key: globalKey,

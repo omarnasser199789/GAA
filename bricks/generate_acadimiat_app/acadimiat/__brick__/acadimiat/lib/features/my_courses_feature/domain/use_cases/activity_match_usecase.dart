@@ -2,12 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'dart:convert';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
-import '../entities/BookmarkEntity.dart';
 import '../entities/activity_match_entity.dart';
-import '../entities/discussion_entity.dart';
 import '../repositories/consultations_repository.dart';
-import 'dart:convert';
-
 
 class ActivityMatchingUseCase implements UseCase< ActivityMatchEntity, ActivityMatchParams> {
   final MyCoursesRepository repository;
