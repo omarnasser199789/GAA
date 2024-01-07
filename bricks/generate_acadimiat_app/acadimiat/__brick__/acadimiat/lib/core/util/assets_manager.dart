@@ -72,10 +72,33 @@ class ImgAssets {
   static String certificate = '$_svgPath/certificate.svg';
   static String wishlist = '$_svgPath/wishlist.svg';
   static String login = '$_svgPath/login.svg';
-
-
-
-
-
+  static String ppt = '$_svgPath/ppt.svg';
+  static String qA = '$_svgPath/q&A.svg';
+  static String python = '$_svgPath/python.svg';
+  static String xls = '$_svgPath/xls.svg';
+  static String json = '$_svgPath/json.svg';
+  static String eps = '$_svgPath/eps.svg';
+  static String cs = '$_svgPath/cs.svg';
+  static String html = '$_svgPath/html.svg';
+  static String java = '$_svgPath/html.svg';
+  static String css = '$_svgPath/css.svg';
+  static String dart = '$_svgPath/dart.svg';
+  static String c__ = '$_svgPath/c++.svg';
+  static String ae = '$_svgPath/ae.svg';
+  static String pdf = '$_svgPath/pdf.svg';
+  static String jpg = '$_svgPath/jpg.svg';
+  static String png = '$_svgPath/png.svg';
+  static String db = '$_svgPath/db.svg';
+  static String doc = '$_svgPath/doc.svg';
+  static String scvg = '$_svgPath/scvg.svg';
+  static String url = '$_svgPath/url.svg';
+  static String zoom = '$_svgPath/zoom.svg';
+  static String txt = '$_svgPath/txt.svg';
+  static String github = '$_svgPath/github.svg';
+  static String default_ = '$_svgPath/default.svg';
+  static String onedrive = '$_svgPath/onedrive.svg';
+  static String aws = '$_svgPath/aws.svg';
+  static String googles = '$_svgPath/googles.svg';
+  static String ggithub = '$_svgPath/ggithub.svg';
 
 }
