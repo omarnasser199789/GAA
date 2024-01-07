@@ -17,19 +17,18 @@ import '../../../../../core/functions.dart';
 import '../../../../../core/util/assets_manager.dart';
 import '../../../../../core/widgets/app_bar_widget.dart';
 import '../../../../../injection_container.dart';
-import '../../../../../Locale/locale.dart';
 import '../../../../../Theme/style.dart';
 
 class SessionPage extends StatelessWidget {
   SessionPage({
-    Key? key,
+    super.key,
     required this.consultationID,
     required this.consultancy,
     required this.numberOfSessions,
     required this.consultant,
     required this.image,
     required this.date,
-  }) : super(key: key);
+  });
 
   final int consultationID;
   final int numberOfSessions;
@@ -43,10 +42,7 @@ class SessionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    var locale = AppLocalizations.of(context)!;
-
     Jiffy.locale("ar");
-
     return BlocProvider(
       create: (BuildContext context) => sl<ConsultanciesBloc>(),
       child: Scaffold(
@@ -55,7 +51,6 @@ class SessionPage extends StatelessWidget {
             if (kDebugMode) {
               print("State:$state");
             }
-
             if (state is Empty) {
               BlocProvider.of<ConsultanciesBloc>(context)
                   .add(GetConsultationSessionsEvent(consultationID: consultationID));
@@ -133,50 +128,29 @@ class SessionPage extends StatelessWidget {
                                                           .start,
                                                       children: [
                                                         SvgPicture.asset(
-                                                          "assets/svgs/vuesax-linear-calendar.svg",
+                                                          ImgAssets.vuesaxLinearCalendar,
                                                           color: iconsColor,
                                                         ),
-                                                        const SizedBox(
-                                                          width: 10,
-                                                        ),
+                                                        const SizedBox(width: 10),
                                                         Column(
-                                                          crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
+                                                          crossAxisAlignment: CrossAxisAlignment.start,
                                                           children: [
                                                             Row(
                                                               children: [
                                                                 Text(
-                                                                  Jiffy(consultationSessionList[index].date)
-                                                                      .yMMMd,
-                                                                  style:
-                                                                  blackBoldTextStyle(
-                                                                      context:
-                                                                      context,
-                                                                      fontSize:
-                                                                      11),
+                                                                  Jiffy(consultationSessionList[index].date).yMMMd,
+                                                                  style: blackBoldTextStyle(context: context, fontSize: 11),
                                                                 ),
                                                                 Text(
-                                                                  Jiffy(consultationSessionList[index].hour)
-                                                                      .jm,
-                                                                  style:
-                                                                  blackBoldTextStyle(
-                                                                      context:
-                                                                      context,
-                                                                      fontSize:
-                                                                      11),
+                                                                  Jiffy(consultationSessionList[index].hour).jm,
+                                                                  style: blackBoldTextStyle(context: context, fontSize: 11),
                                                                 ),
                                                               ],
                                                             ),
 
                                                             Text(
                                                               "موعد الجلسة",
-                                                              style: blackBoldTextStyle(
-                                                                  fontSize: 10,
-                                                                  context:
-                                                                  context,
-                                                                  color:
-                                                                  hintTextColor),
+                                                              style: blackBoldTextStyle(fontSize: 10, context: context, color: hintTextColor),
                                                             ),
                                                           ],
                                                         ),
@@ -190,11 +164,7 @@ class SessionPage extends StatelessWidget {
                                                             "#${consultationSessionList[index].id}"),
                                                         Text(
                                                           "رقم الطلب",
-                                                          style: blackBoldTextStyle(
-                                                              fontSize: 10,
-                                                              context: context,
-                                                              color:
-                                                              hintTextColor),
+                                                          style: blackBoldTextStyle(fontSize: 10, context: context, color: hintTextColor),
                                                         ),
                                                       ],
                                                     ),
@@ -222,29 +192,22 @@ class SessionPage extends StatelessWidget {
                                                         await Permission.camera.request();
                                                         await Permission.microphone.request();
                                                         await Permission.storage.request();
-                                                        goTo(context, (context) => const Browser(url:"https://conference.emasteryacademy.com/bigbluebutton/api/join?fullName=%D9%86%D9%88%D8%B1%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D9%8A%D8%A7%D8%B3%D9%8A%D9%86&meetingID=WHO9FH00C1&password=5VA4BM5ZLR&checksum=f8c4068e4cf495bad33c891617e31fe296c36ecf",),
-                                                        );
+                                                        goTo(context, (context) => const Browser(url:"https://conference.emasteryacademy.com/bigbluebutton/api/join?fullName=%D9%86%D9%88%D8%B1%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D9%8A%D8%A7%D8%B3%D9%8A%D9%86&meetingID=WHO9FH00C1&password=5VA4BM5ZLR&checksum=f8c4068e4cf495bad33c891617e31fe296c36ecf",),);
                                                       },
                                                     ),
                                                   ),
 
                                                 if (consultationSessionList[index].isDone)
                                                   Padding(
-                                                    padding:
-                                                    EdgeInsets.only(top: 20),
+                                                    padding: const EdgeInsets.only(top: 20),
                                                     child: CustomButton(
                                                       title: 'انتهت الجلسة',
                                                       width: double.infinity,
-                                                      textColor: Theme.of(context)
-                                                          .primaryColor,
-                                                      color: Theme.of(context)
-                                                          .primaryColor
-                                                          .withOpacity(0.1),
+                                                      textColor: Theme.of(context).primaryColor,
+                                                      color: Theme.of(context).primaryColor.withOpacity(0.1),
                                                       height: 37,
                                                       borderRadius: 8,
-                                                      onTap: () async {
-
-                                                      },
+                                                      onTap: () async {},
                                                     ),
                                                   ),
                                               ],
@@ -261,7 +224,7 @@ class SessionPage extends StatelessWidget {
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                     color: Theme.of(context).cardColor,
-                                    borderRadius: BorderRadius.circular(10)//
+                                    borderRadius: BorderRadius.circular(10)
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.only(top:15,bottom: 15),

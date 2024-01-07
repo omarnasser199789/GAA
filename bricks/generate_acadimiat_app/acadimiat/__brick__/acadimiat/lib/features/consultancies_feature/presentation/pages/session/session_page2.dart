@@ -258,7 +258,6 @@ class SessionPage extends StatelessWidget {
                                             ),
                                           ),
                                         );
-
                                       }),
                                 ),
                               if(consultationSessionList.isEmpty)
