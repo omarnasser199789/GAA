@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../Theme/style.dart';
+import '../../../../core/util/assets_manager.dart';
+
 class SessionNumber extends StatelessWidget {
   const SessionNumber({super.key,required this.numberOfSessions,this.type2});
   final int numberOfSessions;
@@ -12,7 +13,7 @@ class SessionNumber extends StatelessWidget {
     return   Row(
       children: [
         SvgPicture.asset(
-          "assets/svgs/question.svg",
+          ImgAssets.question,
           color:iconsColor,
         ),
         const SizedBox(width: 10,),
@@ -28,8 +29,6 @@ class SessionNumber extends StatelessWidget {
             ),
           ],
         ),
-
-
       ],
     );
   }

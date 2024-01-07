@@ -24,6 +24,7 @@ class ImgAssets {
   static String lessons = '$_svgPath/lessons.svg';
   static String subscribe = '$_svgPath/subscribe.svg';
   static String question = '$_svgPath/question.svg';
+  static String messageQuestion = '$_svgPath/message-question.svg';
   static String commentIcon = '$_svgPath/comment  icon.svg';
   static String iconIonicIosArrowBack = '$_svgPath/Icon ionic-ios-arrow-back.svg';
   static String iconFeatherCheckCircle = '$_svgPath/Icon feather-check-circle.svg';
@@ -64,7 +65,6 @@ class ImgAssets {
   static String iconLinkedin = '$_svgPath/Icon-linkedin.svg';
   static String iconInstagram = '$_svgPath/Icon-instagram.svg';
   static String liveLine = '$_svgPath/live-line.svg';
-  static String messageQuestion = '$_svgPath/message-question.svg';
   static String consultations = '$_svgPath/consultations.svg';
   static String date = '$_svgPath/date.svg';
 

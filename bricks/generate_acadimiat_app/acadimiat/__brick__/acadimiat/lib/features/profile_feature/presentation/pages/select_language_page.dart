@@ -72,71 +72,55 @@ class SelectLanguagePageState extends State<SelectLanguagePage> {
                     child: Text(localee.chooseTheLanguageOfTheApplication!,style: blackBoldTextStyle(context: context,fontSize: 14),),
                   ),
 
-                  GestureDetector(
-                    onTap: (){
-                      setState(() {
-                        val =2 ;
-                        globalSH.setString(CACHED_USER_LANGUAGE, 'ar',);
-                        _languageCubit.selectArabicLanguage();
-                      });
-                    },
-                    child: Container(
-                      color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),
-                      child: Row(
-                        children: [
-                          Radio(
-                            fillColor: MaterialStateColor.resolveWith((states) => Theme.of(context).primaryColor),
-                            value: 2,
-                            groupValue: val,
-                            onChanged: (value) {
-                              setState(() {
-                                val = value;
-                                globalSH.setString(CACHED_USER_LANGUAGE, 'ar',);
-                                _languageCubit.selectArabicLanguage();
-                              });
-                            },
-                            activeColor: Theme.of(context).primaryColor,
-                          ),
-                          Text("العربية",style: blackBoldTextStyle(context: context,fontSize: 13),),
-
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: (){
-                      setState(() {val = 4;});
-                      globalSH.setString(CACHED_USER_LANGUAGE, 'en',);
-                      _languageCubit.selectEngLanguage();
-                    },
-                    child: Container(
-                      color:Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),
-                      child: Row(
-
-                        children: [
-                          Radio(
-                            fillColor: MaterialStateColor.resolveWith((states) => Theme.of(context).primaryColor),
-                            value: 4,
-                            groupValue: val,
-                            onChanged: (value) {
-                              setState(() {val = value;});
-                              globalSH.setString(CACHED_USER_LANGUAGE, 'en',);
-                              _languageCubit.selectEngLanguage();
-                            },
-                            activeColor: Theme.of(context).primaryColor,
-                          ),
-                          Text("English",style: blackBoldTextStyle(context: context,fontSize: 13),),
-                        ],
-                      ),
-                    ),
-                  ),
+                  _buildLanguageOption(localee, context, 'العربية', 'ar', 2),
+                  _buildLanguageOption(localee, context, 'English', 'en', 4),
                 ],
               ),
             ),
           ),
         );
       },
+    );
+  }
+
+  Widget _buildLanguageOption(AppLocalizations locale, BuildContext context, String text, String languageCode, int value,) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          val = value;
+          globalSH.setString(CACHED_USER_LANGUAGE, languageCode);
+          if (languageCode == 'ar') {
+            _languageCubit.selectArabicLanguage();
+          } else if (languageCode == 'en') {
+            _languageCubit.selectEngLanguage();
+          }
+        });
+      },
+      child: Container(
+        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),
+        child: Row(
+          children: [
+            Radio(
+              fillColor: MaterialStateColor.resolveWith((states) => Theme.of(context).primaryColor),
+              value: value,
+              groupValue: val,
+              onChanged: (newValue) {
+                setState(() {
+                  val = newValue as int;
+                  globalSH.setString(CACHED_USER_LANGUAGE, languageCode);
+                  if (languageCode == 'ar') {
+                    _languageCubit.selectArabicLanguage();
+                  } else if (languageCode == 'en') {
+                    _languageCubit.selectEngLanguage();
+                  }
+                });
+              },
+              activeColor: Theme.of(context).primaryColor,
+            ),
+            Text(text, style: blackBoldTextStyle(context: context, fontSize: 13)),
+          ],
+        ),
+      ),
     );
   }
 }

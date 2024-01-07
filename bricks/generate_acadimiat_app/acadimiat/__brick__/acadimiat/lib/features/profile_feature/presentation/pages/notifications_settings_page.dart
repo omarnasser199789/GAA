@@ -38,7 +38,7 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    Container(
+                    SizedBox(
                         width: size.width*0.7,
                         // color: Colors.red,
                         child: Text(locale.trainingCoursesOffersPercentageOfProgressInTraining!,style: blackBoldTextStyle(context: context,fontSize: 13),)),
@@ -85,7 +85,7 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
+                      SizedBox(
                           width: size.width*0.7,
                           // color: Colors.red,
                           child: Text(locale.currentCoursesYourProgressInLearning!,style: blackBoldTextStyle(context: context,fontSize: 13),)),
@@ -98,6 +98,7 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
                         },
                       ),
                     ],),
+
                   Padding(
                     padding: const EdgeInsets.only(top: 19),
                     child: Row(
