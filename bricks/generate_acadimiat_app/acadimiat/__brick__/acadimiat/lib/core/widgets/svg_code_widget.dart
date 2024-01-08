@@ -25,8 +25,9 @@ class _SvgCodeWidgetState extends State<SvgCodeWidget> {
     }else{
       code=widget.code!;
     }
-
-    svgCode=  code.replaceAll("ec5252",primaryColorTypeString);
+    Color primaryColor = Theme.of(context).primaryColor;
+    String hexColor = primaryColor.value.toRadixString(16).substring(2); // Remove the alpha value (ff) from the color value
+    svgCode=  code.replaceAll("ec5252",hexColor);
     if (!mounted) {
       return;
     }

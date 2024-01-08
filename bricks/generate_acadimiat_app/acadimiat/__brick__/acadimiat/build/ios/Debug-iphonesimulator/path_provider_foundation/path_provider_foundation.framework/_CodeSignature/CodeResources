@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		u0v8z//GZl1p446Rw3rFkylxVKk=
+		yQ48PIrKwkEVSwhPqrjN8t1U3Gw=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		sbUEsuF9BGb1krlkNql8jGSKJsw=
+		b5y0ZKI7LeafOqEdWInBmPpztz0=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dezr4FHcg0FiRFTfjT9KUMqImK4=
+		0/4oGwTkcaW5+eWfRW+huLI/ecA=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		x7RsV/DG3LHw955eeWj3zmKWGvY=
+		glN+uikR5i6d8NWdiP5295b8stw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -80,14 +80,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LhRz9wPSL80w8YnJo39mAGp411jqbAxuEQSt1zpufzI=
+			am6hlPQbSAlFD3vScXXvY1pvtxfouKctoEvWCNdvMmM=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V9aqJl1inQ6igJcY/ozRwzy5/wltM8QYZWyhR/kPmjY=
+			kIFoDfWVthjEueJr1oFPiuR6+9slipWx52+a4vRXyqE=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -108,7 +108,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DKxVaF8W4wfCDAc0BjY7DVqfE8Z9WHpZff6A1BLWqu8=
+			HZ5C0t18PLkKMCj4AwBjNpTKCCkK65S3wM+uagaQozs=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -129,7 +129,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vfmrZMPPlptqqWalCDi2Ho1FrociDh0muNdwtktmrxw=
+			10u9BNyBHaz00i2FHskjT5vjQR9BdMlJ6oUKh2mNlSk=
 			</data>
 		</dict>
 	</dict>

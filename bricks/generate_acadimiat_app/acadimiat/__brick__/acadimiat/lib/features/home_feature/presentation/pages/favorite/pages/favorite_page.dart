@@ -102,7 +102,9 @@ class _FavoritePageState extends State<FavoritePage> {
                     ],
                   ),
                 ),
-              ):  EmptyStateWidget(svg:ImgAssets.wishlist,
+              ) :
+              EmptyStateWidget(
+                svg: ImgAssets.wishlist,
                 text1:"المفضلة فارغة!",
                 text3: "تصفح الدورات",
                 onTap: () async {

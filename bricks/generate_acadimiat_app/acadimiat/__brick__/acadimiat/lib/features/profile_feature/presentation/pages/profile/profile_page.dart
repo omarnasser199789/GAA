@@ -93,23 +93,18 @@ class _ProfilePageState extends State<ProfilePage> {
                          ? Column(
                          children: [
                             Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 15, left: 17, right: 17),
+                              padding: const EdgeInsets.only(top: 15, left: 17, right: 17),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        "${locale.welcome} ${userInfoEntity.name}",
+                                      Text("${locale.welcome} ${userInfoEntity.name}",
                                         style: blackBoldTextStyle(context: context, fontSize: 15),
                                       ),
                                       const SizedBox(height: 9),
-                                      Text(
-                                        userInfoEntity.email,
+                                      Text(userInfoEntity.email,
                                         style: blackBoldTextStyle(context: context, fontSize: 12),
                                       ),
                                     ],
@@ -124,13 +119,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                           width: 55,
                                           height: 55,
                                           child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(5000),
+                                              borderRadius: BorderRadius.circular(5000),
                                               child: (image == null)
                                                   ? CachedNetWorkImage(borderRadius: const BorderRadius.all(Radius.circular(6)),
                                                       url: userInfoEntity.profileImage,
-                                                      boxFit: BoxFit.fill,
-                                                    )
+                                                      boxFit: BoxFit.fill,)
                                                   : Image(image: AssetImage(image!.path),fit: BoxFit.fill,)),
                                         ),
                                       ):

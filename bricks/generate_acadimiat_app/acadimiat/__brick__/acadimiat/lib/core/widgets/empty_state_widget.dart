@@ -32,12 +32,10 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgCodeWidget(svg: widget.svg,)
-
             ],
           ),
           Padding(
@@ -47,7 +45,6 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
           if(widget.text3!=null)
           GestureDetector(
             onTap: widget.onTap,
-
             child: Container(
               color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.01),
               child: Padding(
@@ -58,7 +55,6 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
             ),
           ),
           const  SizedBox(height: 130,),
-
         ],
       ),
     );

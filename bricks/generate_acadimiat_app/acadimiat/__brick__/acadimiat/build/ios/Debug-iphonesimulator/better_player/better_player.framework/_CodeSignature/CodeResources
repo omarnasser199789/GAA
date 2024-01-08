@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/better_player.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FRh3LtssE4CMvhZ8zq1x9gNEHSk=
+		HcJk7zzVsNKgCSvXNAqIaMOpQQc=
 		</data>
 		<key>Modules/better_player.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/better_player.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		oHVAIZcyRWwDrs1Rv7ZK5+A3QDs=
+		ODemcQPhppaayfmgkzNd0TPJRyE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -156,7 +156,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wt9l9jU5xE8aVHM4CRphp3m7C00+JWEDONqmKt0Ue1A=
+			hJBq4j8ww1yox0RJymvYC/plrx+J3JhL+4J478vRQts=
 			</data>
 		</dict>
 		<key>Modules/better_player.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -177,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8a7cDXaHKwiMnuz1opIidObxV7Ve85VkYDAZuGDo3NA=
+			FbPZIhKATAj16/sQB3Ae3fiE9axYCoo6sgHA77UfO0Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

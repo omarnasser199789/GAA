@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/awesome_notifications.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0Sgw9KpZYD3d+1axntlvswmnf58=
+		e4n5DK4CZUadyGH8oKQdm8nscMk=
 		</data>
 		<key>Modules/awesome_notifications.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/awesome_notifications.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		gqiL+aQjWIu01xYpuDmRjjhPWF8=
+		EU6+yrNWcb0SoUdGjkgm5/UBV0w=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -136,11 +136,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0Sgw9KpZYD3d+1axntlvswmnf58=
+			e4n5DK4CZUadyGH8oKQdm8nscMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			3l0Nwgxwqjl6RpHGSGscZurw0/sOdDS02hGNpa32Abo=
+			pdkkewrdPH25Vn2uuhdo8VvL607Z9aF61hjuvLUOUEU=
 			</data>
 		</dict>
 		<key>Modules/awesome_notifications.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -169,11 +169,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gqiL+aQjWIu01xYpuDmRjjhPWF8=
+			EU6+yrNWcb0SoUdGjkgm5/UBV0w=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wu8kMSGNEAhpLbrj06JunKhXUJebLNjuue0ZAFDKsf0=
+			pf1Scbkmn8vmFTnS5MmlEqFu7SF7vx86OQt28CNLe9s=
 			</data>
 		</dict>
 	</dict>
