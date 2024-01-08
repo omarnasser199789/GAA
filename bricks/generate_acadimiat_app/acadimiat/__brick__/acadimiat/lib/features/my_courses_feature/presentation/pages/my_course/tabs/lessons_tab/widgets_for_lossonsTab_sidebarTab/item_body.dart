@@ -37,8 +37,6 @@ class _ItemBodyState extends State<ItemBody> {
             }
             else{
               if(widget.fromSideBar==null) {
-                await Future.delayed(Duration(seconds: 1));
-                print("vfdnsjkkdfnjkvnjkfnjkds");
                 double topPadding =  MediaQuery.of(context).padding.top;
                 await showModalBottomSheet(
                     context: context,
