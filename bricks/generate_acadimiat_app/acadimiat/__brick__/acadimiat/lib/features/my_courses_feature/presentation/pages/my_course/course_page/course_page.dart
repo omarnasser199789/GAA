@@ -213,7 +213,7 @@ class _CoursePageState extends State<CoursePage> {
                         pinned: true,
                         forceElevated: false,
                         collapsedHeight: kToolbarHeight,
-                        expandedHeight: size.height*0.35,//600,
+                        expandedHeight: size.height*0.35,
                         elevation: 4,
                         backgroundColor: Theme.of(context).cardColor,
                         floating: true,

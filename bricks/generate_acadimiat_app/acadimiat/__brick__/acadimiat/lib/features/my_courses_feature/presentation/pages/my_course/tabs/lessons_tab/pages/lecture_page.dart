@@ -72,6 +72,9 @@ class LecturePageState extends State<LecturePage> {
   double heightWidget = 0;
   bool loading = true;
   double addCommentWidgetHeight = 0;
+  double _progress = 0;
+  late int contentLength;
+  List<int> bytes = [];
   MyLectureEntity myLectureEntity = MyLectureEntity(
       materialId: -1,
       materialName: '',
@@ -81,8 +84,7 @@ class LecturePageState extends State<LecturePage> {
       isDone: false,
       totalScore: -1,
       completitionDate: null,
-      currentVideo: CurrentVideo(
-          url: '', currentTime: null, questions: [], bookmarks: []),
+      currentVideo: CurrentVideo(url: '', currentTime: null, questions: const[], bookmarks: const[]),
       discussion: Discussion(discussionId: -1, lectureId: -1, timeline: null),
       unitId: -1,
       contents: const []);
@@ -93,11 +95,8 @@ class LecturePageState extends State<LecturePage> {
   List<FilesEntity> filesEntity = [];
   bool getFile = false;
   bool firstOne = true;
-  EdgeInsetsGeometry defaultPadding= const EdgeInsets.only(
-  bottom: 10,
-  top: 10,
-  left: 17,
-  right: 17);
+  EdgeInsetsGeometry defaultPadding= const EdgeInsets.only(bottom: 10, top: 10, left: 17, right: 17);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -183,15 +182,13 @@ class LecturePageState extends State<LecturePage> {
                                 CoverWidget(coverUrl: widget.lectureParams.courseCover,),
 
                                 if (myLectureEntity.contents[0].type != Constants.VIDEO)
-                                  const SafeArea(
-                                      child: SizedBox(
-                                        height: 20,
-                                      )),
+                                  const SafeArea(child: SizedBox(height: 20,)),
 
                                 TabWidget(myLectureEntity: myLectureEntity,),
                               ],
                             ),
                           ),
+
                           SizedBox(
                             height: (size.height - heightWidget<0)?0:size.height - heightWidget,
                             child: TabBarView(
@@ -1018,10 +1015,6 @@ class LecturePageState extends State<LecturePage> {
       },
     );
   }
-
-  double _progress = 0;
-  late int contentLength;
-  List<int> bytes = [];
 
   Future<dynamic> downloadFile(String url, String fileName, Function(List<int> newBytes) listenFunction) async {
     bytes = [];
