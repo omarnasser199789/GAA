@@ -40,7 +40,6 @@ class SideBarLayout extends StatelessWidget {
           }
           if (state is LecturePage) {
             return Stack(
-              // alignment: Alignment.topLeft,
               children: <Widget>[
                 state,
                 SideBar(

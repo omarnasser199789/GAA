@@ -1,4 +1,3 @@
-
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import '../../../../../widgets/discussion_widget/comment_widget.dart';
@@ -12,9 +11,7 @@ class LoadingLecturePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Column(
       children: [
-        SizedBox(
-          height: size.height * 0.03,
-        ),
+
         AspectRatio(
           aspectRatio: 16/9,
           child: Shimmer.fromColors(
@@ -29,7 +26,7 @@ class LoadingLecturePage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 80),
+          padding: const EdgeInsets.only(top: 10),
           child: Shimmer.fromColors(
             baseColor: Theme.of(context).cardColor,
             highlightColor:
@@ -40,21 +37,16 @@ class LoadingLecturePage extends StatelessWidget {
               child: CommentWidget(
                 comments: [
                   Comment(
-                      avatar:
-                      "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
+                      avatar: "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
                       userName: "  ",
-                      content:
-                      " *************************************** "),
+                      content: " *************************************** "),
                   Comment(
-                      avatar:
-                      "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
+                      avatar: "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
                       userName: "  ",
-                      content:
-                      " *************************************** "),
+                      content: " *************************************** "),
                 ],
                 hadeComment: Comment(
-                    avatar:
-                    "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
+                    avatar: "https://d277bwtxqorw7z.cloudfront.net/trainer.jpg",
                     userName: "********",
                     content: "*********"),
               ),
