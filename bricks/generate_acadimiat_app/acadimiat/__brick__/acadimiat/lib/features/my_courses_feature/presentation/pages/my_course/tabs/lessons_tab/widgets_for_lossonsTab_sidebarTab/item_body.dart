@@ -36,8 +36,8 @@ class _ItemBodyState extends State<ItemBody> {
               goTo(context, (context) => ExamInfoPage(quizzId: widget.nestedList[index].lectureId!,));
             }
             else{
+              EdgeInsets mediaQueryPadding =  MediaQuery.of(context).padding;
               if(widget.fromSideBar==null) {
-                double topPadding =  MediaQuery.of(context).padding.top;
                 await showModalBottomSheet(
                     context: context,
                     backgroundColor:
@@ -46,7 +46,7 @@ class _ItemBodyState extends State<ItemBody> {
                     builder: (context) {
                       return StatefulBuilder(builder: (BuildContext context, StateSetter _) {
                         return SizedBox(
-                            height: size.height-topPadding,
+                            height: size.height-mediaQueryPadding.top,
                             child: Material(
                                 color: Theme.of(context).scaffoldBackgroundColor,
                                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
@@ -56,6 +56,7 @@ class _ItemBodyState extends State<ItemBody> {
                                   myCourseEntity: widget.nestedList[index].myCourseEntity!,
                                   part: widget.nestedList[index].part!,
                                   index: widget.nestedList[index].index!,
+                                  mediaQueryPadding: mediaQueryPadding,
                                 )
                             ));
                       });
@@ -69,6 +70,7 @@ class _ItemBodyState extends State<ItemBody> {
                       myCourseEntity: widget.nestedList[index].myCourseEntity!,
                       part: widget.nestedList[index].part!,
                       index: widget.nestedList[index].index!,
+                      mediaQueryPadding: mediaQueryPadding,
                     )
                 );
               }

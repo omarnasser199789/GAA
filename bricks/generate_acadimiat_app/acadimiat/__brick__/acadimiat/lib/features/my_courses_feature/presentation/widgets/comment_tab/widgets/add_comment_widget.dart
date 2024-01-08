@@ -17,10 +17,12 @@ class AddCommentWidget extends StatefulWidget {
     Key? key,
     required this.lectureId,
     required this.timeline,
+    required this.mediaQueryPadding
   }) : super(key: key);
 
   final int lectureId;
   final List<Timeline> timeline;
+  final EdgeInsets mediaQueryPadding;
 
   @override
   State<AddCommentWidget> createState() => _AddCommentWidgetState();
@@ -28,6 +30,7 @@ class AddCommentWidget extends StatefulWidget {
 
 /// State class for the AddCommentWidget
 class _AddCommentWidgetState extends State<AddCommentWidget> {
+  final double horizontalPadding = 20;
   // Global key for the FlutterMentionsState
   final GlobalKey<FlutterMentionsState> _key = GlobalKey<FlutterMentionsState>();
   /// List of mentions for the user
@@ -55,9 +58,10 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
           create: (BuildContext context) => sl<MyCoursesBloc>(),
           child: BlocBuilder<MyCoursesBloc, MyCoursesState>(
             builder: (context, state) {
-              return SafeArea(
+              return Container(
+                color: Theme.of(context).cardColor,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -79,7 +83,7 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
   Widget _buildCommentContainer(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.84,
+      width: size.width * 0.83 - horizontalPadding,
       color: Theme.of(context).scaffoldBackgroundColor,
       child: FlutterMentions(
         key: _key,

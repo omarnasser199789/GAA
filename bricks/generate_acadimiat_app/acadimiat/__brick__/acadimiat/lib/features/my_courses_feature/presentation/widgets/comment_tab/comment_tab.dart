@@ -17,9 +17,11 @@ import '../discussion_widget/comment_widget.dart';
 import 'loading_comment_tab.dart';
 
 class CommentTabWidget extends StatefulWidget {
-  const CommentTabWidget({super.key,required this.myLectureEntity,required this.lectureId});
+  const CommentTabWidget({super.key,required this.myLectureEntity,required this.lectureId, required this.mediaQueryPadding});
   final MyLectureEntity myLectureEntity;
   final int lectureId;
+  final EdgeInsets mediaQueryPadding;
+
   @override
   State<CommentTabWidget> createState() => _CommentTabWidgetState();
 }
@@ -51,6 +53,7 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                   return Stack(
                     alignment: Alignment.bottomCenter,
                     children: [
+
                       (discussionEntity.timeline.isNotEmpty)?
                       ListView.builder(
                           itemCount: discussionEntity.timeline.length,
@@ -89,7 +92,10 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                         ],//
                       ),
 
-                      AddCommentWidget(lectureId: widget.lectureId,timeline: state.discussionEntity.timeline.reversed.toList(),),
+                      Padding(
+                        padding: widget.mediaQueryPadding,
+                        child: AddCommentWidget(lectureId: widget.lectureId,timeline: state.discussionEntity.timeline.reversed.toList(),mediaQueryPadding: widget.mediaQueryPadding,),
+                      ),
                     ],
                   );
                 }

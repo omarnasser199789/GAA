@@ -1,4 +1,5 @@
 import 'package:acadmiat/features/my_courses_feature/domain/use_cases/get_my_qizizz/get_myqizizz_usecase.dart';
+import 'package:flutter/material.dart';
 
 import '../../data/models/files_model.dart';
 import '../../data/models/my_courses_model.dart';
@@ -169,12 +170,14 @@ class GetMyQuizizz extends MyCoursesEvent {
      required this.index,
      required this.part,
      required this.courseCover,
+     required this.mediaQueryPadding
    });
    final int lectureId;
    final MyCourseEntity myCourseEntity;
    final int index;
    final int part;
    final String courseCover;
+   final EdgeInsets mediaQueryPadding;
  }
 
  class GetMyCourse extends MyCoursesEvent {

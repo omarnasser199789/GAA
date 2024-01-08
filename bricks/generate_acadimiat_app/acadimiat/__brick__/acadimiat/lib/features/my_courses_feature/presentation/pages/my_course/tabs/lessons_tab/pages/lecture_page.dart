@@ -50,6 +50,7 @@ class LectureParams{
   final int index;
   final int part;
   final String courseCover;
+  final EdgeInsets mediaQueryPadding;
 
   LectureParams({
     required this.lectureId,
@@ -57,6 +58,7 @@ class LectureParams{
     required this.index,
     required this.part,
     required this.courseCover,
+    required this.mediaQueryPadding,
   });
 }
 
@@ -828,7 +830,7 @@ class LecturePageState extends State<LecturePage> {
                                   ],
                                 ),
 
-                                CommentTabWidget(myLectureEntity: myLectureEntity, lectureId: widget.lectureParams.lectureId,),
+                                CommentTabWidget(myLectureEntity: myLectureEntity, lectureId: widget.lectureParams.lectureId, mediaQueryPadding: widget.lectureParams.mediaQueryPadding,),
 
                                 if (myLectureEntity.contents[0].type == Constants.VIDEO)
                                   NotesTab(

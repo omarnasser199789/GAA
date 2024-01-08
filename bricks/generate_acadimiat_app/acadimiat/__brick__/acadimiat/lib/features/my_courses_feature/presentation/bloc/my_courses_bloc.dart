@@ -180,6 +180,7 @@ class MyCoursesBloc extends Bloc<MyCoursesEvent, MyCoursesState> {
             index: event.index,
             myCourseEntity: event.myCourseEntity,
             lectureId: event.lectureId,
+            mediaQueryPadding: event.mediaQueryPadding
         )
 
       );

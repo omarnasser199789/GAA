@@ -15,6 +15,7 @@ class SideBarLayout extends StatelessWidget {
     required this.index,
     required this.courseCover,
     required this.myCourseEntity,
+    required this.mediaQueryPadding
   });
 
   final int lectureId;
@@ -22,6 +23,7 @@ class SideBarLayout extends StatelessWidget {
   final int part;
   final int index;
   final String courseCover;
+  final EdgeInsets mediaQueryPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class SideBarLayout extends StatelessWidget {
               part: part,
               index: index,
               courseCover: courseCover,
+              mediaQueryPadding: mediaQueryPadding,
             ));
           }
           if (state is LecturePage) {
