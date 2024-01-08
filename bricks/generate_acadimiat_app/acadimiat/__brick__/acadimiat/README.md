@@ -3,8 +3,7 @@
 ## Developer Information
 - **Developer Name:** Omar Nasser
 - **Email:** omarnaser1997@gmail.com
-- **LinkedIn Account:** [Omar's LinkedIn Profile](https://www.linkedin.com/in/omar-mouhamad-nasser/)
-- **Portfolio:** [Omar's Portfolio](https://omar-nasser-portfolio.web.app#/)
+
 
 ## Project Overview
 This is a Flutter project for ELT.

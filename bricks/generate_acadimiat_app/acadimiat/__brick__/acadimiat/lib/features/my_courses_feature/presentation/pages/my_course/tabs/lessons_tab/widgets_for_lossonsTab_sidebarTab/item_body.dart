@@ -20,100 +20,66 @@ class ItemBody extends StatefulWidget {
   @override
   State<ItemBody> createState() => _ItemBodyState();
 }
-int currentIndex=0;
-class _ItemBodyState extends State<ItemBody> {
 
+int currentIndex=0;
+
+class _ItemBodyState extends State<ItemBody> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-
+    
     return Column(
       children: List<Widget>.generate(widget.nestedList.length,(index){
         return GestureDetector(
           onTap: () async {
-
-            setState(() {
-
-            });
-
-
+            setState(() {});
             if(widget.nestedList[index].type==2) {
-              goTo(context, (context) =>
-                  ExamInfoPage(
-                    quizzId: widget.nestedList[index].lectureId!,
-                  )
-              );
+              goTo(context, (context) => ExamInfoPage(quizzId: widget.nestedList[index].lectureId!,));
             }else{
               if(widget.fromSideBar==null) {
-
-
-
-
                 await showModalBottomSheet(
                     context: context,
                     backgroundColor:
-                    Theme
-                        .of(context)
-                        .scaffoldBackgroundColor,
+                    Theme.of(context).scaffoldBackgroundColor,
                     isScrollControlled: true,
                     builder: (context) {
                       return StatefulBuilder(builder:
-                          (BuildContext context, StateSetter mystate) {
+                          (BuildContext context, StateSetter _) {
                         return SizedBox(
                             height: size.height,
                             child: Material(
-                                color: Theme
-                                    .of(context)
-                                    .scaffoldBackgroundColor,
-                                borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10)),
+                                color: Theme.of(context).scaffoldBackgroundColor,
+                                borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
                                 child: SideBarLayout(
                                   courseCover: widget.courseCover,
-                                  lectureId:
-                                  widget.nestedList[index].lectureId!,
-                                  myCourseEntity: widget
-                                      .nestedList[index]
-                                      .myCourseEntity!,
+                                  lectureId: widget.nestedList[index].lectureId!,
+                                  myCourseEntity: widget.nestedList[index].myCourseEntity!,
                                   part: widget.nestedList[index].part!,
-                                  index: widget.nestedList[index]
-                                      .index!,
-
+                                  index: widget.nestedList[index].index!,
                                 )));
                       });
                     }).whenComplete(() {});
               }
               else {
-
                 BlocProvider.of<MyCoursesBloc>(context).add(
                     LaunchNewVideoEvent(
                       courseCover: widget.courseCover,
-                      lectureId:
-                      widget.nestedList[index].lectureId!,
-                      myCourseEntity: widget
-                          .nestedList[index]
-                          .myCourseEntity!,
+                      lectureId: widget.nestedList[index].lectureId!,
+                      myCourseEntity: widget.nestedList[index].myCourseEntity!,
                       part: widget.nestedList[index].part!,
-                      index: widget.nestedList[index]
-                          .index!,
-
+                      index: widget.nestedList[index].index!,
                     )
                 );
               }
             }
-
-
-
           },
           child: Container(
             color: (currentIndex==widget.nestedList[index].lectureId)?Theme.of(context).primaryColor.withOpacity(0.2):  Theme.of(context).scaffoldBackgroundColor.withOpacity(1),
             child: Column(
               children: [
-                // if (index != 0)
-                const SizedBox(
-                  height: 14,
-                ),
+               
+                const SizedBox(height: 14),
+                
                 Padding(
                   padding: const EdgeInsets.only(left: 20,right: 20),
                   child: Row(
@@ -127,15 +93,13 @@ class _ItemBodyState extends State<ItemBody> {
                           widget.nestedList[index].body,
                         ],
                       ),
+
                       (widget.nestedList[index].myCourseEntity!.courseContents[widget.nestedList[index].part!].contents[widget.nestedList[index].index!].isDone)?
                       Container(
                         width: 65,
                         height: 24,
                         alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: percentIndicatorColor ,
-                            borderRadius: BorderRadius.circular(12)
-                        ),
+                        decoration: BoxDecoration(color: percentIndicatorColor , borderRadius: BorderRadius.circular(12)),
                         child: Text("مكتمل",style: blackBoldTextStyle(fontSize: 11, context: context),),
                       ): Row(children: [
                         Directionality(
@@ -162,11 +126,8 @@ class _ItemBodyState extends State<ItemBody> {
                   ),
                 ),
 
-
-
-                const SizedBox(
-                  height: 14,
-                ),
+                const SizedBox(height: 14),
+                
                 Container(
                   width: double.infinity,
                   height: 0.3,

@@ -279,13 +279,11 @@ FLUTTER_DARWIN_EXPORT
  * - FlutterStandardDataTypeFloat64: 64-bit floats
  */
 typedef NS_ENUM(NSInteger, FlutterStandardDataType) {
-  // NOLINTBEGIN(readability-identifier-naming)
   FlutterStandardDataTypeUInt8,
   FlutterStandardDataTypeInt32,
   FlutterStandardDataTypeInt64,
   FlutterStandardDataTypeFloat32,
   FlutterStandardDataTypeFloat64,
-  // NOLINTEND(readability-identifier-naming)
 };
 
 /**

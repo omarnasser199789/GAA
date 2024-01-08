@@ -22,12 +22,11 @@ import 'header_widget.dart';
 import 'loading_widget.dart';
 
 class CoursePage extends StatefulWidget {
-  const CoursePage(
-      {Key? key,
-      required this.imageUrl,
-      required this.courseId,
-      required this.userId})
-      : super(key: key);
+  const CoursePage({Key? key,
+    required this.imageUrl,
+    required this.courseId,
+    required this.userId}) : super(key: key);
+
   final int userId;
   final int courseId;
   final String imageUrl;
@@ -84,6 +83,7 @@ class _CoursePageState extends State<CoursePage> {
                   child: Text(locale.lessons!),
                 ),
               ),);
+
             tabsPagesList.add(
               SingleChildScrollView(
                   child: LessonsTab(

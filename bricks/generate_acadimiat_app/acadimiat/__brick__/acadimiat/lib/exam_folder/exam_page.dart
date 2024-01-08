@@ -168,8 +168,7 @@ class _ExamPageState extends State<ExamPage> {
                                   connectionId: connection.connectionId!,
                                   quizzParams: QuizzParams(
                                     userId: userId().toString(),
-                                    contentId: widget.myQuizizzEntity!
-                                        .materialId,
+                                    contentId: widget.myQuizizzEntity!.materialId,
 
                                     ///ContentId
                                     quizzId: widget.myQuizizzEntity!.id,

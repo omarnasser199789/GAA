@@ -61,14 +61,8 @@ class LectureParams{
 }
 
 class LecturePage extends StatefulWidget with MyCoursesState {
-  const LecturePage(
-      {super.key,
-      required this.lectureParams,
-      });
-
+  const LecturePage({super.key, required this.lectureParams});
   final LectureParams lectureParams;
-
-
 
   @override
   State<LecturePage> createState() => LecturePageState();
@@ -114,7 +108,6 @@ class LecturePageState extends State<LecturePage> {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     }
 
-
     int length=0;
     return Scaffold(
       key: scaffoldKey,
@@ -131,7 +124,6 @@ class LecturePageState extends State<LecturePage> {
                   myLectureParams: MyLectureParams(
                       userId: userId(), lectureId: widget.lectureParams.lectureId)));
             }
-
 
             if(state is Error){
               return Scaffold(
@@ -152,7 +144,6 @@ class LecturePageState extends State<LecturePage> {
               firstOne=false;
               makeVideoFirstIfExit(state);
               myLectureEntity = state.myLectureEntity;
-
               loading = false;
             }
 
@@ -165,8 +156,6 @@ class LecturePageState extends State<LecturePage> {
             }
 
             if (loading == false) {
-
-
               if(myLectureEntity.contents.isEmpty){
                 return Container();
               }
@@ -181,11 +170,8 @@ class LecturePageState extends State<LecturePage> {
 
               return DefaultTabController(
                 length:length,
-
                 child: SingleChildScrollView(
-                  physics: (MediaQuery.of(scaffoldKey.currentContext!).viewInsets.bottom > 0)
-                      ? null
-                      : const NeverScrollableScrollPhysics(),
+                  physics: (MediaQuery.of(scaffoldKey.currentContext!).viewInsets.bottom > 0) ? null : const NeverScrollableScrollPhysics(),
                   child: Column(
                     children: [
                       MeasureSize(
@@ -205,14 +191,6 @@ class LecturePageState extends State<LecturePage> {
                                 :
                             CoverWidget(coverUrl: widget.lectureParams.courseCover,),
 
-
-
-
-
-
-
-
-
                             if (myLectureEntity.contents[0].type != Constants.VIDEO)
                               const SafeArea(
                                   child: SizedBox(
@@ -223,8 +201,6 @@ class LecturePageState extends State<LecturePage> {
                           ],
                         ),
                       ),
-
-
                       SizedBox(
                         height: (size.height - heightWidget<0)?0:size.height - heightWidget,
                         child: TabBarView(
@@ -241,8 +217,7 @@ class LecturePageState extends State<LecturePage> {
                                           myLectureEntity.contents[index].type == Constants.ATTACHMENT
                                       ) {
                                         return Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 5, right: 5, top: 10),
+                                          padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                           child: GestureDetector(
                                             onTap: () async {
 
@@ -253,10 +228,9 @@ class LecturePageState extends State<LecturePage> {
                                               ///because when the file is downloaded, the file URl and PATH are stored in Locale DB
                                               ///The result is returned in  SuccessGetFileEntityState
 
-                                              BlocProvider.of<MyCoursesBloc>(context).add(GetFileByUrlEvent(
-                                                      params: GetFileParams(
-                                                          url:  myLectureEntity.contents[index].file.fileName,
-                                                          index: index)));
+                                              BlocProvider.of<MyCoursesBloc>(context).add(GetFileByUrlEvent(params: GetFileParams(
+                                                  url:  myLectureEntity.contents[index].file.fileName,
+                                                  index: index)));
 
                                               ///To show waiting indicator to user.
                                               selectedItem = index;
@@ -266,78 +240,39 @@ class LecturePageState extends State<LecturePage> {
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .cardColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                  border: Border.all(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      width: 1)),
+                                                  color: Theme.of(context).cardColor,
+                                                  borderRadius: BorderRadius.circular(5),
+                                                  border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                               child: Padding(
                                                 padding: defaultPadding,
                                                 child: Row(
-                                                  //
                                                   children: [
-                                                    getIcon(
-                                                        fileName:
-                                                            myLectureEntity
-                                                                .contents[index]
-                                                                .file
-                                                                .fileName),
-                                                    const SizedBox(
-                                                      width: 8,
-                                                    ),
+                                                    getIcon(fileName: myLectureEntity.contents[index].file.fileName),
+                                                    const SizedBox(width: 8),
                                                     SizedBox(
-                                                      // color: Colors.red,
                                                       width: size.width - 120,
                                                       child: Text(
-                                                        myLectureEntity
-                                                            .contents[index]
-                                                            .file
-                                                            .fileName,
+                                                        myLectureEntity.contents[index].file.fileName,
                                                         maxLines: 1,
-                                                        style:
-                                                            blackBoldTextStyle(
-                                                                context:
-                                                                    context,
-                                                                fontSize: 11),
+                                                        style: blackBoldTextStyle(context: context, fontSize: 11),
                                                       ),
                                                     ),
                                                     ValueListenableBuilder(
-                                                        valueListenable:
-                                                            counterNotifier,
-                                                        builder: (context,
-                                                            value, _) {
+                                                        valueListenable: counterNotifier,
+                                                        builder: (context, value, _) {
                                                           if (index == selectedItem && _progress != 0) {
                                                             return Stack(
-                                                              alignment:
-                                                                  Alignment
-                                                                      .center,
+                                                              alignment: Alignment.center,
                                                               children: [
                                                                 Center(
-                                                                  child:
-                                                                      SizedBox(
+                                                                  child: SizedBox(
                                                                     width: 30,
                                                                     height: 30,
-                                                                    child:
-                                                                        CircularProgressIndicator(
-                                                                      strokeWidth:
-                                                                          3,
-                                                                      value:
-                                                                          _progress,
-                                                                    ),
+                                                                    child: CircularProgressIndicator(strokeWidth: 3, value: _progress,),
                                                                   ),
                                                                 ),
-                                                                Text(
-                                                                  (_progress *
-                                                                          100)
-                                                                      .toString()
-                                                                      .split(
-                                                                          ".")[0],
-                                                                  style: const TextStyle(
-                                                                      fontSize:
-                                                                          12),
+                                                                Text((_progress * 100).toString().split(".")[0],
+                                                                  style: const TextStyle(fontSize: 12),
                                                                 ),
                                                               ],
                                                             );
@@ -345,13 +280,8 @@ class LecturePageState extends State<LecturePage> {
                                                             return SizedBox(
                                                               width: 30,
                                                               height: 30,
-                                                              child:
-                                                                  CircularProgressIndicator(
-                                                                backgroundColor:
-                                                                    Colors.grey,
-                                                                color: Theme.of(
-                                                                        context)
-                                                                    .primaryColor,
+                                                              child: CircularProgressIndicator(backgroundColor: Colors.grey,
+                                                                color: Theme.of(context).primaryColor,
                                                               ),
                                                             );
                                                           } else {
@@ -367,15 +297,12 @@ class LecturePageState extends State<LecturePage> {
                                       }
 
                                       if (myLectureEntity.contents[index].type == Constants.VIDEO) {
-                                        return VideoCell(
-                                          fileName: myLectureEntity
-                                              .contents[index].file.fileName,
-                                        );
+                                        return VideoCell(fileName: myLectureEntity.contents[index].file.fileName);
                                       }
+
                                       else if (myLectureEntity.contents[index].type == Constants.TEXT) {
                                         return Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 5, right: 5, top: 10),
+                                          padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                           child: GestureDetector(
                                             onTap: () async {
                                               await showModalBottomSheet(
@@ -421,18 +348,8 @@ class LecturePageState extends State<LecturePage> {
 
                                                                             Padding(
                                                                               padding: const EdgeInsets.only(top:20,bottom: 40),
-                                                                              // child: Text(parseHtmlString(myLectureEntity.contents[index].body),
-                                                                              //     style: blackBoldTextStyle(
-                                                                              //         context: context, fontSize: 13,height: 2.5)),
-
                                                                               child:  HtmlWidget(
-                                                                                // "<div style='background-color:blue !important; color:red !important'>${myLectureEntity.contents[index].body}</div >",
-
                                                                                 "<div style='background-color:${Theme.of(context).scaffoldBackgroundColor} !important; font-family:${"taleeq-bold"} !important; font-size:${0.8}em !important' color:${Theme.of(context).canvasColor} !important'>${myLectureEntity.contents[index].body.replaceAll("background-color", "").replaceAll("color", "").replaceAll("font-family", "")..replaceAll("font-size", "")}</div >",
-
-                                                                                // myLectureEntity.contents[index].body.replaceAll("background-color", "background-color: 'blue';"),
-
-
                                                                                 customWidgetBuilder: (element) {
                                                                                   if (element.attributes['background-color'] == 'bar') {
                                                                                     return Container(
@@ -440,9 +357,7 @@ class LecturePageState extends State<LecturePage> {
                                                                                       height: 30,
                                                                                       color: Colors.red,
                                                                                     );
-
                                                                                   }
-
                                                                                   return null;
                                                                                 },
                                                                               ),
@@ -469,8 +384,7 @@ class LecturePageState extends State<LecturePage> {
                                                 padding: defaultPadding,
                                                 child: Row(
                                                   children: [
-                                                    getIcon(
-                                                        fileName:"txt"),
+                                                    getIcon(fileName:"txt"),
                                                     const SizedBox(
                                                       width: 8,
                                                     ),
@@ -524,20 +438,13 @@ class LecturePageState extends State<LecturePage> {
                                                           .cardColor,
                                                       width: 1)),
                                               child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                    bottom: 13,
-                                                    top: 13,
-                                                    left: 17,
-                                                    right: 17),
+                                                padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                 child: Row(
-                                                  //
                                                   children: [
                                                     getIcon( fileName: "q&A",),
 
+                                                    const SizedBox(width: 8),
 
-                                                    const SizedBox(
-                                                      width: 8,
-                                                    ),
                                                     Column(
                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -567,37 +474,24 @@ class LecturePageState extends State<LecturePage> {
 
                                       else if (myLectureEntity.contents[index].type == Constants.DECISION_MAKING) {
                                         return Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 5, right: 5, top: 10),
+                                          padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                           child: GestureDetector(
                                             onTap: () async {
                                               goTo(context, (context) =>DecisionMakingPage(nestedContent:myLectureEntity.contents[index]));
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .cardColor,
-                                                  borderRadius:
-                                                  BorderRadius.circular(5),
-                                                  border: Border.all(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      width: 1)),
+                                                  color: Theme.of(context).cardColor,
+                                                  borderRadius: BorderRadius.circular(5),
+                                                  border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                               child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                    bottom: 13,
-                                                    top: 13,
-                                                    left: 17,
-                                                    right: 17),
+                                                padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                 child: Row(
-                                                  //
                                                   children: [
                                                     getIcon( fileName: "q&A",),
 
+                                                    const SizedBox(width: 8),
 
-                                                    const SizedBox(
-                                                      width: 8,
-                                                    ),
                                                     Column(
                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -607,11 +501,7 @@ class LecturePageState extends State<LecturePage> {
                                                           child: Text(
                                                             parseHtmlString(myLectureEntity.contents[index].activity.caseStudy.caseHeader),
                                                             maxLines: 1,
-                                                            style:
-                                                            blackBoldTextStyle(
-                                                                context:
-                                                                context,
-                                                                fontSize: 11),
+                                                            style: blackBoldTextStyle(context: context, fontSize: 11),
                                                           ),
                                                         ),
                                                       ],
@@ -624,7 +514,6 @@ class LecturePageState extends State<LecturePage> {
                                         );
 
                                       }
-
 
                                       ///نشاط تدريبي(true or false)
                                       else if (myLectureEntity.contents[index].type == Constants.QUIZZ) {
@@ -668,16 +557,10 @@ class LecturePageState extends State<LecturePage> {
                                                             .cardColor,
                                                         width: 1)),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      bottom: 13,
-                                                      top: 13,
-                                                      left: 17,
-                                                      right: 17),
+                                                  padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                   child: Row(
-                                                    //
                                                     children: [
                                                       getIcon( fileName: "q&A",),
-
 
                                                       const SizedBox(
                                                         width: 8,
@@ -765,6 +648,7 @@ class LecturePageState extends State<LecturePage> {
                                         }
 
                                       }
+
                                       else if (myLectureEntity.contents[index].type == Constants.MATCH_BETWEEN) {
                                         return Padding(
                                           padding: const EdgeInsets.only(
@@ -830,8 +714,8 @@ class LecturePageState extends State<LecturePage> {
                                             ),
                                           ),
                                         );
-
                                       }
+
                                       else if (myLectureEntity.contents[index].type == Constants.LOGICAL_ORDER) {
                                         return Padding(
                                           padding: const EdgeInsets.only(
@@ -895,6 +779,7 @@ class LecturePageState extends State<LecturePage> {
                                         );
 
                                       }
+
                                       else if (myLectureEntity.contents[index].type == Constants.FILL_SPACE) {
                                         return Padding(
                                           padding: const EdgeInsets.only(
@@ -958,6 +843,7 @@ class LecturePageState extends State<LecturePage> {
                                         );
 
                                       }
+
                                       else if (myLectureEntity.contents[index].type == Constants.LINK){
                                         return Padding(
                                           padding: const EdgeInsets.only(
@@ -999,6 +885,7 @@ class LecturePageState extends State<LecturePage> {
                                           ),
                                         );
                                       }
+
                                       else if (myLectureEntity.contents[index].type == Constants.LIVE_STREAMING){
                                         return Padding(
                                           padding: const EdgeInsets.only(
@@ -1145,8 +1032,7 @@ class LecturePageState extends State<LecturePage> {
   late int contentLength;
   List<int> bytes = [];
 
-  Future<dynamic> downloadFile(String url, String fileName,
-      Function(List<int> newBytes) listenFunction) async {
+  Future<dynamic> downloadFile(String url, String fileName, Function(List<int> newBytes) listenFunction) async {
     bytes = [];
     final request = Request('GET', Uri.parse(url));
     final StreamedResponse response = await Client().send(request);

@@ -13,16 +13,13 @@ class TabWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     var locale = AppLocalizations.of(context)!;
     return    Padding(
-      padding: const EdgeInsets.only(
-          top: 10, bottom: 10, right: 10, left: 10),
+      padding: const EdgeInsets.only(top: 10, bottom: 10, right: 10, left: 10),
       child: TabBar(
         isScrollable: false,
         labelColor: Theme.of(context).primaryColor,
         unselectedLabelColor: iconsColor,
         indicatorSize: TabBarIndicatorSize.tab,
-        labelPadding: EdgeInsets.only(
-            left: size.width * 0.048,
-            right: size.width * 0.048),
+        labelPadding: EdgeInsets.only(left: size.width * 0.048, right: size.width * 0.048),
         labelStyle: blackBoldTextStyle(
           context: context,
           fontSize: 11,

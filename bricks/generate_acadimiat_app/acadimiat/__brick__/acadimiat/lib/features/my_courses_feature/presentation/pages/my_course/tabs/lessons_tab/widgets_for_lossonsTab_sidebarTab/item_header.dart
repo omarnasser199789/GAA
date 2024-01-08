@@ -37,7 +37,6 @@ class _ItemHeaderState extends State<ItemHeader> {
         children: [
           Row(
             children: [
-
               SizedBox(
                 width: size.width-widget.width,
                 child: Text(
@@ -45,8 +44,6 @@ class _ItemHeaderState extends State<ItemHeader> {
                   style: blackBoldTextStyle(context: context,fontSize: 13,height: lineSpace),
                 ),
               ),
-
-
             ],
           ),
           if(widget.tutorialsNumber!=null)

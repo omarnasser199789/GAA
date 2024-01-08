@@ -7,7 +7,6 @@ import '../../../../../../../../item.dart';
 import '../../../../../../../splash_screen.dart';
 import '../../../../../domain/entities/my_course_entity.dart';
 
-
 class LessonsTab extends StatefulWidget {
   const LessonsTab(
       {super.key,
@@ -42,23 +41,15 @@ class _LessonsTabState extends State<LessonsTab> {
      double partTime=0;
 
       for (int i = 0; widget.myCourseEntity.courseContents[j].contents.length > i; i++) {
-
-        if(widget.myCourseEntity.courseContents[j].contents[i]
-            .lectureContents.isNotEmpty) {
-          partTime += widget.myCourseEntity.courseContents[j].contents[i]
-              .lectureContents[0].time;
+        if(widget.myCourseEntity.courseContents[j].contents[i].lectureContents.isNotEmpty) {
+          partTime += widget.myCourseEntity.courseContents[j].contents[i].lectureContents[0].time;
         }
-
-        // if(widget.myCourseEntity.courseContents[j].contents[i].lectureContents.isNotEmpty){
-          nestedList.add(Item(
+        nestedList.add(Item(
             header: NestedHeader(
               startHere: true,
               lessonNumber: i,
             ),
-            body: NestedBody(
-              name: widget.myCourseEntity.courseContents[j].contents[i].name,
-              width: 130,
-            ),
+            body: NestedBody(name: widget.myCourseEntity.courseContents[j].contents[i].name, width: 130),
             time:(widget.myCourseEntity.courseContents[j].contents[i].lectureContents.isNotEmpty)?
             widget.myCourseEntity.courseContents[j].contents[i].lectureContents[0].time:0,
             isExpanded: !widget.myCourseEntity.courseContents[j].contents[i].isDone,
@@ -68,13 +59,8 @@ class _LessonsTabState extends State<LessonsTab> {
             index: i,
             part: j,
           ));
-        // }
-
       }
-
-
-      items.add(
-        Item(
+      items.add(Item(
           header: ItemHeader(
             width: 104,
             padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
@@ -88,11 +74,11 @@ class _LessonsTabState extends State<LessonsTab> {
             nestedList: nestedList,
           ),
           isExpanded: !widget.myCourseEntity.courseContents[j].isDone,
-        ),
-      );
+        ));
     }
 
   }
+
   @override
   Widget build(BuildContext context) {
     return ExpansionPanelList(
@@ -102,20 +88,16 @@ class _LessonsTabState extends State<LessonsTab> {
       expansionCallback: (index, isExpanded) {
         setState(() {
           items[index].isExpanded = !items[index].isExpanded!;
-          setState(() {});
         });
       },
       animationDuration: const Duration(milliseconds: 600),
-      children: items
-          .map(
-            (item) => ExpansionPanel(
-              canTapOnHeader: (item.canTapOnHeader!=null)?item.canTapOnHeader!:true,
-              headerBuilder: (_, isExpanded) => item.header,
-              body: item.body,
-              isExpanded: item.isExpanded!,
-            ),
-          )
-          .toList(),
+      children: items.map((item) => ExpansionPanel(
+        canTapOnHeader: (item.canTapOnHeader!=null)?item.canTapOnHeader!:true,
+        headerBuilder: (_, isExpanded) => item.header,
+        body: item.body,
+        isExpanded: item.isExpanded!,
+      ),
+      ).toList(),
     );
   }
 }

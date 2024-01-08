@@ -135,7 +135,6 @@ class _LoginPageState extends State<LoginPage> {
                                     children:  [
                                       Hero(
                                         tag: "logo",
-                                        // child:SvgCodeWidget(code: logo,)
                                         child: SizedBox(
                                             width: 130,
                                             child: Image(image: AssetImage("assets/logo.png"),)),
