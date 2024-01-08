@@ -244,6 +244,7 @@ class _CoursePageState extends State<CoursePage> {
                                           isScrollable: (tabsList.length > 4)?true:false,
                                           labelColor: Theme.of(context).primaryColor,
                                           unselectedLabelColor: iconsColor,
+                                          dividerColor:Theme.of(context).cardColor,
                                           indicatorSize: TabBarIndicatorSize.tab,
                                           padding: EdgeInsets.zero,
                                           indicatorPadding: EdgeInsets.zero,

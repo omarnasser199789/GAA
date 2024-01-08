@@ -12,23 +12,17 @@ class TabWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     var locale = AppLocalizations.of(context)!;
-    return    Padding(
+    return  Padding(
       padding: const EdgeInsets.only(top: 10, bottom: 10, right: 10, left: 10),
       child: TabBar(
         isScrollable: false,
         labelColor: Theme.of(context).primaryColor,
+        dividerColor:Theme.of(context).cardColor,
         unselectedLabelColor: iconsColor,
         indicatorSize: TabBarIndicatorSize.tab,
         labelPadding: EdgeInsets.only(left: size.width * 0.048, right: size.width * 0.048),
-        labelStyle: blackBoldTextStyle(
-          context: context,
-          fontSize: 11,
-        ),
-        indicator: BoxDecoration(
-            borderRadius: BorderRadius.circular(7),
-            color: Theme.of(context)
-                .primaryColor
-                .withOpacity(0.1)),
+        labelStyle: blackBoldTextStyle(context: context, fontSize: 11),
+        indicator: BoxDecoration(borderRadius: BorderRadius.circular(7), color: Theme.of(context).primaryColor.withOpacity(0.1)),
         tabs: [
 
           ///Lesson content tab always appears
