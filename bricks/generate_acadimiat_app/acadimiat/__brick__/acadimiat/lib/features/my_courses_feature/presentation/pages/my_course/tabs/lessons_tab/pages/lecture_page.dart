@@ -216,9 +216,7 @@ class LecturePageState extends State<LecturePage> {
                                                   ///because when the file is downloaded, the file URl and PATH are stored in Locale DB
                                                   ///The result is returned in  SuccessGetFileEntityState
 
-                                                  BlocProvider.of<MyCoursesBloc>(context).add(GetFileByUrlEvent(params: GetFileParams(
-                                                      url:  myLectureEntity.contents[index].file.fileName,
-                                                      index: index)));
+                                                  BlocProvider.of<MyCoursesBloc>(context).add(GetFileByUrlEvent(params: GetFileParams(url:  myLectureEntity.contents[index].file.fileName, index: index)));
 
                                                   ///To show waiting indicator to user.
                                                   selectedItem = index;
@@ -1083,10 +1081,7 @@ class LecturePageState extends State<LecturePage> {
   }
 
   void makeVideoFirstIfExit(state) {
-
     NestedContent ? video = getVideoFromContents(state.myLectureEntity.contents);
-
-
     if(video!=null){
       for(int i=0;state.myLectureEntity.contents.length>i;i++){
         if(state.myLectureEntity.contents[i].type==Constants.VIDEO){
@@ -1097,12 +1092,3 @@ class LecturePageState extends State<LecturePage> {
     }
   }
 }
-
-
-
-
-
-
-
-
-
