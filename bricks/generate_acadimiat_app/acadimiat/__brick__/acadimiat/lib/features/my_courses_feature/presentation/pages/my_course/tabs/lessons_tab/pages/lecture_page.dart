@@ -300,9 +300,7 @@ class LecturePageState extends State<LecturePage> {
                                                           padding: const EdgeInsets.only(top:87),
                                                           child: Material(
                                                             color: Theme.of(context).scaffoldBackgroundColor,
-                                                            borderRadius: const BorderRadius.only(
-                                                                topLeft: Radius.circular(10),
-                                                                topRight: Radius.circular(10)),
+                                                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
                                                             child: StatefulBuilder(
                                                                 builder: (BuildContext context, StateSetter mystate) {
                                                                   return Padding(
@@ -330,8 +328,6 @@ class LecturePageState extends State<LecturePage> {
                                                                             child: Column(
                                                                               mainAxisSize: MainAxisSize.min,
                                                                               children: [
-
-
                                                                                 Padding(
                                                                                   padding: const EdgeInsets.only(top:20,bottom: 40),
                                                                                   child:  HtmlWidget(
@@ -415,14 +411,9 @@ class LecturePageState extends State<LecturePage> {
                                                 },
                                                 child: Container(
                                                   decoration: BoxDecoration(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      borderRadius:
-                                                      BorderRadius.circular(5),
-                                                      border: Border.all(
-                                                          color: Theme.of(context)
-                                                              .cardColor,
-                                                          width: 1)),
+                                                      color: Theme.of(context).cardColor,
+                                                      borderRadius: BorderRadius.circular(5),
+                                                      border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                                   child: Padding(
                                                     padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                     child: Row(
@@ -519,29 +510,16 @@ class LecturePageState extends State<LecturePage> {
                                                                 courseId: -1,
                                                                 name: myLectureEntity.contents[index].activity.quizz!.name,
                                                                 beforeStart: false,
-                                                                optional: false,
-                                                                timeLimit: 0,
-                                                                shuffle: false,
-                                                                repetition: 0,
-                                                                myAttempts: 0,
-                                                                ifPassed: 0,
-                                                                ifFailed: 0,
-                                                                minScore: 0,
-                                                                attendance: null,
+                                                                optional: false, timeLimit: 0, shuffle: false, repetition: 0, myAttempts: 0, ifPassed: 0, ifFailed: 0, minScore: 0, attendance: null,
                                                                 questions: myLectureEntity.contents[index].activity.quizz!.questions
                                                             ))
                                                     );
                                                   },
                                                   child: Container(
                                                     decoration: BoxDecoration(
-                                                        color: Theme.of(context)
-                                                            .cardColor,
-                                                        borderRadius:
-                                                        BorderRadius.circular(5),
-                                                        border: Border.all(
-                                                            color: Theme.of(context)
-                                                                .cardColor,
-                                                            width: 1)),
+                                                        color: Theme.of(context).cardColor,
+                                                        borderRadius: BorderRadius.circular(5),
+                                                        border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                                     child: Padding(
                                                       padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                       child: Row(
@@ -560,8 +538,7 @@ class LecturePageState extends State<LecturePage> {
                                                                 child: Text(
                                                                   myLectureEntity.contents[index].activity.title.toString(),
                                                                   maxLines: 1,
-                                                                  style:
-                                                                  blackBoldTextStyle(context: context, fontSize: 11),
+                                                                  style: blackBoldTextStyle(context: context, fontSize: 11),
                                                                 ),
                                                               ),
                                                               Padding(
@@ -581,31 +558,22 @@ class LecturePageState extends State<LecturePage> {
                                               ///The answers or result are inside Attendance Table
                                               //ExamInfoPage
                                               return Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 5, right: 5, top: 10),
+                                                padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                                 child: GestureDetector(
                                                   onTap: () async {
-                                                    goTo(context, (context) =>
-                                                        ExamResultPage(nestedContent: myLectureEntity.contents[index],)
-                                                    );
+                                                    goTo(context, (context) => ExamResultPage(nestedContent: myLectureEntity.contents[index],));
                                                   },
                                                   child: Container(
                                                     decoration: BoxDecoration(
-                                                        color: Theme.of(context)
-                                                            .cardColor,
-                                                        borderRadius:
-                                                        BorderRadius.circular(5),
-                                                        border: Border.all(
-                                                            color: Theme.of(context).cardColor,
-                                                            width: 1)),
+                                                        color: Theme.of(context).cardColor,
+                                                        borderRadius: BorderRadius.circular(5),
+                                                        border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                                     child: Padding(
                                                       padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                       child: Row(
                                                         children: [
                                                           getIcon( fileName: "q&A",),
-                                                          const SizedBox(
-                                                            width: 8,
-                                                          ),
+                                                          const SizedBox(width: 8),
                                                           Column(
                                                             mainAxisAlignment: MainAxisAlignment.start,
                                                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -637,41 +605,24 @@ class LecturePageState extends State<LecturePage> {
 
                                           else if (myLectureEntity.contents[index].type == Constants.MATCH_BETWEEN) {
                                             return Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5, right: 5, top: 10),
+                                              padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                               child: GestureDetector(
                                                 onTap: () async {
                                                   // DragAndDropPage
                                                   goTo(context, (context) =>MatchBetweenInnerTest(nestedContent:myLectureEntity.contents[index]));
-
-
-
                                                 },
                                                 child: Container(
                                                   decoration: BoxDecoration(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      borderRadius:
-                                                      BorderRadius.circular(5),
-                                                      border: Border.all(
-                                                          color: Theme.of(context)
-                                                              .cardColor,
-                                                          width: 1)),
+                                                      color: Theme.of(context).cardColor,
+                                                      borderRadius: BorderRadius.circular(5),
+                                                      border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                                   child: Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        bottom: 13,
-                                                        top: 13,
-                                                        left: 17,
-                                                        right: 17),
+                                                    padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                     child: Row(
-                                                      //
                                                       children: [
                                                         getIcon( fileName: "q&A",),
 
-
-                                                        const SizedBox(
-                                                          width: 8,
-                                                        ),
+                                                        const SizedBox(width: 8),
                                                         Column(
                                                           mainAxisAlignment: MainAxisAlignment.start,
                                                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -681,11 +632,7 @@ class LecturePageState extends State<LecturePage> {
                                                               child: Text(
                                                                 myLectureEntity.contents[index].activity.title.toString(),
                                                                 maxLines: 1,
-                                                                style:
-                                                                blackBoldTextStyle(
-                                                                    context:
-                                                                    context,
-                                                                    fontSize: 11),
+                                                                style: blackBoldTextStyle(context: context, fontSize: 11),
                                                               ),
                                                             ),
                                                             Padding(
@@ -704,37 +651,23 @@ class LecturePageState extends State<LecturePage> {
 
                                           else if (myLectureEntity.contents[index].type == Constants.LOGICAL_ORDER) {
                                             return Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5, right: 5, top: 10),
+                                              padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                               child: GestureDetector(
                                                 onTap: () async {
                                                   goTo(context, (context) =>LogicalOrderPage(nestedContent:myLectureEntity.contents[index]));
                                                 },
                                                 child: Container(
                                                   decoration: BoxDecoration(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      borderRadius:
-                                                      BorderRadius.circular(5),
-                                                      border: Border.all(
-                                                          color: Theme.of(context)
-                                                              .cardColor,
-                                                          width: 1)),
+                                                      color: Theme.of(context).cardColor,
+                                                      borderRadius: BorderRadius.circular(5),
+                                                      border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                                   child: Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        bottom: 13,
-                                                        top: 13,
-                                                        left: 17,
-                                                        right: 17),
+                                                    padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                     child: Row(
-                                                      //
                                                       children: [
                                                         getIcon( fileName: "q&A",),
 
-
-                                                        const SizedBox(
-                                                          width: 8,
-                                                        ),
+                                                        const SizedBox(width: 8),
                                                         Column(
                                                           mainAxisAlignment: MainAxisAlignment.start,
                                                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -745,10 +678,7 @@ class LecturePageState extends State<LecturePage> {
                                                                 myLectureEntity.contents[index].activity.title.toString(),
                                                                 maxLines: 1,
                                                                 style:
-                                                                blackBoldTextStyle(
-                                                                    context:
-                                                                    context,
-                                                                    fontSize: 11),
+                                                                blackBoldTextStyle(context: context, fontSize: 11),
                                                               ),
                                                             ),
                                                             Padding(
@@ -768,37 +698,22 @@ class LecturePageState extends State<LecturePage> {
 
                                           else if (myLectureEntity.contents[index].type == Constants.FILL_SPACE) {
                                             return Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5, right: 5, top: 10),
+                                              padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                               child: GestureDetector(
                                                 onTap: () async {
                                                   goTo(context, (context) =>FillSpaceInner(nestedContent:myLectureEntity.contents[index]));
                                                 },
                                                 child: Container(
                                                   decoration: BoxDecoration(
-                                                      color: Theme.of(context)
-                                                          .cardColor,
-                                                      borderRadius:
-                                                      BorderRadius.circular(5),
-                                                      border: Border.all(
-                                                          color: Theme.of(context)
-                                                              .cardColor,
-                                                          width: 1)),
+                                                      color: Theme.of(context).cardColor,
+                                                      borderRadius: BorderRadius.circular(5),
+                                                      border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                                   child: Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        bottom: 13,
-                                                        top: 13,
-                                                        left: 17,
-                                                        right: 17),
+                                                    padding: const EdgeInsets.only(bottom: 13, top: 13, left: 17, right: 17),
                                                     child: Row(
-                                                      //
                                                       children: [
                                                         getIcon( fileName: "q&A",),
-
-
-                                                        const SizedBox(
-                                                          width: 8,
-                                                        ),
+                                                        const SizedBox(width: 8),
                                                         Column(
                                                           mainAxisAlignment: MainAxisAlignment.start,
                                                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -808,11 +723,7 @@ class LecturePageState extends State<LecturePage> {
                                                               child: Text(
                                                                 myLectureEntity.contents[index].activity.title.toString(),
                                                                 maxLines: 1,
-                                                                style:
-                                                                blackBoldTextStyle(
-                                                                    context:
-                                                                    context,
-                                                                    fontSize: 11),
+                                                                style: blackBoldTextStyle(context: context, fontSize: 11),
                                                               ),
                                                             ),
                                                             Padding(
@@ -832,8 +743,7 @@ class LecturePageState extends State<LecturePage> {
 
                                           else if (myLectureEntity.contents[index].type == Constants.LINK){
                                             return Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5, right: 5, top: 10),
+                                              padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                               child: GestureDetector(
                                                 onTap: () async {
                                                   if (kDebugMode) {
@@ -843,18 +753,14 @@ class LecturePageState extends State<LecturePage> {
                                                 child: Container(
                                                   decoration: BoxDecoration(
                                                       color: Theme.of(context).cardColor,
-                                                      borderRadius:
-                                                      BorderRadius.circular(5),
+                                                      borderRadius: BorderRadius.circular(5),
                                                       border: Border.all(color: Theme.of(context).cardColor, width: 1)),
                                                   child: Padding(
                                                     padding: defaultPadding,
                                                     child: Row(
                                                       children: [
-                                                        getLinkIcon(
-                                                            fileName:parseHtmlString(myLectureEntity.contents[index].body)),
-                                                        const SizedBox(
-                                                          width: 8,
-                                                        ),
+                                                        getLinkIcon(fileName:parseHtmlString(myLectureEntity.contents[index].body)),
+                                                        const SizedBox(width: 8),
                                                         SizedBox(
                                                           width: size.width - 120,
                                                           child: Text(
@@ -874,8 +780,7 @@ class LecturePageState extends State<LecturePage> {
 
                                           else if (myLectureEntity.contents[index].type == Constants.LIVE_STREAMING){
                                             return Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5, right: 5, top: 10),
+                                              padding: const EdgeInsets.only(left: 5, right: 5, top: 10),
                                               child: GestureDetector(
                                                 onTap: () async {
                                                   Uri url =  Uri.parse(myLectureEntity.contents[index].meetingLink);
@@ -894,8 +799,7 @@ class LecturePageState extends State<LecturePage> {
                                                     padding: defaultPadding,
                                                     child: Row(
                                                       children: [
-                                                        getIcon(
-                                                            fileName:"live-line"),
+                                                        getIcon(fileName:"live-line"),
                                                         const SizedBox(
                                                           width: 8,
                                                         ),
