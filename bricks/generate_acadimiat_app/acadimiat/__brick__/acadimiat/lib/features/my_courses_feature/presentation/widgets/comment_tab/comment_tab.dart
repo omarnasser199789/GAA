@@ -92,10 +92,7 @@ class _CommentTabWidgetState extends State<CommentTabWidget> {
                         ],//
                       ),
 
-                      Padding(
-                        padding: widget.mediaQueryPadding,
-                        child: AddCommentWidget(lectureId: widget.lectureId,timeline: state.discussionEntity.timeline.reversed.toList(),mediaQueryPadding: widget.mediaQueryPadding,),
-                      ),
+                      AddCommentWidget(lectureId: widget.lectureId,timeline: state.discussionEntity.timeline.reversed.toList(),mediaQueryPadding: widget.mediaQueryPadding,),
                     ],
                   );
                 }

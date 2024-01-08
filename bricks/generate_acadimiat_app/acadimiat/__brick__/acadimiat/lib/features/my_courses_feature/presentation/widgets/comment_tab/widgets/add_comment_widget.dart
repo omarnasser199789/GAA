@@ -61,14 +61,19 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
               return Container(
                 color: Theme.of(context).cardColor,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      _buildCommentContainer(context),
-                      _buildSendButton(context),
-                    ],
+                  padding: EdgeInsets.only(bottom: widget.mediaQueryPadding.bottom),
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          _buildCommentContainer(context),
+                          _buildSendButton(context),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               );
