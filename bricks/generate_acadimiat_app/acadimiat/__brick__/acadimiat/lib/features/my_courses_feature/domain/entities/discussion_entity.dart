@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-
 import '../../data/models/discussion_model.dart';
 
 class DiscussionEntity extends Equatable{

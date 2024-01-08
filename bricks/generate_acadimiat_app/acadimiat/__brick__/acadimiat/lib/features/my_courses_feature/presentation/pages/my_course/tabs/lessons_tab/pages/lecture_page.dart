@@ -30,7 +30,7 @@ import '../../../../../../domain/entities/my_lecture_entity.dart';
 import '../../../../../../domain/entities/myquizizz_entity.dart';
 import '../../../../../../domain/use_cases/local_db_usecase/add_file_in_local_db_usecase.dart';
 import '../../../../../../domain/use_cases/local_db_usecase/get_file_by_name_usecase.dart';
-import '../../../../../widgets/comment_tab_widget.dart';
+import '../../../../../widgets/comment_tab/comment_tab.dart';
 import '../../../../../widgets/tabs_widget.dart';
 import '../../notes_tab.dart';
 import 'package:measure_size/measure_size.dart';

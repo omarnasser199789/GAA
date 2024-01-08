@@ -17,7 +17,7 @@ GlobalKey<LecturePageState> lecturePageKey  = GlobalKey();
 GlobalKey<NotesTabState> bookMarksWidgetKey  = GlobalKey();
 GlobalKey<AmazonVideoWidgetState> amazonVideoWidgetKey = GlobalKey();
 GlobalKey<VimeoVideoWidgetState> vimeoVideoWidgetKey= GlobalKey();
-GlobalKey<DiscussionWidgetState> discussionWidgetKey= GlobalKey();
+// GlobalKey<DiscussionWidgetState> discussionWidgetKey= GlobalKey();
 GlobalKey<CurvedNavigationBarState> bottomNavigationKey = GlobalKey();
 GlobalKey<ActivityByPageIdState> activityByPageIdKey = GlobalKey();
 
