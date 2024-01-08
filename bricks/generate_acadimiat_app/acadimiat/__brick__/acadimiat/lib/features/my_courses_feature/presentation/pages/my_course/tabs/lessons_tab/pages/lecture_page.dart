@@ -101,6 +101,7 @@ class LecturePageState extends State<LecturePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // print("kcfdlcmfdkm${widget.lectureParams.topPadding}");
 
     if (isLight()) {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
@@ -182,10 +183,8 @@ class LecturePageState extends State<LecturePage> {
                         },
                         child: Column(
                           children: [
-
                             ///If this course contain video show video widget else show course cover
                             doesThisCourseContainAnyVideo(contents:myLectureEntity.contents)?
-
                             VideoWidget(myLectureEntity: myLectureEntity,
                               lectureParams: widget.lectureParams,)
                                 :

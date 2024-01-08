@@ -163,11 +163,12 @@ class GetMyQuizizz extends MyCoursesEvent {
 }
 
  class LaunchNewVideoEvent extends MyCoursesEvent {
-   LaunchNewVideoEvent({required this.lectureId,required this.myCourseEntity,
-   required this.index,
+   LaunchNewVideoEvent({
+     required this.lectureId,
+     required this.myCourseEntity,
+     required this.index,
      required this.part,
      required this.courseCover,
-
    });
    final int lectureId;
    final MyCourseEntity myCourseEntity;

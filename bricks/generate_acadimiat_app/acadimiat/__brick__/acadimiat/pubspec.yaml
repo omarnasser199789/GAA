@@ -157,6 +157,9 @@ dependencies:
   #  It provides a way to highlight specific parts of the app to the user.
   showcaseview: ^2.0.3
 
+  #  remedi_vimeo_player: This library provides a widget for playing Vimeo videos in Flutter apps.
+  remedi_vimeo_player: ^0.1.1
+
   in_app_review: ^2.0.8
   package_info: ^2.0.2
   app_version_update_lite: ^4.0.4

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import '../../../../../../../../Theme/style.dart';
 import '../../../../../../../../core/globals.dart';
@@ -46,10 +45,7 @@ class _VideoWidgetState extends State<VideoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    Size size = MediaQuery.of(context).size;
     _checkIsRecording();
-
     return SafeArea(
       bottom: false,
       child: Column(
@@ -59,35 +55,18 @@ class _VideoWidgetState extends State<VideoWidget> {
         CrossAxisAlignment.start,
         children: [
 
-          if(isPortrait)
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-
-
           if(!_isRecording)
           AmazonVideoWidget(
             key: amazonVideoWidgetKey,
             videoUrl: widget.myLectureEntity.currentVideo.url,
             content:
             widget.myLectureEntity.contents[0],
-
             lectureId:widget.lectureParams.lectureId,
             courseId:widget.lectureParams.myCourseEntity.id,
             contentId:
             (widget.lectureParams.myCourseEntity.courseContents[widget.lectureParams.part].contents[widget.lectureParams.index].lectureContents.isNotEmpty)?
-            widget.lectureParams.myCourseEntity
-                .courseContents[widget.lectureParams.part]
-                .contents[widget.lectureParams.index]
-                .lectureContents[0
-            // widget.contentIndex
-            ]
-                .id:0,
-            lectureLogId: widget.lectureParams.myCourseEntity
-                .courseRecord
-                .unitsLog[widget.lectureParams.part]
-                .lecturesLog[0]
-                .id,
+            widget.lectureParams.myCourseEntity.courseContents[widget.lectureParams.part].contents[widget.lectureParams.index].lectureContents[0].id:0,
+            lectureLogId: widget.lectureParams.myCourseEntity.courseRecord.unitsLog[widget.lectureParams.part].lecturesLog[0].id,
             courseCover:widget.lectureParams.courseCover,
           ),
 
@@ -100,36 +79,16 @@ class _VideoWidgetState extends State<VideoWidget> {
             lectureId: widget.lectureParams.lectureId,
             contentId:
             (widget.lectureParams.myCourseEntity.courseContents[widget.lectureParams.part].contents[widget.lectureParams.index].lectureContents.isNotEmpty)?
-            widget.lectureParams.myCourseEntity
-                .courseContents[widget.lectureParams.part]
-                .contents[widget.lectureParams.index]
-                .lectureContents[0
-            // widget.contentIndex
-            ]
-                .id:0,
+            widget.lectureParams.myCourseEntity.courseContents[widget.lectureParams.part].contents[widget.lectureParams.index].lectureContents[0].id:0,
             courseId:widget.lectureParams.myCourseEntity.id,
-            lectureLogId: widget.lectureParams.myCourseEntity
-                .courseRecord
-                .unitsLog[widget.lectureParams.part]
-                .lecturesLog[0]
-                .id,
+            lectureLogId: widget.lectureParams.myCourseEntity.courseRecord.unitsLog[widget.lectureParams.part].lecturesLog[0].id,
           ),
 
-
-
           Padding(
-            //
-            padding: const EdgeInsets.only(
-                left: 17,
-                right: 17,
-                top: 10,
-                bottom: 7),
+            padding: const EdgeInsets.only(left: 17, right: 17, top: 10, bottom: 7),
             child: Text(
-              widget.myLectureEntity
-                  .contents[0].file.fileName,
-              style: blackBoldTextStyle(
-                  context: context,
-                  fontSize: 12),
+              widget.myLectureEntity.contents[0].file.fileName,
+              style: blackBoldTextStyle(context: context, fontSize: 12),
             ),
           )
         ],

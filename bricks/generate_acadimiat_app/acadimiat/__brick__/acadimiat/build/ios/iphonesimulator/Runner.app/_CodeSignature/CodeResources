@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		FSENdKwshsYcxekqyKzX9ZS/0QE=
+		VdWmJ2PwZ6V2HV62fmFfYQTixDc=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		bi+LM3GbIaj1LYcd6xrmQDNefoQ=
+		fTVYnOdIBIVZe+hJ3o72Dc3QFpg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/.dev_env</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		8GhE9pU7GET9hvzOszsIyZianKE=
+		MLv9lEz/Cb3bJYFlVynb/UNbFbo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/taleeq-bold.ttf</key>
 		<data>
@@ -690,7 +690,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		BheyTId6UPzpJ3M7fEUMcRkKcew=
+		p9NBdfTwo5NUqRdDiqFuL1vUCv4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/awesome_notifications/test/assets/images/test_image.png</key>
 		<data>
@@ -2956,6 +2956,18 @@
 		<data>
 		CjL70qPqbiswHUY4XAlhh+w21hE=
 		</data>
+		<key>Frameworks/remedi_vimeo_player.framework/Info.plist</key>
+		<data>
+		6asUY4KSzxEbX/aPxrfjy/pczRA=
+		</data>
+		<key>Frameworks/remedi_vimeo_player.framework/_CodeSignature/CodeResources</key>
+		<data>
+		LlDeLbgsv3oUaWOpufrpcyhu7dY=
+		</data>
+		<key>Frameworks/remedi_vimeo_player.framework/remedi_vimeo_player</key>
+		<data>
+		JA2DZ5CzJyzRVvwQCTDTSto/5Ew=
+		</data>
 		<key>Frameworks/screen_protector.framework/Info.plist</key>
 		<data>
 		ljLbKlp0Rlw+lY9wncSyM/q4ub0=
@@ -3137,7 +3149,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xRUfGJguga09SQ3Onildwa3tJJtVyyq4DWAo5wmBSjE=
+			yL4g9thrX2V6GKmqt8f3WzOzaGO8Xu+snc5JpU4b8XQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -3151,7 +3163,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			N2mzS7um8O0pX13xu3K/Ws8FxYMG+YxuoMnjT8EBY6s=
+			7VnqFg1F5enA3eaqEVoFrROOvCqbNfAvqSzWnBsETlU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/.dev_env</key>
@@ -3193,7 +3205,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GaAR1mUrnsql0jrwKlr/K04T3UhdjZ7yRIYQtW1tzj0=
+			VZnYb2APD8RkR/sBObBESPxWQShgCObJeGxn+Q71NjI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/taleeq-bold.ttf</key>
@@ -4264,7 +4276,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fmU/r3IJvMf9U8zO19l+omceVWAKVT2u/LLo/0jCYKo=
+			xDghQnKeZCkigVUWxr0GSOA+KDHXw+Sw9FGZnzqzwIE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/awesome_notifications/test/assets/images/test_image.png</key>
@@ -7876,6 +7888,27 @@
 			<key>hash2</key>
 			<data>
 			ZD/TVuG0mNHjtLKcDCOXkuOi9/ZK1jw4DoCN7zDvYC0=
+			</data>
+		</dict>
+		<key>Frameworks/remedi_vimeo_player.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y14l+Mz65k6cjYNhrhZA+ZGq2MqyQvH35X2syC3AvA0=
+			</data>
+		</dict>
+		<key>Frameworks/remedi_vimeo_player.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			p0aSs4P+aTNwLJUN+ljzFVr7SatfvaMr3UJY3GkOx3c=
+			</data>
+		</dict>
+		<key>Frameworks/remedi_vimeo_player.framework/remedi_vimeo_player</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lDREQmSW99OYJoki1FOE9SJjRvQCSh/i7VNDqaf7PPw=
 			</data>
 		</dict>
 		<key>Frameworks/screen_protector.framework/Info.plist</key>

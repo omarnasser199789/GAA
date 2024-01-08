@@ -173,13 +173,13 @@ class MyCoursesBloc extends Bloc<MyCoursesEvent, MyCoursesState> {
       yield Loading();
       await Future.delayed(const Duration(milliseconds: 100));
       yield LecturePage(
-        key: lecturePageKey,
+          key: lecturePageKey,
           lectureParams:LectureParams(
-          part: event.part,
-          courseCover: event.courseCover,
-          index: event.index,
-          myCourseEntity: event.myCourseEntity,
-          lectureId: event.lectureId,
+            part: event.part,
+            courseCover: event.courseCover,
+            index: event.index,
+            myCourseEntity: event.myCourseEntity,
+            lectureId: event.lectureId,
         )
 
       );

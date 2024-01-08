@@ -17,10 +17,7 @@ class CoverWidget extends StatelessWidget {
         crossAxisAlignment:
         CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          //myLectureEntity
+
           SizedBox(
             width: double.infinity,
             height: 200,

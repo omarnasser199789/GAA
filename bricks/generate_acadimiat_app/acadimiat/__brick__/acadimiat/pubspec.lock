@@ -1013,6 +1013,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.13.0"
+  remedi_vimeo_player:
+    dependency: "direct main"
+    description:
+      name: remedi_vimeo_player
+      sha256: "342ad644768f146921b9d72b552e0b950ca25b96c5e287723450085df63f61df"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.5"
   rxdart:
     dependency: transitive
     description:

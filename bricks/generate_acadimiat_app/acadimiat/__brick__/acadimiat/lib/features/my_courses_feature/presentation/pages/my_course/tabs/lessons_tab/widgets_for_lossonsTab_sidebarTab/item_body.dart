@@ -27,7 +27,6 @@ class _ItemBodyState extends State<ItemBody> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    
     return Column(
       children: List<Widget>.generate(widget.nestedList.length,(index){
         return GestureDetector(
@@ -35,18 +34,21 @@ class _ItemBodyState extends State<ItemBody> {
             setState(() {});
             if(widget.nestedList[index].type==2) {
               goTo(context, (context) => ExamInfoPage(quizzId: widget.nestedList[index].lectureId!,));
-            }else{
+            }
+            else{
               if(widget.fromSideBar==null) {
+                await Future.delayed(Duration(seconds: 1));
+                print("vfdnsjkkdfnjkvnjkfnjkds");
+                double topPadding =  MediaQuery.of(context).padding.top;
                 await showModalBottomSheet(
                     context: context,
                     backgroundColor:
                     Theme.of(context).scaffoldBackgroundColor,
                     isScrollControlled: true,
                     builder: (context) {
-                      return StatefulBuilder(builder:
-                          (BuildContext context, StateSetter _) {
+                      return StatefulBuilder(builder: (BuildContext context, StateSetter _) {
                         return SizedBox(
-                            height: size.height,
+                            height: size.height-topPadding,
                             child: Material(
                                 color: Theme.of(context).scaffoldBackgroundColor,
                                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
@@ -56,7 +58,8 @@ class _ItemBodyState extends State<ItemBody> {
                                   myCourseEntity: widget.nestedList[index].myCourseEntity!,
                                   part: widget.nestedList[index].part!,
                                   index: widget.nestedList[index].index!,
-                                )));
+                                )
+                            ));
                       });
                     }).whenComplete(() {});
               }

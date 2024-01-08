@@ -9,18 +9,20 @@ import '../../../../../../../../../injection_container.dart';
 import '../lecture_page.dart';
 
 class SideBarLayout extends StatelessWidget {
-  const SideBarLayout(
-      {super.key,
-      required this.lectureId,
-      required this.part,
-      required this.index,
-        required this.courseCover,
-      required this.myCourseEntity});
+  const SideBarLayout({super.key,
+    required this.lectureId,
+    required this.part,
+    required this.index,
+    required this.courseCover,
+    required this.myCourseEntity,
+  });
+
   final int lectureId;
   final MyCourseEntity myCourseEntity;
   final int part;
   final int index;
   final String courseCover;
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
