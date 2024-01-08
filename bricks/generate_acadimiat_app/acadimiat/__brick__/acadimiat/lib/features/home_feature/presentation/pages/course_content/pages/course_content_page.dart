@@ -141,6 +141,7 @@ class _CourseContentPageState extends State<CourseContentPage> {
                                           padding: const EdgeInsets.only(top: 10, bottom: 10),
                                           child: TabBar(
                                             labelColor: Theme.of(context).primaryColor,
+                                            dividerColor:Theme.of(context).cardColor,
                                             unselectedLabelColor: iconsColor,
                                             indicatorSize: TabBarIndicatorSize.tab,
                                             labelStyle: blackBoldTextStyle(context: context, fontSize: 11,),

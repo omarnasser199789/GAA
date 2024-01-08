@@ -126,7 +126,6 @@ class LecturePageState extends State<LecturePage> {
                   if (getFile) {
                     ///The openOrDownloadFile() function does not allow recursion
                     getFile = false;
-                    // openOrDownloadFile(state.filesEntity, context);
                   }
                 }
                 if (loading == false) {
