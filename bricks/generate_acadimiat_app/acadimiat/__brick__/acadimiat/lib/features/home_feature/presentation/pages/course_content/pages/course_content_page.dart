@@ -42,12 +42,7 @@ class CourseContentPage extends StatefulWidget {
 class _CourseContentPageState extends State<CourseContentPage> {
   final controller = PageController(initialPage: 0);
   bool allowShowPaymentSheet = false;
-  @override
-  void dispose() {
-    controller.dispose();
-    _betterPlayerController.dispose();
-    super.dispose();
-  }
+
 
   int page = 0;
   bool selected = true;
@@ -61,6 +56,13 @@ class _CourseContentPageState extends State<CourseContentPage> {
   bool allowGetCard = true;
 
   Size get preferredSize => Size.fromHeight(kToolbarHeight + MediaQuery.of(context).padding.top);
+
+  @override
+  void dispose() {
+    controller.dispose();
+    _betterPlayerController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -350,37 +352,28 @@ class _CourseContentPageState extends State<CourseContentPage> {
                       if(state.cardByIdEntity.appleId!="")
                         Trail(newPrice: state.cardByIdEntity.currentPrice, price: state.cardByIdEntity.mainPrice,loading:loading,
                           onTap: () async {
-                            setState(() {
+                          setState(() {
                             loading=true;
                             allowGo=true;
                           });
 
-                            if (!coursePurchaseOrNot(state.cardByIdEntity.id))
-                            {
+                          if (!coursePurchaseOrNot(state.cardByIdEntity.id)) {
+                            if(!mounted) return;
+                            goTo(context, (context) => CoursePage(userId: userId(), courseId:state.cardByIdEntity.id, imageUrl: widget.courseCover,));
+                          }else{
+                            try{
+                              await Purchases.purchaseProduct(state.cardByIdEntity.appleId);
+                              String appUserId = await Purchases.appUserID;
                               if(!mounted) return;
-                              goTo(context, (context) => CoursePage(
-                                    userId: userId(),
-                                    courseId:state.cardByIdEntity.id,
-                                    imageUrl: widget.courseCover,
-                                  )
-                              );
-                            }else{
-                              try{
-                                await Purchases.purchaseProduct(state.cardByIdEntity.appleId);
-                                String appUserId = await Purchases.appUserID;
-                                if(!mounted) return;
-                                BlocProvider.of<HomeBloc>(context).add(CheckPurchaseEvent(params:
-                                CheckPurchaseModel(subscriberId: appUserId, productId: state.cardByIdEntity.appleId, userId: "${userId()}")));
-                              }catch(e){
-                                if (kDebugMode) {
-                                  print("Error:$e");
-                                }
-                              }
+                              BlocProvider.of<HomeBloc>(context).add(CheckPurchaseEvent(params: CheckPurchaseModel(subscriberId: appUserId, productId: state.cardByIdEntity.appleId, userId: "${userId()}")));
+                            }catch(e){
+                              if (kDebugMode) {print("Error:$e");}
                             }
-                              setState(() {
-                                loading=false;
-                              });
-                          },),
+                          }
+
+                          setState(() {loading=false;});
+                          },
+                        ),
                     ],
                   ),
                 );
