@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/widgets/cached_net_work_image.dart';
 
-
 class VideoPlayerWidget extends StatefulWidget {
   const VideoPlayerWidget({
     Key? key,
