@@ -1,7 +1,5 @@
-import 'package:acadmiat/core/widgets/price_widget.dart';
 import 'package:acadmiat/core/widgets/waiting_widget.dart';
 import 'package:acadmiat/features/home_feature/presentation/pages/course_content/pages/tabs/course_content_widget/course_content.dart';
-import 'package:acadmiat/features/home_feature/presentation/pages/course_content/pages/trainer_info_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../Theme/style.dart';
@@ -10,22 +8,18 @@ import '../../../../../../core/util/assets_manager.dart';
 import '../../../../../../core/widgets/empty_state_widget.dart';
 import '../../../../../my_courses_feature/presentation/pages/my_course/course_page/course_page.dart';
 import '../../../../domain/use_cases/check_purchase_usecase.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../../core/globals.dart';
 import '../../../../../../core/widgets/app_bar_widget.dart';
-import '../../../../../../core/widgets/back_button.dart';
-import '../../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../cart_feature/presentation/success_payment_page.dart';
+import '../widgets/custom_app_bar.dart';
+import '../widgets/quick_information.dart';
 import '../widgets/trail.dart';
+import '../widgets/video_player_widget.dart';
 import 'tabs/course_overview/course_overview_page.dart';
-import 'package:share_plus/share_plus.dart';
 import '../../../../../../injection_container.dart';
-import '../../../../../my_courses_feature/presentation/widgets/common.dart';
 import '../../../bloc/home_bloc.dart';
 import '../../../bloc/home_event.dart';
 import '../../../bloc/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:better_player/better_player.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 class CourseContentPage extends StatefulWidget {
@@ -42,25 +36,19 @@ class CourseContentPage extends StatefulWidget {
 class _CourseContentPageState extends State<CourseContentPage> {
   final controller = PageController(initialPage: 0);
   bool allowShowPaymentSheet = false;
-
-
   int page = 0;
   bool selected = true;
   bool changeColor = true;
   bool initVideoIsNotInit = false;
-  bool playVideo = false;
   bool loading = false;
   bool allowGo = false;
-  late BetterPlayerController _betterPlayerController;
   int animatedDuration = 2;
   bool allowGetCard = true;
-
   Size get preferredSize => Size.fromHeight(kToolbarHeight + MediaQuery.of(context).padding.top);
 
   @override
   void dispose() {
     controller.dispose();
-    _betterPlayerController.dispose();
     super.dispose();
   }
 
@@ -98,7 +86,7 @@ class _CourseContentPageState extends State<CourseContentPage> {
           else if (state is CardByIdLoaded) {
             if (!initVideoIsNotInit && state.cardByIdEntity.courseVideo!="") {
               initVideoIsNotInit = true;
-              initVideo(url: state.cardByIdEntity.courseVideo,);
+
             }
             return OrientationBuilder(
               builder: (context, orientation) {
@@ -173,167 +161,13 @@ class _CourseContentPageState extends State<CourseContentPage> {
                                 ),
                                 flexibleSpace: FlexibleSpaceBar(
                                   background: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      AppBar(
-                                        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                                        elevation: 0,
-                                        leading: BackButtonWidget(),
-                                        actions: [
-                                          const SizedBox(width: 15),
-                                          GestureDetector(
-                                            onTap: () {
-                                              String result = shareCourseText.replaceAll("####", state.cardByIdEntity.courseName);
-                                              result = result.replaceAll("***", "\n");
-                                              Share.share(result);
-                                            },
-                                            child: SizedBox(
-                                              width: 18,
-                                              height: 18,
-                                              child: SvgPicture.asset(ImgAssets.share, color: iconsColor),
-                                            ),
-                                          ),
-                                          const SizedBox(width: 25),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          (state.cardByIdEntity.courseVideo != "")
-                                              ? Stack(
-                                            alignment: Alignment.center,
-                                            children: [
-                                              AspectRatio(
-                                                aspectRatio: 16 / 9,
-                                                child: BetterPlayer(
-                                                  controller: _betterPlayerController,
-                                                ),
-                                              ),
-                                              if (playVideo == false)
-                                                Stack(
-                                                  alignment: Alignment.center,
-                                                  children: [
-                                                    AspectRatio(
-                                                      aspectRatio: 16/9,
-                                                      child: CachedNetWorkImage(
-                                                        borderRadius: BorderRadius.circular(0),
-                                                        boxFit: BoxFit.fill,
-                                                        url: widget.courseCover,
-                                                      ),
-                                                    ),
-                                                    GestureDetector(
-                                                      onTap: () {
-                                                        _betterPlayerController.play();
-                                                        setState(() {
-                                                              playVideo = true;
-                                                            });
-                                                      },
-                                                      child: Container(
-                                                          height: 60,
-                                                          width: 60,
-                                                          decoration: BoxDecoration(
-                                                              color: Colors.black.withOpacity(0.6),
-                                                              borderRadius: BorderRadius.circular(200),
-                                                              border: Border.all(color: Theme.of(context).primaryColor, width: 3)),
-                                                          child: Icon(Icons.play_arrow_outlined, size: 30, color: Theme.of(context).primaryColor,)),
-                                                    )
-                                                  ],
-                                                ),
-                                            ],
-                                          ) :
-                                          AspectRatio(
-                                              aspectRatio: 16/9,
-                                              child: CachedNetWorkImage(
-                                                borderRadius: BorderRadius.circular(0),
-                                                boxFit:
-                                                BoxFit.fill,
-                                                url: widget.courseCover,
-                                              )),
-
-                                          Padding(
-                                            padding:
-                                            const EdgeInsets.only(left: 17, right: 17, top: 10),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                SizedBox(
-                                                  width: size.width - 34,
-                                                  child: Text(
-                                                    state.cardByIdEntity.courseName,
-                                                    style: blackBoldTextStyle(context: context, fontSize: 15),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(left: 17, right: 17, top: 10),
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                SizedBox(
-                                                  width: size.width - 34,
-                                                  child: Text(
-                                                    parseHtmlString(state.cardByIdEntity.courseDescription),
-                                                    style: blackRegularTextStyle(fontSize: 15),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(left: 17, right: 17, top: 5),
-                                            child: PriceWidget(newPrice: state.cardByIdEntity.currentPrice, price: state.cardByIdEntity.mainPrice),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(top: 5),
-                                            child: SizedBox(
-                                              height: 90,
-                                              child: ListView.builder(
-                                                  padding: EdgeInsets.zero,
-                                                  scrollDirection: Axis.horizontal,
-                                                  itemCount: state.cardByIdEntity.trainers.length,
-                                                  itemBuilder: (context, index) {
-                                                    return Padding(
-                                                      padding: const EdgeInsets.only(left: 17, right: 17, top: 5),
-                                                      child: GestureDetector(
-                                                        onTap: () {
-                                                          goTo(context, (context) => TrainerInfoPage(
-                                                                    index: index,
-                                                                    trainer: state.cardByIdEntity.trainers[index],
-                                                                    image: state.cardByIdEntity.trainers[index].trainerAvatar,
-                                                                  )); //
-                                                        },
-                                                        child: Column(
-                                                          children: [
-                                                            Hero(
-                                                              tag: "TrainerHeroTag$index",
-                                                              child: Container(
-                                                                  width: 50, height: 50,
-                                                                  decoration: BoxDecoration(
-                                                                    borderRadius: BorderRadius.circular(2000),
-                                                                    border: Border.all(width: 2, color: Theme.of(context).canvasColor.withOpacity(0.5)),
-                                                                  ),
-                                                                  child: Padding(
-                                                                    padding: const EdgeInsets.all(2.0),
-                                                                    child: CachedNetWorkImage(borderRadius: BorderRadius.circular(200),
-                                                                        url: state.cardByIdEntity.trainers[index].trainerAvatar,boxFit: BoxFit.fill,),
-                                                                  )),
-                                                            ),
-                                                            const SizedBox(height: 8),
-                                                            Text(state.cardByIdEntity.trainers[index].trainerName,
-                                                              style: blackBoldTextStyle(context: context, fontSize: 13),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                      CustomAppBar( courseName: state.cardByIdEntity.courseName,),
+                                      VideoPlayerWidget(courseVideo: state.cardByIdEntity.courseVideo, courseCover:  widget.courseCover,),
+                                      QuickInformation(courseName:state.cardByIdEntity.courseName, courseDescription: state.cardByIdEntity.courseDescription,
+                                        currentPrice: state.cardByIdEntity.currentPrice, trainers: state.cardByIdEntity.trainers, mainPrice: state.cardByIdEntity.mainPrice,),
                                     ],
                                   ),
                                 ),
@@ -370,7 +204,6 @@ class _CourseContentPageState extends State<CourseContentPage> {
                               if (kDebugMode) {print("Error:$e");}
                             }
                           }
-
                           setState(() {loading=false;});
                           },
                         ),
@@ -383,15 +216,11 @@ class _CourseContentPageState extends State<CourseContentPage> {
           return const WaitingWidget();
         }));
   }
-
-  Future<dynamic> initVideo({required String url, int? startFrom}) async {
-    _betterPlayerController = BetterPlayerController(
-      configurationBetterPlayer(context: context, startFrom: startFrom),
-      betterPlayerDataSource: BetterPlayerDataSource(
-          BetterPlayerDataSourceType.network, url,
-          useAsmsSubtitles: true, headers: headers),
-    );
-
-    return 200;
-  }
 }
+
+
+
+
+
+
+
