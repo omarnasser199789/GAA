@@ -13,7 +13,12 @@ import '../../../bloc/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CourseContentPage extends StatefulWidget {
-  const CourseContentPage({super.key, required this.cardId, required this.productType, required this.courseCover});
+  const CourseContentPage({
+    Key? key,
+    required this.cardId,
+    required this.productType,
+    required this.courseCover,
+  }) : super(key: key);
 
   final int cardId;
   final int productType;
@@ -25,16 +30,8 @@ class CourseContentPage extends StatefulWidget {
 
 class _CourseContentPageState extends State<CourseContentPage> {
   final controller = PageController(initialPage: 0);
-  bool allowShowPaymentSheet = false;
-  int page = 0;
-  bool selected = true;
-  bool changeColor = true;
-  bool initVideoIsNotInit = false;
-  bool loading = false;
-  bool allowGo = false;
-  int animatedDuration = 2;
   bool allowGetCard = true;
-  Size get preferredSize => Size.fromHeight(kToolbarHeight + MediaQuery.of(context).padding.top);
+  bool allowGo = false;
 
   @override
   void dispose() {
@@ -44,50 +41,67 @@ class _CourseContentPageState extends State<CourseContentPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
 
     return BlocProvider(
-        create: (BuildContext context) => sl<HomeBloc>(),
-        child: BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
+      create: (BuildContext context) => sl<HomeBloc>(),
+      child: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          /// Debug log to print the state for debugging purposes
           if (kDebugMode) {
-            print("State:$state");
+            print("State: $state");
           }
+
+          /// Fetch card details if the state is empty and fetching is allowed
           if (state is Empty && allowGetCard) {
-            allowGetCard=false;
+            allowGetCard = false; // Prevent further fetch requests
             BlocProvider.of<HomeBloc>(context).add(GetCardByIdEvent(id: widget.cardId));
           }
+          /// Show error state if the state is an error
           else if (state is Error) {
-            return Scaffold(appBar:appBarWidget("",context,true,null,null),
-              body: EmptyStateWidget(svg:ImgAssets.error,
-                text1:"عذرا! حدثت مشكلة غير متوقعة",
-                text3: "حدث الان",
-                onTap: () async {
-                  BlocProvider.of<HomeBloc>(context).add(GetCardByIdEvent(id: widget.cardId));
-                },
-              ),
-            );
+            return _buildErrorState(context);
           }
-          else if(state is SuccessCheckPurchase && allowGo){
+          /// Handle success check purchase event
+          else if (state is SuccessCheckPurchase && allowGo) {
             _handleSuccessCheckPurchase(context, state);
           }
+          /// Show loaded state with card details if available
           else if (state is CardByIdLoaded) {
-            return LoadedStateWidget(state: state, size: size, courseCover:  widget.courseCover,);
+            return LoadedStateWidget(state: state, size: size, courseCover: widget.courseCover);
           }
+
+          /// Show waiting widget if none of the above conditions are met
           return const WaitingWidget();
-        }));
+        },
+      ),
+    );
   }
 
+  /// Build the error state widget
+  Widget _buildErrorState(BuildContext context) {
+    return Scaffold(
+      appBar: appBarWidget("", context, true, null, null),
+      body: EmptyStateWidget(
+        svg: ImgAssets.error,
+        text1: "عذرا! حدثت مشكلة غير متوقعة",
+        text3: "حدث الان",
+        onTap: () async {
+          BlocProvider.of<HomeBloc>(context).add(GetCardByIdEvent(id: widget.cardId));
+        },
+      ),
+    );
+  }
+
+  /// Handle success check purchase event
   void _handleSuccessCheckPurchase(BuildContext context, SuccessCheckPurchase state) {
-    allowGo=false;
+    allowGo = false; // Prevent multiple navigations
     if (!mounted) return; // Check if the widget is still mounted
+    /// Delay navigation to the success payment page for smooth transition
     Future.delayed(const Duration(milliseconds: 300), () {
       goTo(context, (context) => SuccessPaymentPage());
     });
   }
-
 }
-
-
 
 
 
