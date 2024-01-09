@@ -1,8 +1,8 @@
 import 'package:acadmiat/Theme/style.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/functions.dart';
-import '../../../../../core/util/assets_manager.dart';
-import '../../../data/models/card_by_id_model.dart'as m;
+import '../../../../../../../../core/functions.dart';
+import '../../../../../../../../core/util/assets_manager.dart';
+import '../../../../../../data/models/card_by_id_model.dart'as m;
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatefulWidget {

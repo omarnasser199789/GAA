@@ -1,5 +1,6 @@
 import 'package:acadmiat/core/widgets/price_widget.dart';
 import 'package:acadmiat/core/widgets/waiting_widget.dart';
+import 'package:acadmiat/features/home_feature/presentation/pages/course_content/pages/tabs/course_content_widget/course_content.dart';
 import 'package:acadmiat/features/home_feature/presentation/pages/course_content/pages/trainer_info_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ import '../../../../../../core/widgets/back_button.dart';
 import '../../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../cart_feature/presentation/success_payment_page.dart';
 import '../widgets/trail.dart';
-import '../../course_overview/course_overview_page.dart';
+import 'tabs/course_overview/course_overview_page.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../../../../../injection_container.dart';
 import '../../../../../my_courses_feature/presentation/widgets/common.dart';
@@ -25,7 +26,6 @@ import '../../../bloc/home_event.dart';
 import '../../../bloc/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:better_player/better_player.dart';
-import '../../../widgets/course_content_widget/course_content.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 class CourseContentPage extends StatefulWidget {

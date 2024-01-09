@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import '../../../../../Locale/locale.dart';
-import '../../../../../Theme/style.dart';
-import '../../../../../core/globals.dart';
-import '../../../../../core/util/assets_manager.dart';
-import '../../../../../core/widgets/cached_net_work_image.dart';
-import '../../../domain/entities/card_by_id_entity.dart';
+import '../../../../../../../../Locale/locale.dart';
+import '../../../../../../../../Theme/style.dart';
+import '../../../../../../../../core/globals.dart';
+import '../../../../../../../../core/util/assets_manager.dart';
+import '../../../../../../../../core/widgets/cached_net_work_image.dart';
+import '../../../../../../domain/entities/card_by_id_entity.dart';
 import 'widgets/info_box.dart';
 
 class CourseOverviewPage extends StatefulWidget {

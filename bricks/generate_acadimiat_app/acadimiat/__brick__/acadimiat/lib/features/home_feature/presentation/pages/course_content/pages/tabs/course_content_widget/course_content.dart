@@ -1,11 +1,11 @@
 import 'package:acadmiat/Theme/style.dart';
 import 'package:flutter/material.dart';
-import '../../../../../Locale/locale.dart';
-import '../../../../../core/util/assets_manager.dart';
-import '../../../domain/entities/card_by_id_entity.dart' ;
+import '../../../../../../../../Locale/locale.dart';
+import '../../../../../../../../core/util/assets_manager.dart';
+import '../../../../../../domain/entities/card_by_id_entity.dart' ;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'body.dart';
-import 'item.dart';
+import '../../../../../pages/course_content/pages/tabs/course_content_widget/item.dart';
 
 class CourseContentWidget extends StatefulWidget {
   const CourseContentWidget({super.key, required this.cardByIdEntity});
