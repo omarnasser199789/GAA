@@ -29,12 +29,11 @@ class CourseInfoTab extends StatefulWidget {
 }
 
 class _CourseInfoTabState extends State<CourseInfoTab> {
-  late List<Widget> widgetList =[];
+  List<Widget> widgetList =[];
 
   @override
   void initState() {
     super.initState();
-    widgetList = _buildWidgetList(); // Initialize the widget list
   }
 
   // Method to build the list of widgets
@@ -142,6 +141,8 @@ class _CourseInfoTabState extends State<CourseInfoTab> {
 
   @override
   Widget build(BuildContext context) {
+    widgetList =[];
+    widgetList = _buildWidgetList(); // Initialize the widget list
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 17),
       child: Column(
