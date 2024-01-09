@@ -4,18 +4,18 @@ import '../../../../../../../../Locale/locale.dart';
 import '../../../../../../../../core/util/assets_manager.dart';
 import '../../../../../../domain/entities/card_by_id_entity.dart' ;
 import 'package:flutter_svg/flutter_svg.dart';
-import 'body.dart';
-import '../../../../../pages/course_content/pages/tabs/course_content_widget/item.dart';
+import 'widgets/course_unit_body.dart';
+import 'classes/course_unit_item.dart';
 
-class CourseContentWidget extends StatefulWidget {
-  const CourseContentWidget({super.key, required this.cardByIdEntity});
+class CoursePlanTab extends StatefulWidget {
+  const CoursePlanTab({super.key, required this.cardByIdEntity});
  final CardByIdEntity cardByIdEntity;
   @override
-  State<CourseContentWidget> createState() => _CourseContentState();
+  State<CoursePlanTab> createState() => _CourseContentState();
 }
 
-class _CourseContentState extends State<CourseContentWidget> {
-  List<Item> items = [];
+class _CourseContentState extends State<CoursePlanTab> {
+  List<CourseUnitItem> items = [];
   bool firstTime=true;
 
   @override
@@ -26,14 +26,13 @@ class _CourseContentState extends State<CourseContentWidget> {
     if(firstTime) {
       items = [];
       firstTime=false;
-      for (var item in widget.cardByIdEntity.courseUnits) {
-        items.add(
-          Item(header: Padding(
+      for (var unit in widget.cardByIdEntity.courseUnits) {
+        items.add(CourseUnitItem(header: Padding(
             padding: const EdgeInsets.only(top:10,left: 17,right: 17,bottom: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(item.unitName,
+                Text(unit.unitName,
                   style: blackBoldTextStyle(fontSize: 13, context: context),),
                 Padding(
                   padding: const EdgeInsets.only(top: 9),
@@ -50,7 +49,7 @@ class _CourseContentState extends State<CourseContentWidget> {
                       ),
                       SizedBox(width: size.width*0.01),
                       Text(
-                        "${ item.materials.length} ${locale.tutorials}",
+                        "${ unit.materials.length} ${locale.tutorials}",
                         style: blackBoldTextStyle(context: context,fontSize: 11),
                       ),
                       SizedBox(width: size.width*0.024),
@@ -68,8 +67,7 @@ class _CourseContentState extends State<CourseContentWidget> {
                 ),
               ],
             ),
-          ),
-            body: Body(materials: item.materials),
+          ), body: CourseUnitBody(materials: unit.materials),
             isExpanded: true,),
         );
       }

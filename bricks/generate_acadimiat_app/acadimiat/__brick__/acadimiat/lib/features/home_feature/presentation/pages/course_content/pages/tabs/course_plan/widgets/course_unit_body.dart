@@ -1,19 +1,19 @@
 import 'package:acadmiat/Theme/style.dart';
 import 'package:flutter/material.dart';
-import '../../../../../../../../core/functions.dart';
-import '../../../../../../../../core/util/assets_manager.dart';
-import '../../../../../../data/models/card_by_id_model.dart'as m;
+import '../../../../../../../../../core/functions.dart';
+import '../../../../../../../../../core/util/assets_manager.dart';
+import '../../../../../../../data/models/card_by_id_model.dart'as m;
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Body extends StatefulWidget {
-  const Body({super.key,required this.materials});
+class CourseUnitBody extends StatefulWidget {
+  const CourseUnitBody({super.key,required this.materials});
   final List<m.Material> materials;
 
   @override
-  State<Body> createState() => _BodyState();
+  State<CourseUnitBody> createState() => _CourseUnitBodyState();
 }
 
-class _BodyState extends State<Body> {
+class _CourseUnitBodyState extends State<CourseUnitBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,11 +55,7 @@ class _BodyState extends State<Body> {
                       if(widget.materials[index].materialContents.isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.only(top:5),
-
-
-
                           child: Row(children: [
-
                             Directionality(
                               textDirection:
                               TextDirection.ltr,

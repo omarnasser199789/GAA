@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../../../../../../../../Theme/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class InfoBox extends StatelessWidget {
   const InfoBox({super.key,required this.svg,required this.title , this.svgWidth, this.body});
 

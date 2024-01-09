@@ -10,15 +10,15 @@ import '../../../../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../../domain/entities/card_by_id_entity.dart';
 import 'widgets/info_box.dart';
 
-class CourseOverviewPage extends StatefulWidget {
-  const CourseOverviewPage({Key? key, required this.cardByIdEntity}) : super(key: key);
+class CourseInfoTab extends StatefulWidget {
+  const CourseInfoTab({Key? key, required this.cardByIdEntity}) : super(key: key);
   final CardByIdEntity cardByIdEntity;
 
   @override
-  State<CourseOverviewPage> createState() => _CourseOverviewPageState();
+  State<CourseInfoTab> createState() => _CourseInfoTabState();
 }
 
-class _CourseOverviewPageState extends State<CourseOverviewPage> {
+class _CourseInfoTabState extends State<CourseInfoTab> {
   List<Widget> widgetList = [];
 
   @override
